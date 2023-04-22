@@ -1,31 +1,12 @@
 <?php
-    // include the class to connect
-    
+    //gets the data
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    //give the data to the class
 
-    // $user = $_POST["username"];
-    // $password = $_POST["password"];
+    //the class execute the login process
 
-    
-    // if ($user!=) //checks the user name credentials
-    // {
-    //     header("Location: ../login.html");
-    //     exit();
-    // }
-    // if ($password != ) //checks the password credentials
-    // {
-    //     header("Location: ../login.html");
-    //     exit();
-    // }
-    
-    // header("Location: ../../index.html");
-    // exit(); 
-    class ako
-    {
-        function ikaw()
-        {
-            //header("Location: ../../index.html");
-            echo "eto";
-        }
-        
-    }
+    //if everything goes well go to the home page
+
+    header("Location: ../index.html");
 ?>  
