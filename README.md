@@ -14,4 +14,7 @@ Author -aries(and groupmates)
 ## PROGRESS
 
 ### WEEK 1 - april 22 - 29
-
+- DB CONNECT
+- LOGIN
+- REGISTER
+- NO DESIGN
