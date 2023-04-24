@@ -7,17 +7,14 @@
     $email = $_POST["email"];
     $name = $_POST["name"];
 
-    echo "0gate";
 
     //give them to the class constructor
-    $register = new register();
-
-    echo "1gate";
+    $register = new register($username, $password, $confirmPassword, $email,$name);
 
     //class executes the process
     $register->signUp();
     
     
     //finished
-    //header("Location: ../login.html");
+    header("Location: ../login.html");
 ?>

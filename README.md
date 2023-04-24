@@ -15,6 +15,9 @@ Author -aries(and groupmates)
 
 ### WEEK 1 - april 22 - 29
 - DB CONNECT
-- LOGIN
-- REGISTER
-- NO DESIGN
+- ~~LOGIN~~
+- ~~REGISTER~~
+    -still need encryption for register
+- DESIGN
+- Form validation
+- 

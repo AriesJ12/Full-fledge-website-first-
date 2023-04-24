@@ -4,8 +4,8 @@
         protected function connect()
         {
             //username and password of sql
-            $servename = "localhost";
-            $user = "root";
+            $servername = "localhost";
+            $username = "root";
             $password = "";
             $dbname = "RestaurantDB";
 
@@ -16,6 +16,8 @@
                 
                 die("Connection failed: " . $conn->connect_error);
             }
+
+            return $conn;
         }
     }
 ?>
