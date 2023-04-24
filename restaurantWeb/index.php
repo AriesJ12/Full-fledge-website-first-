@@ -15,6 +15,21 @@
         <a href="Assets/login.html">login</a>
         <br>
         <a href="Assets/register.html">register</a>
+
+        <br><br>
+        <p>
+            Hello
+            <?php
+                session_start();
+                $name = "GUEST";
+                if (isset($_SESSION["username"]))
+                {
+                    $name = $_SESSION["username"];
+                }
+                echo "$name";
+            ?>
+        </p>
+        <a href="Assets/php/logout.php">Logout</a>
     </div>
 </body>
 </html>

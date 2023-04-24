@@ -16,5 +16,5 @@
     //starts session and go to homepage
     session_start();
     $_SESSION["username"] = $username;
-    header("Location: ../../index.html");
+    header("Location: ../../index.php");
 ?>  

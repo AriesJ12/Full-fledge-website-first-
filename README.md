@@ -20,4 +20,9 @@ Author -aries(and groupmates)
     -still need encryption for register
 - DESIGN
 - Form validation
+    - ~~empty spaces~~
+    - ~~confirm password = password~~
+    - password length
+    - email value
+    - username already exist
 - 

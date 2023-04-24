@@ -1,5 +1,5 @@
 <?php
-    require 'classes/signup.php';
+    require 'classes/signup.class.php';
     //get the info
     $username = $_POST["username"];
     $password = $_POST["password"];

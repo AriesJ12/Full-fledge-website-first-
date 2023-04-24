@@ -24,7 +24,15 @@
         {
             
             $sql = "INSERT INTO accounts (username, password, email, name)  values ('$this->username', '$this->password','$this->email','$this->name');";
-            $result = $this->con->query($sql);
+            try
+            {
+                $result = $this->con->query($sql);
+
+            }catch (Exception $e)
+            {
+                header("Location: ../register.html?err=UsernameAlreadyExist");
+                exit();
+            }
         }
     }
     // class register extends db

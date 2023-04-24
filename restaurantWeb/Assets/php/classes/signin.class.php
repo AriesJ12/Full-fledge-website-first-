@@ -20,17 +20,23 @@
             
             $count = mysqli_num_rows($result);
             
-            if($count != 1)
+            if($count != 1)//checks if record exist
             {
                 header("Location: ../login.html?err=NoUser");
                 exit();
             }   
-            if($this->password !== $row["password"])
+            if($this->password !== $row["password"])//check the password
             {
                 header("Location: ../login.html?err=WrongPass");
                 exit();
             }
-
+            //gets the information
+            session_start();
+            $_SESSION["username"] = $this->username;
+            $_SESSION["password"] = $this->password;
+            $_SESSION["email"] = $row["email"];
+            $_SESSION["name"] = $row["name"];
+            
         }
     }
     
