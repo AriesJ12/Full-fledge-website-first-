@@ -17,4 +17,5 @@
     
     //finished
     header("Location: ../login.html");
+    exit();
 ?>

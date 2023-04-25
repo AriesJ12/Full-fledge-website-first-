@@ -14,6 +14,8 @@
             session_start();
             echo $_SESSION["username"].", this is your profile";
         ?>
+        <br>
+        <a href="../index.php">Home</a>
         <form name= "profileForm" action="phpFunctions/profile.inc.php" method="post">
             <label for="username">Username</label>
             <input type="text" name="username" id="username" value="<?php echo $_SESSION["username"]?>" disabled>

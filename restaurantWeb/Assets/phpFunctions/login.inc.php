@@ -15,4 +15,5 @@
     //if everything goes well go to the home page
     //starts session and go to homepage
     header("Location: ../../index.php");
+    exit();
 ?>  

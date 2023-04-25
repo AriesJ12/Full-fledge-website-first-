@@ -36,7 +36,7 @@ Authors
 ### WEEK 1 - april 22 - 29
 - ~~DB CONNECT~~
 - ~~LOGIN~~
-- ~~REGISTER~~(only the connection)
+- ~~REGISTER~~
     -still need encryption for register
     -still dont know the info to get from the user
 - Form validation
@@ -50,8 +50,9 @@ Authors
     -Login
         -wrong password
         -username is not in the database
-- Profile
+-~~ Profile~~
     -change password option
+    -change successful alert
 - ~~Log in and register should disappear when logged in~~
 - ~~Log out should disappear when no one is logged in~~
     -might change it to javascript/ajax(currently using php to execute the things above)

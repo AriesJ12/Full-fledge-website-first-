@@ -24,7 +24,7 @@
                     $name = $_SESSION["username"];
                     echo "$name";
                     echo "<br><a href = 'Assets/profile.php'>Profile</a>";
-                    echo "<br><a href='Assets/php/logout.php'>Logout</a>";
+                    echo "<br><a href='Assets/phpFunctions/logout.php'>Logout</a>";
                 }
                 else 
                 {
