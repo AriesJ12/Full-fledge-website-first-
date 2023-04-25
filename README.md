@@ -9,7 +9,10 @@ It will mainly help me practice html5, css, javascript, and php(and practice wit
 
 this repo's purpose is to store the project required for school
 
-Author -aries(and groupmates)
+Authors
+-aries
+-kian(insert github link)
+-kriesha(insert github link)
 
 ## TODO(updated april 24, 2023)
 ### backend
