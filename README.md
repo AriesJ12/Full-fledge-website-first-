@@ -13,7 +13,7 @@ Author -aries(and groupmates)
 
 ## TODO(updated april 24, 2023)
 ### backend
-- Login
+- ~~Login~~
 - Register
 - plus what to put in the registration
 - Forgot password
