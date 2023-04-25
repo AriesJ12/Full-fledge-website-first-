@@ -1,3 +1,4 @@
+
 function validate()
 {
     //gets the value of the input fields

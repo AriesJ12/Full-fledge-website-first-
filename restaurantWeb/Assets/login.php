@@ -13,13 +13,13 @@
         <h1>Login page</h1>
         <a href="../index.html">Home page</a>
         <br>
-        <form name="loginForm" action="php/login.inc.php" method="POST">
+        <form name="loginForm" action="phpFunctions/login.inc.php" method="POST">
             <label for="username">
                 Username
             </label>
             <input type="text" name="username" id="username">
             
-            <la^bel for="password">
+            <label for="password">
                 Password:
             </label>
             <input type="password" name="password" id="password">
