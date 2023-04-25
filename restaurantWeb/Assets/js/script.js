@@ -1,3 +1,31 @@
+function validateChangePassword(currentPassword)
+{
+    //gets the value into variable
+    var oldPassword = document.getElementById("oldPassword").value;
+    var newPassword = document.getElementById("newPassword").value;
+    var confirmPassword = document.getElementById("confirmPassword").value;
+
+    //checks old password
+    if(currentPassword != oldPassword)
+    {
+        alert("old Password is wrong");
+        return false;
+    }
+    //TODO: new password validation(function validate password)
+
+    //checks if new password is matched with confirm password
+    if(newPassword != confirmPassword)
+    {
+        alert("confirm password must be the same with new password");
+        return false;
+    }
+
+    if (newPassword == "" || confirmPassword == "")
+    {
+        alert("must not be empty");
+        return false;
+    }
+}
 
 function validate()
 {
@@ -58,4 +86,31 @@ function errorDisplay(id)
 function correctDisplay(id)
 {
     document.getElementById(id).style.border = "2px solid green";    
+}
+
+//todo function below
+//spaces is not allowed
+function validatePassword(password)
+{
+    //atleast 1 capital
+    //1 small letter
+    //have a sign
+    //minimum of 8 length
+}
+
+function validateEmail(email)
+{
+    //dunno lmao search google
+    //no spaces and something i guess
+}
+
+function validateName(name)
+{
+    //must not have numbers
+
+}
+
+function validateUsername(username)
+{
+    //checks if it exist in the database
 }

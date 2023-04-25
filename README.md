@@ -47,11 +47,13 @@ Authors
         - email value
         - username already exist
         - might use ajax because of the thing before this
-    -Login
+    -Login (ajax might be needed for below)
         -wrong password
         -username is not in the database
 -~~ Profile~~
     -change password option
+        -newPassword validation
+        -updates
     -change successful alert
 - ~~Log in and register should disappear when logged in~~
 - ~~Log out should disappear when no one is logged in~~
