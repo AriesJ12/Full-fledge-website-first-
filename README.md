@@ -37,12 +37,19 @@ Author -aries(and groupmates)
     -still need encryption for register
     -still dont know the info to get from the user
 - Form validation
-    - ~~empty spaces~~
-    - ~~confirm password = password~~
-    - password length
-    - email value
-    - username already exist
-    - might use ajax because of the thing before this
+    -Registration
+        - ~~empty spaces~~
+        - ~~confirm password = password~~
+        - password length
+        - email value
+        - username already exist
+        - might use ajax because of the thing before this
+    -Login
+        -wrong password
+        -username is not in the database
 - Profile
-- Log in and register should disappear when logged in
-- Log out should disappear when no one is logged in
+    -change password option
+- ~~Log in and register should disappear when logged in~~
+- ~~Log out should disappear when no one is logged in~~
+    -might change it to javascript/ajax(currently using php to execute the things above)
+- AJAX(change just a part of a document) -- javascript

@@ -12,24 +12,32 @@
     <div>
         <h1>Homepage</h1>
         <br>
-        <a href="Assets/login.html">login</a>
-        <br>
-        <a href="Assets/register.html">register</a>
-
+        
         <br><br>
         <p>
             Hello
-            <?php
+            <?php //must rewrite the code below; preferrably with js/ajax but php function is doable too
                 session_start();
-                $name = "GUEST";
+                $name;
                 if (isset($_SESSION["username"]))
                 {
                     $name = $_SESSION["username"];
+                    echo "$name";
+                    echo "<br><a href = 'Assets/profile.php'>Profile</a>";
+                    echo "<br><a href='Assets/php/logout.php'>Logout</a>";
                 }
-                echo "$name";
+                else 
+                {
+                    $name = "GUEST";
+                    echo "$name";
+                    echo "<br>
+                    <a href='Assets/login.php'>login</a>
+                    <br>
+                    <a href='Assets/register.php'>register</a>
+                    ";
+                }
             ?>
         </p>
-        <a href="Assets/php/logout.php">Logout</a>
     </div>
 </body>
 </html>
