@@ -57,3 +57,5 @@ Authors
 - ~~Log out should disappear when no one is logged in~~
     -might change it to javascript/ajax(currently using php to execute the things above)
 - AJAX(change just a part of a document) -- javascript
+
+-optimize the classes(join their functions together -update, select, insert)
