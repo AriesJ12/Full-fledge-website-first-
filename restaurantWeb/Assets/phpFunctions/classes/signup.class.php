@@ -30,7 +30,7 @@
 
             }catch (Exception $e)
             {
-                header("Location: ../register.html?err=UsernameAlreadyExist");
+                header("Location: ../register.php?err=UsernameAlreadyExist");
                 exit();
             }
         }
