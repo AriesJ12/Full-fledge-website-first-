@@ -17,12 +17,12 @@ Authors
 
 ## TODO(updated april 24, 2023)
 ### backend
-- ~~Login~~
-- Register
+- Login (week 1)
+- Register (week1)
 - plus what to put in the registration
-- Forgot password
+- Forgot password 
 - otp in email
-- Profile
+- Profile (week 1)
 - Form Validation
 - ERD --must-- needed for the things below
 - Reservation(with cancel)
@@ -39,13 +39,13 @@ Authors
 - ~~LOGIN~~
 - ~~REGISTER~~
     -still need encryption for register
-    -still dont know the info to get from the user
+    -still dont know the info to get from the user(erd)
 - Form validation
     -Registration
         - ~~empty spaces~~
         - ~~confirm password = password~~
         - password length
-        - email value
+        - email value 
         - username already exist
         - might use ajax because of the thing before this
     -Login (ajax might be needed for below)
@@ -54,7 +54,6 @@ Authors
 -~~ Profile~~
     -change password option
         -newPassword validation
-        -updates
     -change successful alert
 - ~~Log in and register should disappear when logged in~~
 - ~~Log out should disappear when no one is logged in~~
