@@ -19,5 +19,29 @@
 
             return $conn;
         }
+
+        protected function select($columns, $tablename)
+        {
+            $sql = "Select $columns from $tablename;";
+        }
+
+        protected function select($columns, $tablename, $condition)
+        {
+            $sql = "Select $columns from $tablename where $condition;";
+            $result = $this->connect()->query($sql);
+        }
+
+        protected function insert($columns,$tablename, $values)
+        {
+            $sql = "INSERT into $tablename ($columns) values ($values);";
+            $result = $this->connect()->query($sql);
+        }
+
+        protected function update($tablename, $change, $condition)
+        {
+            $sql = "UPDATE $tablename SET $change WHERE $condition;";
+            $result = $this->con->query($sql);
+        }
     }
+
 ?>

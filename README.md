@@ -60,10 +60,11 @@ Authors
     -might change it to javascript/ajax(currently using php to execute the things above)
 - AJAX(change just a part of a document) -- javascript
 
--optimize the classes(join their functions together -update, select, insert)
+
 
 
 ### Week 2 (April 30 - May 6)
+-optimize the classes(join their functions together -update, select, insert)
 -View Restaurant
 -View Comments
 -Add comments
