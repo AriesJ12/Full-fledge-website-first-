@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
-    <script src = "js/script.js"></script>
+    <link rel="stylesheet" href="css/loginStyle.css">
 </head>
 <body>
     <div>
@@ -30,5 +30,6 @@
             <input type="submit" value="Register">
         </form>
     </div>
+    <!-- <script src = "js/script.js"></script> -->
 </body>
 </html>

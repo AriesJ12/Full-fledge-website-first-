@@ -5,13 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- <script src="js/script.js"></script>  -->
+    <link rel="stylesheet" href="css/loginStyle.css">
 </head>
 <body>
     <div>
         <h1>Login page</h1>
-        <a href="../index.html">Home page</a>
+        <a href="../index.php">Home page</a>
         <br>
         <form name="loginForm" action="phpFunctions/login.inc.php" method="POST">
             <label for="username">
@@ -27,5 +26,6 @@
             <input type="submit" value = "Log in">    
         </form>
     </div>
+    <!-- <script src="js/script.js"></script>  -->
 </body>
 </html>

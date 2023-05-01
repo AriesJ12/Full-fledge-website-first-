@@ -23,7 +23,17 @@ Authors
 - Forgot password 
 - otp in email
 - Profile (week 1)
-- Form Validation
+- Form validation
+    -Registration
+        - ~~empty spaces~~
+        - ~~confirm password = password~~
+        - password length
+        - email value 
+        - username already exist
+        - might use ajax because of the thing before this
+    -Login (ajax might be needed for below)
+        -wrong password
+        -username is not in the database
 - ERD --must-- needed for the things below
 - Reservation(with cancel)
 - Adding and removing restaurant(admin privillege)
@@ -40,17 +50,7 @@ Authors
 - ~~REGISTER~~
     -still need encryption for register
     -still dont know the info to get from the user(erd)
-- Form validation
-    -Registration
-        - ~~empty spaces~~
-        - ~~confirm password = password~~
-        - password length
-        - email value 
-        - username already exist
-        - might use ajax because of the thing before this
-    -Login (ajax might be needed for below)
-        -wrong password
-        -username is not in the database
+
 -~~ Profile~~
     -change password option
         -newPassword validation
@@ -61,3 +61,10 @@ Authors
 - AJAX(change just a part of a document) -- javascript
 
 -optimize the classes(join their functions together -update, select, insert)
+
+
+### Week 2 (April 30 - May 6)
+-View Restaurant
+-View Comments
+-Add comments
+-Admin side

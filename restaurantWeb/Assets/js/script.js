@@ -1,116 +1,91 @@
-function validateChangePassword(currentPassword)
-{
-    //gets the value into variable
-    var oldPassword = document.getElementById("oldPassword").value;
-    var newPassword = document.getElementById("newPassword").value;
-    var confirmPassword = document.getElementById("confirmPassword").value;
+// Swiper js
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 1,
+  // grabCursor: true,
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
 
-    //checks old password
-    if(currentPassword != oldPassword)
-    {
-        alert("old Password is wrong");
-        return false;
-    }
-    //TODO: new password validation(function validate password)
 
-    //checks if new password is matched with confirm password
-    if(newPassword != confirmPassword)
-    {
-        alert("confirm password must be the same with new password");
-        return false;
-    }
+// Nav open close
+const body = document.querySelector('body'),
+      navMenu = body.querySelector('.menu-content'),
+      navOpenBtn = body.querySelector('.navOpen-btn'),
+      navCloseBtn = navMenu.querySelector('.navClose-btn');
 
-    if (newPassword == "" || confirmPassword == "")
-    {
-        alert("must not be empty");
-        return false;
-    }
+if(navMenu && navOpenBtn){
+  navOpenBtn.addEventListener("click", () =>{
+    navMenu.classList.add("open");
+    body.style.overflowY = "hidden";
+  })
 }
 
-function validate()
-{
-    //gets the value of the input fields
-    var username = document.forms["registerForm"]["username"].value;
-    var password = document.forms["registerForm"]["password"].value;
-    var confirmPassword = document.forms["registerForm"]["confirmPassword"].value;
-    var email = document.forms["registerForm"]["email"].value;
-    var name = document.forms["registerForm"]["name"].value;
-    var error = 0;//counts the error
-
-    correctDisplay("username");// show its right first
-    correctDisplay("password");
-    correctDisplay("confirmPassword");
-    correctDisplay("email");
-    correctDisplay("name");
-    
-    //below code ifs checks whether its wrong -- the right will be change
-    if(username == "") //checks if its empty(wanted to consider if spaces are there too, but whatevs)
-    {
-        errorDisplay("username");
-        error++;
-    }
-    if(password == "") //checks if its empty(wanted to consider if spaces are there too, but whatevs)
-    {
-        errorDisplay("password");
-        error++;
-    }
-    if(confirmPassword == "" || password != confirmPassword) //checks if its empty(wanted to consider if spaces are there too, but whatevs)
-    {
-        errorDisplay("confirmPassword");
-        error++;
-    }
-    if(email == "") //checks if its empty(wanted to consider if spaces are there too, but whatevs)
-    {
-        errorDisplay("email");
-        error++;
-    }
-    if(name == "") //checks if its empty(wanted to consider if spaces are there too, but whatevs)
-    {
-        errorDisplay("name");
-        error++;
-    }
-
-    if (error > 0)//checks if there are errors
-    {
-        return false;
-    }
-    return true;
-    // alert("sample");
+if(navMenu && navCloseBtn){
+  navCloseBtn.addEventListener("click", () =>{
+    navMenu.classList.remove("open");
+    body.style.overflowY = "scroll";
+  })
 }
 
-function errorDisplay(id)
-{
-    document.getElementById(id).style.border = "2px solid red";
-}
+// Change header bg color
+window.addEventListener("scroll", () => {
+  const scrollY = window.pageYOffset;
 
-function correctDisplay(id)
-{
-    document.getElementById(id).style.border = "2px solid green";    
-}
+  if(scrollY > 5){
+    document.querySelector("header").classList.add("header-active");
+  }else{
+    document.querySelector("header").classList.remove("header-active");
+  }
 
-//todo function below
-//spaces is not allowed
-function validatePassword(password)
-{
-    //atleast 1 capital
-    //1 small letter
-    //have a sign
-    //minimum of 8 length
-}
+  // Scroll up button
+  const scrollUpBtn = document.querySelector('.scrollUp-btn');
 
-function validateEmail(email)
-{
-    //dunno lmao search google
-    //no spaces and something i guess
-}
+  if(scrollY > 250){
+    scrollUpBtn.classList.add("scrollUpBtn-active");
+  }else{
+    scrollUpBtn.classList.remove("scrollUpBtn-active");
+  }
+  
+  
+  // Nav link indicator
 
-function validateName(name)
-{
-    //must not have numbers
+  const sections = document.querySelectorAll('section[id]');
+  sections.forEach(section =>{
+    const sectionHeight = section.offsetHeight,
+          sectionTop = section.offsetTop - 100;
 
-}
+          let navId = document.querySelector(`.menu-content a[href='#${section.id}']`);
+          if(scrollY > sectionTop && scrollY <=  sectionTop + sectionHeight){
+            navId.classList.add("active-navlink");           
+          }else{
+            navId.classList.remove("active-navlink");     
+          }
+          
+          navId.addEventListener("click", () => {
+            navMenu.classList.remove("open");
+            body.style.overflowY = "scroll";
+          })
+  })
+})  
+  
+  
+  // Scroll Reveal Animation
+  const sr = ScrollReveal({
+    origin: 'top',
+    distance: '60px',
+    duration: 2500,
+    delay: 400,
+  })
+  
+  sr.reveal(`.section-title, .section-subtitle, .section-description, .brand-image, .tesitmonial, .newsletter 
+.logo-content, .newsletter-inputBox, .newsletter-mediaIcon, .footer-content, .footer-links`, {interval:100,})
 
-function validateUsername(username)
-{
-    //checks if it exist in the database
-}
+sr.reveal(`.about-imageContent, .menu-items`, {origin: 'left'})
+sr.reveal(`.about-details, .time-table`, {origin: 'right'})
