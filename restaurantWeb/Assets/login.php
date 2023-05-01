@@ -9,6 +9,15 @@
 </head>
 <body>
     <div>
+        <?php
+        // error designn
+            if(isset($_GET['error']))
+            {
+                $error = $_GET['error'];
+                $user = $_GET['user'];
+                echo "<div><p>$error<p></div>";
+            }
+        ?>
         <h1>Login page</h1>
         <a href="../index.php">Home page</a>
         <br>
@@ -16,7 +25,7 @@
             <label for="username">
                 Username
             </label>
-            <input type="text" name="username" id="username">
+            <input type="text" name="username" id="username" value = "<?php if(isset($_GET['user'])){echo "$user";}?>">
             
             <label for="password">
                 Password:

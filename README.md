@@ -65,7 +65,9 @@ Authors
 
 ### Week 2 (April 30 - May 6)
 -optimize the classes(join their functions together -update, select, insert)
+-Do the erd
 -View Restaurant
 -View Comments
 -Add comments
 -Admin side
+-error design
