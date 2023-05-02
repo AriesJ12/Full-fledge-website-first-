@@ -9,23 +9,23 @@
 </head>
 <body>
     <div>
-        <a href="../index.php">Home page</a>
+        <h1>Register</h1>
+        <div class="about-logo">
+            <a href="../index.php" class="logo-content flex">
+                <img src="images/logo-white.png" alt="logo">
+            </a> 
+        </div>
         <br>
         <form name = "registerForm" action = "phpFunctions/register.inc.php" onsubmit="return validate()" method = "POST">
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username" required>
+            <input type="text" name="username" placeholder="Enter your username" id="username" required>
             <br>
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" required>
+            <input type="password" name="password" placeholder="Create a password" id="password" required>
             <br>
-            <label for="confirmPassword">Confirm Password</label>
-            <input type="password" name="confirmPassword" id="confirmPassword" required>
+            <input type="password" name="confirmPassword" placeholder="Confirm your password" id="confirmPassword" required>
             <br>
-            <label for="email">Email</label>
-            <input type="text" name="email" id="email" required>
+            <input type="text" placeholder="Enter your email" name="email" id="email" required>
             <br>
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" required>
+            <input type="text" placeholder="Enter your name" name="name" id="name" required>
             <br>
             <input type="submit" value="Register">
         </form>
