@@ -82,12 +82,14 @@ input[type = password]
     width: 30%;
 }
 
+
 input[type = submit]
 {
   position: absolute;
   top: 69%;
   left: 20%;
   font-size: 25px;
+
   border-radius: 1rem;
     padding: 10px;
     border:none;
