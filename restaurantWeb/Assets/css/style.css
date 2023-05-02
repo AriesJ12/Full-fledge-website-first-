@@ -197,13 +197,10 @@ img{
 }
 .logo-icon,
 .logo-text,
-.nav-link,
-.phone-icon,
-.phone-number{
+.nav-link{
   color: var(--white-color);
 }
 
-.header-active .logo-icon,
 .header-active .logo-text,
 .header-active .nav-link{
   color: var(--text-color);
@@ -237,12 +234,7 @@ img{
 .header-active .active-navlink::before{
   background-color: var(--text-color);
 }
-.media-icons{
-  column-gap: 1rem;
-}
-.media-icons a{
-  color: var(--text-color-light);
-}
+
 .navClose-btn,
 .navOpen-btn,
 .media-icons{
@@ -318,7 +310,7 @@ img{
   width: 100%;
 }
 .about-buttons{
-  column-gap: rem;
+  row-gap: 2rem;
 }
 
 /* swiper button */
