@@ -90,7 +90,11 @@ Authors
 
 
 Front end
--profile page
+#### must
+-profile page(with profile picture)
+-security page(change password + disable button) - para sa user
+-homepage
+    -remove the login and register button in the header
 -nav bar(WRONG - ung clicks non is within page)
     (avatar click) - mayroon dapat naka indicate na ung navbar na un is for user...
     + ilagay ang mga necessity like discover
@@ -100,13 +104,15 @@ Front end
         -have profile + security + logout
     -admin
         -have profile + security + view users + logout
+#### not prio
 -view users page(admin only)
     -view a specific user
         -the right to ban users(disable) - design
+
 -view restaurants page(discover page) - user, guest, admin
     -add restaurant page
     -view the specific restaurant(both user and admin) -- question to this is hiwalay paba natin sila?
         -display the restaurant at question + comments
         -remove restaurant button + comment remove(for admin)
         -add a comment for both user and admin(aalis ung user dito)
--security page(change password + disable button) - para sa user
+
