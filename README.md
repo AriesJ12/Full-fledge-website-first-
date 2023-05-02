@@ -17,9 +17,8 @@ Authors
 
 ## TODO(updated april 24, 2023)
 ### backend
-- Login (week 1)
+- ~~Login (week 1)~~
 - Register (week1)
-- plus what to put in the registration
 - Forgot password 
 - otp in email
 - Profile (week 1)
@@ -34,13 +33,24 @@ Authors
     -Login (ajax might be needed for below)
         -wrong password
         -username is not in the database
-- ERD --must-- needed for the things below
+- ~~ERD --must-- needed for the things below~~
 - Reservation(with cancel)
 - Adding and removing restaurant(admin privillege)
 - Search engine in the website
 - Comment and reviews
 
 ### frontend
+-~~login page~~
+-~~register page~~
+-~~introduction page(index.php)~~
+-homepage
+-profile page
+-securty(change password + disable) page
+-view all the users page
+    -view a specific user page
+-view all restaurant page(discover page???)
+    -view a specific restaurant + comment page
+-AddRestaurant page
 
 ## PROGRESS
 
@@ -77,3 +87,29 @@ Authors
     -add comments
 -Admin side
 -error design(form validation)
+-Profile upload a picture
+
+
+Front end
+-profile page
+-nav bar(hindi marereuse ung introductoryNavbar -- kasi ung clicks non is within page)
+    (avatar click) - mayroon dapat naka indicate na ung navbar na un is for user...
+    + ilagay ang mga necessity like discover
+    -guest
+        -Have login + register
+    -user
+        -have profile + security + logout
+    -admin
+        -have profile + security + view users + logout
+-homepage(ang index.html natin ay ang introduction page nalang)
+    -admin is still a user; difference is it has special access
+-view users page(admin only)
+    -view a specific user
+        -the right to ban users(disable) - design
+-view restaurants page(admin only)
+    -add restaurant page
+    -view the specific restaurant(both user and admin) -- question to this is hiwalay paba natin sila?
+        -display the restaurant at question + comments
+        -remove restaurant button + comment remove(for admin)
+        -add a comment for both user and admin(aalis ung user dito)
+-security page(change password + disable button) - para sa user
