@@ -42,7 +42,7 @@
                             </div>               
                              <div class="about-buttons flex">
                                 <a href="Assets/login.php" class = "button">Login</a>
-                                <a href="Assets/register.php" class = "button">Register</a>
+                                <span><a href="Assets/register.php" class = "button">Register</a></span>
                             </div>             
                         </div>     
                 </div>                                  
