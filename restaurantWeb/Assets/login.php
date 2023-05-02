@@ -11,7 +11,8 @@
 <body>
     <div>
         <h1>Login page</h1>
-        <a href="../index.html">Home page</a>
+        <a href="../index.html" class="logo-content flex">
+                        <img src="images/logo(black).png" alt=""> </a>
         <br>
         <form name="loginForm" action="phpFunctions/login.inc.php" method="POST">
             <label for="username">
