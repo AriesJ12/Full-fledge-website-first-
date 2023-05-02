@@ -89,11 +89,10 @@ input[type = submit]
   top: 69%;
   left: 20%;
   font-size: 25px;
-
   border-radius: 1rem;
-    padding: 10px;
-    border:none;
-    background-color: #C2703D;
-    color: white;
-    width: 10%;
+  padding: 10px;
+  border:none;
+  background-color: #C2703D;
+  color: white;
+  width: 10%;
 }

@@ -43,7 +43,6 @@ Authors
 -~~login page~~
 -~~register page~~
 -~~introduction page(index.php)~~
--homepage
 -profile page
 -securty(change password + disable) page
 -view all the users page
@@ -92,7 +91,7 @@ Authors
 
 Front end
 -profile page
--nav bar(hindi marereuse ung introductoryNavbar -- kasi ung clicks non is within page)
+-nav bar(WRONG - ung clicks non is within page)
     (avatar click) - mayroon dapat naka indicate na ung navbar na un is for user...
     + ilagay ang mga necessity like discover
     -guest
@@ -101,12 +100,10 @@ Front end
         -have profile + security + logout
     -admin
         -have profile + security + view users + logout
--homepage(ang index.html natin ay ang introduction page nalang)
-    -admin is still a user; difference is it has special access
 -view users page(admin only)
     -view a specific user
         -the right to ban users(disable) - design
--view restaurants page(admin only)
+-view restaurants page(discover page) - user, guest, admin
     -add restaurant page
     -view the specific restaurant(both user and admin) -- question to this is hiwalay paba natin sila?
         -display the restaurant at question + comments
