@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,11 +12,10 @@
 <body>
     <h1>Profile</h1>
     <div>
+        
+    </div>
+    <div>
         Hello
-        <?php
-            session_start();
-            echo $_SESSION["username"].", this is your profile";
-        ?>
         <br>
         <a href="../index.php">Home</a>
         <form name= "profileForm" action="phpFunctions/profile.inc.php" method="post">
@@ -29,8 +31,6 @@
             <input type="submit" value="Save Credentials">
         </form>
         <br><br><br>
-        <!-- might change to button -->
-        <a href="changePassword.php">Change password</a>
     </div>
 </body>
 </html>
