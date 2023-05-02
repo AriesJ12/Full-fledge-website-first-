@@ -47,3 +47,53 @@ input[type = submit]
     width: 10%;
 }
 
+
+label[for = username]{
+  position: absolute;
+  top: 35%;
+  left: 9%;
+  font-size: 25px;
+  color: white;
+}
+input[type = text]
+{
+  position: absolute;
+  top: 41%;
+  left: 9%;
+    padding: 15px;
+    border:none;
+    width: 30%;
+}
+
+label[for = password]{
+  position: absolute;
+  top: 51%;
+  left: 9%;
+  font-size: 25px;
+  color: white;
+}
+input[type = password]
+{
+  position: absolute;
+  top: 58%;
+  left: 9%;
+    padding: 15px;
+    border:none;
+    width: 30%;
+}
+
+
+input[type = submit]
+{
+  position: absolute;
+  top: 69%;
+  left: 20%;
+  font-size: 25px;
+
+  border-radius: 1rem;
+    padding: 10px;
+    border:none;
+    background-color: #C2703D;
+    color: white;
+    width: 10%;
+}
