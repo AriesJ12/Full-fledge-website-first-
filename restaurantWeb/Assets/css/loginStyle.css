@@ -1,84 +1,97 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins',sans-serif;
-}
 body{
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  background: ghostwhite;
+    height: 100hv;
+    background-image: url('../images/bg-login.png');
+    background-size: cover;
 }
 
-.container{
-  max-width: 600px;
-  max-height: 600px;
-  width: 100%;
-  background-color: #fff;
-  padding: 25px 30px;
-  border-radius: 5px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+h1{
+  position: absolute;
+  top: 9%;
+  left: 20%;
+  font-size: 50px;
+  color: white;
 }
-.container .title{
+
+.about-logo{
+  position: absolute;
+  margin-top: -7px;
+  left: 4%;
+  max-width: 50px;
+  height: 50px;
+}
+
+input{
+    position: relative;
+    top: 200px;
+    left: 9%;
+    margin-top: 10px;
+    width: 28%;
+    padding: 10px;
+    margin-bottom: 1.3rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+ }
+
+input[type = submit]
+{
+  position: absolute;
+  top: 55%;
+  left: 18%;
+  font-size: 20px;
+  border-radius: 1rem;
+    padding: 10px;
+    border:none;
+    background-color: #C2703D;
+    color: white;
+    width: 10%;
+}
+
+
+label[for = username]{
+  position: absolute;
+  top: 35%;
+  left: 9%;
   font-size: 25px;
-  font-weight: 500;
-  position: relative;
+  color: white;
+}
+input[type = text]
+{
+  position: absolute;
+  top: 41%;
+  left: 9%;
+    padding: 15px;
+    border:none;
+    width: 30%;
 }
 
-.content form .user-details{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 20px 0 12px 0;
+label[for = password]{
+  position: absolute;
+  top: 51%;
+  left: 9%;
+  font-size: 25px;
+  color: white;
 }
-form .user-details .input-box{
-  margin-bottom: 15px;
-  width: calc(100% / 2 - 20px);
-}
-form .input-box span.details{
-  display: block;
-  font-weight: 500;
-  margin-bottom: 5px;
-}
-.user-details .input-box input{
-  height: 45px;
-  width: 100%;
-  outline: none;
-  font-size: 16px;
-  border-radius: 5px;
-  padding-left: 15px;
-  border: 1px solid #ccc;
-  border-bottom-width: 2px;
-  transition: all 0.3s ease;
+input[type = password]
+{
+  position: absolute;
+  top: 58%;
+  left: 9%;
+    padding: 15px;
+    border:none;
+    width: 30%;
 }
 
- form .button{
-   height: 45px;
-   margin: 35px 0
- }
- form .button input{
-   height: 100%;
-   width: 50%;
-   border-radius: 5px;
-   border: none;
-   color: #fff;
-   font-size: 18px;
-   font-weight: 500;
-   letter-spacing: 1px;
-   cursor: pointer;
-   transition: all 0.3s ease;
-   background: linear-gradient(135deg, #71b7e6, #9b59b6);
- }
- form .button input:hover{
-  /* transform: scale(0.99); */
-  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
-  }
-
-form .user-details .input-box{
-    margin-bottom: 15px;
-    width: 100%;
-  }
+input[type = submit]
+{
+  position: absolute;
+  top: 69%;
+  left: 20%;
+  font-size: 25px;
+  border-radius: 1rem;
+    padding: 10px;
+    border:none;
+    background-color: #C2703D;
+    color: white;
+    width: 10%;
+}
