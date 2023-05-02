@@ -23,7 +23,7 @@
 <body>
 <!-- Header -->
     <header class="header">
-            <?php include "Assets/parts/navbar/guestNavbar.html"?>
+            <?php include "Assets/parts/navbar/introductionNavbar.html"?>
             <!-- Still needs user and admin navbar -->
     </header>
 

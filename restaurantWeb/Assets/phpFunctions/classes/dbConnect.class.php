@@ -25,7 +25,7 @@
             $sql = "Select $columns from $tablename where $condition;";
             if($result = $this->connect()->query($sql))
             {
-                return $row = $result->fetch_assoc();
+                return $result;
             }
             return FALSE;
         }
@@ -40,6 +40,23 @@
         {
             $sql = "UPDATE $tablename SET $change WHERE $condition;";
             $result = $this->con->query($sql);
+        }
+
+        public function setSession($row)
+        {
+            session_start();
+            $_SESSION['uniq_id']= $row['uniq_id'];
+            $_SESSION['username']= $row['username'];
+            $_SESSION['password']= $row['password'];
+            $_SESSION['last_name']= $row['last_name'];
+            $_SESSION['first_name']= $row['first_name'];
+            $_SESSION['sex']= $row['sex'];
+            $_SESSION['email']= $row['email'];
+            $_SESSION['phone_number']= $row['phone_number'];
+            $_SESSION['birth_date']= $row['birth_date'];
+            $_SESSION['join_date']= $row['join_date'];
+            $_SESSION['profile_picture']= $row['profile_picture'];
+            $_SESSION['account_type']= $row['account_type'];
         }
     }
 

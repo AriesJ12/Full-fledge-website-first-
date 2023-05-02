@@ -48,8 +48,7 @@ Authors
 - ~~DB CONNECT~~
 - ~~LOGIN~~
 - ~~REGISTER~~
-    -still need encryption for register
-    -still dont know the info to get from the user(erd)
+    -~~still dont know the info to get from the user(erd)~~
 
 -~~ Profile~~
     -change password option
@@ -64,10 +63,17 @@ Authors
 
 
 ### Week 2 (April 30 - May 6)
--optimize the classes(join their functions together -update, select, insert)
+-~~optimize the classes(join their functions together -update, select, insert)~~
 -Do the erd
+-ayusin ang register
+-~~View user~~
+    -disable user
+    -add an admin
 -View Restaurant
+    -add restaurant
+    -and disable
 -View Comments
--Add comments
+    -disable comments
+    -add comments
 -Admin side
--error design
+-error design(form validation)

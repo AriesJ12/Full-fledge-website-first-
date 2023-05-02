@@ -16,7 +16,7 @@
     $login = new db();
 
     //use select since you are trying to login
-    $row = $login->select($column, $tablename, $condition);
+    $result = $login->select($column, $tablename, $condition);
 
     if(is_bool($row))
     {
@@ -30,10 +30,12 @@
         header("Location: ../login.php?$error");
         exit();
     }
+    $row = $result->fetch_assoc();
 
-    
+    $login->setSession($row);
+
     //if everything goes well go to the home page
     //starts session and go to homepage
-    header("Location: ../../index.php");
+    header("Location: ../homepage.php");
     exit();
 ?>  
