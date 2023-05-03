@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin Dashboard</title>
 </head>
 <body>
-    <h1>Admin Functions</h1>
-    <a href="viewUsers.php">View User</a>
-    <br>
-    <a href="viewRestaurants">View Restaurants</a>
+    <h1>View Restaurant</h1>
+    <!-- pupunta sa page kung saan pwede mag dagdag ng restauranta -->
+    <button onclick = "location.href = 'addRestaurant.php'">Add restaurant</button>
+
+    <!-- clickable na div kung saan pwede mag edit ng restaurant -->
+
+    <div>
+        
+    </div>
 </body>
 </html>

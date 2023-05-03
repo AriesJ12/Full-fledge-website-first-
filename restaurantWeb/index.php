@@ -23,7 +23,7 @@
 <body>
 <!-- Header -->
     <header class="header">
-            <?php include "Assets/parts/navbar/guestNavbar.html"?>
+            <?php include "Assets/parts/navbar.html"?>
             <!-- Still needs user and admin navbar -->
     </header>
 
@@ -41,8 +41,7 @@
                                 <h2 class="homeSubtitle">Still haven’t found that sweet spot? This is the answer you've been searching for;<br> you're a perfect user of our website. To reserve your next dinner, simply click Login.<br> If you haven't registered yet, register now.</h2>
                             </div>               
                              <div class="about-buttons flex">
-                                <a href="Assets/login.php" class = "button">Login</a>
-                                <span><a href="Assets/register.php" class = "button">Register</a></span>
+                                <a href="Assets/login.php" class = "button"> Admin login</a>
                             </div>             
                         </div>     
                 </div>                                  
