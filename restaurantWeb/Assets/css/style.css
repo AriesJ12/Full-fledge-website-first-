@@ -133,7 +133,7 @@ img{
   border: none;
   outline: none;
   color: var(--white-color);
-  padding: 1.4rem 4rem;
+  padding: 1rem 2rem;
   border-radius: 3rem;
   background-color: var(--primary-color);
   transition: var(--tran-0-3);
@@ -142,6 +142,7 @@ img{
 .button:hover{
   background-color: var(--primary-color-hover);
 }
+
 .section-subtitle,
 .content-subtitle{
   color: var(--primary-color);
