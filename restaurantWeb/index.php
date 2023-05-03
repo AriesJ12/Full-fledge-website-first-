@@ -33,16 +33,13 @@
             <div class="home-content">
                 <div class="swiper mySwiper">   
                 <div class="swiper-wrapper">       
-                    <img src="Assets/images/homeBG.png" alt="" class="home-img">
+                    <img src="Assets/images/bg.png" alt="" class="home-img">
                         <div class="home-details">
                             <div class="home-text">                    
                                 <h4 class="homeTitle">A QUICK RESERVATION</h4>
                                 <br>
                                 <h2 class="homeSubtitle">Still haven’t found that sweet spot? This is the answer you've been searching for;<br> you're a perfect user of our website. To reserve your next dinner, simply click Login.<br> If you haven't registered yet, register now.</h2>
-                            </div>               
-                             <div class="about-buttons flex">
-                                <a href="Assets/login.php" class = "button"> Admin login</a>
-                            </div>             
+                            </div>                
                         </div>     
                 </div>                                  
                 </div>                                             
