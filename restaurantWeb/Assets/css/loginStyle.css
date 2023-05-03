@@ -67,7 +67,7 @@ input[type = text]
 
 label[for = password]{
   position: absolute;
-  top: 51%;
+  top: 53%;
   left: 9%;
   font-size: 25px;
   color: white;

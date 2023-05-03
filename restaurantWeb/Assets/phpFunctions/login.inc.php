@@ -8,7 +8,7 @@
     //column
     $column = "username, password";
     //tablename
-    $tablename = "accounts";
+    $tablename = "admin";
     //condition
     $condition = "username = '$username' AND password = '$password' ";
 

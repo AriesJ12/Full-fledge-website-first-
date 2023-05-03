@@ -26,6 +26,8 @@ Authors
     - one where you cannot
 - view all restaurant
 - add a restaurant
+
+
 - 3 pages per person(total of 15 pages)(designing and giving suggestion)
 
 
@@ -36,7 +38,7 @@ Authors
 - Login to admin(backend ni aries - design ni kian)
 - admin dashboard
 - View all restaurant (aries)
-    - magkaiba ang sa admin atsaka ang sa user
+    - magkaiba ang sa admin atsaka and sa user
 - View specific restaurant(aries)
     - update a restaurant
 - redesign homepage
