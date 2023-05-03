@@ -33,13 +33,29 @@
         public function insert($columns,$tablename, $values)
         {
             $sql = "INSERT into $tablename ($columns) values ($values);";
-            $result = $this->connect()->query($sql);
+            try
+            {
+                $result = $this->connect()->query($sql);
+
+            }catch(Exception $e)
+            {
+                return "username already exist";
+            }
+            return TRUE;
         }
 
         public function update($tablename, $change, $condition)
         {
             $sql = "UPDATE $tablename SET $change WHERE $condition;";
-            $result = $this->con->query($sql);
+            try
+            {
+                $result = $this->connect()->query($sql);
+
+            }catch(Exception $e)
+            {
+                return "username already exist";
+            }
+            return TRUE;
         }
 
         public function setSession($row)

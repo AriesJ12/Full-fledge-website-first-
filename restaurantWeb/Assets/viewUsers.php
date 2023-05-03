@@ -46,7 +46,7 @@
         while($row = $result->fetch_assoc())
         {
     ?> 
-    <div class = "mainBox">
+    <div class = "mainBox" onclick="location.href='specificUser.php?uniq_id=<?php echo $row['uniq_id'];?>';">
         <!-- <div class = "upper"></div> -->
         <!-- red for disabled, blue for active -->
         <img src="https://www.nj.com/resizer/zovGSasCaR41h_yUGYHXbVTQW2A=/1280x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/SJGKVE5UNVESVCW7BBOHKQCZVE.jpg" alt="Profile Picture">

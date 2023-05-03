@@ -72,47 +72,48 @@ Authors
 
 
 ### Week 2 (April 30 - May 6)
--~~optimize the classes(join their functions together -update, select, insert)~~
--Do the erd
--ayusin ang register
--~~View user~~
-    -disable user
-    -add an admin
--View Restaurant
-    -add restaurant
-    -and disable
--View Comments
-    -disable comments
-    -add comments
--Admin side
--error design(form validation)
--Profile upload a picture
+- ~~optimize the classes(join their functions together -update, select, insert)~~
+- ~~Do the erd~~
+- ayusin ang register
+- Profile upload a picture
+- ~~View users~~
+    - ~~view specific user~~
+        - update a user
+        - picture update
+- View Restaurant
+    - add restaurant
+    - and disable
+- View Comments
+    - disable comments
+    - add comments
+- Admin side
+- error design(form validation)
 
 
 Front end
 #### must
--profile page(with profile picture)
--security page(change password + disable button) - para sa user
--homepage
-    -remove the login and register button in the header
--nav bar(WRONG - ung clicks non is within page)
+- profile page(with profile picture)
+- security page(change password + disable button) - para sa user
+- homepage
+    - remove the login and register button in the header
+- nav bar(WRONG - ung clicks non is within page)
     (avatar click) - mayroon dapat naka indicate na ung navbar na un is for user...
     + ilagay ang mga necessity like discover
-    -guest
-        -Have login + register
-    -user
-        -have profile + security + logout
-    -admin
-        -have profile + security + view users + logout
+    - guest
+        - Have login + register
+    - user
+        - have profile + security + logout
+    - admin
+        - have profile + security + view users + logout
 #### not prio
--view users page(admin only)
-    -view a specific user
-        -the right to ban users(disable) - design
+- view users page(admin only)
+    - view a specific user
+        - the right to ban users(disable) - design
 
--view restaurants page(discover page) - user, guest, admin
-    -add restaurant page
-    -view the specific restaurant(both user and admin) -- question to this is hiwalay paba natin sila?
-        -display the restaurant at question + comments
-        -remove restaurant button + comment remove(for admin)
-        -add a comment for both user and admin(aalis ung user dito)
+- view restaurants page(discover page) - user, guest, admin
+    - add restaurant page
+    - view the specific restaurant(both user and admin) -- question to this is hiwalay paba natin sila?
+        - display the restaurant at question + comments
+        - remove restaurant button + comment remove(for admin)
+        - add a comment for both user and admin(aalis ung user dito)
 
