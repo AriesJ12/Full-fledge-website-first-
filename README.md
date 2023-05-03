@@ -17,13 +17,27 @@ Authors
 -willie(no github)
 
 ## Starting over ;-; in this project
-
-### Todo
-#### April 30 - May 6
+## Current pages/approved pages(total = 6)
+- homepage(need more editing -- tanggalin ung malaking login button sa gitna - ilipat yon lol)
+- admin dashboard
+- ~~login~~
+- view a specific restaurant
+    - one where you edit
+    - one where you cannot
+- view all restaurant
+- add a restaurant
 - 3 pages per person(total of 15 pages)(designing and giving suggestion)
+
+
+
+### Todo (HULING GAGAWIN ANG NAVBAR)
+#### April 30 - May 6
 - Add a restaurant(aries)
 - Login to admin(backend ni aries - design ni kian)
+- admin dashboard
 - View all restaurant (aries)
     - magkaiba ang sa admin atsaka ang sa user
 - View specific restaurant(aries)
     - update a restaurant
+- redesign homepage
+
