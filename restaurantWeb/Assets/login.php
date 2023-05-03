@@ -6,19 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="css/loginStyle.css?v=2">
-    <style>
-        .error
-        {
-            border: thin solid red;
-            background: #f2dede;
-            color: red;
-            text-align: center;
-            position: absolute;
-            top: 20%;
-            left: 9%;
-            font-size: 15px;
-        }
-    </style>
+
 </head>
 <body>
         <div>
