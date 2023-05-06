@@ -12,7 +12,7 @@
     <button onclick = "location.href = 'addRestaurant.php'">Add restaurant</button>
 
     <!-- clickable na div kung saan pwede mag edit ng restaurant -->
-
+    <button onclick = "location.href = 'phpFunctions/logout.php'">Logout</button>
     <div>
         
     </div>

@@ -18,13 +18,13 @@
     //use select since you are trying to login
     $result = $login->select($column, $tablename, $condition);
 
-    if(is_bool($row))
+    if(is_bool($result))
     {
         $error = "error=ConnectionFailed&user=$username";
         header("Location: ../login.php?$error");
         exit();        
     }
-    if(is_null($row))
+    if(is_null($result))
     {
         $error = "error=InvalidCredentials&user=$username";
         header("Location: ../login.php?$error");
@@ -36,6 +36,6 @@
 
     //if everything goes well go to the home page
     //starts session and go to homepage
-    header("Location: ../homepage.php");
+    header("Location: ../adminDashboard.php");
     exit();
 ?>  
