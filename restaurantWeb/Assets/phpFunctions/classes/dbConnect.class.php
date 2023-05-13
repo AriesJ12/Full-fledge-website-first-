@@ -7,7 +7,7 @@
             $servername = "localhost";
             $username = "root";
             $password = "";
-            $dbname = "RestaurantDB";
+            $dbname = "hope2eat";
 
             // Create connection
             $conn = new mysqli($servername, $username, $password, $dbname);
