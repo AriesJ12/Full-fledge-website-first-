@@ -90,12 +90,18 @@ Authors
 
 
 ### Week 3 (may 7 - may 14)
+DONE
 - added tables
     -check restaurantWeb/Assets/phpFunctions/CREATEDB-DONOTTOUCH/tables.sql
 - remove the object oriented programming because its way too hard to implement and because we are not dealing with real life objects
 - redid logn
     -can now transfer to user and admin
-
+- add restaurant
+- rating is working on the database
+    
+TODO
+- still no comment function for user in rating
+- discuss the restaurant thingie(view specific and the details to put)
 
 ### Week 4(may 15 - may 21)
 

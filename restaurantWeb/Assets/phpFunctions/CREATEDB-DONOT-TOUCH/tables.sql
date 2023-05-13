@@ -76,4 +76,34 @@ CREATE TABLE restaurant_cuisine
     FOREIGN KEY (cuisineId) REFERENCES cuisines(id)
 );
 
+-- for rating
+CREATE TABLE rating (
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    restaurant_id INT NOT NULL,
+    accountsId INT,
+    rating_value DECIMAL(3,2) NOT NULL,
+    rating_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    comment TEXT,
+    FOREIGN KEY (restaurant_id) REFERENCES restaurants(id),
+    FOREIGN KEY (accountsId) REFERENCES accounts(id)
+);
+
+-- trigger event
+CREATE TRIGGER update_restaurant_rating
+AFTER INSERT ON rating
+FOR EACH ROW
+BEGIN
+    UPDATE restaurants
+    SET rating = (
+        SELECT AVG(rating_value)
+        FROM rating
+        WHERE restaurant_Id = NEW.restaurant_Id
+    )
+    WHERE id = NEW.restaurant_id;
+END;
+
+
+-- location insert
+
+-- cuisine insert
 
