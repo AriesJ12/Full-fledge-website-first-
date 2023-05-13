@@ -2,7 +2,6 @@ name of database : hope2eat
 
 tables : 
     -  accounts
-    - admin
     - restaurants
     - cuisine
     - restaurant_cuisine (junction table)

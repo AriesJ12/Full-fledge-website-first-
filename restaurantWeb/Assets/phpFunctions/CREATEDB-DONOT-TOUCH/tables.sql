@@ -23,18 +23,19 @@ CREATE TABLE accounts (
     birthdate DATE,
     phone_number VARCHAR(20),
     profileImage VARCHAR(255),
+    -- accountype (0 for user, 1 for admin)
+    account_type TINYINT(1) DEFAULT 0,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
--- create table for admins - to avoid clutter in the accounts table; and probably to add additional levels of admin
--- in the future
-CREATE TABLE admin (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(255) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+-- location table
+CREATE TABLE location
+(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    country VARCHAR(255) NOT NULL,
+    region_or_state VARCHAR(255) NOT NULL,
+    city VARCHAR(255) NOT NULL
 );
 
 -- create restaurants table
@@ -52,16 +53,17 @@ CREATE TABLE restaurants
     rating DECIMAL(3,2),
     -- I WANT TO CREATE A FUNCTIONALITY FOR OPEN -- MIGHT NEED TRIGGER EVENT ONCE THE CLOCK HITS A CERTAIN ERROR
     -- Open boolean,
-    ImageURL VARCHAR(255)
+    ImageURL VARCHAR(255),
     -- might add price range, delivery option and menu url
+    FOREIGN KEY (locationID) REFERENCES location(id)
 );
 
 -- create cuisine table(purpose is to have consistency in the whole database -- naming can be wrong)
-CREATE TABLE cuisine
+CREATE TABLE cuisines
 (
-    id INT NOT NULL AUTO_INCREMENT,
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) UNIQUE NOT NULL
-):
+);
 
 -- create a junction table for restaurant and cuisine
 -- purpose is to not add a butt ton of columns in the restaurant table
@@ -74,11 +76,4 @@ CREATE TABLE restaurant_cuisine
     FOREIGN KEY (cuisineId) REFERENCES cuisines(id)
 );
 
--- location table
-CREATE TABLE location
-(
-    id INT NOT NULL AUTO_INCREMENT,
-    country VARCHAR(255) NOT NULL,
-    region_or_state VARCHAR(255) NOT NULL,
-    city VARCHAR(255) NOT NULL
-);
+
