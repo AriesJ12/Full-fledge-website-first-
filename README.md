@@ -97,6 +97,8 @@ DONE
 - redid logn
     -can now transfer to user and admin
 - add restaurant
+    - sources
+    - https://github.com/habibmhamadi/multi-select-tag (for cuisine multiple select)
 - rating is working on the database
     
 TODO

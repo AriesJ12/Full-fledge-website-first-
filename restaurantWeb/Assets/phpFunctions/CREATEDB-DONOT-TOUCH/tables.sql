@@ -38,6 +38,9 @@ CREATE TABLE location
     city VARCHAR(255) NOT NULL
 );
 
+CREATE UNIQUE INDEX unique_location ON location (country, region_or_state, city);
+
+
 -- create restaurants table
 CREATE TABLE restaurants
 (
@@ -76,6 +79,8 @@ CREATE TABLE restaurant_cuisine
     FOREIGN KEY (cuisineId) REFERENCES cuisines(id)
 );
 
+CREATE UNIQUE INDEX unique_cuisine ON restaurant_cuisine (restaurantId, cuisineId);
+
 -- for rating
 CREATE TABLE rating (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -104,6 +109,20 @@ END;
 
 
 -- location insert
+INSERT INTO location
+(country, region_or_state, city)
+VALUES
+('PHILIPPINES', 'REGION 3', 'SAN FERNANDO'),
+('PHILIPPINES', 'REGION 3', 'BACOLOR'),
+('PHILIPPINES', 'REGION 3', 'SAN SIMON'), 
+('PHILIPPINES', 'NCR', 'MANILA'); 
 
 -- cuisine insert
+INSERT INTO cuisines
+(name)
+VALUES
+('JAPANESE'),
+('BURGER'),
+('PASTA'),
+('PIZZA');
 
