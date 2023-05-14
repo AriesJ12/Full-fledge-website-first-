@@ -26,20 +26,20 @@
         
         <img id="main_picture" src="#" alt="Main Image Preview">
         <br>
-        <input type="file" id="picture" name="picture" onchange="previewImage(event)"  accept=".jpg, .jpeg, .png">
+        <input type="file" id="picture" name="picture" onchange="previewImage(event)"  accept=".jpg, .jpeg, .png" required>
         
         <label for="name">Restaurant name</label>
-        <input type="text" name="name" id="name">
+        <input type="text" name="name" id="name" required>
         <label for="website">Website URL</label>
-        <input type="text" name="website" id="website">
+        <input type="text" name="website" id="website" required>
         
         <!-- newly added location no backend-->
-        <label for="country">country</label>
-        <select name="country" id="country">
+        <label for="location">country</label>
+        <select name="location" id="location" required>
             <option value="">---</option>
             <?php
                 //get available locations in the sql
-                $sql = "SELECT * from location ORDER BY CONCAT(country, ' ', region_or_state, ' ', city) ASC";
+                $sql = "SELECT * from location ORDER BY CONCAT(city, ' ', region_or_state, ' ', country) ASC";
                 $result = $conn->query($sql);
                 
                 //display it as choices
@@ -49,14 +49,14 @@
                     $country = $row['country'];
                     $region = $row['region_or_state'];
                     $city = $row['city'];
-                    echo "<option value = $id>$country, $region, $city - $id</option>";
+                    echo "<option value = $id>$city, $region, $country - $id</option>";
                 }
             ?>
         </select>
         <br>
         <!-- newly added cuisine no backend-->
         <label for="cuisine">Cuisine</label>
-        <select name="cuisine[]" id="cuisine" multiple>
+        <select name="cuisine[]" id="cuisine" multiple required>
             <?php
                 //get data from sql
                 $sql = "SELECT * FROM cuisines ORDER BY name";
@@ -95,6 +95,8 @@
             //what to insert
             $name = $_POST['name'];
             $website = $_POST['website'];
+            $location = $_POST['location'];
+            $cuisine = $_POST['cuisine'];
             $image = basename($_FILES['picture']['name']);
             $tempFolder = $_FILES['picture']['tmp_name'];
             
@@ -135,14 +137,26 @@
                 move_uploaded_file($tempFolder, $newImageName);
 
                 //sql making
-                $column ='name, website, ImageURL';
+                $column ='name, website, ImageURL, locationID';
                 $tablename = 'restaurants';
-                $values = "'$name', '$website', '$newImageName'";
+                $values = "'$name', '$website', '$newImageName', '$location'";
 
                 //upload the data into the sql
                 $sql = "INSERT INTO $tablename ($column) VALUES ($values)";
                 $result = $conn->query($sql);
-                
+
+                //get the newly inserted restaurant id
+                $id = $conn->insert_id;
+
+                //insert the cuisines in the junction table
+                $tablename = "restaurant_cuisine";
+                $column = "restaurantId, cuisineId";    
+                foreach ($cuisine as $cuis)
+                {
+                    $values = "$id, $cuis";
+                    $sql = "INSERT INTO $tablename ($column) VALUES ($values);";
+                    $result = $conn->query($sql);
+                }
 
                 //display success
                 echo

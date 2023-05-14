@@ -79,7 +79,6 @@ CREATE TABLE restaurant_cuisine
     FOREIGN KEY (cuisineId) REFERENCES cuisines(id)
 );
 
-CREATE UNIQUE INDEX unique_cuisine ON restaurant_cuisine (restaurantId, cuisineId);
 
 -- for rating
 CREATE TABLE rating (
@@ -93,7 +92,8 @@ CREATE TABLE rating (
     FOREIGN KEY (accountsId) REFERENCES accounts(id)
 );
 
--- trigger event
+-- trigger event -- manually input it in the trigger event of php my admin
+-- sql tab shows that there is a syntax error (probably around at the begin and end)
 CREATE TRIGGER update_restaurant_rating
 AFTER INSERT ON rating
 FOR EACH ROW

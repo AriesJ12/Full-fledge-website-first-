@@ -92,21 +92,26 @@ Authors
 ### Week 3 (may 7 - may 14)
 DONE
 - added tables
-    -check restaurantWeb/Assets/phpFunctions/CREATEDB-DONOTTOUCH/tables.sql
+    - check: restaurantWeb/Assets/phpFunctions/CREATEDB-DONOTTOUCH/tables.sql  ((for creating tables, and schemas))
 - remove the object oriented programming because its way too hard to implement and because we are not dealing with real life objects
 - redid logn
-    -can now transfer to user and admin
+    - both user and admin can log in
 - add restaurant
     - sources
     - https://github.com/habibmhamadi/multi-select-tag (for cuisine multiple select)
 - rating is working on the database
     
+
+
+### Week 4(may 15 - may 21)
+- add restaurant (location and cuisines now can be uploaded in the sql side)
+- 
+
 TODO
 - still no comment function for user in rating
 - discuss the restaurant thingie(view specific and the details to put)
-
-### Week 4(may 15 - may 21)
-
+- discuss what location are to be put, and cuisines
+- view classification/categories
 ### week 5(may 22 - may 29)
 
 ### week 6(may 30 - june 5)
