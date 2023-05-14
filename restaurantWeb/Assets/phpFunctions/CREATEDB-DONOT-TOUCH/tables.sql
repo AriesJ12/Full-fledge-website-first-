@@ -35,7 +35,8 @@ CREATE TABLE location
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     country VARCHAR(255) NOT NULL,
     region_or_state VARCHAR(255) NOT NULL,
-    city VARCHAR(255) NOT NULL
+    city VARCHAR(255) NOT NULL,
+    headerImage VARCHAR(255)
 );
 
 CREATE UNIQUE INDEX unique_location ON location (country, region_or_state, city);
@@ -65,7 +66,8 @@ CREATE TABLE restaurants
 CREATE TABLE cuisines
 (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) UNIQUE NOT NULL
+    name VARCHAR(255) UNIQUE NOT NULL,
+    headerImage VARCHAR(255)
 );
 
 -- create a junction table for restaurant and cuisine
