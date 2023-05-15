@@ -6,7 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add a restaurant</title>
+    
+    
+    <!-- link stylesheet below is for the multiple select -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/css/multi-select-tag.css">
+    
+    
+    <!-- sample stylesheet below; transfer to a css file(external) -->
     <style>
         input, img, textarea{
             text-align: center;
@@ -22,7 +28,7 @@
 <body>
     <h1>Add a restaurant</h1>
     
-    <form action="" method="post" enctype="multipart/form-data">
+    <form action="addRestaurant.php" method="post" enctype="multipart/form-data">
         
         <img id="main_picture" src="#" alt="Main Image Preview">
         <br>
@@ -88,8 +94,15 @@
         }
     </script>
 
+    <!-- script below is for the multiple select input -->
+    <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/js/multi-select-tag.js"></script>
+    <script>
+        new MultiSelectTag('cuisine')  // id
+    </script>
+
+
     <!-- PERMISSION DENIED ERROR -- NEED TO MANUALLY FIX SOMETHING IN THE SERVER IN ORDER TO RUN WITHOUT ERROR -->
-    <?php 
+    <?php //upload
         if($_SERVER['REQUEST_METHOD']== 'POST')
         {
             //what to insert
@@ -169,9 +182,5 @@
         }
         $conn->close();
     ?>
-    <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/js/multi-select-tag.js"></script>
-    <script>
-        new MultiSelectTag('cuisine')  // id
-    </script>
 </body>
 </html>

@@ -106,13 +106,16 @@ DONE
 ### Week 4(may 15 - may 21)
 - add restaurant (location and cuisines now can be uploaded in the sql side)
 - view classification/categories
+- update restaurant
 - 
+
 
 TODO
 - still no comment function for user in rating
 - discuss the restaurant thingie(view specific and the details to put)
 - discuss what location are to be put, and cuisines
-- update restaurant
+- click function for discover/category viewing(the view itself is working, but the page before that is not)
+- balik ang register
 
 ### week 5(may 22 - may 29)
 
