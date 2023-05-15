@@ -60,14 +60,11 @@
                                 </div>
 
                                 <div class="about-buttons flex">
-                                        <button class="button">About Us</button>
                                         <a href="#" class="about-link flex">
-                                                <span class="link-text">see more</span>
-                                                <i class='bx bx-right-arrow-alt about-arrowIcon'></i>
+                                                <button class="button">About Us</button>
                                         </a>
                                 </div>
                         </div>
-
                 </div>
         </section>
 
@@ -83,15 +80,15 @@
                         <div class="box-img">
                             <img src="Assets/images/grumpyjoe.png">
                         </div>
-                            <h2>Grumpy Joe</h2>
+                            <a href="https://www.facebook.com/people/Grumpy-Joe-Pampanga/100083036991702/" class="link"><h2>Grumpy Joe</h2></a>
                             <h3>Pampanga</h3>
                     </div>
-                    
+
                     <div class="box">
                         <div class="box-img">
                             <img src="Assets/images/ilustrado.jpg">
                         </div>
-                            <h2>Ilustrado Restaurants</h2>
+                            <a href="https://www.facebook.com/ilustradorestaurant/" class="link"><h2>Ilustrado Restaurants</h2></a>
                             <h3>Intramuros</h3>
                     </div>
                     
@@ -99,9 +96,9 @@
                         <div class="box-img">
                             <img src="Assets/images/harbor.jpg">
                         </div>
-                            <h2>Harbor View Restaurant</h2>
+                            <a href="https://www.facebook.com/HARBORVIEWCAPEMAY/" class="link"><h2>Harbor View Restaurant</h2></a>
                             <h3>Manila Bay</h3>
-                    </div>    
+                    </div> 
                 </div>
         </section>
 
