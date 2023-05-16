@@ -1,0 +1,471 @@
+html{
+    font-size: 62.5%; /* 1rem = 10px */
+    scroll-behavior: smooth;
+}
+
+
+/* Pre-CSS */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+  border: 0;
+  text-decoration: none;
+  transition: .2s linear;
+}
+
+body,
+button,
+input{
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #333;
+}
+
+body{
+  overflow-x: hidden;
+  background-color: #FFF;
+}
+
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+
+
+/* Reusuable CSS */
+.section{
+  padding: 7rem 2rem;
+}
+.container{
+  max-width: 1030px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+.flex{
+  display: flex;
+  align-items: center;
+  column-gap: 0.6rem;
+}
+
+
+/*buttons */
+.button{
+  display: grid;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 1.4rem 4rem;
+  border-radius: 3rem;
+  background-color: #C87E4F;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.button::hover{
+  background-color: #C2703D;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+body{
+  min-height: 100vh;
+  background: #F5F5DC;
+}
+
+
+/* NAV */
+header{
+  position: fixed;
+  width: 100%;
+  height: 7rem;
+  background-color: white;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 12%;
+  transition: all .50s ease;
+}
+.logo{
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 60%;
+}
+.navbar{
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+}
+.navbar ul{
+  list-style: none;
+  display: flex;
+}
+.navbar ul li{
+  padding: 10px 30px;
+  position: relative;
+}
+.navbar ul li a{
+  color: #333;
+  text-decoration: none;
+  font-size: 20px;
+  transition: all 0.3s;
+}
+.navbar ul li a:hover{
+  color: #0073ff;
+}
+.dropdown{
+  display: none;
+}
+.dropdown ul{
+  display: block;
+  margin: 10px;
+}
+.dropdown ul li{
+  width: 150px;
+  padding: 10px;
+}
+.navbar ul li:hover .dropdown{
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: white;
+}
+
+
+/* HOME */
+.home-details{
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  z-index: 100;
+  transform: translate(-50%, -50%);
+  display: grid;
+  justify-items: center;
+  width: 100%;
+  row-gap: 4rem;
+}
+
+
+/* DISHES */
+.view3{
+  text-align: right;
+}
+.view3 a{
+  color: #2C3034;
+  font-size: 20px;
+}
+.view3 a:hover{
+  color: brown;
+}
+.dish-container{
+  background: white;
+  padding: 15px 9%;
+  padding-bottom: 90px;
+}
+.dish-container .heading{
+  text-align: center;
+  padding-top: 5%;
+  padding-bottom: 5px;
+  font-size: 30px;
+  font-weight: 500;
+  margin: 1rem 0;
+  color: #333;
+}
+.dish-container .dishes-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 30px;
+}
+.box-dish p{
+
+  text-align: left;
+}
+.box-dish a{
+  color: #343a40;
+  text-align: left;
+}
+/* box color */
+.dish-container .dishes-container .box-dish{
+  border-radius: 5px;
+  background: #fff;
+  text-align: center;
+  padding: 30px 20px;
+}
+.dish-container .dishes-container .box-dish:hover{
+  box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
+  transform: scale(1.02);
+}
+
+
+/* NAV */
+.navmeal{
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5%;
+}
+.navmeal ul{
+  list-style: none;
+  display: flex;
+}
+.navmeal ul li{
+  padding: 10px 30px;
+  position: relative;
+}
+.navmeal ul li a{
+  color: #333;
+  text-decoration: none;
+  font-size: 20px;
+  transition: all 0.3s;
+}
+.navmeal ul li a:hover{
+  color: #0073ff;
+}
+a
+{
+  text-decoration: none;
+  color: black;
+}
+img
+{
+  width: 90%;
+  height: 280px;
+  top: 0%;
+  background-size: cover;
+}
+
+
+/* NAV */
+header{
+  position: fixed;
+  width: 100%;
+  height: 5rem;
+  align-items: center;
+}
+
+
+/*Header*/
+.header-image
+{
+  width: 100%;
+  height: 100%;
+  margin-top: 5%;
+  background-size: cover;
+  border-radius: 0%;
+}
+.header-text
+{
+  position: absolute;
+  text-align: center;
+  top: 32%;
+  left: 40%;
+  color: white;
+}
+hr
+{
+  width: 1200px;
+  height: 1px;
+  background-color: black;
+  margin-top: 1%;
+  color: black;
+  margin-left: 5%;
+}
+
+.best-container .rectangle
+{
+	margin-top: -10%;
+	width: 350px;
+	height: 20px;
+	background-color: saddlebrown;
+}
+
+/* Best Restaurants */
+.bestresto
+{
+  margin-top: 12%;
+}
+.best-container
+{
+  display:grid;
+  grid-template-columns: repeat(3, 390px);
+  align-items: center;
+  justify-items: right;
+  margin-left: 4%;
+}
+.heading
+{
+  margin-top: 5%;
+  margin-left: 6%;
+  text-align: left;
+}
+.viewall
+{
+  margin-top: 1%;
+  text-align: right;
+  margin-right: 8%;
+  color: dimgray;
+}
+.container, .container-img
+{
+  margin-top: 6%;
+  text-align: center;
+  font-size: 13px;
+  position: inherit;
+  width: 300px;
+  height: 250px;
+}
+.resto-logo
+{
+  margin-right: 80%;
+  margin-top: 3%;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 0.2px solid gray;
+}
+.descrip
+{
+  text-align: left;
+  margin-left: 20%;
+  margin-top: -16%;
+}
+#loc
+{
+  margin-top: 1%;
+  color: black;
+}
+/* Restaurants Nearby */
+.nearbyresto
+{
+  margin-top: 14%;
+}
+.near-container
+{
+  display:grid;
+  grid-template-columns: repeat(3, 390px);
+  align-items: center;
+  justify-items: right;
+  margin-left: 3%;
+}
+.container1, .container1-img
+{
+  margin-top: 6%;
+  text-align: center;
+  font-size: 13px;
+  position: inherit;
+  width: 300px;
+  height: 250px;
+}
+
+
+/* Resto Open Now */
+.openresto
+{
+  margin-top: 14%;
+}
+.open-container
+{
+  display:grid;
+  grid-template-columns: repeat(3, 390px);
+  align-items: center;
+  justify-items: right;
+  margin-left: 3%;
+}
+.container2, .container2-img
+{
+  margin-top: 6%;
+  text-align: center;
+  font-size: 13px;
+  position: inherit;
+  width: 300px;
+  height: 250px;
+}
+
+
+/* Best Resto in Pampanga */
+.pampresto
+{
+  margin-top: 14%;
+}
+.pamp-container
+{
+  display:grid;
+  grid-template-columns: repeat(3, 390px);
+  align-items: center;
+  justify-items: right;
+  margin-left: 3%;
+}
+.container3, .container3-img
+{
+  margin-top: 6%;
+  text-align: center;
+  font-size: 13px;
+  position: inherit;
+  width: 300px;
+  height: 250px;
+}
+
+
+/* Best Breakfast Place */
+.bfresto
+{
+  margin-top: 14%;
+}
+.bf-container
+{
+  display:grid;
+  grid-template-columns: repeat(3, 390px);
+  align-items: center;
+  justify-items: right;
+  margin-left: 3%;
+}
+.container4, .container4-img
+{
+  margin-top: 6%;
+  text-align: center;
+  font-size: 13px;
+  position: inherit;
+  width: 300px;
+  height: 250px;
+}
+
+/* Best Dinner Place */
+.dinnerresto
+{
+  margin-top: 14%;
+}
+.d-container
+{
+  display:grid;
+  grid-template-columns: repeat(3, 390px);
+  align-items: center;
+  justify-items: right;
+  margin-left: 3%;
+}
+.container5, .container5-img
+{
+  margin-top: 6%;
+  text-align: center;
+  font-size: 13px;
+  position: inherit;
+  width: 300px;
+  height: 250px;
+}
