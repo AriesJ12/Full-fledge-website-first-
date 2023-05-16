@@ -1,138 +1,116 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Cuisine</title>
-	<link rel="stylesheet" href="css/todaydish.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Famous Dishes</title>
+    <link rel="stylesheet" href="css/todaydish.css">
 
     <!-- FOR ICONS -->
     <script src="https://kit.fontawesome.com/10d593c5dc.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
-<!-- Header -->
-          <header class="nav">
+   <!-- Header -->
+          <header class="navbar">
             <a href="Homepage.html" class="logo">
                 <img src="images/logo(black).png" alt="logo">
             </a> 
-                <div class="navbar">
-                    <a href="discover.html" class="nav-link">Discover</a>
-                    <a href="cuisine.html" class="nav-link">Cuisine</a>
-                    <a href="services.html" class="nav-link">Services</a>
-                    <a href="location.html" class="nav-link">Location</a>
-                    <a href="review.html" class="nav-link">Review</a>
-                    <a href="about.html" class="nav-link">About us</a>
-                </div>
+                <ul>
+                    <li><a href="discover.html">Discover <i class="fa-solid fa-caret-down"></i> </a> 
+                        <div class="dropdown"> 
+                            <ul>
+                                <li><a href="discover.html">Restaurants</a></li>
+                                <li><a href="cuisine.html">Cuisine</a></li>
+                                <li><a href="location.html">Location</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="reservation.html" class="nav-link">Reservation</a></li> 
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="review.html" class="nav-link">Review</a></li> 
+                    <li><a href="about.html" class="nav-link">About us</a></li> 
+                </ul>
 
         </header>
 
-        <!-- Header BG -->
-        <main>
-            <section class="home" id="home">
-                <div class="home-content">
-                    <img src="images/cuisine.png" alt="" class="home-img">
-                </div>
-            </section>
-
- <!-- FAMOUS DISHES -->
+    <!-- FAMOUS DISHES -->
         <section class="dish" id="resto">
             <div class="dish-container">
-                <h1 class="heading">Today's Dishes</h1> 
+                <h1 class="heading">FAMOUS DISHES</h1> 
                     <div class="dishes-container"> 
 
                         <div class="box-dish">  
-                            <div class="box-img">
+                            <div class="dish-img">
                                 <img src="images-cuisine/herb.png">
                             </div>
                                 
-                            <p>Herb Roasted Chicken </p><br>
-                            <a href="https://www.facebook.com/liamsnlouisgourmetcafe/" class="link">    <h4><i class="fa-solid fa-location-dot" style="color: #ff0505;"></i>  Liam & Louis’ Gourmet Café</h4>
+                            <a href="dish1.html"><h3>Herb Roasted Chicken </h3></a>
+                            <a href="https://www.facebook.com/liamsnlouisgourmetcafe/" class="link">
+                                <p><i class="fa-solid fa-location-dot" style="color: #ff0505;"></i>  Liam & Louis’ Gourmet Café</p>
                             </a>
                                 
                         </div> 
 
                         <div class="box-dish">
-                            <div class="box-img">
+                            <div class="dish-img">
                                 <img src="images-cuisine/pasta.png">
                             </div>  
                             
-                            <p>Lemon Pepper Cajun Chicken Fettuccine Alfredo </p><br>
+                            <a href="dish2.html"><h3>Chicken Fettuccine Alfredo </h3></a>
                             <a href="https://www.facebook.com/ilustradorestaurant/" class="link">
-                                <h4><i class="fa-solid fa-location-dot" style="color: #ff0505;"></i> Cafe Ilang Ilang</h4>
+                                <p><i class="fa-solid fa-location-dot" style="color: #ff0505;"></i> Cafe Ilang Ilang</p>
                             </a>        
                         </div> 
 
                         <div class="box-dish">  
-                            <div class="box-img">
+                            <div class="dish-img">
                                 <img src="images-cuisine/pizza.jpg">
                             </div>
                             
-                            <p>5 Cheese Pizza </p><br><br>
+                            <a href="dish3.html"><h3>5 Cheese Pizza </h3></a>
                             <a href="https://www.facebook.com/people/Grumpy-Joe-Pampanga/100083036991702/" class="link">
-                                <h4><i class="fa-solid fa-location-dot" style="color: #ff0505;"></i> Grumpy Joe</h4>
+                                <p><i class="fa-solid fa-location-dot" style="color: #ff0505;"></i> Grumpy Joe</p>
                             </a>
                         </div>  
 
-                         <div class="box-dish">  
-                            <div class="box-img">
-                                <img src="images-cuisine/pizza.jpg">
-                            </div>
-                            
-                            <p>5 Cheese Pizza </p><br><br>
-                            <a href="https://www.facebook.com/people/Grumpy-Joe-Pampanga/100083036991702/" class="link">
-                                <h4><i class="fa-solid fa-location-dot" style="color: #ff0505;"></i> Grumpy Joe</h4>
-                            </a>
-                        </div>  
-
-                         <div class="box-dish">  
-                            <div class="box-img">
+                        <div class="box-dish">  
+                            <div class="dish-img">
                                 <img src="images-cuisine/herb.png">
                             </div>
                                 
-                            <p>Herb Roasted Chicken </p><br>
-                            <a href="https://www.facebook.com/liamsnlouisgourmetcafe/" class="link">    <h4><i class="fa-solid fa-location-dot" style="color: #ff0505;"></i>  Liam & Louis’ Gourmet Café</h4>
+                            <a href="dish1.html"><h3>Herb Roasted Chicken </h3></a>
+                            <a href="https://www.facebook.com/liamsnlouisgourmetcafe/" class="link">
+                                <p><i class="fa-solid fa-location-dot" style="color: #ff0505;"></i>  Liam & Louis’ Gourmet Café</p>
                             </a>
                                 
                         </div> 
 
                         <div class="box-dish">
-                            <div class="box-img">
+                            <div class="dish-img">
                                 <img src="images-cuisine/pasta.png">
                             </div>  
                             
-                            <p>Lemon Pepper Cajun Chicken Fettuccine Alfredo </p><br>
+                            <a href="dish2.html"><h3>Chicken Fettuccine Alfredo </h3></a>
                             <a href="https://www.facebook.com/ilustradorestaurant/" class="link">
-                                <h4><i class="fa-solid fa-location-dot" style="color: #ff0505;"></i> Cafe Ilang Ilang</h4>
+                                <p><i class="fa-solid fa-location-dot" style="color: #ff0505;"></i> Cafe Ilang Ilang</p>
                             </a>        
                         </div> 
 
                         <div class="box-dish">  
-                            <div class="box-img">
+                            <div class="dish-img">
                                 <img src="images-cuisine/pizza.jpg">
                             </div>
                             
-                            <p>5 Cheese Pizza </p><br><br>
+                            <a href="dish3.html"><h3>5 Cheese Pizza </h3></a>
                             <a href="https://www.facebook.com/people/Grumpy-Joe-Pampanga/100083036991702/" class="link">
-                                <h4><i class="fa-solid fa-location-dot" style="color: #ff0505;"></i> Grumpy Joe</h4>
-                            </a>
-                        </div>  
-
-                         <div class="box-dish">  
-                            <div class="box-img">
-                                <img src="images-cuisine/pizza.jpg">
-                            </div>
-                            
-                            <p>5 Cheese Pizza </p><br><br>
-                            <a href="https://www.facebook.com/people/Grumpy-Joe-Pampanga/100083036991702/" class="link">
-                                <h4><i class="fa-solid fa-location-dot" style="color: #ff0505;"></i> Grumpy Joe</h4>
+                                <p><i class="fa-solid fa-location-dot" style="color: #ff0505;"></i> Grumpy Joe</p>
                             </a>
                         </div>  
                 </div>
             </div>
-        </section>    
-         
-      
+        </section> 
+
       <!-- FOOTER --> 
         <footer class="section footer">
             <div class="footer-container container">
@@ -177,7 +155,7 @@
                             <div class="footer-copyRight">&#169; Hop2Eat. All rigths reserved</div>
         </footer>
        
-	  
+      
 
 </body>
 </html>

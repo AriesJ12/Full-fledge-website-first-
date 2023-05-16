@@ -55,14 +55,14 @@ img{
   column-gap: 0.6rem;
 }
 
-/*buttons */
+/* buttons */
 .button{
   display: grid;
   border: none;
   outline: none;
   color: white;
   padding: 1.4rem 4rem;
-  border-radius: 3rem;
+  border-radius: 2rem;
   background-color: #C87E4F;
   transition: 0.3s;
   cursor: pointer;
@@ -70,7 +70,20 @@ img{
 .button::hover{
   background-color: #C2703D;
 }
-
+.buttons{
+  position: relative;
+  left: 30%;
+  width: 90px;
+  height: 40px;
+  background-color: #C87E4F;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 3rem;
+}
+.buttons:hover{
+  background-color: #333;
+}
 *{
   padding: 0;
   margin: 0;
@@ -133,9 +146,11 @@ header{
 .navbar ul{
   list-style: none;
   display: flex;
+  position: relative;
+  left: 11%;
 }
 .navbar ul li{
-  padding: 10px 30px;
+  padding: 10px 20px;
   position: relative;
 }
 .navbar ul li a{
@@ -164,6 +179,7 @@ header{
   left: 0;
   top: 100%;
   background-color: white;
+  border-radius: 2rem;
 }
 
 /* HOME */
