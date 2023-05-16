@@ -18,8 +18,12 @@ LOCATIONS CODES
 - 3 SAN SIMON
 - 4 MANILA
 
+guagua; angeles; manila; quezon city; taguig; paranaque; pasay; intramuros; makati; clark; marikina; las pinas
+
 CUISINE CODES
 - 1 JAPANESE
 - 2 BURGERS
 - 3 PASTA
 - 4 PIZZA
+
+pizza, burger, japanese, pasta, korean, rice meal
