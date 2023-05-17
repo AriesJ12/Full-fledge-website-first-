@@ -14,27 +14,7 @@
 <body>
 
     <!-- Header -->
-          <header class="navbar">
-            <a href="Homepage.html" class="logo">
-                <img src="../images/restaurantImages/logo(black).png" alt="logo">
-            </a> 
-                <ul>
-                    <li><a href="discover.html">Discover</a> 
-                        <div class="dropdown"> 
-                            <ul>
-                                <li><a href="discover.html">Restaurants</a></li>
-                                <li><a href="cuisine.html">Cuisine</a></li>
-                                <li><a href="location.html">Location</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a href="cuisine.html" class="nav-link">Reservation</a></li> 
-                    <li><a href="services.html" class="nav-link">Services</a></li>
-                    <li><a href="review.html" class="nav-link">Review</a></li> 
-                    <li><a href="about.html" class="nav-link">About us</a></li> 
-                </ul>
-        </header>
-
+<?php require_once "parts/navbar.html"?>
     <!--- Header -->
     <div class="header">
         <div class="header-img">
@@ -393,5 +373,8 @@
             </div>
         </div>
     </div>
+
+    <!-- FOOTER --> 
+    <?php require_once "parts/footer.html"?> 
 </body>
 </html>

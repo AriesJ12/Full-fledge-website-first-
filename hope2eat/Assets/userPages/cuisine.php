@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Cuisine</title>
-	<link rel="stylesheet" href="css/cuisine.css">
+	<link rel="stylesheet" href="../css/cuisine.css">
 
     <!-- FOR ICONS -->
     <script src="https://kit.fontawesome.com/10d593c5dc.js" crossorigin="anonymous"></script>
@@ -12,32 +12,13 @@
 </head>
 <body>
    <!-- Header -->
-          <header class="navbar">
-            <a href="Homepage.html" class="logo">
-                <img src="images/logo(black).png" alt="logo">
-            </a> 
-                <ul>
-                    <li><a href="discover.html">Discover <i class="fa-solid fa-caret-down"></i> </a> 
-                        <div class="dropdown"> 
-                            <ul>
-                                <li><a href="discover.html">Restaurants</a></li>
-                                <li><a href="cuisine.html">Cuisine</a></li>
-                                <li><a href="location.html">Location</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a href="reservation.html" class="nav-link">Reservation</a></li> 
-                    <li><a href="services.html" class="nav-link">Services</a></li>
-                    <li><a href="review.html" class="nav-link">Review</a></li> 
-                    <li><a href="about.html" class="nav-link">About us</a></li> 
-                </ul>
-        </header>
+<?php require_once "parts/navbar.html"?>
 
         <!-- Header BG -->
         <main>
             <section class="home" id="home">
                 <div class="home-content">
-                    <img src="images/cuisine.png" alt="" class="home-img">
+                    <img src="../images/cuisine.png" alt="" class="home-img">
                     <!--
                     <div class="home-details">
                         <div class="home-text">
@@ -59,7 +40,7 @@
 
                         <div class="box-dish">  
                             <div class="dish-img">
-                                <img src="images-cuisine/herb.png">
+                                <img src="../images/images-cuisine/herb.png">
                             </div>
                                 
                             <h3>Herb Roasted Chicken </h3><br>
@@ -70,7 +51,7 @@
 
                         <div class="box-dish">
                             <div class="dish-img">
-                                <img src="images-cuisine/pasta.png">
+                                <img src="../images/images-cuisine/pasta.png">
                             </div>  
                             
                             <h3>Lemon Pepper Cajun Chicken Fettuccine Alfredo </h3>
@@ -81,7 +62,7 @@
 
                         <div class="box-dish">  
                             <div class="dish-img">
-                                <img src="images-cuisine/pizza.jpg">
+                                <img src="../images/images-cuisine/pizza.jpg">
                             </div>
                             
                             <h3>5 Cheese Pizza </h3><br>
@@ -104,7 +85,7 @@
                     <div class="famousdish-container"> 
                         <div class="box-famous">  
                             <div class="famous1-img">
-                                <img src="images-cuisine/herb.png">
+                                <img src="../images/images-cuisine/herb.png">
                             </div>
                             <div class="info">
                                 <p>Herb Roasted Chicken </p><br>
@@ -117,7 +98,7 @@
 
                         <div class="box-famous">
                             <div class="famous-img">
-                                <img src="images-cuisine/pasta.png">
+                                <img src="../images/images-cuisine/pasta.png">
                             </div>  
                             <div class="info">
                                 <p>Lemon Pepper Cajun Chicken Fettuccine Alfredo </p><br>
@@ -129,7 +110,7 @@
 
                         <div class="box-famous">  
                             <div class="famous2-img">
-                                <img src="images-cuisine/pizza1.jpg">
+                                <img src="../images/images-cuisine/pizza1.jpg">
                             </div>
                             <div class="info">
                                 <p>5 Cheese Pizza </p><br><br>
@@ -162,7 +143,7 @@
         <section class="brunch">
                 <div class="container">
                     <div class="card">
-                        <img src="images-cuisine/breakfast.jpg" class="image">
+                        <img src="../images/images-cuisine/breakfast.jpg" class="image">
                         <div class="intro">
                             <h3>BREAKFAST</h3>
                             <p>Are you having trouble finding your breakfast spot? Hop2eat has you covered because we have plenty of options for you. view more</p>
@@ -170,7 +151,7 @@
                     </div>
 
                     <div class="card">
-                        <img src="images-cuisine/lunch.jpg" class="image">
+                        <img src="../images/images-cuisine/lunch.jpg" class="image">
                         <div class="intro">
                             <h3>LUNCH</h3>
                             
@@ -178,7 +159,7 @@
                     </div>
 
                     <div class="card">
-                        <img src="images-cuisine/dinner.jpg" class="image">
+                        <img src="../images/images-cuisine/dinner.jpg" class="image">
                         <div class="intro">
                             <h3>DINNER</h3>
                             
@@ -188,48 +169,10 @@
         </section>
 
     <!-- FOOTER --> 
-        <footer class="section footer">
-            <div class="footer-container container">
-                <div class="footer-content">
-                    <a href="#" class="logo-content flex">
-                        <img src="images/logo(white).png" alt="">
-                    </a>
-           
-                    <div class="content-description">This is the perfect place to find a nice and cozy spot. For further updates, please follow us on our social media platforms.</div>         
-                </div>
-
-                    <div class="footer-linkContent">
-                        <ul class="footer-links">
-                            <h4 class="footerLinks-title">Facility</h4>
-                                <li><a href="#" class="footer-link">Private Room</a></li>
-                                <li><a href="#" class="footer-link">Event Room</a></li>
-                                <li><a href="#" class="footer-link">Custom Room</a></li>
-                        </ul>
-           
-                        <ul class="footer-links">
-                            <h4 class="footerLinks-title">Discover</h4>
-                                <li><a href="#" class="footer-link">Restaurants Near Me</a></li>
-                                <li><a href="#" class="footer-link">Restaurants Open Now</a></li>
-                                <li><a href="#" class="footer-link">Reserve for Others</a></li>
-                        </ul>
-       
-                        <ul class="footer-links">
-                            <h4 class="footerLinks-title">Support</h4>
-                                <li><a href="about.html" class="footer-link">About Us</a></li>
-                                <li><a href="#" class="footer-link">FAQs</a></li>
-                                <li><a href="#" class="footer-link">Private Policy</a></li>
-                                <li><a href="#" class="footer-link">Help Us</a></li>
-
-                            <div class="logo-icon">
-                                <a href="https://www.facebook.com"><i class="fa-brands fa-facebook fa-1x" style="color: #dedede;"></i></a>
-                                <a href="https://twitter.com/i/flow/login"><i class="fa-brands fa-instagram fa-1x" style="color: #dedede;"></i></a>
-                                <a href="https://www.instagram.com/accounts/login"><i class="fa-brands fa-twitter fa-1x" style="color: #dedede;"></i></a>
-                            </div>   
-                        </ul>     
-                    </div>
-                </div>
-                            <div class="footer-copyRight">&#169; Hop2Eat. All rigths reserved</div>
-        </footer>    
+    <?php require_once "parts/footer.html"?> 
+   
+<!-- FOR ICONS -->
+<script src="https://kit.fontawesome.com/10d593c5dc.js" crossorigin="anonymous"></script>
 
 </body>
 </html>

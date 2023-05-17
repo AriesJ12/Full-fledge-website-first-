@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ PAGE</title>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="faq-style.css?v=2">
+    <link rel="stylesheet" href="../css/faq-style.css">
 </head>
 
 <body>
-    <header>
-        
-    </header>
+    <!-- header -->
+<?php require_once "parts/navbar.html"?>
+
     <main>
         <section>
             <h2 class = title>FAQ</h2>
@@ -109,9 +109,10 @@
             </div>
         </section>
     </main>
-    <footer>
+    
+    <!-- footer -->
+    <?php require_once "parts/footer.html"?> 
 
-    </footer>
-    <script src = "faq-script.js"></script>
+    <script src = "../js/faq-script.js"></script>
 </body>
 </html>
