@@ -109,7 +109,6 @@ DONE
 - update restaurant
 - 
 
-
 TODO
 - still no comment function for user in rating
 - discuss the restaurant thingie(view specific and the details to put)
