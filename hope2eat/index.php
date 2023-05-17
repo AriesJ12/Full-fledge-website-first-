@@ -23,7 +23,7 @@
                     <li><a href="#">Discover <i class="fa-solid fa-caret-down"></i> </a> 
                         <div class="dropdown"> 
                             <ul>
-                                <li><a href="Assets/userPages/restaurant.php">Restaurants</a></li>
+                                <li><a href="Assets/userPages/discover.php">Restaurants</a></li>
                                 <li><a href="Assets/userPages/cuisine.php">Cuisine</a></li>
                                 <li><a href="Assets/userPages/location.php">Location</a></li>
                             </ul>
@@ -103,7 +103,7 @@
             <div class="resto-container">
                 <h1 class="heading">FAMOUS RESTAURANTS</h1> 
                     <div class="view">
-                        <a href="Assets/userPages/reservation.php" class="btn">view all</a>
+                        <a href="Assets/userPages/discover.php" class="btn">view all</a>
                     </div>
 
                     <div class="restor-container"> 

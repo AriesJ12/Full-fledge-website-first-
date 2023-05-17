@@ -34,7 +34,7 @@
         <hr>
 
         <div class="viewall">
-            <a href="viewall_manila.html"><h4>View All</h4></a>
+            <a href="viewall.html"><h4>View All</h4></a>
         </div>
 
         <!-- Spiral -->
