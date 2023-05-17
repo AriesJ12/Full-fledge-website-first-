@@ -19,7 +19,7 @@
      <!-- Header BG -->
         <main>
             <section class="home" id="home">
-            	<img src="image-services/plain.png" alt="" class="mas">
+            	<img src="../images/image-services/plain.png" alt="" class="mas">
                 <div class="home-content">  
                     <div class="home-details">
                         <div class="home-text">
@@ -34,7 +34,7 @@
 
     <!-- X-MAX -->
     	<section class="x-mas">
-        	<img src="image-services/x-mas.png" alt="" class="mas">
+        	<img src="../images/image-services/x-mas.png" alt="" class="mas">
             <div class="x-mas-container">
                 <div class="mas-container"> 
                 <br><br><br>	                  	
@@ -56,7 +56,7 @@
 
     <!-- NEW YEAR -->
     	<section class="new-yr">
-        	<img src="image-services/new-yr.png" alt="" class="mas">
+        	<img src="../images/image-services/new-yr.png" alt="" class="mas">
         	
             <div class="newyr-container">
                 <div class="new-container"> 
@@ -72,7 +72,7 @@
 
     <!-- VALENTINE'S DAY -->
     	<section class="valend">
-        	<img src="image-services/vales-d.png" alt="" class="mas">
+        	<img src="../images/image-services/vales-d.png" alt="" class="mas">
         	
             <div class="valend-container">
                     <div class="valen-container"> 
@@ -83,7 +83,7 @@
                             <p>HOP2Eat will make your day with love ones more sweeter. With a variety of restaurants to reserve and services, you and your other half will have a wonderful day. Make a reservation and get our Valentine's gift for you.</p>     
                     </div> 
                     <br><br>
-                        
+                    
                     <div class="box-valen"> 
                         <h2 class="title">Valentine's for All</h2> 
                         <br>   
@@ -92,7 +92,7 @@
                 </div>
             </div>
         </section>  
-
+    </main>
      <!-- FOOTER --> 
      <?php require_once "parts/footer.html"?> 
        	

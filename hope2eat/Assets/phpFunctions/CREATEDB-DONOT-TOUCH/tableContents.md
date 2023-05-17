@@ -3,8 +3,8 @@ name of database : hope2eat
 tables : 
     -  accounts
     - restaurants
-    - cuisine
-    - restaurant_cuisine (junction table)
+    - cuisine_classification
+    - restaurant_cuisine (junction table) - like menu
     - location
 
 NOT YET ADDED
@@ -13,17 +13,23 @@ NOT YET ADDED
     -reservation
 
 LOCATIONS CODES
-- 1 SAN FERNANDO 
-- 2 BACOLOR
-- 3 SAN SIMON
-- 4 MANILA
+- 1 GUAGUA
+- 2 ANGELES
+- 3 MANILA
+- 4 QUEZON CITY
+- 5 TAGUIG
+- 6 PARANAQUE
+- 7 PASAY
+- 8 INTRAMUROS
+- 9 MAKATI
+- 10 CLARK
+- 11 MARIKINA
+- 12 LAS PINAS
 
 guagua; angeles; manila; quezon city; taguig; paranaque; pasay; intramuros; makati; clark; marikina; las pinas
 
-CUISINE CODES
-- 1 JAPANESE
-- 2 BURGERS
-- 3 PASTA
-- 4 PIZZA
+CUISINE_CLASSIFICATION CODES
+- 1 BREAKFAST
+- 2 LUNCH
+- 3 DINNER
 
-pizza, burger, japanese, pasta, korean, rice meal

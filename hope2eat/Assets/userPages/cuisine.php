@@ -33,7 +33,7 @@
             <div class="dish-container">
                 <h1 class="heading">TODAY'S DISHES</h1> 
                     <div class="view1">
-                        <a href="todaydish.html" class="btn">view all</a>
+                        <a href="todaydish.php" class="btn">view all</a>
                     </div>
 
                     <div class="dishes-container"> 
@@ -79,7 +79,7 @@
             <div class="famous-container">
                 <h1 class="heading">FAMOUS DISHES</h1> 
                     <div class="view2">
-                        <a href="famousdish.html" class="btn">view all</a>
+                        <a href="famousdish.php" class="btn">view all</a>
                     </div>
 
                     <div class="famousdish-container"> 
@@ -129,11 +129,11 @@
             <div class="meal-container">
                 <nav class="navi">
                     <ul>
-                        <li><a href="korean.html" class="nav-link">KOREAN FOOD</a></li>
-                        <li><a href="japanese.html" class="nav-link">JAPANESE FOOD</a></li>
-                        <li><a href="pizza.html" class="nav-link">PIZZA</a></li>
-                        <li><a href="burger.html" class="nav-link">BURGER</a></li>
-                        <li><a href="pasta.html" class="nav-link">PASTA</a></li> 
+                        <li><a href="korean.php" class="nav-link">KOREAN FOOD</a></li>
+                        <li><a href="japanese.php" class="nav-link">JAPANESE FOOD</a></li>
+                        <li><a href="pizza.php" class="nav-link">PIZZA</a></li>
+                        <li><a href="burger.php" class="nav-link">BURGER</a></li>
+                        <li><a href="pasta.php" class="nav-link">PASTA</a></li> 
                     </ul>
                 </nav>
             </div>

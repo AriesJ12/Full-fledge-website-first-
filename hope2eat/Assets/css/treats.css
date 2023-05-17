@@ -67,7 +67,7 @@ img{
   transition: 0.3s;
   cursor: pointer;
 }
-.button::hover{
+.button:hover{
   background-color: #C2703D;
 }
 .buttons{
@@ -117,7 +117,7 @@ header{
   position: relative;
   top: 60%;
 }
-//*
+/*
 .navbar{
   display: flex;
 }

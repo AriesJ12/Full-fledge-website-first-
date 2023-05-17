@@ -32,7 +32,7 @@
         <section class="services">
             <div class="services-container">
                     <div class="view2">
-                        <a href="services.html" class="btn">view all</a>
+                        <a href="services.php" class="btn">view all</a>
                     </div>
 
                     <div class="servi-container"> 
@@ -41,7 +41,7 @@
                                 <img src="../images/reward.png">
                             </div>  
                                 <p>Get free meals and discounts for birthday celebrants on selected months.</p>
-                                <a href="diningrew.html" class="btn">Dining Rewards</a>
+                                <a href="diningrew.php" class="btn">Dining Rewards</a>
                         </div> 
 
                         <div class="box-service"> 
@@ -49,7 +49,7 @@
                                 <img src="../images/dine.png">
                             </div>  
                                 <p>Arrange your desired table set-up and foods for events.</p>
-                                <a href="privatedining.html" class="btn">Private Dining</a>
+                                <a href="privatedining.php" class="btn">Private Dining</a>
                         </div>
                             
                         <div class="box-service"> 
@@ -57,7 +57,7 @@
                                 <img src="../images/treats.png">
                             </div>   
                                 <p>Made to make your holidays more special.</p>
-                                <a href="treats.html" class="btn">Holiday Treats</a>
+                                <a href="treats.php" class="btn">Holiday Treats</a>
                         </div>
                            
                         <div class="box-service">
@@ -65,7 +65,7 @@
                                 <img src="../images/sched.png">
                             </div>  
                                 <p>See reserved days and choose yours with us.</p>
-                                <a href="sched.html" class="btn">Schedule Table</a>
+                                <a href="sched.php" class="btn">Schedule Table</a>
                         </div>
                             
                         <div class="box-service"> 
@@ -73,7 +73,7 @@
                                 <img src="../images/pay.png">
                             </div>  
                                 <p>Payment transaction is flexible with different payment method.</p>
-                                <a href="payment.html" class="btn">Payment</a>
+                                <a href="payment.php" class="btn">Payment</a>
                         </div>
                     </div>
             </div>

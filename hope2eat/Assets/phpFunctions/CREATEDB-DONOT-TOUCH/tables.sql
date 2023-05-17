@@ -11,8 +11,8 @@ create database hope2eat;
 use hope2eat;
 
 
--- create accounts table
-CREATE TABLE accounts (
+-- create account table
+CREATE TABLE account (
     id INT PRIMARY KEY not null AUTO_INCREMENT,
     username VARCHAR(50) NOT NULL UNIQUE,
     email VARCHAR(255) NOT NULL,
@@ -42,8 +42,8 @@ CREATE TABLE location
 CREATE UNIQUE INDEX unique_location ON location (country, region_or_state, city);
 
 
--- create restaurants table
-CREATE TABLE restaurants
+-- create restaurant table
+CREATE TABLE restaurant
 (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     name varchar(255) NOT NULL,
@@ -63,7 +63,7 @@ CREATE TABLE restaurants
 );
 
 -- create cuisine table(purpose is to have consistency in the whole database -- naming can be wrong)
-CREATE TABLE cuisines
+CREATE TABLE cuisine_classification
 (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) UNIQUE NOT NULL,
@@ -74,11 +74,15 @@ CREATE TABLE cuisines
 -- purpose is to not add a butt ton of columns in the restaurant table
 CREATE TABLE restaurant_cuisine
 (
+    id INT NOT NULL AUTO_INCREMENT,
     restaurantId INT NOT NULL,
-    cuisineId INT NOT NULL,
-    PRIMARY KEY(restaurantId, cuisineId),
-    FOREIGN KEY (restaurantId) REFERENCES restaurants(id),
-    FOREIGN KEY (cuisineId) REFERENCES cuisines(id)
+    classificationID INT NOT NULL,
+    name VARCHAR(255),
+    description TEXT,
+    image VARCHAR(255),
+    PRIMARY KEY(id)
+    FOREIGN KEY (restaurantId) REFERENCES restaurant(id),
+    FOREIGN KEY (cuisineId) REFERENCES cuisine_classification(id)
 );
 
 
@@ -86,12 +90,12 @@ CREATE TABLE restaurant_cuisine
 CREATE TABLE rating (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     restaurant_id INT NOT NULL,
-    accountsId INT,
+    accountId INT,
     rating_value DECIMAL(3,2) NOT NULL,
     rating_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     comment TEXT,
-    FOREIGN KEY (restaurant_id) REFERENCES restaurants(id),
-    FOREIGN KEY (accountsId) REFERENCES accounts(id)
+    FOREIGN KEY (restaurant_id) REFERENCES restaurant(id),
+    FOREIGN KEY (accountId) REFERENCES account(id)
 );
 
 -- trigger event -- manually input it in the trigger event of php my admin
@@ -99,32 +103,59 @@ CREATE TABLE rating (
 CREATE TRIGGER update_restaurant_rating
 AFTER INSERT ON rating
 FOR EACH ROW
-BEGIN
-    UPDATE restaurants
-    SET rating = (
-        SELECT AVG(rating_value)
-        FROM rating
-        WHERE restaurant_Id = NEW.restaurant_Id
-    )
-    WHERE id = NEW.restaurant_id;
-END;
+UPDATE restaurant
+SET rating = (
+    SELECT AVG(rating_value)
+    FROM rating
+    WHERE restaurant_Id = NEW.restaurant_Id
+)
+WHERE id = NEW.restaurant_id;
+
+-- account defaults
+INSERT INTO account
+(username, password, account_type)
+VALUES
+("aries", "ariestagle", 1),
+("mark", "markbeltran", 0),
+("kian", "kiandavid", 0),
+("kriesha", "krieshabuglosa", 0),
+("willie", "willieroldan", 0);
+
 
 
 -- location insert
 INSERT INTO location
 (country, region_or_state, city)
 VALUES
-('PHILIPPINES', 'REGION 3', 'SAN FERNANDO'),
-('PHILIPPINES', 'REGION 3', 'BACOLOR'),
-('PHILIPPINES', 'REGION 3', 'SAN SIMON'), 
-('PHILIPPINES', 'NCR', 'MANILA'); 
+('PHILIPPINES', 'REGION 3', 'GUAGUA'),
+('PHILIPPINES', 'REGION 3', 'ANGELES'),
+('PHILIPPINES', 'REGION 3', 'MANILA'), 
+('PHILIPPINES', 'NCR', 'QUEZON CITY'), 
+('PHILIPPINES', 'NCR', 'TAGUIG'), 
+('PHILIPPINES', 'NCR', 'PARANAQUE'), 
+('PHILIPPINES', 'NCR', 'PASAY'), 
+('PHILIPPINES', 'NCR', 'INTRAMUROS'),
+('PHILIPPINES', 'NCR', 'MAKATI'),
+('PHILIPPINES', 'NCR', 'CLARK'), 
+('PHILIPPINES', 'NCR', 'MARIKINA'),
+('PHILIPPINES', 'NCR', 'LAS PINAS');
 
 -- cuisine insert
-INSERT INTO cuisines
+INSERT INTO cuisine_classification
 (name)
 VALUES
-('JAPANESE'),
-('BURGER'),
-('PASTA'),
-('PIZZA');
+('BREAKFAST'),
+('LUNCH'),
+('DINNER');
+
+--restaurant
+INSERT INTO restaurant
+(name, ImageURL, website, locationID)
+VALUES
+("", "", "", "");
+
+--restaurant cuisine
+
+
+--reviews
 
