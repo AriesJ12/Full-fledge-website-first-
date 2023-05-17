@@ -33,16 +33,13 @@
             <div class="home-content">
                 <div class="swiper mySwiper">   
                 <div class="swiper-wrapper">       
-                    <img src="Assets/images/homeBG.png" alt="" class="home-img">
+                    <img src="Assets/images/bg.png" alt="" class="home-img">
                         <div class="home-details">
                             <div class="home-text">                    
                                 <h4 class="homeTitle">A QUICK RESERVATION</h4>
                                 <br>
                                 <h2 class="homeSubtitle">Still haven’t found that sweet spot? This is the answer you've been searching for;<br> you're a perfect user of our website. To reserve your next dinner, simply click Login.<br> If you haven't registered yet, register now.</h2>
-                            </div>               
-                             <div class="about-buttons flex">
-                                <a href="Assets/login.php" class = "button"> Admin login</a>
-                            </div>             
+                            </div>                
                         </div>     
                 </div>                                  
                 </div>                                             
@@ -63,14 +60,11 @@
                                 </div>
 
                                 <div class="about-buttons flex">
-                                        <button class="button">About Us</button>
                                         <a href="#" class="about-link flex">
-                                                <span class="link-text">see more</span>
-                                                <i class='bx bx-right-arrow-alt about-arrowIcon'></i>
+                                                <button class="button">About Us</button>
                                         </a>
                                 </div>
                         </div>
-
                 </div>
         </section>
 
@@ -86,15 +80,15 @@
                         <div class="box-img">
                             <img src="Assets/images/grumpyjoe.png">
                         </div>
-                            <h2>Grumpy Joe</h2>
+                            <a href="https://www.facebook.com/people/Grumpy-Joe-Pampanga/100083036991702/" class="link"><h2>Grumpy Joe</h2></a>
                             <h3>Pampanga</h3>
                     </div>
-                    
+
                     <div class="box">
                         <div class="box-img">
                             <img src="Assets/images/ilustrado.jpg">
                         </div>
-                            <h2>Ilustrado Restaurants</h2>
+                            <a href="https://www.facebook.com/ilustradorestaurant/" class="link"><h2>Ilustrado Restaurants</h2></a>
                             <h3>Intramuros</h3>
                     </div>
                     
@@ -102,9 +96,9 @@
                         <div class="box-img">
                             <img src="Assets/images/harbor.jpg">
                         </div>
-                            <h2>Harbor View Restaurant</h2>
+                            <a href="https://www.facebook.com/HARBORVIEWCAPEMAY/" class="link"><h2>Harbor View Restaurant</h2></a>
                             <h3>Manila Bay</h3>
-                    </div>    
+                    </div> 
                 </div>
         </section>
 
