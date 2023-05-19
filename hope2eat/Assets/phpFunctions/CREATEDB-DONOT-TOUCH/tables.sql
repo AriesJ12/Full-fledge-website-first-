@@ -33,13 +33,14 @@ CREATE TABLE account (
 CREATE TABLE location
 (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    country VARCHAR(255) NOT NULL,
-    region_or_state VARCHAR(255) NOT NULL,
+    region VARCHAR(255) NOT NULL,
+    province VARCHAR(255) NOT NULL,
     city VARCHAR(255) NOT NULL,
+    barangay VARCHAR(255) NOT NULL,
     headerImage VARCHAR(255)
 );
 
-CREATE UNIQUE INDEX unique_location ON location (country, region_or_state, city);
+CREATE UNIQUE INDEX unique_location ON location (region, province, city);
 
 
 -- create restaurant table
@@ -80,7 +81,7 @@ CREATE TABLE restaurant_cuisine
     name VARCHAR(255),
     description TEXT,
     image VARCHAR(255),
-    PRIMARY KEY(id)
+    PRIMARY KEY(id),
     FOREIGN KEY (restaurantId) REFERENCES restaurant(id),
     FOREIGN KEY (cuisineId) REFERENCES cuisine_classification(id)
 );
@@ -127,18 +128,17 @@ VALUES
 INSERT INTO location
 (country, region_or_state, city)
 VALUES
-('PHILIPPINES', 'REGION 3', 'GUAGUA'),
-('PHILIPPINES', 'REGION 3', 'ANGELES'),
-('PHILIPPINES', 'REGION 3', 'MANILA'), 
-('PHILIPPINES', 'NCR', 'QUEZON CITY'), 
-('PHILIPPINES', 'NCR', 'TAGUIG'), 
-('PHILIPPINES', 'NCR', 'PARANAQUE'), 
-('PHILIPPINES', 'NCR', 'PASAY'), 
-('PHILIPPINES', 'NCR', 'INTRAMUROS'),
-('PHILIPPINES', 'NCR', 'MAKATI'),
-('PHILIPPINES', 'NCR', 'CLARK'), 
-('PHILIPPINES', 'NCR', 'MARIKINA'),
-('PHILIPPINES', 'NCR', 'LAS PINAS');
+('CENTRAL LUZON', 'PAMPANGA', 'GUAGUA'),
+('CENTRAL LUZON', 'PAMPANGA', 'ANGELES'),
+('NCR', 'EASTERN MANILA DISTRICT', 'QUEZON CITY'), 
+('NCR', 'SOUTHERN MANILA DISTRICT', 'TAGUIG'), 
+('NCR', 'SOUTHERN MANILA DISTRICT', 'PARANAQUE'), 
+('NCR', 'SOUTHERN MANILA DISTRICT', 'PASAY'), 
+('NCR', 'CAPITAL DISTRICT', 'MANILA'),
+('NCR', 'SOUTHERN MANILA DISTRICT', 'MAKATI'),
+-- ('CENTRAL LUZON', 'PAMPANGA', 'CLARK'), clark is the same as angeles 
+('NCR', 'EASTERN MANILA DISTRICT', 'MARIKINA'),
+('NCR', 'SOUTHERN MANILA DISTRICT', 'LAS PINAS');
 
 -- cuisine insert
 INSERT INTO cuisine_classification
@@ -148,14 +148,18 @@ VALUES
 ('LUNCH'),
 ('DINNER');
 
---restaurant
+-- restaurant
 INSERT INTO restaurant
 (name, ImageURL, website, locationID)
 VALUES
-("", "", "", "");
+("Grumpy Joe", "grumpyjoe.png", "https://www.facebook.com/people/Grumpy-Joe-Pampanga/100083036991702/", 2),
+("Ilustrados Restauran", "ilustrado.jpg", "https://www.facebook.com/ilustradorestaurant/", 8),
+("Harbor View Restaurant", "harbor.jpg", "https://www.facebook.com/HARBORVIEWCAPEMAY/", 3),
+("Spiral Restaurant", "harbor.jpg", "https://www.facebook.com/HARBORVIEWCAPEMAY/", 8),
 
---restaurant cuisine
+
+-- restaurant cuisine
 
 
---reviews
+-- reviews
 

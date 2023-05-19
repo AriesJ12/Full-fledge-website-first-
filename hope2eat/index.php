@@ -1,3 +1,4 @@
+<?php require_once "Assets/phpFunctions/dbConnect.php"?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -106,62 +107,68 @@
                         <a href="Assets/userPages/discover.php" class="btn">view all</a>
                     </div>
 
-                    <div class="restor-container"> 
-                        <div class="box-resto">  
-                            <div class="resto-img">
-                                <img src="Assets/images/grumpyjoe.png">
-                            </div>
-                           
-                            <a href="https://www.facebook.com/people/Grumpy-Joe-Pampanga/100083036991702/" class="link">
-                                <h3>Grumpy Joe</h3>
-                                <br>
-                                <h4><i class="fa-solid fa-location-dot" style="color: #ff0505;"></i>  Pampanga</h4>
-                            </a>
-                        </div> 
-
+                    <div class="restor-container">
+                        <?php //getting the data to display(famous restaurant)
+                            //execute the query
+                            $columns = "res.name AS name, res.website AS website, res.ImageURL AS image, CONCAT(loc.city, ' ', loc.region_or_state) AS location";
+                            $table = "restaurant as res";
+                            $innerJoin = "location as loc ON res.locationID = loc.id";
+                            $order = "res.rating DESC";
+                            $sql = "SELECT $columns FROM $table INNER JOIN $innerJoin ORDER BY $order";
+                            $result = $conn->query($sql);
+                            
+                            //for getting the images
+                            $target_directory = "Assets/images/restaurantImages/";
+                            //while
+                            $max = 3;
+                            $current = 0;
+                            while($current < $max && $row = $result->fetch_assoc())
+                            {
+                                //get the data
+                                $name = $row['name'];
+                                $website = $row['website'];
+                                $image = $target_directory.basename($row['image']);
+                                $location = $row['location'];
+                        ?>
                         <div class="box-resto">
                             <div class="resto-img">
-                                <img src="Assets/images/ilustrado.jpg">
-                            </div>  
-                            
-                            <a href="https://www.facebook.com/ilustradorestaurant/" class="link">
-                                <h3>Ilustrado Restaurants</h3>
-                                <br>
-                                <h4><i class="fa-solid fa-location-dot" style="color: #ff0505;"></i>  Intramuros</h4>
-                            </a>
-                        </div> 
-
-                        <div class="box-resto">  
-                            <div class="resto-img">
-                                <img src="Assets/images/harbor.jpg">
+                                <img src="<?php echo $image?>">
                             </div>
-                            
-                            <a href="https://www.facebook.com/HARBORVIEWCAPEMAY/" class="link">
-                                <h3>Harbor View Restaurant</h3>
+                           
+                            <a href="<?php echo $website?>" class="link">
+                                <h3><?php echo "$name"?></h3>
                                 <br>
-                                <h4><i class="fa-solid fa-location-dot" style="color: #ff0505;"></i> Manila Bay</h4>
-                            </a>   
-                        </div>  
+                                <h4><i class="fa-solid fa-location-dot" style="color: #ff0505;"></i><?php echo "$location"?></h4>
+                            </a>
+                        </div>
+                        <?php
+                            $current++;
+                            }
+                        ?>
                 </div>
             </div>
         </section>
 
 
-     <!-- FAMOUS DISHES -->
+     <!-- FAMOUS RESTAURANT'S DISHES -->
+    <?php
+        $sql = "SELECT cuis.description AS description, cuis.image AS image, cuis.name AS name"
+        ."FROM restaurant_cuisine AS cuis INNER JOIN restaurant AS res ON cuis.restaurantid = restaurant.id ORDER BY res.rating DESC"; 
+    ?>
      <section class="famous">
         <div>
-         <h1 class="famous-heading">FAMOUS DISHES</h1>
+         <h1 class="famous-heading">FAMOUS RESTAURANT'S DISHES</h1>
             <div class="view2">
                 <a href="Assets/userPages/cuisine.php" class="btn">view all</a>
             </div>
-                <div class="container">
-                    <div class="card">
-                        <img src="Assets/images/images-cuisine/herb.png" class="famous-image">
-                        <div class="intro">
-                            <h3>Herb Roasted Chicken </h3>
-                             <p>There’s nothing better than the aroma of a tender, juicy chicken roasting in the oven – and the anticipation of enjoying a delicious family dinner.</p>
-                            <a href="https://www.facebook.com/liamsnlouisgourmetcafe/" class="link">    
-                            <p class="place"><i class="fa-solid fa-location-dot" style="color: #ff0505;"></i> Liam & Louis’ Gourmet Café</p>
+            <div class="container">
+                <div class="card">
+                    <img src="Assets/images/images-cuisine/herb.png" class="famous-image">
+                    <div class="intro">
+                        <h3>Herb Roasted Chicken </h3>
+                            <p>There’s nothing better than the aroma of a tender, juicy chicken roasting in the oven – and the anticipation of enjoying a delicious family dinner.</p>
+                        <a href="https://www.facebook.com/liamsnlouisgourmetcafe/" class="link">    
+                        <p class="place"><i class="fa-solid fa-location-dot" style="color: #ff0505;"></i> Liam & Louis’ Gourmet Café</p>
                     </div>
                 </div>
 
@@ -184,6 +191,7 @@
                         <p class="place"><i class="fa-solid fa-location-dot" style="color: #ff0505;"></i> Grumpy Joe</p>
                     </div>
                 </div>
+            </div>
         </div>
     </section>
 
