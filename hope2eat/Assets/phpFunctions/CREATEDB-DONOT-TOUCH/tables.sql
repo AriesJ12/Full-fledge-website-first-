@@ -83,7 +83,7 @@ CREATE TABLE restaurant_cuisine
     image VARCHAR(255),
     PRIMARY KEY(id),
     FOREIGN KEY (restaurantId) REFERENCES restaurant(id),
-    FOREIGN KEY (cuisineId) REFERENCES cuisine_classification(id)
+    FOREIGN KEY (classificationID) REFERENCES cuisine_classification(id)
 );
 
 

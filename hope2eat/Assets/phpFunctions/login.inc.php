@@ -11,7 +11,7 @@
     //column
     $column = "username, password, account_type";
     //tablename
-    $tablename = "accounts";
+    $tablename = "account";
     //condition
     $condition = "username = '$username' AND password = '$password' ";
     $sql = "SELECT $column FROM $tablename WHERE $condition;";
