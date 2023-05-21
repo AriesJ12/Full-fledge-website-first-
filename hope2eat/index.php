@@ -110,7 +110,7 @@
                     <div class="restor-container">
                         <?php //getting the data to display(famous restaurant)
                             //execute the query
-                            $columns = "res.name AS name, res.website AS website, res.ImageURL AS image, CONCAT(loc.city, ' ', loc.region_or_state) AS location";
+                            $columns = "res.name AS name, res.website AS website, res.ImageURL AS image, CONCAT(loc.region, ', ', loc.province, ', ', loc.city) AS location";
                             $table = "restaurant as res";
                             $innerJoin = "location as loc ON res.locationID = loc.id";
                             $order = "res.rating DESC";
@@ -152,8 +152,8 @@
 
      <!-- FAMOUS RESTAURANT'S DISHES -->
     <?php
-        $sql = "SELECT cuis.description AS description, cuis.image AS image, cuis.name AS name"
-        ."FROM restaurant_cuisine AS cuis INNER JOIN restaurant AS res ON cuis.restaurantid = restaurant.id ORDER BY res.rating DESC"; 
+        // $sql = "SELECT cuis.description AS description, cuis.image AS image, cuis.name AS name"
+        // ."FROM restaurant_cuisine AS cuis INNER JOIN restaurant AS res ON cuis.restaurantid = restaurant.id ORDER BY res.rating DESC"; 
     ?>
      <section class="famous">
         <div>

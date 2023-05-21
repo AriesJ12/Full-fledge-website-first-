@@ -15,7 +15,7 @@ use hope2eat;
 CREATE TABLE account (
     id INT PRIMARY KEY not null AUTO_INCREMENT,
     username VARCHAR(50) NOT NULL UNIQUE,
-    email VARCHAR(255) NOT NULL,
+    email VARCHAR(255),
     password VARCHAR(255) NOT NULL,
     first_name VARCHAR(50),
     last_name VARCHAR(50),
