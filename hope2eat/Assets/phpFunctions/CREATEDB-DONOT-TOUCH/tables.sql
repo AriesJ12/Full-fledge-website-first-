@@ -36,7 +36,6 @@ CREATE TABLE location
     region VARCHAR(255) NOT NULL,
     province VARCHAR(255) NOT NULL,
     city VARCHAR(255) NOT NULL,
-    barangay VARCHAR(255) NOT NULL,
     headerImage VARCHAR(255)
 );
 
@@ -126,7 +125,7 @@ VALUES
 
 -- location insert
 INSERT INTO location
-(country, region_or_state, city)
+(region, province, city)
 VALUES
 ('CENTRAL LUZON', 'PAMPANGA', 'GUAGUA'),
 ('CENTRAL LUZON', 'PAMPANGA', 'ANGELES'),
