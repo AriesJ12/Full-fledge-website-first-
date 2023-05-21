@@ -154,7 +154,7 @@ VALUES
 ("Grumpy Joe", "grumpyjoe.png", "https://www.facebook.com/people/Grumpy-Joe-Pampanga/100083036991702/", 2),
 ("Ilustrados Restauran", "ilustrado.jpg", "https://www.facebook.com/ilustradorestaurant/", 8),
 ("Harbor View Restaurant", "harbor.jpg", "https://www.facebook.com/HARBORVIEWCAPEMAY/", 3),
-("Spiral Restaurant", "harbor.jpg", "https://www.facebook.com/HARBORVIEWCAPEMAY/", 8),
+("Spiral Restaurant", "harbor.jpg", "https://www.facebook.com/HARBORVIEWCAPEMAY/", 8);
 
 
 -- restaurant cuisine
