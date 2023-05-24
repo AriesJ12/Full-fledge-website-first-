@@ -1,6 +1,19 @@
 <!-- setting up php -->
 <?php
+    require_once "../hope2eat/Assets/phpFunctions/dbConnect.php";
+    //image directory for the not in the db images
     $imageDefaultDirectory = "Assets/images/homepage/";
+    $imageRestaurantDirectory = "Assets/images/restaurantImages/";
+    $max_carousel = 3; 
+    
+    //restaurant carousel
+    $restaurant_per_carousel = 2;
+    $restaurant_display = $restaurant_per_carousel * $max_carousel;
+
+    $sql = "CALL get_restaurant();";
+    $restaurant = $conn->query($sql);
+
+    //cuisine carousel
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,9 +22,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
     
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../hope2eat/Assets/css/style.css">
 </head>
 <body>
     
@@ -136,136 +148,58 @@
         <section class = restaurant>
             <div class="container-fluid text-bg-dark">
 
-                <div class="container p-4">
+              <div class="container p-4">
                     <h2 class = "text-center display-4 ">Famous restaurants </h2>
                     <div class="d-flex justify-content-end">
                         <a href="" class="btn btn-outline-info align-self-end">View all</a>
                     </div>
                     <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="row row-cols-lg-2 row-cols-md-1 g-4">
-                                    <div class="col d-block">
-                                        <div class="card mb-3" style="max-width: 540px;">
-                                            <div class="row g-0">
-                                              <div class="col-md-5 overflow-hidden">
-                                                <img src="https://picsum.photos/200/300" class="img-fluid rounded-start" alt="...">
-                                              </div>
-                                              <div class="col-md-7">
-                                                <div class="card-body">
-                                                  <h5 class="card-title">Card title</h5>
-                                                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                                  <i class="fa fa-star checked"></i>
-                                                    <i class="fa fa-star checked"></i>
-                                                    <i class="fa fa-star checked"></i>
-                                                    <i class="fa fa-star-half-full checked"></i>
-                                                    <i class="fa fa-star"></i>
-                                                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                    </div>
-                                    <div class="col d-block">
-                                        <div class="card mb-3" style="max-width: 540px;">
-                                            <div class="row g-0">
-                                              <div class="col-md-5 overflow-hidden">
-                                                <img src="https://picsum.photos/200/300" class="img-fluid rounded-start" alt="...">
-                                              </div>
-                                              <div class="col-md-7">
-                                                <div class="card-body">
-                                                  <h5 class="card-title">Card title</h5>
-                                                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                                  <i class="fa fa-star checked"></i>
-                                                    <i class="fa fa-star checked"></i>
-                                                    <i class="fa fa-star checked"></i>
-                                                    <i class="fa fa-star-half-full checked"></i>
-                                                    <i class="fa fa-star"></i>
-                                                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                    </div>
-                                </div>
-                            </div>
-                          <div class="carousel-item">
+                          <?php for($i = 0; $i < $max_carousel; $i++)
+                          {?>
+                          <div class="carousel-item <?php if($i==0){echo "active";}?>">
                             <div class="row row-cols-lg-2 row-cols-md-1 g-4">
-                                <div class="col d-block">
-                                    <div class="card mb-3" style="max-width: 540px;">
-                                        <div class="row g-0">
-                                          <div class="col-md-5 overflow-hidden">
-                                            <img src="https://picsum.photos/200/300" class="img-fluid rounded-start" alt="...">
-                                          </div>
-                                          <div class="col-md-7">
-                                            <div class="card-body">
-                                              <h5 class="card-title">Card title</h5>
-                                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                              
-                                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                            </div>
-                                          </div>
-                                        </div>
+                            <?php for ($j = 0; $j < $restaurant_per_carousel; $j++)
+                            {$row = $restaurant->fetch_assoc();?>
+                            <div class="col d-block">
+                              <div class="card mb-3" style="max-width: 540px;">
+                                  <div class="row g-0">
+                                    <div class="col-md-5 overflow-hidden">
+                                      <img src="<?php echo $imageRestaurantDirectory.$row['image'];?>" class="img-fluid rounded-start" alt="...">
+                                    </div>
+                                    <div class="col-md-7">
+                                      <div class="card-body">
+                                        <h5 class="card-title"><?php echo $row['name'];?></h5>
+                                        <p class="card-text">
+                                          <?php 
+                                          $truncatedText = strlen($row['description']) > 100 ? substr($row['description'], 0, 100) . "..." : $$row['description'];
+                                          echo $truncatedText;?>
+                                        </p>
+                                        <?php for ($k = 0, $stars = 5, $currentStars = $row['rating']; $k < $stars; $k++, $currentStars--)
+                                        {?>
+                                          <?php
+                                          if($currentStars > 0 and $currentStars < 1){echo '<i class="fa fa-star-half-full checked"></i>';}
+                                          elseif($currentStars > 0){echo '<i class="fa fa-star checked"></i>';}
+                                          else{echo '<i class="fa fa-star"></i>';}?> 
+                                        <?php
+                                        }
+                                        ?>
+                                        <p class="card-text"><small class="text-muted"><?php echo $row['address']?></small></p>
                                       </div>
+                                    </div>
+                                  </div>
                                 </div>
-                                <div class="col d-block">
-                                    <div class="card mb-3" style="max-width: 540px;">
-                                        <div class="row g-0">
-                                          <div class="col-md-5 overflow-hidden">
-                                            <img src="https://picsum.photos/200/300" class="img-fluid rounded-start" alt="...">
-                                          </div>
-                                          <div class="col-md-7">
-                                            <div class="card-body">
-                                              <h5 class="card-title">Card title</h5>
-                                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                </div>
+                              </div>
+                            <?php
+                            }?>
                             </div>
                           </div>
-                          <div class="carousel-item">
-                            <div class="row row-cols-lg-2 row-cols-md-1 g-4">
-                                <div class="col d-block">
-                                    <div class="card mb-3" style="max-width: 540px;">
-                                        <div class="row g-0">
-                                          <div class="col-md-5 overflow-hidden">
-                                            <img src="https://picsum.photos/200/300" class="img-fluid rounded-start" alt="...">
-                                          </div>
-                                          <div class="col-md-7">
-                                            <div class="card-body">
-                                              <h5 class="card-title">Card title</h5>
-                                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                </div>
-                                <div class="col d-block">
-                                    <div class="card mb-3" style="max-width: 540px;">
-                                        <div class="row g-0">
-                                          <div class="col-md-5 overflow-hidden">
-                                            <img src="https://picsum.photos/200/300" class="img-fluid rounded-start" alt="...">
-                                          </div>
-                                          <div class="col-md-7">
-                                            <div class="card-body">
-                                              <h5 class="card-title">Card title</h5>
-                                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                </div>
-                            </div>
-                          </div>
+                          <?php
+                          }?>
                         </div>
                       </div>
                 </div>
-                </div>
+              </div>
         </section>
         <!-- famous dishes -->  
         <section class="text-bg-light pt-5 pb-5 shadow-sm dishes">
@@ -373,7 +307,6 @@
           </div>
         </section>
     </main>
-    
     <!-- icons -->
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
       <symbol id="bootstrap" viewBox="0 0 118 94">

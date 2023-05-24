@@ -29,18 +29,6 @@ CREATE TABLE account (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
--- location table
-CREATE TABLE location
-(
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    region VARCHAR(255) NOT NULL,
-    province VARCHAR(255) NOT NULL,
-    city VARCHAR(255) NOT NULL,
-    headerImage VARCHAR(255)
-);
-
-CREATE UNIQUE INDEX unique_location ON location (region, province, city);
-
 
 -- create restaurant table
 CREATE TABLE restaurant
@@ -48,18 +36,18 @@ CREATE TABLE restaurant
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     name varchar(255) NOT NULL,
     description TEXT,
-    address VARCHAR(255),
     phone VARCHAR(20),
     website VARCHAR(255),
     email VARCHAR(255),
     -- cuisineID INT, MIGHT USE JUNCTION TABLE INSTEAD
-    locationID INT,
+    city_and_barangay VARCHAR(255),
+    province_id INT,
     rating DECIMAL(3,2),
     -- I WANT TO CREATE A FUNCTIONALITY FOR OPEN -- MIGHT NEED TRIGGER EVENT ONCE THE CLOCK HITS A CERTAIN ERROR
     -- Open boolean,
     ImageURL VARCHAR(255),
     -- might add price range, delivery option and menu url
-    FOREIGN KEY (locationID) REFERENCES location(id)
+    FOREIGN KEY (province_id) REFERENCES table_province(province_id)
 );
 
 -- create cuisine table(purpose is to have consistency in the whole database -- naming can be wrong)
@@ -122,23 +110,6 @@ VALUES
 ("willie", "willieroldan", 0);
 
 
-
--- location insert
-INSERT INTO location
-(region, province, city)
-VALUES
-('CENTRAL LUZON', 'PAMPANGA', 'GUAGUA'),
-('CENTRAL LUZON', 'PAMPANGA', 'ANGELES'),
-('NCR', 'EASTERN MANILA DISTRICT', 'QUEZON CITY'), 
-('NCR', 'SOUTHERN MANILA DISTRICT', 'TAGUIG'), 
-('NCR', 'SOUTHERN MANILA DISTRICT', 'PARANAQUE'), 
-('NCR', 'SOUTHERN MANILA DISTRICT', 'PASAY'), 
-('NCR', 'CAPITAL DISTRICT', 'MANILA'),
-('NCR', 'SOUTHERN MANILA DISTRICT', 'MAKATI'),
--- ('CENTRAL LUZON', 'PAMPANGA', 'CLARK'), clark is the same as angeles 
-('NCR', 'EASTERN MANILA DISTRICT', 'MARIKINA'),
-('NCR', 'SOUTHERN MANILA DISTRICT', 'LAS PINAS');
-
 -- cuisine insert
 INSERT INTO cuisine_classification
 (name)
@@ -149,12 +120,26 @@ VALUES
 
 -- restaurant
 INSERT INTO restaurant
-(name, ImageURL, website, locationID)
+(name,description, ImageURL, website, province_id)
 VALUES
-("Grumpy Joe", "grumpyjoe.png", "https://www.facebook.com/people/Grumpy-Joe-Pampanga/100083036991702/", 2),
-("Ilustrados Restauran", "ilustrado.jpg", "https://www.facebook.com/ilustradorestaurant/", 8),
-("Harbor View Restaurant", "harbor.jpg", "https://www.facebook.com/HARBORVIEWCAPEMAY/", 3),
-("Spiral Restaurant", "harbor.jpg", "https://www.facebook.com/HARBORVIEWCAPEMAY/", 8);
+("Grumpy Joe",
+"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit dolor inventore fugit quam accusantium magni dolore iste corporis ipsam omnis a aspernatur, cum illum odit fugiat ex, libero iusto exercitationem dolores architecto cumque! Nemo, accusamus possimus. Dolorum iste esse autem, reprehenderit aliquam omnis sapiente adipisci quis impedit recusandae? Magni, consequuntur.",
+ "grumpyjoe.png", "https://www.facebook.com/people/Grumpy-Joe-Pampanga/100083036991702/", 2),
+("Ilustrados Restauran",
+"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit dolor inventore fugit quam accusantium magni dolore iste corporis ipsam omnis a aspernatur, cum illum odit fugiat ex, libero iusto exercitationem dolores architecto cumque! Nemo, accusamus possimus. Dolorum iste esse autem, reprehenderit aliquam omnis sapiente adipisci quis impedit recusandae? Magni, consequuntur.",
+"ilustrado.jpg", "https://www.facebook.com/ilustradorestaurant/", 8),
+("Harbor View Restaurant",
+ "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit dolor inventore fugit quam accusantium magni dolore iste corporis ipsam omnis a aspernatur, cum illum odit fugiat ex, libero iusto exercitationem dolores architecto cumque! Nemo, accusamus possimus. Dolorum iste esse autem, reprehenderit aliquam omnis sapiente adipisci quis impedit recusandae? Magni, consequuntur.",
+"harbor.jpg", "https://www.facebook.com/HARBORVIEWCAPEMAY/", 3),
+("Spiral Restaurant", 
+"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit dolor inventore fugit quam accusantium magni dolore iste corporis ipsam omnis a aspernatur, cum illum odit fugiat ex, libero iusto exercitationem dolores architecto cumque! Nemo, accusamus possimus. Dolorum iste esse autem, reprehenderit aliquam omnis sapiente adipisci quis impedit recusandae? Magni, consequuntur.",
+"harbor.jpg", "https://www.facebook.com/HARBORVIEWCAPEMAY/", 8),
+("Ilustrados Restauran",
+"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit dolor inventore fugit quam accusantium magni dolore iste corporis ipsam omnis a aspernatur, cum illum odit fugiat ex, libero iusto exercitationem dolores architecto cumque! Nemo, accusamus possimus. Dolorum iste esse autem, reprehenderit aliquam omnis sapiente adipisci quis impedit recusandae? Magni, consequuntur.",
+"ilustrado.jpg", "https://www.facebook.com/ilustradorestaurant/", 8),
+("Harbor View Restaurant",
+ "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit dolor inventore fugit quam accusantium magni dolore iste corporis ipsam omnis a aspernatur, cum illum odit fugiat ex, libero iusto exercitationem dolores architecto cumque! Nemo, accusamus possimus. Dolorum iste esse autem, reprehenderit aliquam omnis sapiente adipisci quis impedit recusandae? Magni, consequuntur.",
+"harbor.jpg", "https://www.facebook.com/HARBORVIEWCAPEMAY/", 3);
 
 
 -- restaurant cuisine
@@ -162,3 +147,17 @@ VALUES
 
 -- reviews
 
+-- procedures
+
+Delimiter //
+create procedure get_restaurant()
+BEGIN
+    SELECT res.name AS name, res.description as description, res.phone as phone, 
+    res.website as website, res.email as email, res.rating as rating, res.ImageURL as image, 
+    CONCAT(reg.region_name,", ", prov.province_name,", ", res.city_and_barangay) AS address
+    FROM restaurant as res
+    INNER JOIN table_province AS prov ON res.province_id = prov.province_id
+    INNER JOIN table_region AS reg ON prov.region_id = reg.region_id
+    ORDER BY rating DESC;
+END //
+Delimiter ;
