@@ -1,3 +1,21 @@
+<?php
+    if ($_SERVER["REQUEST_METHOD"] === "POST")
+    {
+        require_once "../Assets/phpFunctions/dbConnect.php";
+
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+        $confirm_password = $_POST["confirm_password"];
+        $email = $_POST["email"];
+        $first_name = $_POST["first_name"];
+        $last_name = $_POST["last_name"];
+
+        $sql = "INSERT INTO account(username, password, email, first_name, last_name) values ('$username','$password','$email','$first_name','$last_name',)";
+    
+        // execute
+        $result = $conn->query($sql); 
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,16 +35,18 @@
         </div>
         <br>
         
-        <form name = "registerForm" action = "phpFunctions/register.inc.php" method = "POST">
+        <form name = "registerForm" action = "" method = "POST">
             <input type="text" name="username" placeholder="Enter your username" id="username" required>
             <br>
             <input type="password" name="password" placeholder="Create a password" id="password" required>
             <br>
-            <input type="password" name="confirmPassword" placeholder="Confirm your password" id="confirmPassword" required>
+            <input type="password" name="confirm_password" placeholder="Confirm your password" id="confirmPassword" required>
             <br>
             <input type="text" placeholder="Enter your email" name="email" id="email" required>
             <br>
-            <input type="text" placeholder="Enter your name" name="name" id="name" required>
+            <input type="text" placeholder="Enter your first name" name="first_name" id="first_name" required>
+            <br>
+            <input type="text" placeholder="Enter your last name" name="last_name" id="last_name" required>
             <br>
             <input type="submit" value="Register">
         </form>

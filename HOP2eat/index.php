@@ -54,7 +54,7 @@
                     </div>
               </div>
               <div class="carousel-item">
-                        <div class="row text-dark text-center"> 
+                        <div class="row text-light shadow-md text-center"> 
                             <div class="col-md-4 h-100"></div>
                             <div class="col-md-4 pt-5 pb-5 mt-5 mb-5 h-100">
                                 <h1>Check out the famous cuisines</h1>

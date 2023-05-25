@@ -44,7 +44,7 @@
     
           <div class="align-items-middle">
               <button type="button" class="btn btn-danger"><a href="<?php echo $user_page_directory?>login.php" class = "nav-link">Login</a></button>
-              <button type="button" class="btn btn-outline-danger"><a href="<?php echo $user_page_directory?>register.php" class = "nav-link">Register</a></button>
+              <button type="button" class="btn btn-outline-danger"><a href="<?php echo $user_page_directory?>register copy.php" class = "nav-link">Register</a></button>
           </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>

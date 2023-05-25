@@ -65,32 +65,34 @@
             while($row = $result->fetch_assoc())
             {
             ?>
-            <div class="row p-3 m-3 border rounded" onclick =>
-                <div class="col-lg-3 mt-3">
-                    <img src="<?php echo $restaurantImages . $row['image'];?>" alt="" class="rounded img-fluid">
-                </div>
-                <div class="col-lg-9 mt-md-3">  
-                    <h2><?php echo $number.". ". $row['name']?></h2>
-                    <?php for ($k = 0, $stars = 5, $currentStars = $row['rating']; $k < $stars; $k++, $currentStars--)
-                    {?>
+            <a href="<?php echo $row['website']?>">
+                <div class="row p-3 m-3 border rounded">
+                    <div class="col-lg-3 mt-3">
+                        <img src="<?php echo $restaurantImages . $row['image'];?>" alt="" class="rounded img-fluid">
+                    </div>
+                    <div class="col-lg-9 mt-md-3">  
+                        <h2><?php echo $number.". ". $row['name']?></h2>
+                        <?php for ($k = 0, $stars = 5, $currentStars = $row['rating']; $k < $stars; $k++, $currentStars--)
+                        {?>
+                            <?php
+                            if($currentStars > 0 and $currentStars < 1){echo '<i class="fa fa-star-half-full checked"></i>';}
+                            elseif($currentStars > 0){echo '<i class="fa fa-star checked"></i>';}
+                            else{echo '<i class="fa fa-star"></i>';}?> 
                         <?php
-                        if($currentStars > 0 and $currentStars < 1){echo '<i class="fa fa-star-half-full checked"></i>';}
-                        elseif($currentStars > 0){echo '<i class="fa fa-star checked"></i>';}
-                        else{echo '<i class="fa fa-star"></i>';}?> 
-                    <?php
-                    } echo " (".$row['rating'].")"
-                    ?>
-                    <br>
-                    <span class = text-secondary><?php echo $row['address']?></span>
-                    <br><br>
-                    <?php 
-                        $truncatedText = strlen($row['description']) > 200 ? substr($row['description'], 0, 200) . "..." : $row['description'];
-                        echo $truncatedText;
-                    ?>
-                    <br>
-                    
+                        } echo " (".$row['rating'].")"
+                        ?>
+                        <br>
+                        <span class = text-secondary><?php echo $row['address']?></span>
+                        <br><br>
+                        <?php 
+                            $truncatedText = strlen($row['description']) > 200 ? substr($row['description'], 0, 200) . "..." : $row['description'];
+                            echo $truncatedText;
+                        ?>
+                        <br>
+                        
+                    </div>
                 </div>
-            </div>
+            </a>
             <?php
             $number++;
             }
