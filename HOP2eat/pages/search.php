@@ -2,6 +2,7 @@
     //get directories
     $imageDefaultDirectory = "../Assets/images/developer/";
     $restaurantImages = "../Assets/images/restaurantImages/";
+    $https = "https://";
 
     if (isset($_GET['find_location'])) {
         //get sql connection
@@ -65,7 +66,7 @@
             while($row = $result->fetch_assoc())
             {
             ?>
-            <a href="<?php echo $row['website']?>">
+            <a href="<?php echo $https . $row['website']?>" class = "text-decoration-none text-bg-light">
                 <div class="row p-3 m-3 border rounded">
                     <div class="col-lg-3 mt-3">
                         <img src="<?php echo $restaurantImages . $row['image'];?>" alt="" class="rounded img-fluid">

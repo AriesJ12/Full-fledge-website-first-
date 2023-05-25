@@ -52,7 +52,16 @@
                 <div class="card-body text-center">
                   <h5 class="card-title"></h5>
                   <p class="card-text">
-                    Account type: <?php if($row['account_type'] == 1){echo "Admin";}else{"User";}?>
+                    Account type: 
+                    <?php 
+                    if($row['account_type'] == 1)
+                    {
+                      echo "Admin";
+                    }
+                    else
+                    {
+                      echo "User";
+                    }?>
                     <br>
                     Username: <?php echo $row['username'];?>
                     <br>
@@ -60,8 +69,8 @@
                   </p>
                   <div class="mb-3 d-flex align-items-end">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                       <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Delete</button>
                     </div>
                   </div>
                   <div class="card-footer text-body-secondary">

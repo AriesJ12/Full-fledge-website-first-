@@ -5,7 +5,7 @@ VALUES
 ('lunch'),
 ('dinner');
 
-INSERT INTO restaurant_cuisine (restaurantID, ClassificationID, name, image) VALUES
+INSERT INTO restaurant_cuisine (restaurantID, ClassificationID, name, imageURL) VALUES
 (1, 1, "Egg Benedicts", "Benedicts.png"),
 (2, 1, "The Breakfast Wrap", "b- wrap.png"),
 (3, 1, "Avocado Toast", "avocado.png"),

@@ -116,9 +116,9 @@ WHERE id = NEW.restaurant_id;
 Delimiter //
 create procedure get_restaurant()
 BEGIN
-    SELECT res.name AS name, res.description as description, res.phone as phone, 
+    SELECT res.id AS id, res.name AS name, res.description as description, res.phone as phone, 
     res.website as website, res.email as email, res.rating as rating, res.ImageURL as image, 
-    CONCAT(reg.region_name,", ", prov.province_name,", ", res.city_and_barangay) AS address
+    CONCAT(COALESCE(reg.region_name, ''), ", ", COALESCE(prov.province_name, ''), ", ", COALESCE(res.city_and_barangay, '')) AS address
     FROM restaurant as res
     INNER JOIN table_province AS prov ON res.province_id = prov.province_id
     INNER JOIN table_region AS reg ON prov.region_id = reg.region_id
@@ -130,7 +130,7 @@ DELIMITER //
 
 CREATE PROCEDURE get_restaurant_filter(IN search_name VARCHAR(50), IN search_location VARCHAR(50))
 BEGIN
-    SELECT res.name AS name, res.description AS description, res.phone AS phone, 
+    SELECT res.id AS id, res.name AS name, res.description AS description, res.phone AS phone, 
         res.website AS website, res.email AS email, res.rating AS rating, res.ImageURL AS image, 
         CONCAT(COALESCE(reg.region_name, ''), ", ", COALESCE(prov.province_name, ''), ", ", COALESCE(res.city_and_barangay, '')) AS address
     FROM restaurant AS res
@@ -143,7 +143,22 @@ END //
 
 DELIMITER ;
 
+DELIMITER //
+CREATE PROCEDURE get_cuisine()
+BEGIN
+    SELECT cuis.classificationID AS classification_id, cuis.restaurantID AS restaurant_id,
+    cuis.imageURL AS image, cuis.name AS cuisine_name, class.name AS classification, 
+    res.name AS restaurant_name, res.website AS website,
+    CONCAT(COALESCE(reg.region_name, ''), ", ", COALESCE(prov.province_name, ''), ", ", COALESCE(res.city_and_barangay, '')) AS address
+    FROM restaurant_cuisine AS cuis
+    INNER JOIN cuisine_classification AS class ON cuis.classificationID = class.id 
+    INNER JOIN restaurant AS res ON cuis.restaurantID = res.id
+    INNER JOIN table_province AS prov ON res.province_id = prov.province_id
+    INNER JOIN table_region AS reg ON prov.region_id = reg.region_id
+    ORDER BY res.rating DESC;
+END //
 
+DELIMITER ;
 
 
 
