@@ -2,13 +2,13 @@
 -- make sure you are connected to an sql server that DOESNT CONTAIN IMPORTANT SCHEMAS - AS WE WILL BE PERFORMING DROPPING OF SCHEMAS AND TABLES
 
 -- drop the schema if it exist
-drop database if exists hope2eat; 
+drop database if exists hop2eat; 
 
 -- create the schema
-create database hope2eat;
+create database hop2eat;
 
 -- use the schema, so u can execute the queries below
-use hope2eat;
+use hop2eat;
 
 
 -- create account table
@@ -39,7 +39,7 @@ CREATE TABLE restaurant
     -- cuisineID INT, MIGHT USE JUNCTION TABLE INSTEAD
     city_and_barangay VARCHAR(255),
     province_id INT,
-    rating DECIMAL(3,2),
+    rating DECIMAL(3,2) DEFAULT 0,
     -- I WANT TO CREATE A FUNCTIONALITY FOR OPEN -- MIGHT NEED TRIGGER EVENT ONCE THE CLOCK HITS A CERTAIN ERROR
     -- Open boolean,
     ImageURL VARCHAR(255),
@@ -63,8 +63,7 @@ CREATE TABLE restaurant_cuisine
     restaurantId INT NOT NULL,
     classificationID INT NOT NULL,
     name VARCHAR(255),
-    description TEXT,
-    image VARCHAR(255),
+    ImageURL VARCHAR(255),
     PRIMARY KEY(id),
     FOREIGN KEY (restaurantId) REFERENCES restaurant(id),
     FOREIGN KEY (classificationID) REFERENCES cuisine_classification(id)
@@ -96,47 +95,12 @@ SET rating = (
 )
 WHERE id = NEW.restaurant_id;
 
--- account defaults
-INSERT INTO account
-(username, password, account_type)
-VALUES
-("aries", "ariestagle", 1),
-("mark", "markbeltran", 0),
-("kian", "kiandavid", 0),
-("kriesha", "krieshabuglosa", 0),
-("willie", "willieroldan", 0);
 
-
+-- insert all here
 -- cuisine insert
-INSERT INTO cuisine_classification
-(name)
-VALUES
-('BREAKFAST'),
-('LUNCH'),
-('DINNER');
+
 
 -- restaurant
-INSERT INTO restaurant
-(name,description, ImageURL, website, province_id)
-VALUES
-("Grumpy Joe",
-"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit dolor inventore fugit quam accusantium magni dolore iste corporis ipsam omnis a aspernatur, cum illum odit fugiat ex, libero iusto exercitationem dolores architecto cumque! Nemo, accusamus possimus. Dolorum iste esse autem, reprehenderit aliquam omnis sapiente adipisci quis impedit recusandae? Magni, consequuntur.",
- "grumpyjoe.png", "https://www.facebook.com/people/Grumpy-Joe-Pampanga/100083036991702/", 2),
-("Ilustrados Restauran",
-"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit dolor inventore fugit quam accusantium magni dolore iste corporis ipsam omnis a aspernatur, cum illum odit fugiat ex, libero iusto exercitationem dolores architecto cumque! Nemo, accusamus possimus. Dolorum iste esse autem, reprehenderit aliquam omnis sapiente adipisci quis impedit recusandae? Magni, consequuntur.",
-"ilustrado.jpg", "https://www.facebook.com/ilustradorestaurant/", 8),
-("Harbor View Restaurant",
- "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit dolor inventore fugit quam accusantium magni dolore iste corporis ipsam omnis a aspernatur, cum illum odit fugiat ex, libero iusto exercitationem dolores architecto cumque! Nemo, accusamus possimus. Dolorum iste esse autem, reprehenderit aliquam omnis sapiente adipisci quis impedit recusandae? Magni, consequuntur.",
-"harbor.jpg", "https://www.facebook.com/HARBORVIEWCAPEMAY/", 3),
-("Spiral Restaurant", 
-"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit dolor inventore fugit quam accusantium magni dolore iste corporis ipsam omnis a aspernatur, cum illum odit fugiat ex, libero iusto exercitationem dolores architecto cumque! Nemo, accusamus possimus. Dolorum iste esse autem, reprehenderit aliquam omnis sapiente adipisci quis impedit recusandae? Magni, consequuntur.",
-"harbor.jpg", "https://www.facebook.com/HARBORVIEWCAPEMAY/", 8),
-("Ilustrados Restauran",
-"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit dolor inventore fugit quam accusantium magni dolore iste corporis ipsam omnis a aspernatur, cum illum odit fugiat ex, libero iusto exercitationem dolores architecto cumque! Nemo, accusamus possimus. Dolorum iste esse autem, reprehenderit aliquam omnis sapiente adipisci quis impedit recusandae? Magni, consequuntur.",
-"ilustrado.jpg", "https://www.facebook.com/ilustradorestaurant/", 8),
-("Harbor View Restaurant",
- "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit dolor inventore fugit quam accusantium magni dolore iste corporis ipsam omnis a aspernatur, cum illum odit fugiat ex, libero iusto exercitationem dolores architecto cumque! Nemo, accusamus possimus. Dolorum iste esse autem, reprehenderit aliquam omnis sapiente adipisci quis impedit recusandae? Magni, consequuntur.",
-"harbor.jpg", "https://www.facebook.com/HARBORVIEWCAPEMAY/", 3);
 
 
 -- restaurant cuisine
@@ -144,7 +108,10 @@ VALUES
 
 -- reviews
 
--- procedures
+
+
+
+-- procedures all here
 
 Delimiter //
 create procedure get_restaurant()
@@ -158,3 +125,26 @@ BEGIN
     ORDER BY rating DESC;
 END //
 Delimiter ;
+
+DELIMITER //
+
+CREATE PROCEDURE get_restaurant_filter(IN search_name VARCHAR(50), IN search_location VARCHAR(50))
+BEGIN
+    SELECT res.name AS name, res.description AS description, res.phone AS phone, 
+        res.website AS website, res.email AS email, res.rating AS rating, res.ImageURL AS image, 
+        CONCAT(COALESCE(reg.region_name, ''), ", ", COALESCE(prov.province_name, ''), ", ", COALESCE(res.city_and_barangay, '')) AS address
+    FROM restaurant AS res
+    INNER JOIN table_province AS prov ON res.province_id = prov.province_id
+    INNER JOIN table_region AS reg ON prov.region_id = reg.region_id
+    WHERE (search_name = '' OR res.name LIKE CONCAT('%', search_name, '%'))
+        AND (search_location = '' OR CONCAT(COALESCE(reg.region_name, ''), ", ", COALESCE(prov.province_name, ''), ", ", COALESCE(res.city_and_barangay, '')) LIKE CONCAT('%', search_location, '%'))
+    ORDER BY rating DESC;
+END //
+
+DELIMITER ;
+
+
+
+
+
+

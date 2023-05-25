@@ -24,7 +24,7 @@
     <title>Homepage</title>
     <link rel="stylesheet" href="Assets/css/style.css">
 </head>
-<body>
+<body class="index">
     
     <!-- navbar -->
     <?php require_once "Assets/navbar-footer/navbar.php"?>
@@ -95,7 +95,7 @@
                         <h1 class="display-4">HOP2eat</h1>
                         Looking for an ideal restaurant and book a table quickly and easily with Hop2Eat. We provide a one-of-a-kind dining experience that includes delicious meals in a peaceful and cozy place. If you're having trouble deciding where to eat, we provide the ideal setting and delicious food toshare with family and friends, a special occasion, or a romantic date.
                         <br>
-                        <a href="" class="btn btn-outline-secondary mt-5">About us</a>
+                        <a href="pages/about_us.php" class="btn btn-outline-secondary mt-5">About us</a>
                     </div>
                 </div>
             </div>
@@ -119,7 +119,7 @@
                             {$row = $restaurant->fetch_assoc();?>
                             <div class="col d-block">
                               <div class="card mb-3" style="max-width: 540px;">
-                                  <div class="row g-0">
+                                  <div class="row flex-md-row g-0">
                                     <div class="col-md-5 overflow-hidden">
                                       <img src="<?php echo $imageRestaurantDirectory.$row['image'];?>" class="img-fluid rounded-start" alt="...">
                                     </div>
@@ -128,7 +128,7 @@
                                         <h5 class="card-title"><?php echo $row['name'];?></h5>
                                         <p class="card-text">
                                           <?php 
-                                          $truncatedText = strlen($row['description']) > 100 ? substr($row['description'], 0, 100) . "..." : $$row['description'];
+                                          $truncatedText = strlen($row['description']) > 100 ? substr($row['description'], 0, 100) . "..." : $row['description'];
                                           echo $truncatedText;?>
                                         </p>
                                         <?php for ($k = 0, $stars = 5, $currentStars = $row['rating']; $k < $stars; $k++, $currentStars--)
@@ -168,7 +168,7 @@
               </div> 
               <div class="row">
                 <!--ADD CLASSES HERE d-flex align-items-stretch-->
-                <div class="col-lg-4 mb-3 d-flex align-items-stretch">
+                <div class="col-lg-4 col-md-6 mb-3 d-flex align-items-stretch">
                   <div class="card overflow-hidden">
                     <img src="https://picsum.photos/200/300" 
                     class="card-img-top" 
@@ -187,7 +187,7 @@
                   </div>
                 </div>
                 <!--ADD CLASSES HERE d-flex align-items-stretch-->
-                <div class="col-lg-4 mb-3 d-flex align-items-stretch">
+                <div class="col-lg-4 col-md-6 mb-3 d-flex align-items-stretch">
                   <div class="card overflow-hidden">
                     <img src="https://i.postimg.cc/4xVY64PV/porto-timoni-double-beach-corfu-greece-700.jpg" class="card-img-top" alt="Card Image" height = "200px" widht = "300x">
                     <div class="card-body d-flex flex-column">
@@ -203,7 +203,7 @@
                   </div>
                 </div>
                 <!--ADD CLASSES HERE d-flex align-items-stretch-->
-                <div class="col-lg-4 mb-3 d-flex align-items-stretch">
+                <div class="col-lg-4 col-md-6 mb-3 d-flex align-items-stretch">
                   <div class="card overflow-hidden">
                     <img src="https://i.postimg.cc/TYyLPJWk/tritons-fountain-valletta-malta-700.jpg" class="card-img-top" alt="Card Image" height = "200px" widht = "300x">
                     <div class="card-body d-flex flex-column">
@@ -222,11 +222,10 @@
             </div>
         </section>
         <!-- services -->
-        <section class="services">
+        <section class="services mt-3 mb-5 pb-4">
           <div class="container">
               <div class="row g-3">
                   <div class="col-12 text-center p-4">
-                      <a href="" class="btn btn-outline-primary mt-3 float-end">View all</a>
                       <h1 class="display-5 border-bottom">Services</h1>
                   </div>
                   <div class="col-lg-4 col-md-6 col-sm-12 text-center border rounded p-4">
@@ -241,24 +240,22 @@
                       <br>
                       <button class="btn btn-dark mt-4">Private Dining</button>
                   </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12 text-center border rounded p-4">
-                      <img src="<?php echo $imageDefaultDirectory?>treats.png" alt="..." height = "150"><br>
-                      Made to make your holidays more special.
-                      <br>
-                      <button class="btn btn-dark mt-4">Holiday Treats</button>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12 text-center border rounded p-4">
-                      <img src="<?php echo $imageDefaultDirectory?>sched.png" alt="..." height = "150"><br>
-                      See reserved days and choose yours with us.
-                      <br>
-                      <button class="btn btn-dark mt-4">Schedule Table</button>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12 text-center border rounded p-4">
-                      <img src="<?php echo $imageDefaultDirectory?>pay.png" alt="..." height = "150"><br>
-                      Payment transaction is flexible with different payment method.
-                      <br>
-                      <button class="btn btn-dark mt-4">Payment</button>
-                  </div>
+                  <div class="col-lg-4 col-md-6 col-sm-12 text-center border rounded p-4" aria-hidden="true">
+                      <img src="Assets/images/placeholder.png" class="card-img-top" alt="..." height = "150">
+                      <div class="card-body">
+                        <h5 class="card-title placeholder-glow">
+                          <span class="placeholder col-6"></span>
+                        </h5>
+                        <p class="card-text placeholder-glow">
+                          <span class="placeholder col-7"></span>
+                          <span class="placeholder col-4"></span>
+                          <span class="placeholder col-4"></span>
+                          <span class="placeholder col-6"></span>
+                          <span class="placeholder col-8"></span>
+                        </p>
+                        
+                      <a href="pages/service.php" class="btn btn-outline-primary mt-4">View all</a>
+                      </div>
               </div>
           </div>
         </section>
