@@ -32,6 +32,11 @@
     (left/start -> s, right/end -> e, top-> t, bottom -> b)
 
     margin auto -> center(m-auto)
+
+    text-center
+    border
+
+    
     <!-- main part -->
     <main class = "row mt-5 sample">
         <div class="try col-sm-6 col-md-4 text-center ">
