@@ -161,5 +161,21 @@ END //
 DELIMITER ;
 
 
-
+DELIMITER //
+CREATE PROCEDURE get_restaurant_cuisine(IN search_class INT)
+BEGIN
+    SELECT cuis.classificationID AS classification_id, cuis.restaurantID AS restaurant_id,
+    res.imageURL AS image, class.name AS classification, 
+    res.name AS restaurant_name, res.website AS website,
+    CONCAT(COALESCE(reg.region_name, ''), ", ", COALESCE(prov.province_name, ''), ", ", COALESCE(res.city_and_barangay, '')) AS address
+    FROM restaurant_cuisine AS cuis
+    INNER JOIN cuisine_classification AS class ON cuis.classificationID = class.id 
+    INNER JOIN restaurant AS res ON cuis.restaurantID = res.id
+    INNER JOIN table_province AS prov ON res.province_id = prov.province_id
+    INNER JOIN table_region AS reg ON prov.region_id = reg.region_id
+    WHERE cuis.classificationID = search_class
+    GROUP BY cuis.restaurantID
+    ORDER BY res.rating DESC;
+END //
+DELIMITER ;
 

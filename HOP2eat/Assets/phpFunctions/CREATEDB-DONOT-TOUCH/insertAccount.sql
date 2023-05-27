@@ -1,8 +1,27 @@
-INSERT INTO account
-(username, password, account_type)
-VALUES
-("aries", "ariestagle", 1),
-("mark", "markbeltran", 0),
-("kian", "kiandavid", 0),
-("kriesha", "krieshabuglosa", 0),
-("willie", "willieroldan", 0);
+
+INSERT INTO `account` (`id`, `username`, `email`, `password`, `first_name`, `last_name`, `profileImage`, `account_type`, `created_at`, `updated_at`) VALUES
+(1, 'aries', 'aries@email.com\r\n', 'ariestagle', NULL, NULL, NULL, 1, '2023-05-25 14:45:09', '2023-05-25 15:41:47'),
+(2, 'mark', NULL, 'markbeltran', NULL, NULL, NULL, 0, '2023-05-25 14:45:09', '2023-05-25 14:45:09'),
+(3, 'kian', NULL, 'kiandavid', NULL, NULL, NULL, 0, '2023-05-25 14:45:09', '2023-05-25 14:45:09'),
+(4, 'kriesha', NULL, 'krieshabuglosa', NULL, NULL, NULL, 0, '2023-05-25 14:45:09', '2023-05-25 14:45:09'),
+(5, 'willie', NULL, 'willieroldan', NULL, NULL, NULL, 0, '2023-05-25 14:45:09', '2023-05-25 14:45:09'),
+(6, 'joseph_a', 'JosephAgoncillo@gmail.com', '111111111', 'Joseph', 'Agoncillo', 'joseph_pic', 1, '2023-05-25 16:24:31', '2023-05-25 16:24:31'),
+(7, 'kervinss', 'Harold02@gmail.com', '22222222', 'Harold Kervin', 'De Mesa', 'harold_pic', 0, '2023-05-25 16:24:31', '2023-05-25 16:24:31'),
+(8, 'Kylie.mavs', 'Kyliemavs@gmail.com', '33333333', 'Kylie', 'Francisco', 'kylie_pic', 0, '2023-05-25 16:24:31', '2023-05-25 16:24:31'),
+(9, 'avey_avey', 'AverySanchez@gmail.com', '44444444', 'Avery', 'Sanchez', 'avey_pic', 1, '2023-05-25 16:24:31', '2023-05-25 16:24:31'),
+(10, 'Timothee12', 'TimothyFlores@gmail.com', '55555555', 'Timothy', 'Flores', 'timothy_pic', 0, '2023-05-25 16:24:31', '2023-05-25 16:24:31'),
+(11, 'Clarence14', 'Clarence14@gmail.com', '66666666', 'John Clarence', 'Perez', 'clarence_pic', 0, '2023-05-25 16:24:31', '2023-05-25 16:24:31'),
+(12, 'Im_Ritchie', 'RitchieGatus@gmail.com', '77777777', 'Ritchie', 'Gatus', 'ritchie_pic', 0, '2023-05-25 16:24:31', '2023-05-25 16:24:31'),
+(13, 'Maria_sleepyhead', 'MariaBautista@gmail.com', '88888888', 'Maria Lena', 'Bautista', 'maria_pic', 0, '2023-05-25 16:24:31', '2023-05-25 16:24:31'),
+(14, 'Art_gab01', 'ArtGrabriel01@gmail.com', '99999999', 'Art Gabriel', 'Rivera', 'art_pic', 0, '2023-05-25 16:24:31', '2023-05-25 16:24:31'),
+(15, 'helenn_23', 'Helen23@gmail.com', '10101010', 'Helen', 'Garcia', 'helen_pic', 0, '2023-05-25 16:24:31', '2023-05-25 16:24:31'),
+(16, 'Rowinwin', 'RowinCastro@gmail.com', '11111110', 'Rowin', 'Castro', 'rowin_pic', 0, '2023-05-25 16:24:31', '2023-05-25 16:24:31'),
+(17, 'Lucygurl10', 'LucyAguilar10@gmail.com', '12121212', 'Lucy', 'Aguila', 'lucy_pic', 0, '2023-05-25 16:24:31', '2023-05-25 16:24:31'),
+(18, 'shineCrystal', 'CrystalAndrade@gmail.com', '13131313', 'CrystaL Mae', 'Andrade', 'crystal_pic', 0, '2023-05-25 16:24:31', '2023-05-25 16:24:31'),
+(19, 'Mary123', 'MaryLopez@gmail.com', '14141414', 'Mary', 'Lopez', 'mary_pic', 0, '2023-05-25 16:24:31', '2023-05-25 16:24:31'),
+(20, 'Carlshibe', 'CarlGonzales15@gmail.com', '15151515', 'Carl Justin', 'Gonzales', 'carl_pic', 0, '2023-05-25 16:24:31', '2023-05-25 16:24:31'),
+(21, 'Error_Earl', 'EarlClinton00@gmail.com', '16161616', 'Earl Clinton', 'Garcia', 'earl_pic', 0, '2023-05-25 16:24:31', '2023-05-25 16:24:31'),
+(22, 'Hannsz143', 'HannsAndrei34@gmail.com', '17171717', 'Hanns Andrei', 'Hernaez', 'hanns_pic', 0, '2023-05-25 16:24:31', '2023-05-25 16:24:31'),
+(23, 'Trish-aaa28', 'Trisha.Ferrer@gmail.com', '18181818', 'Trisha', 'Ferre', 'trisha_pic', 0, '2023-05-25 16:24:31', '2023-05-25 16:24:31'),
+(24, 'Vinceonle', 'VinceMercado@gmail.com', '19191919', 'Vince Aaron', 'Mercado', 'vince_pic', 0, '2023-05-25 16:24:31', '2023-05-25 16:24:31'),
+(25, 'Benben2', 'BenPascual@gmail.com', '20202020', 'Benedict', 'Pascual', 'ben_pic', 0, '2023-05-25 16:24:31', '2023-05-25 16:24:31');

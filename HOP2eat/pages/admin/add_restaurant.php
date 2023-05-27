@@ -14,60 +14,65 @@
     <!-- navbar -->
     <?php require_once "../../Assets/navbar-footer/navbar.php"?>
     <!-- header -->
-   
+   <!-- header -->
+   <header>
+      <section class="py-5 text-center container text-bg-tertiary">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">Add restaurant</h1>
+        </div>
+      </div>
+      </section>
+    </header>
     <!-- main part -->
     <main class = "container text-bg-light mt-5 mb-5">
-        <form action="addRestaurant.php" method="post" enctype="multipart/form-data">
-            <input type="file" id="picture" name="picture" onchange="previewImage(event)"  accept=".jpg, .jpeg, .png" required>
-            
-            <label for="name">Restaurant name</label>
-            <input type="text" name="name" id="name" required>
-            <label for="website">Website URL</label>
-            <input type="text" name="website" id="website" required>
-            
-            <!-- newly added location no backend-->
-            <label for="location">country</label>
-            <select name="location" id="location" required>
-                <option value="">---</option>
-                <?php
-                    //get available locations in the sql
-                    $sql = "SELECT * from location ORDER BY CONCAT(city, ' ', region_or_state, ' ', country) ASC";
-                    $result = $conn->query($sql);
+        <!-- display -->
+    <section>
+            <div class="row p-3 m-3 border rounded">
+                <div class="col-lg-3 mt-3">
+                    <img src="#" alt="Preview Image" id = "main_picture" class="rounded img-fluid">
+                </div>
+                <div class="col-lg-9 mt-md-3">  
+                    <h2 id = "main_title">Preview Title</h2>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <br>
+                    <span class = text-secondary id = "main_address">Preview Address</span>
+                    <br><br>
+                    <span id = "main_description">Preview Description</span>
+                    <br>
+                </div>
+            </div>
+        </section>
+        <!-- form below -->
+        <section class = "row">
+            <div class="col">
+                <form action="addRestaurant.php" method="post" enctype="multipart/form-data">
+                    <input type="file" id="picture" name="picture" onchange="previewImage(event)"  accept=".jpg, .jpeg, .png" required>
                     
-                    //display it as choices
-                    while ($row = $result->fetch_assoc())
-                    {
-                        $id = $row['id'];
-                        $country = $row['country'];
-                        $region = $row['region_or_state'];
-                        $city = $row['city'];
-                        echo "<option value = $id>$city, $region, $country - $id</option>";
-                    }
-                ?>
-            </select>
-            <br>
-            <!-- newly added cuisine no backend-->
-                
-            <input type="submit" name = "add" value="Add restaurant">
-        </form>
-        <div class="row p-3 m-3 border rounded">
-            <div class="col-lg-3 mt-3">
-                <img src="#" alt="Preview Image" id = "main_picture" class="rounded img-fluid">
-            </div>
-            <div class="col-lg-9 mt-md-3">  
-                <h2 id = "main_title">Preview Title</h2>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>'
-                <i class="fa fa-star"></i>'
-                <br>
-                <span class = text-secondary id = "main_address">Preview Address</span>
-                <br><br>
-                <span id = "main_description"></span>
-                <br>
-            </div>
-        </div>
+                    <label for="name">Restaurant name</label>
+                    <input type="text" name="name" id="name" required oninput = "previewText()">
+                    <label for="website">Website URL</label>
+                    <input type="text" name="website" id="website" required>
+                    
+                    <!-- newly added location no backend-->
+                    <label for="location">country</label>
+                    <select name="location" id="location" required>
+                        <option value="">---</option>asdasd
+                    </select>
+                    <br>
+                    <!-- newly added cuisine no backend-->
+                    <textarea name="descriptipn" id="description" cols="30" rows="10" oninput = "previewText()"></textarea>
+                    <input type="submit" name = "add" value="Add restaurant">
+                </form>
+            </div>   
+        </section>
+
+        
+        
     
     </main>
 
@@ -158,6 +163,8 @@
 
     <!-- footer -->
     <?php require_once "../../Assets/navbar-footer/footer.html"?>
+    <!-- <script src = "../../../Assets/js/bootstrapJS/bootstrap.bundle.js"></script> -->
+   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -62,6 +62,26 @@
                         <br>
                     </div>
                 </div>
+                <div class="row border shadow-sm rounded mb-3">
+                    <div class="col-md-6 mt-md-3 p-md-5 p-3">
+                        <h1 class="display-6">Kriesha Mae</h1>
+                        I am Kriesha Mae Buglosa, one of the UI designers of this project. Milton Glaser once stated, "There are three responses to a piece of design - yes, no, and WOW! Wow is the one to aim for." Let's always do our best for our dreams to come true.
+                        <br>
+                    </div>
+                    <div class="col-md-6 p-md-5 p-3">
+                        <img src="<?php echo $imageDefaultDirectory?>kriesha.jpg" alt="" class="rounded img-fluid img-thumbnail">
+                    </div>
+                </div>
+                <div class="row border shadow-sm rounded mb-3">
+                    <div class="col-md-6 p-md-5 p-3">
+                        <img src="<?php echo $imageDefaultDirectory?>kian.jpg" alt="" class="rounded img-fluid img-thumbnail">
+                    </div>
+                    <div class="col-md-6 mt-md-3 p-md-5 p-3">
+                        <h1 class="display-6">Kian</h1>
+                        I am Kian David, and I'm part of the UI Designer in this group. All my life I've been in my comfort zone, I need to get out of it because a bigger world is out there waiting for me.
+                        <br>
+                    </div>
+                </div>
                 
             </div>
         </div>
@@ -69,6 +89,8 @@
     </main>
     <!-- footer -->
     <?php require_once "../Assets/navbar-footer/footer.html"?>
+    <!-- <script src = "../../Assets/js/bootstrapJS/bootstrap.bundle.js"></script> -->
+   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -41,7 +41,7 @@
     <!-- navbar -->
     <?php require_once "Assets/navbar-footer/navbar.php"?>
   <!-- header -->
-    <header class="container-fluid p-0">
+    <header class="container-fluid p-0 vh-25s">
         
         <!-- carousel headeer -->
         <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -53,15 +53,12 @@
             <div class="carousel-inner">
               <div class="carousel-item active">
                     <div class="row text-light text-center h-100"> 
-                        <div class="col-md-4 h-100"></div>
-                        <div class="col-md-4 pt-5 pb-5 mt-5 mb-5 h-100">
+                        <div class="col-md-4 pt-5 pb-5 m-auto h-100">
                             <h1>WELCOME TO HOP2eat</h1>
                             <p>
                                 Still haven’t found that sweet spot?
                                 Use our search filters to help you find your next amazing meal.
                             </p>
-                        </div>
-                        <div class="col-md-4 h-100">
                         </div>
                     </div>
               </div>
@@ -119,7 +116,7 @@
               <div class="container p-4">
                     <h2 class = "text-center display-4 ">Famous restaurants </h2>
                     <div class="d-flex justify-content-end">
-                        <a href="" class="btn btn-outline-info align-self-end">View all</a>
+                        <a href="" class="btn btn-outline-info align-self-end mb-3">View all</a>
                     </div>
                     <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
@@ -133,7 +130,7 @@
                               <div class="card mb-3" style="max-width: 540px;">
                                   <div class="row flex-md-row g-0">
                                     <div class="col-md-5 overflow-hidden">
-                                      <img src="<?php echo $imageRestaurantDirectory.$row['image'];?>" class="img-fluid rounded-start" alt="...">
+                                      <img src="<?php echo $imageRestaurantDirectory.$row['image'];?>" class="m-auto rounded-start" alt="..." height="300px">
                                     </div>
                                     <div class="col-md-7">
                                       <div class="card-body">
@@ -315,6 +312,6 @@
 
     <!-- bootstrap script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-  
+    <!-- <script src = "../Assets/js/bootstrapJS/bootstrap.bundle.js"></script> -->
   </body>
 </html>
