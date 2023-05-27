@@ -49,3 +49,4 @@ VALUES ('La Trattoria', 'Authentic Italian cuisine with a cozy ambiance.', '+1-1
         ('The Oriental Tea House', 'Immerse yourself in the world of tea with a wide selection of Asian tea varieties.', '+1-890-123-4567', 'www.orientalteahouse.com', 'info@orientalteahouse.com', 'Romblon, San Agustin', 27, 'resto48.jpg'),
         ('Steak & Seafood Grill', 'A steak and seafood grill offering the best of land and sea on a single menu.', '+1-901-234-5678', 'www.steakseafoodgrill.com', 'info@steakseafoodgrill.com', 'Bontoc, Poblacion', 71, 'resto49.jpg'),
         ('Spice Junction', 'Embark on a culinary journey through the flavors of India at this Indian restaurant.', '+1-012-345-6789', 'www.spicejunction.com', 'info@spicejunction.com', 'Jordan, Rizal', 39, 'resto50.jpg');
+

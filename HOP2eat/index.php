@@ -34,14 +34,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
-    <link rel="stylesheet" href="Assets/css/style.css">
+    <link rel="stylesheet" href="Assets/css/style.css?v=2">
 </head>
 <body class="index">
     
     <!-- navbar -->
     <?php require_once "Assets/navbar-footer/navbar.php"?>
   <!-- header -->
-    <header class="container-fluid p-0 vh-25s">
+    <header class="container-fluid p-0">
         
         <!-- carousel headeer -->
         <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -52,8 +52,8 @@
               </div>            
             <div class="carousel-inner">
               <div class="carousel-item active">
-                    <div class="row text-light text-center h-100"> 
-                        <div class="col-md-4 pt-5 pb-5 m-auto h-100">
+                    <div class="row text-light text-center"> 
+                        <div class="col-md-4 pt-5 pb-5 m-auto  carousel-content">
                             <h1>WELCOME TO HOP2eat</h1>
                             <p>
                                 Still haven’t found that sweet spot?
@@ -63,29 +63,23 @@
                     </div>
               </div>
               <div class="carousel-item">
-                        <div class="row text-light shadow-md text-center"> 
-                            <div class="col-md-4 h-100"></div>
-                            <div class="col-md-4 pt-5 pb-5 mt-5 mb-5 h-100">
+                        <div class="row text-light shadow-md text-center  carousel-content"> 
+                            <div class="col-md-4 pt-5 pb-5 m-auto">
                                 <h1>Check out the famous cuisines</h1>
                                 <p>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim nulla totam earum facere est fugiat, optio recusandae rerum vero ab!
                                 </p>
                             </div>
-                            <div class="col-md-4 h-100">
-                            </div>
                         </div>
               </div>
               <div class="carousel-item">
                         <div class="row text-bg-dark text-center"> 
-                            <div class="col-md-4 h-100"></div>
-                            <div class="col-md-4 pt-5 pb-5 mt-5 mb-5 h-100">
+                            <div class="col-md-4 pt-5 pb-5 carousel-content">
                                 <h1>Quick Reservation</h1>
                                 <p>
                                     Still haven’t found that sweet spot?
                                     Use our search filters to help you find your next amazing meal.
                                 </p>
-                            </div>
-                            <div class="col-md-4 h-100">
                             </div>
                         </div>
                 </div>

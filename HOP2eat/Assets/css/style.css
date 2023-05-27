@@ -2,7 +2,10 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 /* @import url('bootstrapCSS/bootstrap.min.css'); */
 
-  
+.carousel-content {
+  height: 300px;
+}
+
 /* for background only */
 .index > header > .carousel > .carousel-inner > .carousel-item:nth-child(1) > .row 
 {
