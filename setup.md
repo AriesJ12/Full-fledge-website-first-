@@ -14,6 +14,7 @@
 5. open your browser and open phpmyadmin
     - type this in the url (    localhost/phpmyadmin       )
 
+
 6. click the New keyword at the right
 
 
@@ -26,7 +27,7 @@
     - go back to your browser(phpmyadmin)
     - paste all the contents in the query box (click go to execute)
 
-9. you have now created our database
+9. you have now created our database(yey)
 
 10. click our database at the right(HOP2eat)
 
@@ -35,3 +36,6 @@
 12. copy and paste the other remaining files in the query box(PRESS GO TO EXECUTE)
     - do it in this order
     - locations -> restaurant -> cuisine -> accounts
+
+13. website should be working
+    - go to (    localhost/Full-fledge-website-first-/HOP2eat )

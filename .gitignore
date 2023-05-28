@@ -130,5 +130,3 @@ dist
 .pnp.*
 
 
-#upload directory of restaurant picture
-restaurantWeb/Assets/images/restaurantImages

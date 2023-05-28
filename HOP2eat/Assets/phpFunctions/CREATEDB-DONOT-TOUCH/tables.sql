@@ -67,8 +67,7 @@ CREATE TABLE restaurant
 CREATE TABLE cuisine_classification
 (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) UNIQUE NOT NULL,
-    headerImage VARCHAR(255)
+    name VARCHAR(255) UNIQUE NOT NULL
 );
 
 -- create a junction table for restaurant and cuisine
