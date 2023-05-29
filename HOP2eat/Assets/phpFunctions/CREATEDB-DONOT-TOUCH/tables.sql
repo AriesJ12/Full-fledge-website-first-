@@ -115,63 +115,102 @@ SET rating = (
 WHERE id = NEW.restaurant_id;
 
 
+
+
 -- procedures all here
--- get all restaurants
-Delimiter //
-create procedure get_restaurant()
+-- restaurants
+-- add restaurant
+DELIMITER //
+CREATE PROCEDURE add_restaurant(
+    IN newName VARCHAR(255),
+    IN newDescription TEXT,
+    IN newPhone VARCHAR(20),
+    IN newWebsite VARCHAR(255),
+    IN newEmail VARCHAR(255),
+    IN newCityAndBarangay VARCHAR(255),
+    IN newProvinceId INT,
+    IN newImageUrl VARCHAR(255)
+)
 BEGIN
-    SELECT res.id AS id, res.name AS name, res.description as description, res.phone as phone, 
-    res.website as website, res.email as email, res.rating as rating, res.ImageURL as image, res.active as active,
+    INSERT INTO restaurant (name, description, phone, website, email, city_and_barangay, province_id, ImageURL)
+    VALUES (newName, newDescription, newPhone, newWebsite, newEmail, newCityAndBarangay, newProvinceId, newImageUrl);
+END //
+DELIMITER ;
+
+-- updates restaurant
+DELIMITER //
+CREATE PROCEDURE updateRestaurant(
+    IN restaurantId INT,
+    IN newName VARCHAR(255),
+    IN newDescription TEXT,
+    IN newPhone VARCHAR(20),
+    IN newWebsite VARCHAR(255),
+    IN newEmail VARCHAR(255),
+    IN newCityAndBarangay VARCHAR(255),
+    IN newProvinceId INT,
+    IN newRating DECIMAL(3, 2),
+    IN newImageUrl VARCHAR(255),
+    IN newActive TINYINT(1)
+)
+BEGIN
+    UPDATE restaurant
+    SET name = newName,
+        description = newDescription,
+        phone = newPhone,
+        website = newWebsite,
+        email = newEmail,
+        city_and_barangay = newCityAndBarangay,
+        province_id = newProvinceId,
+        rating = newRating,
+        ImageURL = newImageUrl,
+        active = newActive
+    WHERE id = restaurantId;
+END //
+DELIMITER ;
+
+-- get all restaurant
+DELIMITER //
+CREATE PROCEDURE get_restaurant()
+BEGIN
+    SELECT res.id AS id, res.name AS name, res.description AS description, res.phone AS phone, 
+    res.website AS website, res.email AS email, res.rating AS rating, res.ImageURL AS image, res.active AS active,
     CONCAT(COALESCE(reg.region_name, ''), ", ", COALESCE(prov.province_name, ''), ", ", COALESCE(res.city_and_barangay, '')) AS address
-    FROM restaurant as res
+    FROM restaurant AS res
     INNER JOIN table_province AS prov ON res.province_id = prov.province_id
     INNER JOIN table_region AS reg ON prov.region_id = reg.region_id
+    WHERE res.active = 1
     ORDER BY rating DESC;
 END //
-Delimiter ;
+DELIMITER ;
 
--- search bar 
+
+
+
+-- search bar restaurant
 DELIMITER //
-
 CREATE PROCEDURE get_restaurant_filter(IN search_name VARCHAR(50), IN search_location VARCHAR(50))
 BEGIN
     SELECT res.id AS id, res.name AS name, res.description AS description, res.phone AS phone, 
-        res.website AS website, res.email AS email, res.rating AS rating, res.ImageURL AS image, res.active as active,
+        res.website AS website, res.email AS email, res.rating AS rating, res.ImageURL AS image, res.active AS active,
         CONCAT(COALESCE(reg.region_name, ''), ", ", COALESCE(prov.province_name, ''), ", ", COALESCE(res.city_and_barangay, '')) AS address
     FROM restaurant AS res
     INNER JOIN table_province AS prov ON res.province_id = prov.province_id
     INNER JOIN table_region AS reg ON prov.region_id = reg.region_id
-    WHERE (search_name = '' OR res.name LIKE CONCAT('%', search_name, '%'))
+    WHERE res.active = 1
+        AND (search_name = '' OR res.name LIKE CONCAT('%', search_name, '%'))
         AND (search_location = '' OR CONCAT(COALESCE(reg.region_name, ''), ", ", COALESCE(prov.province_name, ''), ", ", COALESCE(res.city_and_barangay, '')) LIKE CONCAT('%', search_location, '%'))
     ORDER BY rating DESC;
 END //
-
 DELIMITER ;
 
--- procedure for getting all the dish
-DELIMITER //
-CREATE PROCEDURE get_cuisine()
-BEGIN
-    SELECT cuis.classificationID AS classification_id, cuis.restaurantID AS restaurant_id,
-    cuis.imageURL AS image, cuis.name AS cuisine_name, class.name AS classification, 
-    res.name AS restaurant_name, res.website AS website, res.active AS active,
-    CONCAT(COALESCE(reg.region_name, ''), ", ", COALESCE(prov.province_name, ''), ", ", COALESCE(res.city_and_barangay, '')) AS address
-    FROM restaurant_cuisine AS cuis
-    INNER JOIN cuisine_classification AS class ON cuis.classificationID = class.id 
-    INNER JOIN restaurant AS res ON cuis.restaurantID = res.id
-    INNER JOIN table_province AS prov ON res.province_id = prov.province_id
-    INNER JOIN table_region AS reg ON prov.region_id = reg.region_id
-    ORDER BY res.rating DESC;
-END //
 
-DELIMITER ;
 
 -- procedure for selecting ONE DISH from restaurant
 DELIMITER //
 CREATE PROCEDURE get_restaurant_cuisine(IN search_class INT)
 BEGIN
     SELECT cuis.classificationID AS classification_id, cuis.restaurantID AS restaurant_id,
-    res.imageURL AS image, class.name AS classification, 
+    res.ImageURL AS image, class.name AS classification, 
     res.name AS restaurant_name, res.website AS website, res.active AS active,
     CONCAT(COALESCE(reg.region_name, ''), ", ", COALESCE(prov.province_name, ''), ", ", COALESCE(res.city_and_barangay, '')) AS address
     FROM restaurant_cuisine AS cuis
@@ -179,8 +218,54 @@ BEGIN
     INNER JOIN restaurant AS res ON cuis.restaurantID = res.id
     INNER JOIN table_province AS prov ON res.province_id = prov.province_id
     INNER JOIN table_region AS reg ON prov.region_id = reg.region_id
-    WHERE cuis.classificationID = search_class
+    WHERE res.active = 1 AND cuis.classificationID = search_class
     GROUP BY cuis.restaurantID
+    ORDER BY res.rating DESC;
+END //
+DELIMITER ;
+
+
+
+
+-- ACCOUNT BELOW
+-- account update
+
+DELIMITER //
+CREATE PROCEDURE update_account(IN accountId INT, IN newEmail VARCHAR(255), IN newPassword VARCHAR(255))
+BEGIN
+    UPDATE account
+    SET email = newEmail, password = newPassword
+    WHERE id = accountId;
+END //
+DELIMITER ;
+
+
+-- account delete
+
+DELIMITER //
+CREATE PROCEDURE active_account(IN accountId INT, IN newActiveStatus TINYINT(1))
+BEGIN
+    UPDATE account
+    SET active = newActiveStatus
+    WHERE id = accountId;
+END //
+DELIMITER ;
+
+-- cuisine BELOW
+-- procedure for getting all the dish
+DELIMITER //
+CREATE PROCEDURE get_cuisine()
+BEGIN
+    SELECT cuis.classificationID AS classification_id, cuis.restaurantID AS restaurant_id,
+    cuis.ImageURL AS image, cuis.name AS cuisine_name, class.name AS classification, 
+    res.name AS restaurant_name, res.website AS website, res.active AS active,
+    CONCAT(COALESCE(reg.region_name, ''), ", ", COALESCE(prov.province_name, ''), ", ", COALESCE(res.city_and_barangay, '')) AS address
+    FROM restaurant_cuisine AS cuis
+    INNER JOIN cuisine_classification AS class ON cuis.classificationID = class.id 
+    INNER JOIN restaurant AS res ON cuis.restaurantID = res.id
+    INNER JOIN table_province AS prov ON res.province_id = prov.province_id
+    INNER JOIN table_region AS reg ON prov.region_id = reg.region_id
+    WHERE res.active = 1 AND cuis.active = 1
     ORDER BY res.rating DESC;
 END //
 DELIMITER ;
@@ -188,10 +273,10 @@ DELIMITER ;
 
 -- cuisine filter
 DELIMITER //
-CREATE PROCEDURE get_cuisine_filter(IN search_name VARCHAR(50),IN search_class INT,IN search_location VARCHAR(50))
+CREATE PROCEDURE get_cuisine_filter(IN search_name VARCHAR(50), IN search_class INT, IN search_location VARCHAR(50))
 BEGIN
     SELECT cuis.classificationID AS classification_id, cuis.restaurantID AS restaurant_id,
-    cuis.imageURL AS image, cuis.name AS cuisine_name, class.name AS classification, 
+    cuis.ImageURL AS image, cuis.name AS cuisine_name, class.name AS classification, 
     res.name AS restaurant_name, res.website AS website, res.active AS active,
     CONCAT(COALESCE(reg.region_name, ''), ", ", COALESCE(prov.province_name, ''), ", ", COALESCE(res.city_and_barangay, '')) AS address
     FROM restaurant_cuisine AS cuis
@@ -199,9 +284,129 @@ BEGIN
     INNER JOIN restaurant AS res ON cuis.restaurantID = res.id
     INNER JOIN table_province AS prov ON res.province_id = prov.province_id
     INNER JOIN table_region AS reg ON prov.region_id = reg.region_id
-    WHERE (search_class IS NULL OR cuis.classificationID = search_class)
+    WHERE res.active = 1 AND cuis.active = 1
+        AND (search_class IS NULL OR cuis.classificationID = search_class)
         AND (search_name = '' OR cuis.name LIKE CONCAT('%', search_name, '%'))
         AND (search_location = '' OR CONCAT(COALESCE(reg.region_name, ''), ", ", COALESCE(prov.province_name, ''), ", ", COALESCE(res.city_and_barangay, '')) LIKE CONCAT('%', search_location, '%'))
     ORDER BY res.rating DESC;
 END //
 DELIMITER ;
+
+
+-- add cuisine
+DELIMITER //
+CREATE PROCEDURE add_cuisine(
+    IN restaurantId INT,
+    IN classificationId INT,
+    IN newName VARCHAR(255),
+    IN newImageUrl VARCHAR(255)
+)
+BEGIN
+    INSERT INTO restaurant_cuisine (restaurantId, classificationID, name, ImageURL)
+    VALUES (restaurantId, classificationId, newName, newImageUrl);
+END //
+DELIMITER ;
+
+
+-- update cuisine
+
+DELIMITER //
+CREATE PROCEDURE update_cuisine(
+    IN cuisineId INT,
+    IN newName VARCHAR(255),
+    IN newImageUrl VARCHAR(255)
+)
+BEGIN
+    UPDATE restaurant_cuisine
+    SET name = newName, ImageURL = newImageUrl
+    WHERE id = cuisineId;
+END //
+DELIMITER ;
+
+
+-- delete cuisine
+DELIMITER //
+CREATE PROCEDURE active_cuisine(
+    IN cuisineId INT,
+    IN newActiveStatus TINYINT(1)
+)
+BEGIN
+    UPDATE restaurant_cuisine
+    SET active = newActiveStatus
+    WHERE id = cuisineId;
+END //
+DELIMITER ;
+
+
+
+-- RATING BELOW
+-- add review
+
+DELIMITER //
+CREATE PROCEDURE add_rating(
+    IN restaurantId INT,
+    IN accountId INT,
+    IN ratingValue DECIMAL(3, 2),
+    IN comment TEXT
+)
+BEGIN
+    INSERT INTO rating (restaurant_id, accountId, rating_value, comment)
+    VALUES (restaurantId, accountId, ratingValue, comment);
+END //
+DELIMITER ;
+
+
+-- delete rating
+
+DELIMITER //
+CREATE PROCEDURE active_rating(IN ratingId INT, IN newActiveStatus TINYINT(1))
+BEGIN
+    UPDATE rating
+    SET active = newActiveStatus
+    WHERE id = ratingId;
+END //
+DELIMITER ;
+
+-- display rating
+
+DELIMITER //
+CREATE PROCEDURE display_rating(
+    IN accountId INT,
+    IN restaurantId INT
+)
+BEGIN
+    IF accountId IS NOT NULL AND restaurantId IS NOT NULL THEN
+        -- Filter by both account ID and restaurant ID
+        SELECT *
+        FROM rating
+        WHERE active = 1 AND accountId = accountId AND restaurant_id = restaurantId;
+    ELSEIF accountId IS NOT NULL THEN
+        -- Filter by account ID only
+        SELECT *
+        FROM rating
+        WHERE active = 1 AND accountId = accountId;
+    ELSEIF restaurantId IS NOT NULL THEN
+        -- Filter by restaurant ID only
+        SELECT *
+        FROM rating
+        WHERE active = 1 AND restaurant_id = restaurantId;
+    ELSE
+        -- No filters applied
+        SELECT *
+        FROM rating
+        WHERE active = 1;
+    END IF;
+END //
+DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE active_restaurant(IN restaurant_id INT)
+BEGIN
+    UPDATE restaurant
+    SET active = 0
+    WHERE id = restaurant_id;
+END //
+DELIMITER ;
+
+
+
