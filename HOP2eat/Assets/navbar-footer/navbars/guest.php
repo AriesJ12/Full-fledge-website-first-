@@ -1,38 +1,7 @@
-<?php
-    //get basae name
-    $current_file = basename( $_SERVER['PHP_SELF']);
-
-    //store all pages in an array
-    $pages_user = array("find_something.php", "cuisine.php", "reservation.php", "service.php", "about_us.php", "login.php", "register.php","profile.php", "logout.php");
-    $pages_admin = array("add_restaurant.php", "view_user.php");
-    $index = array("index");
-    
-    //set the directory
-    if(in_array($current_file, $pages_user))
-    {
-        $index_page_directory = "../";
-        $user_page_directory = "./";
-        $admin_page_directory = "admin/";        
-    }
-    else if(in_array($current_file, $pages_admin))
-    {
-        $index_page_directory =  "../../";
-        $user_page_directory = "../";
-        $admin_page_directory = "./";        
-    }
-    else
-    {
-        $index_page_directory = "./";
-        $user_page_directory = "pages/";
-        $admin_page_directory = "pages/admin/";        
-    }
-?>
-
-
-    <nav class="navbar sticky-md-top navbar-expand-lg navbar-light bg-light border">
+<nav class="navbar sticky-md-top navbar-expand-lg navbar-light bg-light border">
       <div class="container-fluid">
           <a class="navbar-brand" href="<?php echo $index_page_directory?>index.php">
-              <img src="<?php echo $imageDefaultDirectory?>logo-black3.png" 
+              <img src="<?php echo $logo_directory?>logo-black3.png" 
               class = "navbar-brand"
               alt="">
           </a>
@@ -53,16 +22,25 @@
               <li class="nav-item">
                   <a class="nav-link" href="<?php echo $user_page_directory?>service.php">Services</a>
               </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="<?php echo $user_page_directory?>about_us.php">About us</a>
-              </li>
+              <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="about_us_dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    About us
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="about_us_dropdown">
+                    <li><a class="dropdown-item" href="<?php echo $user_page_directory?>about_us.php">Who are we?</a></li>
+                    <li><a class="dropdown-item" href="<?php echo $user_page_directory?>faqs.php">Faqs</a></li>
+                    </ul>
+                </li>
               </ul>
               
           </div>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <form class="d-flex w-75" role="search" method = "GET" action = "<?php echo $user_page_directory;?>search.php">
+            <div class="input-group">              
+                <input type="text" aria-label="find_name" class="form-control w-25" id="find_name" name = "find_name" placeholder="Restaurant">
+                <input type="text" aria-label="find_location" class="form-control w-50" id="find_location" name = "find_location" placeholder = "region, province, city/barangay">
+            </div>
             <button class="btn btn-outline-success me-2" type="submit">Search</button>
-          </form>
+        </form>    
     
           <div class="align-items-middle">
               <button type="button" class="btn btn-danger"><a href="<?php echo $user_page_directory?>login.php" class = "nav-link">Login</a></button>
