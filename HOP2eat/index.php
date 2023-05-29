@@ -51,34 +51,42 @@
                 <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="2" aria-label="Slide 3"></button>
               </div>            
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                    <div class="row text-light text-center"> 
-                        <div class="col-md-4 pt-5 pb-5 m-auto  carousel-content">
+              <div class="carousel-item active" data-bs-interval="3500" class="carousel">
+                    <div class="row text-light text-center carousel-content"> 
+                        <div class="col-md-6 pt-5 pb-5 m-auto">
                             <h1>WELCOME TO HOP2eat</h1>
                             <p>
                                 Still haven’t found that sweet spot?
                                 Use our search filters to help you find your next amazing meal.
                             </p>
+
+                            <form class="d-flex" role="search" method = "GET" action = "<?php echo $user_page_directory;?>search.php">
+                                <div class="input-group">              
+                                  <input type="text" aria-label="find_name" class="form-control w-25" id="find_name" name = "find_name" placeholder="Restaurant">
+                                  <input type="text" aria-label="find_location" class="form-control w-50" id="find_location" name = "find_location" placeholder = "region, province, city/barangay">
+                              </div>
+                                  <button class="btn btn-outline-light mx-2" type="submit">Search</button>
+                          </form>
                         </div>
                     </div>
               </div>
-              <div class="carousel-item">
-                        <div class="row text-light shadow-md text-center  carousel-content"> 
-                            <div class="col-md-4 pt-5 pb-5 m-auto">
-                                <h1>Check out the famous cuisines</h1>
+              <div class="carousel-item" data-bs-interval="3500" class="carousel">
+                        <div class="row text-light shadow-md text-center carousel-content d-flex justify-content-end"> 
+                            <div class="col-md-4 pt-5 pb-5 my-auto">
+                                <h1 class="display-4 fw-bold">Quick Reservation</h1>
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim nulla totam earum facere est fugiat, optio recusandae rerum vero ab!
+                                    Still haven’t found that sweet spot?
+                                    Use our search <br> filters to help you find your next amazing meal.
                                 </p>
                             </div>
                         </div>
               </div>
-              <div class="carousel-item">
-                        <div class="row text-bg-dark text-center"> 
-                            <div class="col-md-4 pt-5 pb-5 carousel-content">
-                                <h1>Quick Reservation</h1>
+              <div class="carousel-item" data-bs-interval="3500" class="carousel">
+                        <div class="row text-bg-dark text-center carousel-content"> 
+                            <div class="col-md-4 pt-5 pb-5 m-auto">
+                                <h1>Check out the famous cuisines</h1>
                                 <p>
-                                    Still haven’t found that sweet spot?
-                                    Use our search filters to help you find your next amazing meal.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim nulla totam earum facere est fugiat, optio recusandae rerum vero ab!
                                 </p>
                             </div>
                         </div>
@@ -88,7 +96,7 @@
     </header>
     <main>
         <!-- about us -->
-        <section class="text-bg-light">
+        <section class="text-bg-dark">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 p-md-5 p-3">

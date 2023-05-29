@@ -3,7 +3,7 @@
 /* @import url('bootstrapCSS/bootstrap.min.css'); */
 
 .carousel-content {
-  height: 300px;
+  height: 500px;
 }
 
 /* for background only */
@@ -14,12 +14,13 @@
 }
 .index > header > .carousel >.carousel-inner > .carousel-item:nth-child(2) > .row 
 {
-    background-image: url("../images/homepage/cuisine.png");
+    background-image: url("../images/homepage/homebg3.jpeg");
     background-size: auto;
+    
 }
 .index > header > .carousel >.carousel-inner > .carousel-item:nth-child(3) > .row 
 {
-    background-image: url("../images/homepage/sectionbg.png");
+    background-image: url("../images/homepage/homebg2.jpg");
     background-size: auto;
 }
 /* Transition */
@@ -169,3 +170,9 @@
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+/* navbar height */
+.navbar-height{
+  height: 80px;
+}
+

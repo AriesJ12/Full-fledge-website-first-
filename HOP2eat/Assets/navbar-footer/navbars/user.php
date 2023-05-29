@@ -1,7 +1,7 @@
-<nav class="navbar sticky-md-top navbar-expand-md navbar-light bg-light borders">
-    <div class="container-fluid">
+<nav class="navbar sticky-md-top navbar-expand-md navbar-dark text-bg-dark borders navbar-height">
+    <div class="container fs-5 class">
       <a class="navbar-brand" href="<?php echo $index_page_directory?>index.php">
-        <img src="<?php echo $logo_directory?>logo-black3.png"
+        <img src="<?php echo $logo_directory?>logo-white.png"
         class = "navbar-brand"
         alt="">
       </a>
@@ -33,13 +33,7 @@
                 </li>
               </ul>
       </div>
-      <form class="d-flex" role="search" method = "GET" action = "<?php echo $user_page_directory;?>search.php">
-            <div class="input-group">
-                <input type="text" aria-label="find_name" class="form-control w-25" id="find_name" name = "find_name" placeholder="Restaurant">
-                <input type="text" aria-label="find_location" class="form-control w-75" id="find_location" name = "find_location" placeholder = "region, province, city/barangay">
-            </div>
-            <button class="btn btn-outline-success me-2" type="submit">Search</button>
-        </form>     
+     
       <div class="dropdown">
         <div class="align-middle border p-2 rounded dropdown-toggle" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Hello, <?php echo $_SESSION['username']?>
