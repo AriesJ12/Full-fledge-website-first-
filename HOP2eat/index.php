@@ -4,16 +4,28 @@
     //image directory for the not in the db images
     $imageDefaultDirectory = "Assets/images/homepage/";
     $imageRestaurantDirectory = "Assets/images/restaurantImages/";
+    $imageCuisineDirectory = "Assets/images/cuisineImages/";
     $max_carousel = 3; 
+    $https = "https://";
     
-    //restaurant carousel
     $restaurant_per_carousel = 2;
-    $restaurant_display = $restaurant_per_carousel * $max_carousel;
 
     $sql = "CALL get_restaurant();";
-    $restaurant = $conn->query($sql);
-
-    //cuisine carousel
+    if ($conn->multi_query($sql)) {
+        $restaurant = $conn->store_result(); // Get the restaurant result set
+    
+        $conn->next_result(); // Move to the next result set
+    
+        // Cuisine carousel
+        $cuisine_per_carousel = 3;
+    
+        $sql = "CALL get_cuisine();";
+        if ($conn->multi_query($sql)) {
+            $cuisine = $conn->store_result(); // Get the cuisine result set
+        }
+    
+    }
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,9 +34,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
-    <link rel="stylesheet" href="Assets/css/style.css">
+    <link rel="stylesheet" href="Assets/css/style.css?v=2">
 </head>
-<body>
+<body class="index">
     
     <!-- navbar -->
     <?php require_once "Assets/navbar-footer/navbar.php"?>
@@ -40,43 +52,34 @@
               </div>            
             <div class="carousel-inner">
               <div class="carousel-item active">
-                    <div class="row text-light text-center h-100"> 
-                        <div class="col-md-4 h-100"></div>
-                        <div class="col-md-4 pt-5 pb-5 mt-5 mb-5 h-100">
+                    <div class="row text-light text-center"> 
+                        <div class="col-md-4 pt-5 pb-5 m-auto  carousel-content">
                             <h1>WELCOME TO HOP2eat</h1>
                             <p>
                                 Still haven’t found that sweet spot?
                                 Use our search filters to help you find your next amazing meal.
                             </p>
                         </div>
-                        <div class="col-md-4 h-100">
-                        </div>
                     </div>
               </div>
               <div class="carousel-item">
-                        <div class="row text-dark text-center"> 
-                            <div class="col-md-4 h-100"></div>
-                            <div class="col-md-4 pt-5 pb-5 mt-5 mb-5 h-100">
+                        <div class="row text-light shadow-md text-center  carousel-content"> 
+                            <div class="col-md-4 pt-5 pb-5 m-auto">
                                 <h1>Check out the famous cuisines</h1>
                                 <p>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim nulla totam earum facere est fugiat, optio recusandae rerum vero ab!
                                 </p>
                             </div>
-                            <div class="col-md-4 h-100">
-                            </div>
                         </div>
               </div>
               <div class="carousel-item">
                         <div class="row text-bg-dark text-center"> 
-                            <div class="col-md-4 h-100"></div>
-                            <div class="col-md-4 pt-5 pb-5 mt-5 mb-5 h-100">
+                            <div class="col-md-4 pt-5 pb-5 carousel-content">
                                 <h1>Quick Reservation</h1>
                                 <p>
                                     Still haven’t found that sweet spot?
                                     Use our search filters to help you find your next amazing meal.
                                 </p>
-                            </div>
-                            <div class="col-md-4 h-100">
                             </div>
                         </div>
                 </div>
@@ -95,7 +98,7 @@
                         <h1 class="display-4">HOP2eat</h1>
                         Looking for an ideal restaurant and book a table quickly and easily with Hop2Eat. We provide a one-of-a-kind dining experience that includes delicious meals in a peaceful and cozy place. If you're having trouble deciding where to eat, we provide the ideal setting and delicious food toshare with family and friends, a special occasion, or a romantic date.
                         <br>
-                        <a href="" class="btn btn-outline-secondary mt-5">About us</a>
+                        <a href="pages/about_us.php" class="btn btn-outline-secondary mt-5">About us</a>
                     </div>
                 </div>
             </div>
@@ -107,7 +110,7 @@
               <div class="container p-4">
                     <h2 class = "text-center display-4 ">Famous restaurants </h2>
                     <div class="d-flex justify-content-end">
-                        <a href="" class="btn btn-outline-info align-self-end">View all</a>
+                        <a href="" class="btn btn-outline-info align-self-end mb-3">View all</a>
                     </div>
                     <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
@@ -119,16 +122,16 @@
                             {$row = $restaurant->fetch_assoc();?>
                             <div class="col d-block">
                               <div class="card mb-3" style="max-width: 540px;">
-                                  <div class="row g-0">
+                                  <div class="row flex-md-row g-0">
                                     <div class="col-md-5 overflow-hidden">
-                                      <img src="<?php echo $imageRestaurantDirectory.$row['image'];?>" class="img-fluid rounded-start" alt="...">
+                                      <img src="<?php echo $imageRestaurantDirectory.$row['image'];?>" class="m-auto rounded-start" alt="..." height="300px">
                                     </div>
                                     <div class="col-md-7">
                                       <div class="card-body">
                                         <h5 class="card-title"><?php echo $row['name'];?></h5>
                                         <p class="card-text">
                                           <?php 
-                                          $truncatedText = strlen($row['description']) > 100 ? substr($row['description'], 0, 100) . "..." : $$row['description'];
+                                          $truncatedText = strlen($row['description']) > 100 ? substr($row['description'], 0, 100) . "..." : $row['description'];
                                           echo $truncatedText;?>
                                         </p>
                                         <?php for ($k = 0, $stars = 5, $currentStars = $row['rating']; $k < $stars; $k++, $currentStars--)
@@ -163,70 +166,38 @@
               <div class="row pt-5 ">
                 <div class="col-12">
                   <a href="#" class="btn btn-outline-primary float-end m">View All</a>
-                  <h3 class="text-uppercase mb-4 p-1 border-bottom ">Famous restaurants in Manila</h3>
+                  <h3 class="text-uppercase mb-4 p-1 border-bottom ">Dishes from famous restaurants</h3>
                 </div>
               </div> 
               <div class="row">
-                <!--ADD CLASSES HERE d-flex align-items-stretch-->
-                <div class="col-lg-4 mb-3 d-flex align-items-stretch">
+              <?php
+                for($j = 0 ; $j < $cuisine_per_carousel; $j++)
+                { $row = $cuisine->fetch_assoc();
+              ?>
+                <div class="col-md-4 col-sm-6 mb-3">
                   <div class="card overflow-hidden">
-                    <img src="https://picsum.photos/200/300" 
-                    class="card-img-top" 
-                    alt="Card Image"
-                    height = "200px" widht = "300x">
-                    <div class="card-body d-flex flex-column">
-                      <h5 class="card-title">Dōtonbori Canal</h5>
-                      <p class="card-text mb-4">Is a manmade waterway dug in the early 1600's and now displays many landmark commercial locals and vivid neon signs.</p>
-                      <p class="card-text mb-4"><span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star-half-full checked"></span>
-                        <span class="fa fa-star"></span></p>
-                      <a href="#" class="btn btn-primary mt-auto align-self-start">Book now</a>
+                    <img src="<?php echo $imageCuisineDirectory.$row['image'];?>" class="card-img-top" alt="Card Image" height = "200px" widht = "300x">
+                    <div class="card-body">
+                      <h5 class="card-title"><?php echo $row['cuisine_name'];?></h5>
+                      <p class="card-text mb-4">From: <a href="<?php echo $https . $row['website']?>"> <?php echo $row['restaurant_name']?> </a></p>
+                    </div>
+                    <div class="card-footer">
+                      Location: <?php echo $row['address']?>
                     </div>
                   </div>
                 </div>
-                <!--ADD CLASSES HERE d-flex align-items-stretch-->
-                <div class="col-lg-4 mb-3 d-flex align-items-stretch">
-                  <div class="card overflow-hidden">
-                    <img src="https://i.postimg.cc/4xVY64PV/porto-timoni-double-beach-corfu-greece-700.jpg" class="card-img-top" alt="Card Image" height = "200px" widht = "300x">
-                    <div class="card-body d-flex flex-column">
-                      <h5 class="card-title">Porto Timoni Double Beach</h5>
-                      <p class="card-text mb-4">Near Afionas village, on the west coast of Corfu island. The two beaches form two unique bays. The turquoise color of the sea contrasts to the high green hills surrounding it.</p>
-                      <p class="card-text mb-4"><span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star-half-full checked"></span>
-                        <span class="fa fa-star"></span></p>
-                      <a href="#" class="btn btn-primary mt-auto align-self-start">Book now</a>
-                    </div>
-                  </div>
-                </div>
-                <!--ADD CLASSES HERE d-flex align-items-stretch-->
-                <div class="col-lg-4 mb-3 d-flex align-items-stretch">
-                  <div class="card overflow-hidden">
-                    <img src="https://i.postimg.cc/TYyLPJWk/tritons-fountain-valletta-malta-700.jpg" class="card-img-top" alt="Card Image" height = "200px" widht = "300x">
-                    <div class="card-body d-flex flex-column">
-                      <h5 class="card-title">Tritons Fountain</h5>
-                      <p class="card-text mb-4">Located just outside the City Gate of Valletta, Malta. It consists of three bronze Tritons holding up a large basin, balanced on a concentric base built out of concrete and clad in travertine slabs.</p>
-                      <p class="card-text mb-4"><span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star-half-full checked"></span>
-                        <span class="fa fa-star"></span></p>
-                      <a href="#" class="btn btn-primary mt-auto align-self-start">Book now</a>
-                    </div>
-                  </div>
-                </div>
+              <?php 
+                }
+              ?>
+                
               </div>
             </div>
         </section>
         <!-- services -->
-        <section class="services">
+        <section class="services mt-3 mb-5 pb-4">
           <div class="container">
               <div class="row g-3">
                   <div class="col-12 text-center p-4">
-                      <a href="" class="btn btn-outline-primary mt-3 float-end">View all</a>
                       <h1 class="display-5 border-bottom">Services</h1>
                   </div>
                   <div class="col-lg-4 col-md-6 col-sm-12 text-center border rounded p-4">
@@ -241,24 +212,22 @@
                       <br>
                       <button class="btn btn-dark mt-4">Private Dining</button>
                   </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12 text-center border rounded p-4">
-                      <img src="<?php echo $imageDefaultDirectory?>treats.png" alt="..." height = "150"><br>
-                      Made to make your holidays more special.
-                      <br>
-                      <button class="btn btn-dark mt-4">Holiday Treats</button>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12 text-center border rounded p-4">
-                      <img src="<?php echo $imageDefaultDirectory?>sched.png" alt="..." height = "150"><br>
-                      See reserved days and choose yours with us.
-                      <br>
-                      <button class="btn btn-dark mt-4">Schedule Table</button>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12 text-center border rounded p-4">
-                      <img src="<?php echo $imageDefaultDirectory?>pay.png" alt="..." height = "150"><br>
-                      Payment transaction is flexible with different payment method.
-                      <br>
-                      <button class="btn btn-dark mt-4">Payment</button>
-                  </div>
+                  <div class="col-lg-4 col-md-6 col-sm-12 text-center border rounded p-4" aria-hidden="true">
+                      <img src="Assets/images/placeholder.png" class="card-img-top" alt="..." height = "150">
+                      <div class="card-body">
+                        <h5 class="card-title placeholder-glow">
+                          <span class="placeholder col-6"></span>
+                        </h5>
+                        <p class="card-text placeholder-glow">
+                          <span class="placeholder col-7"></span>
+                          <span class="placeholder col-4"></span>
+                          <span class="placeholder col-4"></span>
+                          <span class="placeholder col-6"></span>
+                          <span class="placeholder col-8"></span>
+                        </p>
+                        
+                      <a href="pages/service.php" class="btn btn-outline-primary mt-4">View all</a>
+                      </div>
               </div>
           </div>
         </section>
@@ -337,6 +306,6 @@
 
     <!-- bootstrap script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-  
+    <!-- <script src = "../Assets/js/bootstrapJS/bootstrap.bundle.js"></script> -->
   </body>
 </html>

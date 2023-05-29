@@ -17,7 +17,7 @@
         </div>
         <br>
         
-        <form name = "registerForm" action = "phpFunctions/register.inc.php" onsubmit="return validate()" method = "POST">
+        <form name = "registerForm" action = "phpFunctions/register.inc.php" method = "POST">
             <input type="text" name="username" placeholder="Enter your username" id="username" required>
             <br>
             <input type="password" name="password" placeholder="Create a password" id="password" required>
