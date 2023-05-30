@@ -183,6 +183,22 @@ BEGIN
 END //
 DELIMITER ;
 
+-- get restaurant by id
+DELIMITER //
+
+CREATE PROCEDURE get_restaurant_by_id(IN restaurant_id INT)
+BEGIN
+    SELECT res.id AS id, res.name AS name, res.description AS description, res.phone AS phone, 
+    res.website AS website, res.email AS email, res.rating AS rating, res.ImageURL AS image, res.active AS active,
+    CONCAT(COALESCE(reg.region_name, ''), ", ", COALESCE(prov.province_name, ''), ", ", COALESCE(res.city_and_barangay, '')) AS address
+    FROM restaurant AS res
+    INNER JOIN table_province AS prov ON res.province_id = prov.province_id
+    INNER JOIN table_region AS reg ON prov.region_id = reg.region_id
+    WHERE res.active = 1 AND res.id = restaurant_id
+    ORDER BY rating DESC;
+END //
+
+DELIMITER ;
 
 
 
@@ -377,27 +393,32 @@ CREATE PROCEDURE display_rating(
 BEGIN
     IF accountId IS NOT NULL AND restaurantId IS NOT NULL THEN
         -- Filter by both account ID and restaurant ID
-        SELECT *
-        FROM rating
-        WHERE active = 1 AND accountId = accountId AND restaurant_id = restaurantId;
+        SELECT r.*, a.username, a.email, a.first_name, a.last_name, a.profileImage
+        FROM rating r
+        JOIN account a ON r.accountId = a.id
+        WHERE r.active = 1 AND r.accountId = accountId AND r.restaurant_id = restaurantId;
     ELSEIF accountId IS NOT NULL THEN
         -- Filter by account ID only
-        SELECT *
-        FROM rating
-        WHERE active = 1 AND accountId = accountId;
+        SELECT r.*, a.username, a.email, a.first_name, a.last_name, a.profileImage
+        FROM rating r
+        JOIN account a ON r.accountId = a.id
+        WHERE r.active = 1 AND r.accountId = accountId;
     ELSEIF restaurantId IS NOT NULL THEN
         -- Filter by restaurant ID only
-        SELECT *
-        FROM rating
-        WHERE active = 1 AND restaurant_id = restaurantId;
+        SELECT r.*, a.username, a.email, a.first_name, a.last_name, a.profileImage
+        FROM rating r
+        JOIN account a ON r.accountId = a.id
+        WHERE r.active = 1 AND r.restaurant_id = restaurantId;
     ELSE
         -- No filters applied
-        SELECT *
-        FROM rating
-        WHERE active = 1;
+        SELECT r.*, a.username, a.email, a.first_name, a.last_name, a.profileImage
+        FROM rating r
+        JOIN account a ON r.accountId = a.id
+        WHERE r.active = 1;
     END IF;
 END //
 DELIMITER ;
+
 
 DELIMITER //
 CREATE PROCEDURE active_restaurant(IN restaurant_id INT)
