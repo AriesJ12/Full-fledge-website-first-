@@ -1,0 +1,101 @@
+<mxfile host="65bd71144e">
+    <diagram id="JjrxQiCD_OAi4fqboPpC" name="Page-1">
+        <mxGraphModel dx="844" dy="471" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="Android Phone" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fontStyle=1;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="195" y="110" width="275" height="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="2">
+                    <mxGeometry y="30" width="275" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="&lt;b&gt;CPU&lt;/b&gt;: A quad-core ARM Cortex-A7 or equivalent processor.&lt;br&gt;&lt;b&gt;RAM&lt;/b&gt;: 1 GB or more for seamless multitasking.&lt;br&gt;&amp;nbsp;&lt;b&gt;Storage&lt;/b&gt;: 64gb" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" vertex="1" parent="3">
+                    <mxGeometry width="138" height="190" as="geometry">
+                        <mxRectangle width="138" height="190" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="5" value="&lt;b&gt;CPU&lt;/b&gt;: A quad-core ARM Cortex-A53 or equivalent processor for better processing power.&lt;br&gt;&lt;b&gt;RAM&lt;/b&gt;: 2 GB or more to handle multiple apps and browser tabs simultaneously.&lt;br&gt;&lt;b&gt;Storage&lt;/b&gt;: 128gb" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" vertex="1" parent="3">
+                    <mxGeometry x="138" width="137" height="190" as="geometry">
+                        <mxRectangle width="137" height="190" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="24" value="Laptop/Desktop PC" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fontStyle=1;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="195" y="330" width="275" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="24">
+                    <mxGeometry y="30" width="275" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="&lt;b&gt;CPU&lt;/b&gt;: Any modern processor with at least 1 GHz clock speed.&lt;br&gt;&lt;b&gt;RAM:&lt;/b&gt; 2 GB or more&lt;br&gt;Storage: 128 gb" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" vertex="1" parent="25">
+                    <mxGeometry width="139" height="150" as="geometry">
+                        <mxRectangle width="139" height="150" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="27" value="&lt;b&gt;CPU:&lt;/b&gt; A multi-core processor with a clock speed of 2 GHz or higher.&lt;br&gt;&lt;b&gt;RAM:&lt;/b&gt; 8 GB or more,&lt;br&gt;Storage: 512gb" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" vertex="1" parent="25">
+                    <mxGeometry x="139" width="136" height="150" as="geometry">
+                        <mxRectangle width="136" height="150" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="38" value="Hardware Specification" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fontStyle=1;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="195" y="40" width="275" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="38">
+                    <mxGeometry y="30" width="275" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="Minimum" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" vertex="1" parent="39">
+                    <mxGeometry width="138" height="40" as="geometry">
+                        <mxRectangle width="138" height="40" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="41" value="Recommended" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" vertex="1" parent="39">
+                    <mxGeometry x="138" width="137" height="40" as="geometry">
+                        <mxRectangle width="137" height="40" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="79" value="Software" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fontStyle=1;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="510" y="50" width="210" height="230" as="geometry"/>
+                </mxCell>
+                <mxCell id="80" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="79">
+                    <mxGeometry y="30" width="210" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="81" value="&lt;b&gt;VSCODE: &lt;/b&gt;Code editor we used for web development" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;align=center;" vertex="1" parent="80">
+                    <mxGeometry width="210" height="40" as="geometry">
+                        <mxRectangle width="210" height="40" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="84" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="79">
+                    <mxGeometry y="70" width="210" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="85" value="&lt;b&gt;XAMPP-APACHE:&lt;/b&gt; For local server" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" vertex="1" parent="84">
+                    <mxGeometry width="210" height="40" as="geometry">
+                        <mxRectangle width="210" height="40" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="88" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="79">
+                    <mxGeometry y="110" width="210" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="89" value="&lt;b&gt;XAMMP- PhpMyAdmin-Mysql:&lt;/b&gt; For database" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" vertex="1" parent="88">
+                    <mxGeometry width="210" height="40" as="geometry">
+                        <mxRectangle width="210" height="40" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="98" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="79">
+                    <mxGeometry y="150" width="210" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="99" value="&lt;b&gt;FIGMA/CANVA: &lt;/b&gt;For designing" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" vertex="1" parent="98">
+                    <mxGeometry width="210" height="40" as="geometry">
+                        <mxRectangle width="210" height="40" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="96" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="79">
+                    <mxGeometry y="190" width="210" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="97" value="&lt;b&gt;XAMPP-PHP&lt;/b&gt;: For server side language" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" vertex="1" parent="96">
+                    <mxGeometry width="210" height="40" as="geometry">
+                        <mxRectangle width="210" height="40" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
