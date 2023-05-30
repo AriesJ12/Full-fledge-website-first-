@@ -89,7 +89,8 @@
                             $truncatedText = strlen($row['description']) > 200 ? substr($row['description'], 0, 200) . "..." : $row['description'];
                             echo $truncatedText;
                         ?>
-                        <br><br>                  
+                        <br>
+                                             
                     </div>
                 </div>
             </a>
