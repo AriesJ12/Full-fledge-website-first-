@@ -68,10 +68,10 @@
             ?>
             <a href="<?php echo $https . $row['website']?>" class = "text-decoration-none text-bg-light">
                 <div class="row p-3 m-3 border rounded">
-                    <div class="col-lg-3 mt-3">
+                    <div class="col-md-3 mt-3">
                         <img src="<?php echo $restaurantImages . $row['image'];?>" alt="" class="rounded img-fluid">
                     </div>
-                    <div class="col-lg-9 mt-md-3">  
+                    <div class="col-md-9 mt-md-3">  
                         <h2><?php echo $number.". ". $row['name']?></h2>
                         <?php for ($k = 0, $stars = 5, $currentStars = $row['rating']; $k < $stars; $k++, $currentStars--)
                         {?>
@@ -89,8 +89,7 @@
                             $truncatedText = strlen($row['description']) > 200 ? substr($row['description'], 0, 200) . "..." : $row['description'];
                             echo $truncatedText;
                         ?>
-
-                                                 
+                        <br><br>                  
                     </div>
                 </div>
             </a>
