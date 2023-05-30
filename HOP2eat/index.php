@@ -96,30 +96,51 @@
     </header>
     <main>
         <!-- about us -->
-        <section class="text-bg-dark">
-            <div class="container">
+        <section class="text-bg-light">
+             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 p-md-5 p-3">
-                        <img src="<?php echo $imageDefaultDirectory?>aboutImg1.jpg" alt="" class="rounded img-thumbnail">
-                    </div>
-                    <div class="col-md-6 mt-md-3 p-md-5 p-3">
-                        <h1 class="display-4">HOP2eat</h1>
-                        Looking for an ideal restaurant and book a table quickly and easily with Hop2Eat. We provide a one-of-a-kind dining experience that includes delicious meals in a peaceful and cozy place. If you're having trouble deciding where to eat, we provide the ideal setting and delicious food toshare with family and friends, a special occasion, or a romantic date.
-                        <br>
-                        <a href="pages/about_us.php" class="btn btn-outline-secondary mt-5">About us</a>
-                    </div>
+                        <div class="col-12 mt-md-3 p-md-5 p-3">
+                          <h1 class="display-4 fw-bold">HOP2eat</h1>
+                          Looking for an ideal restaurant and book a table quickly and easily with Hop2Eat. We provide a one-of-a-kind dining experience that includes delicious meals in a peaceful and cozy place. If you're having trouble deciding where to eat, we provide the ideal setting and delicious food toshare with family and friends, a special occasion, or a romantic date.
+                          <br>
+                          <a href="pages/about_us.php" class="btn btn-outline-secondary mt-5">About us</a>
+                        </div>
+
+                        <div class="col-12 border">
+                          <div class="row border">
+                            <div class="col-7 border h-100"> 
+                              <img src="Assets/images/homepage/img1.jpg" alt="" class="img-fluid">
+                            </div>
+                          
+
+                          <div class="col-5 border h-100">
+                            <div class="row border">
+                              <div class="col-12 border h-50">
+                                <img src="Assets/images/homepage/f1.jpg" alt="" class="img-fluid">
+                              </div>
+  
+                              <div class="col-12 border h-50">
+                                <img src="Assets/images/homepage/f2.jpg" alt="" class="img-fluid">
+                              </div>
+                            </div>
+                          </div>
+                      </div>  
+                      </div> 
                 </div>
             </div>
         </section>
+
         <!-- famous restaurant -->
         <section class = restaurant>
             <div class="container-fluid text-bg-dark">
 
               <div class="container p-4">
-                    <h2 class = "text-center display-4 ">Famous restaurants </h2>
-                    <div class="d-flex justify-content-end">
-                        <a href="" class="btn btn-outline-info align-self-end mb-3">View all</a>
-                    </div>
+                <div class="row pt-5 ">
+                  <div class="col-12">
+                    <a href="#" class="btn btn-outline-primary float-end m">View All</a>
+                    <h3 class="text-uppercase mb-4 p-1 border-bottom ">Famous restaurants</h3>
+                  </div>
+                </div> 
                     <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                           <?php for($i = 0; $i < $max_carousel; $i++)
@@ -132,7 +153,7 @@
                               <div class="card mb-3" style="max-width: 540px;">
                                   <div class="row flex-md-row g-0">
                                     <div class="col-md-5 overflow-hidden">
-                                      <img src="<?php echo $imageRestaurantDirectory.$row['image'];?>" class="m-auto rounded-start" alt="..." height="300px">
+                                      <img src="<?php echo $imageRestaurantDirectory.$row['image'];?>" class="m-auto rounded-start" alt="..." height="200px">
                                     </div>
                                     <div class="col-md-7">
                                       <div class="card-body">
@@ -168,6 +189,7 @@
                 </div>
               </div>
         </section>
+
         <!-- famous dishes -->  
         <section class="text-bg-light pt-5 pb-5 shadow-sm dishes">
             <div class="container">
@@ -206,7 +228,7 @@
           <div class="container">
               <div class="row g-3">
                   <div class="col-12 text-center p-4">
-                      <h1 class="display-5 border-bottom">Services</h1>
+                    <h3 class="text-uppercase mb-4 p-1 border-bottom ">Services</h3>
                   </div>
                   <div class="col-lg-4 col-md-6 col-sm-12 text-center border rounded p-4">
                       <img src="<?php echo $imageDefaultDirectory?>reward.png" alt="..." height = "150"><br>
