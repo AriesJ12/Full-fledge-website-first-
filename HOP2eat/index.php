@@ -106,21 +106,21 @@
                           <a href="pages/about_us.php" class="btn btn-outline-secondary mt-5">About us</a>
                         </div>
 
-                        <div class="col-12 border">
-                          <div class="row border">
-                            <div class="col-7 border h-100"> 
-                              <img src="Assets/images/homepage/img1.jpg" alt="" class="img-fluid">
+                        <div class="col-12 border my-5">
+                          <div class="row border h-100">
+                            <div class="col-8 border h-100 overflow-hidden p-0"> 
+                              <img src="Assets/images/homepage/img1.jpg" alt="" class="w-100 h-100">
                             </div>
                           
 
-                          <div class="col-5 border h-100">
-                            <div class="row border">
-                              <div class="col-12 border h-50">
-                                <img src="Assets/images/homepage/f1.jpg" alt="" class="img-fluid">
+                          <div class="col-4 border h-100">
+                            <div class="row border h-100">
+                              <div class="col-12 border h-50 overflow-hidden p-0">
+                                <img src="Assets/images/homepage/f1.jpg" alt="" class="w-100 h-100">
                               </div>
   
-                              <div class="col-12 border h-50">
-                                <img src="Assets/images/homepage/f2.jpg" alt="" class="img-fluid">
+                              <div class="col-12 border h-50 overflow-hidden p-0">
+                                <img src="Assets/images/homepage/f2.jpg" alt="" class="w-100 h-100">
                               </div>
                             </div>
                           </div>
