@@ -36,7 +36,7 @@
     <title>Homepage</title>
     <link rel="stylesheet" href="Assets/css/style.css?v=2">
 </head>
-<body class="index">
+<body class="index bg-dark">
     
     <!-- navbar -->
     <?php require_once "Assets/navbar-footer/navbar.php"?>
@@ -95,11 +95,12 @@
         </div>
     </header>
     <main>
+
         <!-- about us -->
-        <section class="text-bg-light">
+        <section class="text-light" data-bs-theme = "dark">
              <div class="container">
                 <div class="row">
-                        <div class="col-12 mt-md-3 p-md-5 p-3">
+                        <div class="col-12 mt-md-3 p-md-5 p-3 text-center">
                           <h1 class="display-4 fw-bold">HOP2eat</h1>
                           Looking for an ideal restaurant and book a table quickly and easily with Hop2Eat. We provide a one-of-a-kind dining experience that includes delicious meals in a peaceful and cozy place. If you're having trouble deciding where to eat, we provide the ideal setting and delicious food toshare with family and friends, a special occasion, or a romantic date.
                           <br>
@@ -109,18 +110,18 @@
                         <div class="col-12 border my-5">
                           <div class="row border h-100">
                             <div class="col-8 border h-100 overflow-hidden p-0"> 
-                              <img src="Assets/images/homepage/img1.jpg" alt="" class="w-100 h-100">
+                              <img src="Assets/images/homepage/f1.jpg" alt="" class="w-100 h-100">
                             </div>
                           
 
                           <div class="col-4 border h-100">
                             <div class="row border h-100">
                               <div class="col-12 border h-50 overflow-hidden p-0">
-                                <img src="Assets/images/homepage/f1.jpg" alt="" class="w-100 h-100">
+                                <img src="Assets/images/homepage/f2.jpg" alt="" class="w-100 h-100">
                               </div>
   
                               <div class="col-12 border h-50 overflow-hidden p-0">
-                                <img src="Assets/images/homepage/f2.jpg" alt="" class="w-100 h-100">
+                                <img src="Assets/images/homepage/f3.jpg" alt="" class="w-100 h-100">
                               </div>
                             </div>
                           </div>
@@ -128,6 +129,44 @@
                       </div> 
                 </div>
             </div>
+        </section>
+
+        <!-- breakfats --> 
+        <section class="breakfast">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 col-sm-6 mb-3">
+                <div class="card">
+                        <img src="Assets/images/homepage/breakfast.jpg" class="image">
+                        <div class="intro">
+                            <a href="breakfast.html" class="nav-link"><h3>BREAKFAST</h3></a>
+                            <p>Are you having trouble finding your breakfast spot? Hop2eat has you covered because we have plenty of options for you.</p>
+                        </div>
+                    </div>
+              </div>
+
+              <div class="col-md-4 col-sm-6 mb-3">
+                <div class="card">
+                        <img src="Assets/images/homepage/lunch.jpg" class="image">
+                        <div class="intro">
+                            <a href="lunch.html" class="nav-link"><h3>LUNCH</h3></a>
+                            <p>Are you having trouble finding your lunch spot? Hop2eat has you covered because we have plenty of options for you.</p>
+                        </div>
+                    </div>
+              </div>
+
+              <div class="col-md-4 col-sm-6 mb-3">
+                <div class="card">
+                        <img src="Assets/images/homepage/dinner.jpg" class="image">
+                        <div class="intro">
+                            <a href="dinner.html" class="nav-link"><h3>DINNER</h3></a>
+                            <p>Are you having trouble finding your dinner spot? Hop2eat has you covered because we have plenty of options for you.</p>
+                        </div>
+                    </div>
+              </div>
+
+            </div>
+          </div>
         </section>
 
         <!-- famous restaurant -->
@@ -223,6 +262,7 @@
               </div>
             </div>
         </section>
+
         <!-- services -->
         <section class="services mt-3 mb-5 pb-4">
           <div class="container">
