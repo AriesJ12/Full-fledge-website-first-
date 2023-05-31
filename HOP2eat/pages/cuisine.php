@@ -32,91 +32,83 @@
     <link rel="stylesheet" href="../Assets/css/style.css"/>
   </head>
   <body>
-
-
-<main>
   <!-- navbar -->
   <?php require_once "../Assets/navbar-footer/navbar.php"?>
-<!--  -->
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Try our newly added cuisine search engine</h1>
-        <span class="text-muted">Press search without any inputs to show everything</span> 
-       <p>
-       <form role="search" method = "GET" action = "<?php echo $user_page_directory;?>search_cuisine.php">
-          <div class = "form-floating">
-            <input type="text" aria-label="find_cuisine" class="form-control border border-warning my-3" id="find_cuisine" name = "find_cuisine" placeholder="Cuisine">
-            <label for="find_cuisine">Cuisine</label>
-          </div>
-          <div class="form-floating">
-            <select class="form-select border border-warning my-3" id="classification" name = "clasification">
-              <option value = "" selected>Any ...</option>
-              <option value="1">Breakfast</option>
-              <option value="2">Lunch</option>
-              <option value="3">Dinner</option>
-            </select>
-            <label for="classification">Meal time</label>
-          </div>
-
-          <div class="form-floating">
-            <input type="text" name="cuisine_location" id="cuisine_location" class="form-control border border-warning my-3" placeholder = "region, province, barangay/city">
-            <label for="cuisine_location">Location</label>
-          </div>
-          <button class="btn btn-outline-success me-2 my-3" type="submit">Search</button>
-        </form>   
-        </p>
+  <!-- header -->
+  <header>
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">Try our newly added cuisine search engine</h1>
+          <span class="text-muted">Press search without any inputs to show everything</span> 
+         <p>
+         <form role="search" method = "GET" action = "<?php echo $user_page_directory;?>search_cuisine.php">
+            <div class = "form-floating">
+              <input type="text" aria-label="find_cuisine" class="form-control border border-warning my-3" id="find_cuisine" name = "find_cuisine" placeholder="Cuisine">
+              <label for="find_cuisine">Cuisine</label>
+            </div>
+            <div class="form-floating">
+              <select class="form-select border border-warning my-3" id="classification" name = "classification">
+                <option value = "" selected>Any ...</option>
+                <option value="1">Breakfast</option>
+                <option value="2">Lunch</option>
+                <option value="3">Dinner</option>
+              </select>
+              <label for="classification">Meal time</label>
+            </div>
+  
+            <div class="form-floating">
+              <input type="text" name="cuisine_location" id="cuisine_location" class="form-control border border-warning my-3" placeholder = "region, province, barangay/city">
+              <label for="cuisine_location">Location</label>
+            </div>
+            <button class="btn btn-outline-success me-2 my-3" type="submit">Search</button>
+          </form>   
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <div class="album py-5 bg-body-tertiary">
-    <!-- famous dishes -->  
-    <section class="text-bg-light pt-5 pb-5 shadow-sm dishes">
-            <div class="container">
-              <div class="row pt-5 ">
-                <div class="col-12">
-                  <a href="#" class="btn btn-outline-primary float-end m">View All</a>
-                  <h3 class="text-uppercase mb-4 p-1 border-bottom ">Dishes from famous restaurants</h3>
-                </div>
-              </div> 
-              <div class="row">
-              <?php
-                for($j = 0 ; $j < $cuisine_per_carousel; $j++)
-                { $row = $cuisine->fetch_assoc();
-              ?>
-                <div class="col-md-4 col-sm-6 mb-3">
-                  <div class="card overflow-hidden">
-                    <img src="<?php echo $imageCuisineDirectory.$row['image'];?>" class="card-img-top" alt="Card Image" height = "200px" widht = "300x">
-                    <div class="card-body">
-                      <h5 class="card-title"><?php echo $row['cuisine_name'];?></h5>
-                      <p class="card-text mb-4">From: <a href="<?php echo $https . $row['website']?>"> <?php echo $row['restaurant_name']?> </a></p>
-                    </div>
-                    <div class="card-footer">
-                      Location: <?php echo $row['address']?>
+    </section>
+  </header>
+  
+  <main>
+    <div class="album py-5 bg-body-tertiary">
+      <!-- famous dishes -->  
+      <section class="text-bg-light pt-5 pb-5 shadow-sm dishes">
+              <div class="container">
+                <div class="row pt-5 ">
+                  <div class="col-12">
+                    <a href="#" class="btn btn-outline-primary float-end m">View All</a>
+                    <h3 class="text-uppercase mb-4 p-1 border-bottom ">Dishes from famous restaurants</h3>
+                  </div>
+                </div> 
+                <div class="row">
+                <?php
+                  for($j = 0 ; $j < $cuisine_per_carousel; $j++)
+                  { $row = $cuisine->fetch_assoc();
+                ?>
+                  <div class="col-md-4 col-sm-6 mb-3">
+                    <div class="card overflow-hidden">
+                      <img src="<?php echo $imageCuisineDirectory.$row['image'];?>" class="card-img-top" alt="Card Image" height = "200px" widht = "300x">
+                      <div class="card-body">
+                        <h5 class="card-title"><?php echo $row['cuisine_name'];?></h5>
+                        <p class="card-text mb-4">From: <a href="<?php echo $https . $row['website']?>"> <?php echo $row['restaurant_name']?> </a></p>
+                      </div>
+                      <div class="card-footer">
+                        Location: <?php echo $row['address']?>
+                      </div>
                     </div>
                   </div>
+                <?php 
+                  }
+                ?>
+                  
                 </div>
-              <?php 
-                }
-              ?>
-                
               </div>
-            </div>
-    </section>
-  </div>
+      </section>
+    </div>
 
   </main>
-  
+    
   <?php require_once "../Assets/navbar-footer/footer.html"?>
-  <!-- <script src = "../../Assets/js/bootstrapJS/bootstrap.bundle.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
- 
 </body>
-<!-- footer -->
-    <?php require_once "../Assets/navbar-footer/footer.html"?>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-
-      
-  </body>
 </html>
