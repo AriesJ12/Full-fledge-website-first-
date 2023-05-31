@@ -46,7 +46,7 @@
           ?>
             <div class="col">
               <div class="card shadow-sm">
-                <div class="card-top h-75">
+                <div class="card-top">
                   <img src="<?php echo $imagesDefaultDirectory . $profileImage?>" alt="" class="img-fluid">
                 </div>
                 <div class="card-body text-center">

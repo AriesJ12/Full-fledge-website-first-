@@ -40,11 +40,14 @@
             // Verify the password
             if ($password == $row["password"]) {
                 // Password is correct, store user data in session
+                $_SESSION["id"] = $row["id"];
                 $_SESSION["username"] = $row["username"];
-                $_SESSION["fullname"] = $row["first_name"] . " " . $row["last_name"];
-                $_SESSION["profile_image"] = $row["profile_image"];
+                $_SESSION["first_name"] = $row["first_name"];
+                $_SESSION["last_name"] = $row["last_name"];
+                $_SESSION["profile_image"] = $row["profileImage"];
                 $_SESSION["account_type"] = $row["account_type"];
-    
+                $_SESSION["email"] = $row["email"];
+
                 // Redirect to a different page
                 header("Location: ../index.php");
                 exit();

@@ -57,7 +57,8 @@
                             <h1>WELCOME TO HOP2eat</h1>
                             <p>
                                 Still haven’t found that sweet spot?
-                                Use our search filters to help you find your next amazing meal.
+                                Use our search filters to help you find your next amazing meal.<br>
+                                
                             </p>
 
                             <form class="d-flex" role="search" method = "GET" action = "<?php echo $user_page_directory;?>search.php">
@@ -67,6 +68,7 @@
                               </div>
                                   <button class="btn btn-outline-light mx-2" type="submit">Search</button>
                           </form>
+                          <span>Leave it blank and press search to see everthing</span>
                         </div>
                     </div>
               </div>
@@ -97,7 +99,7 @@
     <main>
 
         <!-- about us -->
-        <section class="text-light" data-bs-theme = "dark">
+        <section class="text-light bg-dark-subtle" data-bs-theme = "dark">
              <div class="container">
                 <div class="row">
                         <div class="col-12 mt-md-3 p-md-5 p-3 text-center">
@@ -132,39 +134,48 @@
         </section>
 
         <!-- breakfats --> 
-        <section class="breakfast">
+        <section class="breakfast bg-dark-subtle" data-bs-theme = "dark">
           <div class="container">
             <div class="row">
-              <div class="col-md-4 col-sm-6 mb-3 m-auto">
+              <div class="col-md-4 col-sm-6 mb-3 m-auto" onclick = "window.location.href='pages/search_cuisine.php?find_cuisine=&classification=1&cuisine_location='">
                 <div class="card-">
                   <img src="Assets/images/homepage/breakfast.jpg" class="image rounded">
                   <div class="intro">
-                      <a href="breakfast.html" class="nav-link"><h3>BREAKFAST</h3></a>
+                      <h3>BREAKFAST</h3>
                       <p>Are you having trouble finding your breakfast spot? Hop2eat has you covered because we have plenty of options for you.</p>
                   </div>
                  </div>
               </div>
 
-              <div class="col-md-4 col-sm-6 mb-3 m-auto">
+              <div class="col-md-4 col-sm-6 mb-3 m-auto" onclick = "window.location.href='pages/search_cuisine.php?find_cuisine=&classification=2&cuisine_location='">
                 <div class="card-">
                         <img src="Assets/images/homepage/lunch.jpg" class="image rounded">
                         <div class="intro">
-                            <a href="lunch.html" class="nav-link"><h3>LUNCH</h3></a>
+                            <h3>LUNCH</h3>  
                             <p>Are you having trouble finding your lunch spot? Hop2eat has you covered because we have plenty of options for you.</p>
                         </div>
                     </div>
               </div>
 
-              <div class="col-md-4 col-sm-6 mb-3 m-auto">
+              <div class="col-md-4 col-sm-6 mb-3 m-auto" onclick = "window.location.href='pages/search_cuisine.php?find_cuisine=&classification=3&cuisine_location='">
                 <div class="card-">
                         <img src="Assets/images/homepage/dinner.jpg" class="image rounded">
                         <div class="intro">
-                            <a href="dinner.html" class="nav-link"><h3>DINNER</h3></a>
+                            <h3>DINNER</h3>
                             <p>Are you having trouble finding your dinner spot? Hop2eat has you covered because we have plenty of options for you.</p>
                         </div>
                     </div>
               </div>
 
+            </div>
+          </div>
+        </section>
+
+        <!-- reservation header -->
+        <section class="bg-dark-subtle text-center container-fluid text-bg-tertiary reservation-section" data-bs-theme = "dark">
+          <div class="row d-flex align-items-center">
+            <div class="col-12 text-light pt-5 ">
+                <h1 class = "display-4 fst-italic">QUICK RESERVATION</h1>
             </div>
           </div>
         </section>
@@ -264,7 +275,7 @@
         </section>
 
         <!-- services -->
-        <section class="services mt-3 mb-5 pb-4 text-bg-light">
+        <section class="services mt-3 mb-5 pb-4 bg-dark-subtle text-light" data-bs-theme = "dark">
           <div class="container">
               <div class="row g-3">
                   <div class="col-12 text-center p-4">
@@ -274,13 +285,13 @@
                       <img src="<?php echo $imageDefaultDirectory?>reward.png" alt="..." height = "150"><br>
                       Get free meals and discounts for birthday celebrants on selected months.
                       <br>
-                      <button class="btn btn-dark mt-4">Dining Rewards</button>
+                      <button class="btn btn-light mt-4">Dining Rewards</button>
                   </div>
                   <div class="col-lg-4 col-md-6 col-sm-12 text-center p-4 rounded">
                       <img src="<?php echo $imageDefaultDirectory?>dine.png" alt="..." height = "150"><br>
                       Arrange your desired table set-up and foods for events.
                       <br>
-                      <button class="btn btn-dark mt-4">Private Dining</button>
+                      <button class="btn btn-light mt-4">Private Dining</button>
                   </div>
                   <div class="col-lg-4 col-md-6 col-sm-12 text-center p-4 rounded" aria-hidden="true">
                       <img src="Assets/images/placeholder1.png" class="card-img-top" alt="..." height = "150">
@@ -294,7 +305,7 @@
                           <span class="placeholder col-4"></span>
                         </p>
                         
-                      <a href="pages/service.php" class="btn btn-outline-primary mt-4">View all</a>
+                      <a href="pages/service.php" class="btn btn-light mt-4">View all</a>
                       </div>
               </div>
           </div>

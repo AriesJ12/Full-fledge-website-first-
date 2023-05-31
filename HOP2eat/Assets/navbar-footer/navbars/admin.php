@@ -1,4 +1,4 @@
-<nav class="navbar sticky-md-top navbar-expand-md navbar-dark text-bg-dark borders navbar-height">
+<nav class="navbar sticky-md-top navbar-expand-md navbar-dark text-bg-dark borders" data-bs-theme="dark">
     <div class="container fs-5 class">
       <a class="navbar-brand" href="<?php echo $index_page_directory?>index.php">
         <img src="<?php echo $logo_directory?>logo-white.png"
@@ -37,7 +37,7 @@
       <div class="dropdown">
         <div class="align-middle border p-2 rounded dropdown-toggle" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Hello, <?php echo $_SESSION['username']?>
-          <img src="https://picsum.photos/200/300" height = "30" width = "40" alt="" class="img-thumbnail" >
+          <img src="<?php echo $profile_directory . $_SESSION['profile_image']?>" height = "30" width = "40" alt="" class="img-thumbnail" >
         </div>
         <ul class="dropdown-menu" aria-labelledby="profileDropdown">
           <li><a class="dropdown-item" href="<?php echo $user_page_directory?>profile.php">Profile</a></li>

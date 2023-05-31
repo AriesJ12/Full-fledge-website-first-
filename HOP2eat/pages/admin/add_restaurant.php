@@ -51,22 +51,24 @@
         <section class = "row">
             <div class="col">
                 <form action="addRestaurant.php" method="post" enctype="multipart/form-data">
-                    <input type="file" id="picture" name="picture" onchange="previewImage(event)"  accept=".jpg, .jpeg, .png" required>
+                    <label for="picture">Image</label>
+                    <input class ="form-control mb-3"  type="file" id="picture" name="picture" onchange="previewImage(event)"  accept=".jpg, .jpeg, .png" required>
                     
                     <label for="name">Restaurant name</label>
-                    <input type="text" name="name" id="name" required oninput = "previewText()">
+                    <input class ="form-control mb-3" type="text" name="name" id="name" placeholder = "Example Name" required oninput = "previewText()">
                     <label for="website">Website URL</label>
-                    <input type="text" name="website" id="website" required>
+                    <input class ="form-control mb-3" type="text" name="website" id="website" placeholder = "website.com" required>
                     
                     <!-- newly added location no backend-->
                     <label for="location">country</label>
-                    <select name="location" id="location" required>
-                        <option value="">---</option>asdasd
+                    <select class ="form-control mb-3" name="location" id="location" required>
+                        <option value="">---</option>
                     </select>
                     <br>
                     <!-- newly added cuisine no backend-->
-                    <textarea name="descriptipn" id="description" cols="30" rows="10" oninput = "previewText()"></textarea>
-                    <input type="submit" name = "add" value="Add restaurant">
+                    <label for="description">Description</label>
+                    <textarea class ="form-control mb-3"  name="descriptipn" id="description" cols="50" rows="5" oninput = "previewText()" placeholder = "minimum of 200 characters"></textarea>
+                    <input type="submit" name = "add" value="Add restaurant" class = "btn btn-primary">
                 </form>
             </div>   
         </section>

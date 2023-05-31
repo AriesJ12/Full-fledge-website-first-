@@ -6,12 +6,16 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 /* @import url('bootstrapCSS/bootstrap.min.css'); */
 
+/* font google icon */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
+
+/* for stars */
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css); 
 
 .carousel-content, .header-height {
   height: 500px;
 }
-/* for stars */
-@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css); 
+
 
 
 
@@ -36,6 +40,16 @@
 {
   background-image: url("../images/resto-header.png");
 }
+
+.reservation-section
+{
+  background-image: url("../images/homepage/sectionbg.png");
+}
+
+.reservation-section .row
+{
+  height: 300px;
+}
 /* Transition */
 /* restaurant and dishes image(zoom) transition */
 .restaurant img, .dishes img
@@ -52,14 +66,19 @@
 .services .col-lg-4, .search-restaurant .container .row
 {
   transition: .2s linear;
-  cursor: pointer;
+    
 }
+
 
 .services .col-lg-4:hover, .search-restaurant .container .row:hover
 {
-  background-color: var( --bs-dark);
-  color: var(--bs-light);
+  background-color: var( --bs-light);
+  color: var(--bs-dark);
   transform:scale(1.05); 
+}
+.search-restaurant .container .row h2:hover
+{
+  cursor: pointer;
 }
 
 .services .col-lg-4 .btn
@@ -69,8 +88,8 @@
 
 .services .col-lg-4 .btn:hover
 {
-  background-color: var( --bs-light);
-  color: var(--bs-dark);
+  background-color: var( --bs-dark);
+  color: var(--bs-light);
   transform:scale(1.05);
 }
 

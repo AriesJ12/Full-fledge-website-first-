@@ -82,7 +82,16 @@
                         <br>
                     </div>
                 </div>
-                
+                <div class="row border shadow-sm rounded mb-3">
+                    <div class="col-md-6 mt-md-3 p-md-5 p-3">
+                        <h1 class="display-6">Mark John</h1>
+                        Hi, I'm Mark Jhon Beltran, One of the member that created this website. "Coding is like girls, hard to understand when there is a problem"
+                        <br>
+                    </div>
+                    <div class="col-md-6 p-md-5 p-3">
+                        <img src="<?php echo $imageDefaultDirectory?>beltran.jpg" alt="" class="rounded img-fluid img-thumbnail">
+                    </div>
+                </div>
             </div>
         </div>
     </section>

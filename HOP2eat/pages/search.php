@@ -35,7 +35,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search</title>
-    <link rel="stylesheet" href="../Assets/css/style.css?v=2"/>
+    <link rel="stylesheet" href="../Assets/css/style.css?v=1"/>
 </head>
 <body>
     <!-- navbar -->
@@ -44,6 +44,7 @@
    
     <!-- main part -->
     <main class = "container text-bg-light mt-5 mb-5">
+        <!-- search part -->
     <section class="search-restaurant">
         <div class="container p-4">
             <div class = "ms-3 text-muted">
@@ -62,58 +63,75 @@
             </h1>
             
             <?php // get the data
-            $number = 1;
-            while($row = $result->fetch_assoc())
-            {
-            ?>
-            <div class="row p-3 my-3 border rounded" onclick = "window.location.href='<?php echo $https . $row['website']?>'">
-                <div class="col-md-3 mt-3 h-100">
-                    <img src="<?php echo $restaurantImages . $row['image'];?>" alt="" class="rounded img-fluid">
-                </div>
-                <div class="col-md-6 mt-md-3 h-100">  
-                    <h2><?php echo $number.". ". $row['name']?></h2>
-                    <?php for ($k = 0, $stars = 5, $currentStars = $row['rating']; $k < $stars; $k++, $currentStars--)
-                    {
-                        if($currentStars > 0 and $currentStars < 1){echo '<i class="fa fa-star-half-full checked"></i>';}
-                        elseif($currentStars > 0){echo '<i class="fa fa-star checked"></i>';}
-                        else{echo '<i class="fa fa-star"></i>';}?> 
-                    <?php
-                    } echo " (".$row['rating'].")"
-                    ?>
-                    <br>
-                    <span class = text-secondary><?php echo $row['address']?></span>
-                    <br><br>
-                    <?php 
-                        $truncatedText = strlen($row['description']) > 200 ? substr($row['description'], 0, 200) . "..." : $row['description'];
-                        echo $truncatedText;
-                    ?>                     
-                </div>
-                <div class="col-md-3">
-                    <a href="review.php?resto_id=<?php echo $row['id']?>" class="btn btn-outline-warning ">See reviews</a>  
-                    <?php 
-                      if(isset($_SESSION['account_type']))
-                      {
-                          if($_SESSION['account_type'] == 1)
-                          {?>
-                          <div class="mb-3 d-flex align-items-end">
-                              <div class="btn-group">
-                                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                  <button type="button" class="btn btn-sm btn-outline-secondary">Delete</button>   
-                              </div>
-                          </div>
+                $number = 1;
+                while($row = $result->fetch_assoc())
+                {
+                ?>
+                <div class="row p-3 my-3 border rounded" >
+                    <div class="col-md-3 mt-3 h-100">
+                        <img src="<?php echo $restaurantImages . $row['image'];?>" alt="" class="rounded img-fluid">
+                    </div>
+                    <div class="col-md-6 mt-md-3 h-100">  
+                        <h2 onclick = "window.location.href='<?php echo $https . $row['website']?>'"><?php echo $number.". ". $row['name']?></h2>
+                        <?php for ($k = 0, $stars = 5, $currentStars = $row['rating']; $k < $stars; $k++, $currentStars--)
+                        {
+                            if($currentStars > 0 and $currentStars < 1){echo '<i class="fa fa-star-half-full checked"></i>';}
+                            elseif($currentStars > 0){echo '<i class="fa fa-star checked"></i>';}
+                            else{echo '<i class="fa fa-star"></i>';}?> 
+                        <?php
+                        } echo " (".$row['rating'].")"
+                        ?>
+                        <br>
+                        <span class = text-secondary><?php echo $row['address']?></span>
+                        <br><br>
+                        <?php 
+                            $truncatedText = strlen($row['description']) > 200 ? substr($row['description'], 0, 200) . "..." : $row['description'];
+                            echo $truncatedText;
+                        ?>                     
+                    </div>
+                    <div class="col-md-3">
+                        <a href="review.php?resto_id=<?php echo $row['id']?>" class="btn btn-outline-warning ">See reviews</a>  
+                        <?php 
+                        if(isset($_SESSION['account_type']))
+                        {
+                            if($_SESSION['account_type'] == 1)
+                            {?>
+                            <div class="mb-3 d-flex align-items-end">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Delete</button>   
+                                </div>
+                            </div>
 
-                  <?php   }
-                      }
-                  ?>
+                    <?php   }
+                        }
+                    ?>
+                    </div>
                 </div>
-            </div>
-            <?php
-            $number++;
-            }
+                <?php
+                $number++;
+                }
             ?>
-            
-            
         </div>
+    </section>
+    
+    <!-- pagination -->
+    <section>
+        <nav class = "d-flex align-items-center"aria-label="...">
+        <ul class="pagination">
+            <li class="page-item disabled">
+            <span class="page-link">Previous</span>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item active" aria-current="page">
+            <span class="page-link">2</span>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+            </li>
+        </ul>
+        </nav>
     </section>
     </main>
     <!-- footer -->

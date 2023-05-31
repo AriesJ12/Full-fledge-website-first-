@@ -244,16 +244,7 @@ DELIMITER ;
 
 
 -- ACCOUNT BELOW
--- account update
 
-DELIMITER //
-CREATE PROCEDURE update_account(IN accountId INT, IN newEmail VARCHAR(255), IN newPassword VARCHAR(255))
-BEGIN
-    UPDATE account
-    SET email = newEmail, password = newPassword
-    WHERE id = accountId;
-END //
-DELIMITER ;
 
 
 -- account delete
