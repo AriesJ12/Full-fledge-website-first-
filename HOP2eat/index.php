@@ -34,15 +34,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
-    <link rel="stylesheet" href="Assets/css/style.css?v=2">
+    <link rel="stylesheet" href="Assets/css/style.css?v=0">
 </head>
-<body class="index">
+<body class="index bg-dark">
     
     <!-- navbar -->
     <?php require_once "Assets/navbar-footer/navbar.php"?>
   <!-- header -->
     <header class="container-fluid p-0">
-        
+      
         <!-- carousel headeer -->
         <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -51,34 +51,42 @@
                 <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="2" aria-label="Slide 3"></button>
               </div>            
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                    <div class="row text-light text-center"> 
-                        <div class="col-md-4 pt-5 pb-5 m-auto  carousel-content">
+              <div class="carousel-item active" data-bs-interval="3500" class="carousel">
+                    <div class="row text-light text-center carousel-content"> 
+                        <div class="col-md-6 pt-5 pb-5 m-auto">
                             <h1>WELCOME TO HOP2eat</h1>
                             <p>
                                 Still haven’t found that sweet spot?
                                 Use our search filters to help you find your next amazing meal.
                             </p>
+
+                            <form class="d-flex" role="search" method = "GET" action = "<?php echo $user_page_directory;?>search.php">
+                                <div class="input-group">              
+                                  <input type="text" aria-label="find_name" class="form-control w-25" id="find_name" name = "find_name" placeholder="Restaurant">
+                                  <input type="text" aria-label="find_location" class="form-control w-50" id="find_location" name = "find_location" placeholder = "region, province, city/barangay">
+                              </div>
+                                  <button class="btn btn-outline-light mx-2" type="submit">Search</button>
+                          </form>
                         </div>
                     </div>
               </div>
-              <div class="carousel-item">
-                        <div class="row text-light shadow-md text-center  carousel-content"> 
-                            <div class="col-md-4 pt-5 pb-5 m-auto">
-                                <h1>Check out the famous cuisines</h1>
+              <div class="carousel-item" data-bs-interval="3500" class="carousel">
+                        <div class="row text-light shadow-md text-center carousel-content d-flex justify-content-end"> 
+                            <div class="col-md-4 pt-5 pb-5 my-auto">
+                                <h1 class="display-4 fw-bold">Quick Reservation</h1>
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim nulla totam earum facere est fugiat, optio recusandae rerum vero ab!
+                                    Still haven’t found that sweet spot?
+                                    Use our search <br> filters to help you find your next amazing meal.
                                 </p>
                             </div>
                         </div>
               </div>
-              <div class="carousel-item">
-                        <div class="row text-bg-dark text-center"> 
-                            <div class="col-md-4 pt-5 pb-5 carousel-content">
-                                <h1>Quick Reservation</h1>
+              <div class="carousel-item" data-bs-interval="3500" class="carousel">
+                        <div class="row text-bg-dark text-center carousel-content"> 
+                            <div class="col-md-4 pt-5 pb-5 m-auto">
+                                <h1>Check out the famous cuisines</h1>
                                 <p>
-                                    Still haven’t found that sweet spot?
-                                    Use our search filters to help you find your next amazing meal.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim nulla totam earum facere est fugiat, optio recusandae rerum vero ab!
                                 </p>
                             </div>
                         </div>
@@ -87,31 +95,91 @@
         </div>
     </header>
     <main>
+
         <!-- about us -->
-        <section class="text-bg-light">
-            <div class="container">
+        <section class="text-light" data-bs-theme = "dark">
+             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 p-md-5 p-3">
-                        <img src="<?php echo $imageDefaultDirectory?>aboutImg1.jpg" alt="" class="rounded img-thumbnail">
-                    </div>
-                    <div class="col-md-6 mt-md-3 p-md-5 p-3">
-                        <h1 class="display-4">HOP2eat</h1>
-                        Looking for an ideal restaurant and book a table quickly and easily with Hop2Eat. We provide a one-of-a-kind dining experience that includes delicious meals in a peaceful and cozy place. If you're having trouble deciding where to eat, we provide the ideal setting and delicious food toshare with family and friends, a special occasion, or a romantic date.
-                        <br>
-                        <a href="pages/about_us.php" class="btn btn-outline-secondary mt-5">About us</a>
-                    </div>
+                        <div class="col-12 mt-md-3 p-md-5 p-3 text-center">
+                          <h1 class="display-4 fw-bold">HOP2eat</h1>
+                          Looking for an ideal restaurant and book a table quickly and easily with Hop2Eat. We provide a one-of-a-kind dining experience that includes delicious meals in a peaceful and cozy place. If you're having trouble deciding where to eat, we provide the ideal setting and delicious food toshare with family and friends, a special occasion, or a romantic date.
+                          <br>
+                          <a href="pages/about_us.php" class="btn btn-outline-secondary mt-5">About us</a>
+                        </div>
+
+                        <div class="col-12 border my-5">
+                          <div class="row border h-100">
+                            <div class="col-8 border h-100 overflow-hidden p-0"> 
+                              <img src="Assets/images/homepage/f1.jpg" alt="" class="w-100 h-100">
+                            </div>
+                          
+
+                          <div class="col-4 border h-100">
+                            <div class="row border h-100">
+                              <div class="col-12 border h-50 overflow-hidden p-0">
+                                <img src="Assets/images/homepage/f2.jpg" alt="" class="w-100 h-100">
+                              </div>
+  
+                              <div class="col-12 border h-50 overflow-hidden p-0">
+                                <img src="Assets/images/homepage/f3.jpg" alt="" class="w-100 h-100">
+                              </div>
+                            </div>
+                          </div>
+                      </div>  
+                      </div> 
                 </div>
             </div>
         </section>
+
+        <!-- breakfats --> 
+        <section class="breakfast">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 col-sm-6 mb-3 m-auto">
+                <div class="card-">
+                  <img src="Assets/images/homepage/breakfast.jpg" class="image rounded">
+                  <div class="intro">
+                      <a href="breakfast.html" class="nav-link"><h3>BREAKFAST</h3></a>
+                      <p>Are you having trouble finding your breakfast spot? Hop2eat has you covered because we have plenty of options for you.</p>
+                  </div>
+                 </div>
+              </div>
+
+              <div class="col-md-4 col-sm-6 mb-3 m-auto">
+                <div class="card-">
+                        <img src="Assets/images/homepage/lunch.jpg" class="image rounded">
+                        <div class="intro">
+                            <a href="lunch.html" class="nav-link"><h3>LUNCH</h3></a>
+                            <p>Are you having trouble finding your lunch spot? Hop2eat has you covered because we have plenty of options for you.</p>
+                        </div>
+                    </div>
+              </div>
+
+              <div class="col-md-4 col-sm-6 mb-3 m-auto">
+                <div class="card-">
+                        <img src="Assets/images/homepage/dinner.jpg" class="image rounded">
+                        <div class="intro">
+                            <a href="dinner.html" class="nav-link"><h3>DINNER</h3></a>
+                            <p>Are you having trouble finding your dinner spot? Hop2eat has you covered because we have plenty of options for you.</p>
+                        </div>
+                    </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
         <!-- famous restaurant -->
         <section class = restaurant>
             <div class="container-fluid text-bg-dark">
 
               <div class="container p-4">
-                    <h2 class = "text-center display-4 ">Famous restaurants </h2>
-                    <div class="d-flex justify-content-end">
-                        <a href="" class="btn btn-outline-info align-self-end mb-3">View all</a>
-                    </div>
+                <div class="row pt-5 ">
+                  <div class="col-12">
+                    <a href="#" class="btn btn-outline-primary float-end m">View All</a>
+                    <h3 class="text-uppercase mb-4 p-1 border-bottom ">Famous restaurants</h3>
+                  </div>
+                </div> 
                     <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                           <?php for($i = 0; $i < $max_carousel; $i++)
@@ -124,7 +192,7 @@
                               <div class="card mb-3" style="max-width: 540px;">
                                   <div class="row flex-md-row g-0">
                                     <div class="col-md-5 overflow-hidden">
-                                      <img src="<?php echo $imageRestaurantDirectory.$row['image'];?>" class="m-auto rounded-start" alt="..." height="300px">
+                                      <img src="<?php echo $imageRestaurantDirectory.$row['image'];?>" class="m-auto rounded-start" alt="..." height="200px">
                                     </div>
                                     <div class="col-md-7">
                                       <div class="card-body">
@@ -160,6 +228,7 @@
                 </div>
               </div>
         </section>
+
         <!-- famous dishes -->  
         <section class="text-bg-light pt-5 pb-5 shadow-sm dishes">
             <div class="container">
@@ -193,27 +262,28 @@
               </div>
             </div>
         </section>
+
         <!-- services -->
-        <section class="services mt-3 mb-5 pb-4">
+        <section class="services mt-3 mb-5 pb-4 text-bg-light">
           <div class="container">
               <div class="row g-3">
                   <div class="col-12 text-center p-4">
-                      <h1 class="display-5 border-bottom">Services</h1>
+                    <h3 class="text-uppercase mb-4 p-1 border-bottom ">Services</h3>
                   </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12 text-center border rounded p-4">
+                  <div class="col-lg-4 col-md-6 col-sm-12 text-center p-4 rounded">
                       <img src="<?php echo $imageDefaultDirectory?>reward.png" alt="..." height = "150"><br>
                       Get free meals and discounts for birthday celebrants on selected months.
                       <br>
                       <button class="btn btn-dark mt-4">Dining Rewards</button>
                   </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12 text-center border rounded p-4">
+                  <div class="col-lg-4 col-md-6 col-sm-12 text-center p-4 rounded">
                       <img src="<?php echo $imageDefaultDirectory?>dine.png" alt="..." height = "150"><br>
                       Arrange your desired table set-up and foods for events.
                       <br>
                       <button class="btn btn-dark mt-4">Private Dining</button>
                   </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12 text-center border rounded p-4" aria-hidden="true">
-                      <img src="Assets/images/placeholder.png" class="card-img-top" alt="..." height = "150">
+                  <div class="col-lg-4 col-md-6 col-sm-12 text-center p-4 rounded" aria-hidden="true">
+                      <img src="Assets/images/placeholder1.png" class="card-img-top" alt="..." height = "150">
                       <div class="card-body">
                         <h5 class="card-title placeholder-glow">
                           <span class="placeholder col-6"></span>
@@ -222,8 +292,6 @@
                           <span class="placeholder col-7"></span>
                           <span class="placeholder col-4"></span>
                           <span class="placeholder col-4"></span>
-                          <span class="placeholder col-6"></span>
-                          <span class="placeholder col-8"></span>
                         </p>
                         
                       <a href="pages/service.php" class="btn btn-outline-primary mt-4">View all</a>

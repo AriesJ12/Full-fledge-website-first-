@@ -74,7 +74,6 @@
                     <h2><?php echo $number.". ". $row['name']?></h2>
                     <?php for ($k = 0, $stars = 5, $currentStars = $row['rating']; $k < $stars; $k++, $currentStars--)
                     {?>
-                        <?php
                         if($currentStars > 0 and $currentStars < 1){echo '<i class="fa fa-star-half-full checked"></i>';}
                         elseif($currentStars > 0){echo '<i class="fa fa-star checked"></i>';}
                         else{echo '<i class="fa fa-star"></i>';}?> 
@@ -91,6 +90,21 @@
                 </div>
                 <div class="col-md-3">
                     <a href="review.php?resto_id=<?php echo $row['id']?>" class="btn btn-outline-warning ">See reviews</a>  
+                    <?php 
+                      if(isset($_SESSION['account_type']))
+                      {
+                          if($_SESSION['account_type'] == 1)
+                          {?>
+                          <div class="mb-3 d-flex align-items-end">
+                              <div class="btn-group">
+                                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                  <button type="button" class="btn btn-sm btn-outline-secondary">Delete</button>   
+                              </div>
+                          </div>
+
+                  <?php   }
+                      }
+                  ?>
                 </div>
             </div>
             <?php

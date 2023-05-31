@@ -1,7 +1,7 @@
-<nav class="navbar sticky-md-top navbar-expand-lg navbar-light bg-light border">
-      <div class="container-fluid">
+<nav class="navbar sticky-md-top navbar-expand-lg navbar-dark text-bg-dark border navbar-height" data-bs-theme="dark"> 
+      <div class="container fs-5 class">
           <a class="navbar-brand" href="<?php echo $index_page_directory?>index.php">
-              <img src="<?php echo $logo_directory?>logo-black3.png" 
+              <img src="<?php echo $logo_directory?>logo-white.png" 
               class = "navbar-brand"
               alt="">
           </a>
@@ -33,14 +33,7 @@
                 </li>
               </ul>
               
-          </div>
-          <form class="d-flex w-75" role="search" method = "GET" action = "<?php echo $user_page_directory;?>search.php">
-            <div class="input-group">              
-                <input type="text" aria-label="find_name" class="form-control w-25" id="find_name" name = "find_name" placeholder="Restaurant">
-                <input type="text" aria-label="find_location" class="form-control w-50" id="find_location" name = "find_location" placeholder = "region, province, city/barangay">
-            </div>
-            <button class="btn btn-outline-success me-2" type="submit">Search</button>
-        </form>    
+          </div>    
     
           <div class="align-items-middle">
               <button type="button" class="btn btn-danger"><a href="<?php echo $user_page_directory?>login.php" class = "nav-link">Login</a></button>
