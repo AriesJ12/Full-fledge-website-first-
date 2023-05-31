@@ -34,9 +34,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
-    <link rel="stylesheet" href="Assets/css/style.css?v=1">
+    <link rel="stylesheet" href="Assets/css/style.css?v=4">
 </head>
-<body class="index bg-dark">
+<body class="index ">
     
     <!-- navbar -->
     <?php require_once "Assets/navbar-footer/navbar.php"?>
@@ -99,7 +99,9 @@
     <main>
 
         <!-- about us -->
-        <section class="text-light bg-dark-subtle" data-bs-theme = "dark">
+
+        <section class="text-bg-dark" data-bs-theme = "dark">
+
              <div class="container">
                 <div class="row">
                         <div class="col-12 mt-md-3 p-md-5 p-3 text-center">
@@ -134,7 +136,10 @@
         </section>
 
         <!-- breakfats --> 
-        <section class="breakfast bg-dark-subtle" data-bs-theme = "dark">
+
+        <section class="breakfast text-bg-dark" data-bs-theme="dark">
+
+
           <div class="container">
             <div class="row">
               <div class="col-md-4 col-sm-6 mb-3 m-auto" onclick = "window.location.href='pages/search_cuisine.php?find_cuisine=&classification=1&cuisine_location='">
@@ -181,8 +186,10 @@
         </section>
 
         <!-- famous restaurant -->
-        <section class = " restaurant bg-dark-subtle" data-bs-theme = "dark">
-            <div class="container-fluid text-bg-dark">
+
+        <section class = "restaurant custom-dark-dark-bg" data-bs-theme="dark">
+            <div class="container-fluid text-light">
+
 
               <div class="container p-4">
                 <div class="row pt-5 ">
@@ -241,7 +248,7 @@
         </section>
 
         <!-- famous dishes -->  
-        <section class="text-bg-light pt-5 pb-5 shadow-sm dishes">
+        <section class="text-bg-dark pt-5 pb-5 shadow-sm dishes" data-bs-theme="dark">
             <div class="container">
               <div class="row pt-5 ">
                 <div class="col-12">
@@ -275,7 +282,9 @@
         </section>
 
         <!-- services -->
-        <section class="services mt-3 mb-5 pb-4 bg-dark-subtle text-light" data-bs-theme = "dark">
+
+        <section class="services mt-3 mb-5 pb-4 text-light custom-dark-dark-bg" data-bs-theme="dark">
+
           <div class="container">
               <div class="row g-3">
                   <div class="col-12 text-center p-4">

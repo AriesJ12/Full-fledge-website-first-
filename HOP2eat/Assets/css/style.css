@@ -18,6 +18,11 @@
 
 
 
+.custom-dark-dark-bg
+{
+  background-color: #111418;
+}
+
 
 /* for background only */
 .index > header > .carousel > .carousel-inner > .carousel-item:nth-child(1) > .row 

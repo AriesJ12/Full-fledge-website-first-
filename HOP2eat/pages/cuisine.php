@@ -76,6 +76,9 @@
               <div class="container">
                 <div class="row pt-5 ">
                   <div class="col-12">
+
+                    <a href="" class="btn btn-outline-primary float-end m">View All</a>
+
                     <h3 class="text-uppercase mb-4 p-1 border-bottom ">Dishes from famous restaurants</h3>
                   </div>
                 </div> 
