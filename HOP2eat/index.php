@@ -34,9 +34,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
-    <link rel="stylesheet" href="Assets/css/style.css?v=1">
+    <link rel="stylesheet" href="Assets/css/style.css?v=4">
 </head>
-<body class="index bg-dark">
+<body class="index ">
     
     <!-- navbar -->
     <?php require_once "Assets/navbar-footer/navbar.php"?>
@@ -97,7 +97,7 @@
     <main>
 
         <!-- about us -->
-        <section class="text-light" data-bs-theme = "dark">
+        <section class="text-bg-dark" data-bs-theme = "dark">
              <div class="container">
                 <div class="row">
                         <div class="col-12 mt-md-3 p-md-5 p-3 text-center">
@@ -132,7 +132,7 @@
         </section>
 
         <!-- breakfats --> 
-        <section class="breakfast">
+        <section class="breakfast text-bg-dark" data-bs-theme="dark">
           <div class="container">
             <div class="row">
               <div class="col-md-4 col-sm-6 mb-3 m-auto">
@@ -170,8 +170,8 @@
         </section>
 
         <!-- famous restaurant -->
-        <section class = restaurant>
-            <div class="container-fluid text-bg-dark">
+        <section class = "restaurant custom-dark-dark-bg" data-bs-theme="dark">
+            <div class="container-fluid text-light">
 
               <div class="container p-4">
                 <div class="row pt-5 ">
@@ -230,7 +230,7 @@
         </section>
 
         <!-- famous dishes -->  
-        <section class="text-bg-dark pt-5 pb-5 shadow-sm dishes">
+        <section class="text-bg-dark pt-5 pb-5 shadow-sm dishes" data-bs-theme="dark">
             <div class="container">
               <div class="row pt-5 ">
                 <div class="col-12">
@@ -264,7 +264,7 @@
         </section>
 
         <!-- services -->
-        <section class="services mt-3 mb-5 pb-4 text-bg-dark">
+        <section class="services mt-3 mb-5 pb-4 text-light custom-dark-dark-bg" data-bs-theme="dark">
           <div class="container">
               <div class="row g-3">
                   <div class="col-12 text-center p-4">
@@ -274,13 +274,13 @@
                       <img src="<?php echo $imageDefaultDirectory?>reward.png" alt="..." height = "150"><br>
                       Get free meals and discounts for birthday celebrants on selected months.
                       <br>
-                      <button class="btn btn-dark mt-4">Dining Rewards</button>
+                      <button class="btn btn-light mt-4">Dining Rewards</button>
                   </div>
                   <div class="col-lg-4 col-md-6 col-sm-12 text-center p-4 rounded">
                       <img src="<?php echo $imageDefaultDirectory?>dine.png" alt="..." height = "150"><br>
                       Arrange your desired table set-up and foods for events.
                       <br>
-                      <button class="btn btn-dark mt-4">Private Dining</button>
+                      <button class="btn btn-light mt-4">Private Dining</button>
                   </div>
                   <div class="col-lg-4 col-md-6 col-sm-12 text-center p-4 rounded" aria-hidden="true">
                       <img src="Assets/images/placeholder1.png" class="card-img-top" alt="..." height = "150">
@@ -294,7 +294,7 @@
                           <span class="placeholder col-4"></span>
                         </p>
                         
-                      <a href="pages/service.php" class="btn btn-outline-primary mt-4">View all</a>
+                      <a href="pages/service.php" class="btn btn-light mt-4">View all</a>
                       </div>
               </div>
           </div>

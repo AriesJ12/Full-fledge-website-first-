@@ -42,7 +42,7 @@
     <title>Find something</title>
     <link rel="stylesheet" href="../Assets/css/style.css"/>
 </head>
-<body>
+<body data-bs-theme= "dark">
     <!-- navbar -->
     <?php require_once "../Assets/navbar-footer/navbar.php"?>
     <!-- header -->
@@ -57,9 +57,9 @@
       </section>
     </header>
     <!-- main part -->
-    <main class = "container">
+    <main>
         <!-- famous restaurant in Manila -->  
-        <section class="text-bg-light pt-5 pb-5 shadow-sm restaurant">
+        <section class="container-fluid text-bg-dark pt-5 pb-5 shadow-sm restaurant">
             <div class="container">
               <div class="row pt-5 ">
                 <div class="col-12">
@@ -111,7 +111,7 @@
 
        
         <!-- nearby restaurants  -->  
-        <section class="text-bg-light pt-5 pb-5 shadow-sm restaurant">
+        <section class="container-fluid text-bg-dark pt-5 pb-5 shadow-sm restaurant">
             <div class="container">
               <div class="row pt-5 ">
                 <div class="col-12">
@@ -186,7 +186,7 @@
         </section>
 
         <!-- famous dishes -->  
-        <section class="text-bg-light pt-5 pb-5 shadow-sm dishes">
+        <section class="container-fluid text-light custom-dark-dark-bg pt-5 pb-5 shadow-sm dishes">
             <div class="container">
               <div class="row pt-5 ">
                 <div class="col-12">
@@ -220,7 +220,7 @@
         </section>
 
         <!-- best diner place -->  
-        <section class="text-bg-light pt-5 pb-5 shadow-sm restaurant">
+        <section class="container-fluid text-bg-dark pt-5 pb-5 shadow-sm restaurant">
             <div class="container">
               <div class="row pt-5 ">
                 <div class="col-12">
@@ -285,7 +285,7 @@
         </section>
 
         <!-- bestt breakfast place -->  
-        <section class="text-bg-light pt-5 pb-5 shadow-sm restaurant">
+        <section class="container-fluid text-bg-dark pt-5 pb-5 shadow-sm restaurant">
             <div class="container">
               <div class="row pt-5 ">
                 <div class="col-12">
