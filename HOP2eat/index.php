@@ -181,7 +181,7 @@
         </section>
 
         <!-- famous restaurant -->
-        <section class = restaurant>
+        <section class = " restaurant bg-dark-subtle" data-bs-theme = "dark">
             <div class="container-fluid text-bg-dark">
 
               <div class="container p-4">
