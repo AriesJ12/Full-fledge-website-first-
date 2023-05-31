@@ -34,7 +34,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
-    <link rel="stylesheet" href="Assets/css/style.css?v=2">
+    <link rel="stylesheet" href="Assets/css/style.css?v=0">
 </head>
 <body class="index bg-dark">
     
@@ -42,7 +42,7 @@
     <?php require_once "Assets/navbar-footer/navbar.php"?>
   <!-- header -->
     <header class="container-fluid p-0">
-        
+      
         <!-- carousel headeer -->
         <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -135,19 +135,19 @@
         <section class="breakfast">
           <div class="container">
             <div class="row">
-              <div class="col-md-4 col-sm-6 mb-3">
-                <div class="card">
-                        <img src="Assets/images/homepage/breakfast.jpg" class="image">
-                        <div class="intro">
-                            <a href="breakfast.html" class="nav-link"><h3>BREAKFAST</h3></a>
-                            <p>Are you having trouble finding your breakfast spot? Hop2eat has you covered because we have plenty of options for you.</p>
-                        </div>
-                    </div>
+              <div class="col-md-4 col-sm-6 mb-3 m-auto">
+                <div class="card-">
+                  <img src="Assets/images/homepage/breakfast.jpg" class="image rounded">
+                  <div class="intro">
+                      <a href="breakfast.html" class="nav-link"><h3>BREAKFAST</h3></a>
+                      <p>Are you having trouble finding your breakfast spot? Hop2eat has you covered because we have plenty of options for you.</p>
+                  </div>
+                 </div>
               </div>
 
-              <div class="col-md-4 col-sm-6 mb-3">
-                <div class="card">
-                        <img src="Assets/images/homepage/lunch.jpg" class="image">
+              <div class="col-md-4 col-sm-6 mb-3 m-auto">
+                <div class="card-">
+                        <img src="Assets/images/homepage/lunch.jpg" class="image rounded">
                         <div class="intro">
                             <a href="lunch.html" class="nav-link"><h3>LUNCH</h3></a>
                             <p>Are you having trouble finding your lunch spot? Hop2eat has you covered because we have plenty of options for you.</p>
@@ -155,9 +155,9 @@
                     </div>
               </div>
 
-              <div class="col-md-4 col-sm-6 mb-3">
-                <div class="card">
-                        <img src="Assets/images/homepage/dinner.jpg" class="image">
+              <div class="col-md-4 col-sm-6 mb-3 m-auto">
+                <div class="card-">
+                        <img src="Assets/images/homepage/dinner.jpg" class="image rounded">
                         <div class="intro">
                             <a href="dinner.html" class="nav-link"><h3>DINNER</h3></a>
                             <p>Are you having trouble finding your dinner spot? Hop2eat has you covered because we have plenty of options for you.</p>
@@ -264,26 +264,26 @@
         </section>
 
         <!-- services -->
-        <section class="services mt-3 mb-5 pb-4">
+        <section class="services mt-3 mb-5 pb-4 text-bg-light">
           <div class="container">
               <div class="row g-3">
                   <div class="col-12 text-center p-4">
                     <h3 class="text-uppercase mb-4 p-1 border-bottom ">Services</h3>
                   </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12 text-center border rounded p-4">
+                  <div class="col-lg-4 col-md-6 col-sm-12 text-center p-4 rounded">
                       <img src="<?php echo $imageDefaultDirectory?>reward.png" alt="..." height = "150"><br>
                       Get free meals and discounts for birthday celebrants on selected months.
                       <br>
                       <button class="btn btn-dark mt-4">Dining Rewards</button>
                   </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12 text-center border rounded p-4">
+                  <div class="col-lg-4 col-md-6 col-sm-12 text-center p-4 rounded">
                       <img src="<?php echo $imageDefaultDirectory?>dine.png" alt="..." height = "150"><br>
                       Arrange your desired table set-up and foods for events.
                       <br>
                       <button class="btn btn-dark mt-4">Private Dining</button>
                   </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12 text-center border rounded p-4" aria-hidden="true">
-                      <img src="Assets/images/placeholder.png" class="card-img-top" alt="..." height = "150">
+                  <div class="col-lg-4 col-md-6 col-sm-12 text-center p-4 rounded" aria-hidden="true">
+                      <img src="Assets/images/placeholder1.png" class="card-img-top" alt="..." height = "150">
                       <div class="card-body">
                         <h5 class="card-title placeholder-glow">
                           <span class="placeholder col-6"></span>
@@ -292,8 +292,6 @@
                           <span class="placeholder col-7"></span>
                           <span class="placeholder col-4"></span>
                           <span class="placeholder col-4"></span>
-                          <span class="placeholder col-6"></span>
-                          <span class="placeholder col-8"></span>
                         </p>
                         
                       <a href="pages/service.php" class="btn btn-outline-primary mt-4">View all</a>
