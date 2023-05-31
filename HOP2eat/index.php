@@ -230,7 +230,7 @@
         </section>
 
         <!-- famous dishes -->  
-        <section class="text-bg-light pt-5 pb-5 shadow-sm dishes">
+        <section class="text-bg-dark pt-5 pb-5 shadow-sm dishes">
             <div class="container">
               <div class="row pt-5 ">
                 <div class="col-12">
@@ -264,7 +264,7 @@
         </section>
 
         <!-- services -->
-        <section class="services mt-3 mb-5 pb-4 text-bg-light">
+        <section class="services mt-3 mb-5 pb-4 text-bg-dark">
           <div class="container">
               <div class="row g-3">
                   <div class="col-12 text-center p-4">

@@ -16,7 +16,7 @@
       <section class="text-center container text-bg-tertiary">
         <div class="row">
           <div class="col-12 text-center text-light header-height pt-5 m-auto">
-              <h1>BOOK A TABLE</h1>
+              <h1 class="display-1 fw-bold">Reservation</h1>
           </div>
         </div>
       </section>
