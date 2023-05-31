@@ -1,5 +1,5 @@
 name of database : hope2eat
-
+hello kian xD
 tables : 
     -  accounts
     - restaurants
