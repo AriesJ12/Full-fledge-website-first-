@@ -3,7 +3,7 @@
     $current_file = basename( $_SERVER['PHP_SELF']);
 
     //store all pages in an array
-    $pages_user = array("find_something.php", "cuisine.php", "reservation.php", "service.php", "about_us.php", "login.php", "register.php","profile.php", "logout.php", "search.php", "faqs.php", "review.php", "search_cuisine.php");
+    $pages_user = array("find_something.php", "cuisine.php", "reservation.php", "service.php", "about_us.php", "login.php", "register.php","profile.php", "logout.php", "search.php", "faqs.php", "review.php", "search_cuisine.php", "donation.php");
     $pages_admin = array("add_restaurant.php", "view_user.php");
     $index = array("index");
     
@@ -13,7 +13,8 @@
         $index_page_directory = "../";
         $user_page_directory = "./";
         $admin_page_directory = "admin/";  
-        $logo_directory = "../Assets/images/homepage/";      
+        $logo_directory = "../Assets/images/homepage/";    
+        $profile_directory = "../Assets/images/userImages/";  
     }
     else if(in_array($current_file, $pages_admin))
     {
@@ -21,13 +22,17 @@
         $user_page_directory = "../";
         $admin_page_directory = "./";
         $logo_directory = "../../Assets/images/homepage/";
+
+        $profile_directory = "../../Assets/images/userImages/";
     }
     else
     {
         $index_page_directory = "./";
         $user_page_directory = "pages/";
         $admin_page_directory = "pages/admin/";
-        $logo_directory = "Assets/images/homepage/";     
+        $logo_directory = "Assets/images/homepage/";
+        
+        $profile_directory = "Assets/images/userImages/";  
     }
 ?>
 

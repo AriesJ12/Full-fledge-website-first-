@@ -57,7 +57,8 @@
                             <h1>WELCOME TO HOP2eat</h1>
                             <p>
                                 Still haven’t found that sweet spot?
-                                Use our search filters to help you find your next amazing meal.
+                                Use our search filters to help you find your next amazing meal.<br>
+                                
                             </p>
 
                             <form class="d-flex" role="search" method = "GET" action = "<?php echo $user_page_directory;?>search.php">
@@ -67,6 +68,7 @@
                               </div>
                                   <button class="btn btn-outline-light mx-2" type="submit">Search</button>
                           </form>
+                          <span>Leave it blank and press search to see everthing</span>
                         </div>
                     </div>
               </div>
@@ -97,7 +99,9 @@
     <main>
 
         <!-- about us -->
+
         <section class="text-bg-dark" data-bs-theme = "dark">
+
              <div class="container">
                 <div class="row">
                         <div class="col-12 mt-md-3 p-md-5 p-3 text-center">
@@ -132,34 +136,37 @@
         </section>
 
         <!-- breakfats --> 
+
         <section class="breakfast text-bg-dark" data-bs-theme="dark">
+
+
           <div class="container">
             <div class="row">
-              <div class="col-md-4 col-sm-6 mb-3 m-auto">
+              <div class="col-md-4 col-sm-6 mb-3 m-auto" onclick = "window.location.href='pages/search_cuisine.php?find_cuisine=&classification=1&cuisine_location='">
                 <div class="card-">
                   <img src="Assets/images/homepage/breakfast.jpg" class="image rounded">
                   <div class="intro">
-                      <a href="breakfast.html" class="nav-link"><h3>BREAKFAST</h3></a>
+                      <h3>BREAKFAST</h3>
                       <p>Are you having trouble finding your breakfast spot? Hop2eat has you covered because we have plenty of options for you.</p>
                   </div>
                  </div>
               </div>
 
-              <div class="col-md-4 col-sm-6 mb-3 m-auto">
+              <div class="col-md-4 col-sm-6 mb-3 m-auto" onclick = "window.location.href='pages/search_cuisine.php?find_cuisine=&classification=2&cuisine_location='">
                 <div class="card-">
                         <img src="Assets/images/homepage/lunch.jpg" class="image rounded">
                         <div class="intro">
-                            <a href="lunch.html" class="nav-link"><h3>LUNCH</h3></a>
+                            <h3>LUNCH</h3>  
                             <p>Are you having trouble finding your lunch spot? Hop2eat has you covered because we have plenty of options for you.</p>
                         </div>
                     </div>
               </div>
 
-              <div class="col-md-4 col-sm-6 mb-3 m-auto">
+              <div class="col-md-4 col-sm-6 mb-3 m-auto" onclick = "window.location.href='pages/search_cuisine.php?find_cuisine=&classification=3&cuisine_location='">
                 <div class="card-">
                         <img src="Assets/images/homepage/dinner.jpg" class="image rounded">
                         <div class="intro">
-                            <a href="dinner.html" class="nav-link"><h3>DINNER</h3></a>
+                            <h3>DINNER</h3>
                             <p>Are you having trouble finding your dinner spot? Hop2eat has you covered because we have plenty of options for you.</p>
                         </div>
                     </div>
@@ -169,9 +176,20 @@
           </div>
         </section>
 
+        <!-- reservation header -->
+        <section class="bg-dark-subtle text-center container-fluid text-bg-tertiary reservation-section" data-bs-theme = "dark">
+          <div class="row d-flex align-items-center">
+            <div class="col-12 text-light pt-5 ">
+                <h1 class = "display-4 fst-italic">QUICK RESERVATION</h1>
+            </div>
+          </div>
+        </section>
+
         <!-- famous restaurant -->
+
         <section class = "restaurant custom-dark-dark-bg" data-bs-theme="dark">
             <div class="container-fluid text-light">
+
 
               <div class="container p-4">
                 <div class="row pt-5 ">
@@ -264,7 +282,9 @@
         </section>
 
         <!-- services -->
+
         <section class="services mt-3 mb-5 pb-4 text-light custom-dark-dark-bg" data-bs-theme="dark">
+
           <div class="container">
               <div class="row g-3">
                   <div class="col-12 text-center p-4">
