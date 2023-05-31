@@ -73,7 +73,7 @@
                 <div class="col-md-6 mt-md-3 h-100">  
                     <h2><?php echo $number.". ". $row['name']?></h2>
                     <?php for ($k = 0, $stars = 5, $currentStars = $row['rating']; $k < $stars; $k++, $currentStars--)
-                    {?>
+                    {
                         if($currentStars > 0 and $currentStars < 1){echo '<i class="fa fa-star-half-full checked"></i>';}
                         elseif($currentStars > 0){echo '<i class="fa fa-star checked"></i>';}
                         else{echo '<i class="fa fa-star"></i>';}?> 

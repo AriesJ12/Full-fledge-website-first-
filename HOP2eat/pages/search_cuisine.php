@@ -15,7 +15,6 @@
     $location = $_GET['cuisine_location'];
 
     $sql = "CALL get_cuisine_filter('$name', $classification, '$location');";
-    echo $sql;
     $result = $conn->query($sql);
 ?>
 

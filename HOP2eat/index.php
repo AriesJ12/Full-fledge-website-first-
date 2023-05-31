@@ -34,7 +34,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
-    <link rel="stylesheet" href="Assets/css/style.css?v=0">
+    <link rel="stylesheet" href="Assets/css/style.css?v=1">
 </head>
 <body class="index bg-dark">
     
