@@ -90,6 +90,21 @@
                             echo $truncatedText;
                         ?>
                         <br>
+                        <?php 
+                            if(isset($_SESSION['account_type']))
+                            {
+                                if($_SESSION['account_type'] == 1)
+                                {?>
+                                <div class="mb-3 d-flex align-items-end">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">Delete</button>   
+                                    </div>
+                                </div>
+                                
+                        <?php   }
+                            }
+                        ?>
                         
                     </div>
                 </div>
