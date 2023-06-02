@@ -17,6 +17,13 @@
 }
 
 
+<<<<<<< Updated upstream
+=======
+.custom-dark-dark-bg
+{
+  background-color: #111418;
+}
+>>>>>>> Stashed changes
 
 
 /* for background only */
@@ -36,9 +43,29 @@
     background-image: url("../images/homepage/homebg2.jpg");
     background-size: auto;
 }
+
+.find-something header
+{
+  background-image: url("../images/find-header .png");
+  background-size: auto;
+  height: 400px;
+}
+.cuisine header 
+{
+  background-image: url("../images/cuisine-header.png");
+  background-size: auto;
+  height: 500px;
+}
+.service header 
+{
+  background-image: url("../images/services.png");
+  background-size: auto;
+  height: 500px;
+}
 .reservation > header
 {
   background-image: url("../images/resto-header.png");
+  height: 900px;
 }
 
 .reservation-section
@@ -249,6 +276,11 @@
   visibility: visible;
 }
 
+/* Reservation container */
+.reser-height{
+  height: 600px;
+  width: 600px;
+}
 
 
 /* stars */

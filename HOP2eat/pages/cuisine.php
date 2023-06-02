@@ -31,16 +31,16 @@
     <title>Cuisines</title>
     <link rel="stylesheet" href="../Assets/css/style.css"/>
   </head>
-  <body>
+  <body class="cuisine">
   <!-- navbar -->
   <?php require_once "../Assets/navbar-footer/navbar.php"?>
   <!-- header -->
   <header>
-    <section class="py-5 text-center container">
+    <section class="py-5 text-center container pb-1">
       <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
-          <h1 class="fw-light">Try our newly added cuisine search engine</h1>
-          <span class="text-muted">Press search without any inputs to show everything</span> 
+          <h1 class="text-light fs-3">Try our newly added cuisine search engine</h1>
+          <span class="text-light">Press search without any inputs to show everything</span> 
          <p>
          <form role="search" method = "GET" action = "<?php echo $user_page_directory;?>search_cuisine.php">
             <div class = "form-floating">
@@ -61,7 +61,7 @@
               <input type="text" name="cuisine_location" id="cuisine_location" class="form-control border border-warning my-3" placeholder = "region, province, barangay/city">
               <label for="cuisine_location">Location</label>
             </div>
-            <button class="btn btn-outline-success me-2 my-3" type="submit">Search</button>
+            <button class="btn btn-dark me-2 my-3" type="submit">Search</button>
           </form>   
           </p>
         </div>
@@ -70,9 +70,9 @@
   </header>
   
   <main>
-    <div class="album py-5 bg-body-tertiary">
+    <div class="album py-5">
       <!-- famous dishes -->  
-      <section class="text-bg-light pt-5 pb-5 shadow-sm dishes">
+      <section class="text-light pt-5 pb-5 shadow-sm dishes text-bg-dark">
               <div class="container">
                 <div class="row pt-5 ">
                   <div class="col-12">

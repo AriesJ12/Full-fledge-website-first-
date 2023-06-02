@@ -5,21 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find something</title>
+    <title>Services</title>
     <link rel="stylesheet" href="../Assets/css/style.css"/>
 </head>
-<body>
+<body class="service bg-dark">
     <!-- navbar -->
     <?php require_once "../Assets/navbar-footer/navbar.php"?>
     <!-- header -->
 
+  <header>
+    <div class="container">
+      <div class="col-12 text-center p-4">
+        <h1 class="display-3 text-light">Services</h1>
+      <div>
+    </div>
+  </header>
+
     <main>
     <section class="services mb-5">
-          <div class="container">
+          <div class="container pt-5">
               <div class="row g-3">
-                  <div class="col-12 text-center p-4">
-                      <h1 class="display-5 border-bottom">Services</h1>
-                  </div>
                   <div class="col-lg-4 col-md-6 col-sm-12 text-center border rounded p-4">
                       <img src="<?php echo $imageDefaultDirectory?>reward.png" alt="..." height = "150"><br>
                       Get free meals and discounts for birthday celebrants on selected months.

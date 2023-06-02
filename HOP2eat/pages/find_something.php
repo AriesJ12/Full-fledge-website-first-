@@ -40,22 +40,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find something</title>
-    <link rel="stylesheet" href="../Assets/css/style.css"/>
+    <link rel="stylesheet" href="../Assets/css/style.css?v=2"/>
 </head>
+<<<<<<< Updated upstream
 <body>
+=======
+<body class="find-something" data-bs-theme= "dark">
+>>>>>>> Stashed changes
     <!-- navbar -->
     <?php require_once "../Assets/navbar-footer/navbar.php"?>
     <!-- header -->
     <header>
       <section class="py-5 text-center container">
-      <div class="row py-lg-5">
-        <div class="col-lg-6 col-md-8 mx-auto">
-          <h1 class="fw-light">Try using the search bar at the navbar to see better result</h1>
-          <span class="text-muted">Press search without any inputs to show everything</span> 
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <p class="text-light fs-3">Try using the search bar at the navbar to see better result</p>
+            <span class="text-muted">Press search without any inputs to show everything</span> 
+
+            <form class="d-flex pt-3" role="search" method = "GET" action = "<?php echo $user_page_directory;?>search.php">
+                <div class="input-group">              
+                    <input type="text" aria-label="find_name" class="form-control w-25 bg-light" id="find_name" name = "find_name" placeholder="Restaurant">
+                    <input type="text" aria-label="find_location" class="form-control w-50 bg-light text-dark" id="find_location" name = "find_location" placeholder = "region, province, city/barangay">
+                </div>
+                        <button class="btn btn-outline-light mx-2" type="submit">Search</button>
+            </form>
+
+          </div>
         </div>
-      </div>
       </section>
     </header>
+
     <!-- main part -->
     <main class = "container">
         <!-- famous restaurant in Manila -->  
@@ -186,7 +200,11 @@
         </section>
 
         <!-- famous dishes -->  
+<<<<<<< Updated upstream
         <section class="text-bg-light pt-5 pb-5 shadow-sm dishes">
+=======
+        <section class="container-fluid text-light bg-dark pt-5 pb-5 shadow-sm dishes">
+>>>>>>> Stashed changes
             <div class="container">
               <div class="row pt-5 ">
                 <div class="col-12">
