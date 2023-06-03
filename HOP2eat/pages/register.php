@@ -68,18 +68,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register Page</title>
-    <link rel="stylesheet" href="../Assets/css/style.css">
+    <link rel="stylesheet" href="../Assets/css/style.css?v=2">
 </head>
-<body class = "bg-secondary-color">
+<body class = "bg-secondary-color register-login-bg">
 
     
 <main class="container">
+  <a href="../index.php">
+    <img class="mb-4" src="../Assets/images/homepage/logo-white.png" alt="" width="120" height="70">
+  </a>
   <div class=" row my-5">
-    <div class="col-lg-4 m-auto border shadow-lg p-3 mb-5 rounded text-center">
+    <div class="col-lg-4 m-auto shadow p-3 mb-5 rounded text-center bg-light">
       <form action= "" method = "POST" class = "needs-validation" novalidate>
-        <a href="../index.php">
-          <img class="mb-4" src="../Assets/images/homepage/logoblack4.png" alt="" width="120" height="57">
-        </a>
         <h1 class="h4 mb-3 fw-normal">Sign Up</h1>
         <?php
           if(isset($_GET['error']))
@@ -92,28 +92,28 @@
           <?php
           }?>
         <div class="form-floating mb-3">
-          <input type="text" id ="username" name= "username"class="form-control" required>
+          <input type="text" id ="username" name= "username"class="form-control" required placeholder = "username">
           <label for="username" class = "form-label">Username</label>
         </div>
         <div class="form-floating mb-3">
-          <input aria-label = "passwordHelpBlock" type="password" class="form-control" id="password" name = "password" required>
+          <input aria-label = "passwordHelpBlock" type="password" class="form-control" id="password" name = "password" required placeholder = "password">
           <label for="password" class = "form-label">Password</label>
         </div>
         <div class="form-floating mb-3">
-          <input type="password" class="form-control" id="confirm_password" name = "confirm_password" required>
+          <input type="password" class="form-control" id="confirm_password" name = "confirm_password" required placeholder = "confirm password">
           <label for="confirm_password" class = "form-label">Confirm Password</label>
         </div>
         <div class="form-floating mb-3">
-          <input type="email" id ="email" name= "email"class="form-control" required>
+          <input type="email" id ="email" name= "email"class="form-control" required placeholder = "email@email.com">
           <label for="email" class = "form-label">Email</label>
         </div>
         <div class="input-group mb-3">
           <div class="form-floating">
-            <input type="text" id = "first_name" name = "first_name" aria-label="First Name" class="form-control" required>
+            <input type="text" id = "first_name" name = "first_name" aria-label="First Name" class="form-control" required placeholder = "first name">
             <label for="first_name" class = "form-label">First Name</label>
           </div>
           <div class="form-floating">
-            <input type="text" id = "last_name" name = "last_name" aria-label="Last Name" class="form-control" required>
+            <input type="text" id = "last_name" name = "last_name" aria-label="Last Name" class="form-control" required placeholder = "last name">
             <label for="last_name" class = "form-label">Last Name</label>
           </div>
         </div>

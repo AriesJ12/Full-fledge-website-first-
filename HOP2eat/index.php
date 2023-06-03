@@ -54,7 +54,7 @@
               <div class="carousel-item active" data-bs-interval="3500" class="carousel">
                     <div class="row text-light text-center carousel-content"> 
                         <div class="col-md-6 pt-5 pb-5 m-auto">
-                            <h1>WELCOME TO HOP2eat</h1>
+                            <h1 class="display-5 pb-2 fw-bold">WELCOME TO HOP2eat</h1>
                             <p>
                                 Still haven’t found that sweet spot?
                                 Use our search filters to help you find your next amazing meal.<br>
@@ -86,10 +86,7 @@
               <div class="carousel-item" data-bs-interval="3500" class="carousel">
                         <div class="row text-bg-dark text-center carousel-content"> 
                             <div class="col-md-4 pt-5 pb-5 m-auto">
-                                <h1>Check out the famous cuisines</h1>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim nulla totam earum facere est fugiat, optio recusandae rerum vero ab!
-                                </p>
+                                
                             </div>
                         </div>
                 </div>

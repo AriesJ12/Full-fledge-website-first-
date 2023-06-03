@@ -76,16 +76,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <link rel="stylesheet" href="../Assets/css/style.css?v=2">
+    <link rel="stylesheet" href="../Assets/css/style.css?v=3">
 
 </head>
-<body class="text-center h-100 login login-bg">
-    
+<body class="text-center p-5 vh-100 login register-login-bg">
+<a href="../index.php">
+    <img class="mb-4" src="../Assets/images/homepage/logo-white.png" alt="" width="120" height="57">
+  </a>
 <main class="form-signin w-100 m-auto border shadow-lg p-3 mb-5 bg-body-tertiary rounded">
   <form action= "" method = "POST">
-    <a href="../index.php">
-      <img class="mb-4" src="../Assets/images/homepage/logoblack4.png" alt="" width="110" height="57">
-    </a>
     <h1 class="h4 mb-3 fw-normal">Please sign in</h1>
     <?php
           if(isset($_GET['error']))
@@ -98,11 +97,11 @@
           <?php
           }?>
     <div class="form-floating">
-      <input type="text" id ="username" name= "username"class="form-control" required>
+      <input type="text" id ="username" name= "username"class="form-control" required placeholder = "username">
       <label for="username">Username</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="password" name = "password" required>
+      <input type="password" class="form-control" id="password" name = "password" required placeholder = "password">
       <label for="password">Password</label>
     </div>
 

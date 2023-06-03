@@ -202,25 +202,24 @@
   color: orange; 
 }
 
-/* login */
+/* login and register*/
 .login {
   display: flex;
   align-items: center;
   padding-top: 40px;
   padding-bottom: 40px;
 }
-.login-bg header
+
+.register-login-bg
 {
-  background-image: url("../Assets/images/homepage/login-bg.png");
+  background-image: url("../images/register-bg.png");
 }
+
 .form-signin {
   max-width: 330px;
   padding: 15px;
 }
 
-.form-signin .form-floating:focus-within {
-  z-index: 2;
-}
 
 .form-signin input[type="email"] {
   margin-bottom: -1px;
