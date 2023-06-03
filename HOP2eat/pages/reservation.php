@@ -23,7 +23,7 @@
         </div>
 
         <!-- Reservation -->
-        <form class="container custom-dark-dark-bg reser-height border p-5"  >
+        <form class="container custom-dark-dark-bg reser-height rounded border p-5"  >
             <div class="row">
                 <div class="col-12 text-center text-light ">
                     <h1 class="display-5">BOOK A TABLE</h1>

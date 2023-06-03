@@ -35,7 +35,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search</title>
-    <link rel="stylesheet" href="../Assets/css/style.css?v=2"/>
+    <link rel="stylesheet" href="../Assets/css/style.css?v=100"/>
 </head>
 <body class = "text-light custom-dark-dark-bg " data-bs-theme= "dark">
     <!-- navbar -->

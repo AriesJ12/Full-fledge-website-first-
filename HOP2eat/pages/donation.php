@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../Assets/css/style.css"/>
 
 </head>
-<body>
+<body class = "custom-dark-dark-bg" data-bs-theme = "dark">
     <!-- navbar -->
     <?php require_once "../Assets/navbar-footer/navbar.php"?>
     
@@ -25,7 +25,7 @@
                     <div class="accordion-item">
                         <div class="p-0 accordion-header " id="headingTwo">
                             <h2 class="mb-0 ">
-                                <button class="btn btn-light btn-block text-left p-3 rounded-0 border-bottom-custom w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <button class="btn btn-dark btn-block text-left p-3 rounded-0 border-bottom-custom w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                     <div class="d-flex align-items-center justify-content-between">
 
                                         <span>Paypal</span>
@@ -45,7 +45,7 @@
                     <div class="accordion-item">
                         <div class="accordion-header p-0">
                             <h2 class="mb-0">
-                            <button class="btn btn-light btn-block text-left p-3 rounded-0 w-100" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <button class="btn btn-dark btn-block text-left p-3 rounded-0 w-100" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 <div class="d-flex align-items-center justify-content-between">
 
                                 <span>Credit card</span>

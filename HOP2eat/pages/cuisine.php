@@ -31,7 +31,7 @@
     <title>Cuisines</title>
     <link rel="stylesheet" href="../Assets/css/style.css"/>
   </head>
-  <body class="cuisine" >
+  <body class="cuisine custom-dark-dark-bg" >
   <!-- navbar -->
   <?php require_once "../Assets/navbar-footer/navbar.php"?>
   <!-- header -->
@@ -72,7 +72,7 @@
   <main data-bs-theme = "dark">
     <div class="album">
       <!-- famous dishes -->  
-      <section class="text-light pt-5 pb-5 dishes text-bg-dark">
+      <section class="text-light pt-5 pb-5 dishes">
               <div class="container">
                 <div class="row pt-5 ">
                   <div class="col-12">

@@ -14,7 +14,7 @@
     <title>Profile</title>
     <link rel="stylesheet" href="../Assets/css/style.css"/>
 </head>
-<body data-bs-theme = "dark">
+<body class = "custom-dark-dark-bg" data-bs-theme = "dark">
     <!-- navbar -->
     <?php require_once "../Assets/navbar-footer/navbar.php"?>
     
@@ -52,9 +52,9 @@
     <!-- main part -->
     <main class = "container mt-5 mb-5 p-4">
         <section class="Profile">
-            <div class="row">
+            <div class="row g-5">
                 <!-- sidebar -->
-                <div class="col-md-4 col-12 navbar text-md-center">
+                <div class="col-md-4 col-12 navbar text-md-center border shadow rounded ">
                     <div class="container d-block">
                         <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>

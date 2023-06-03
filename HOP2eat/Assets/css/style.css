@@ -99,11 +99,10 @@
 }
 
 
-.search-restaurant .container .row:hover,
-.restaurant .card:hover
+.search-restaurant .row:hover ,
+.restaurant .card:hover, .cuisine .card:hover, .dishes .card-body:hover
 {
-  background-color: var( --bs-dark);
-  /* input */
+  background-color: #393d3f !important;
 }
 
 .search-restaurant .container .row h2:hover

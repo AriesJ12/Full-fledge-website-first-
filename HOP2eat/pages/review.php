@@ -13,7 +13,7 @@
     <title>Review</title>
     <link rel="stylesheet" href="../Assets/css/style.css?v=2"/>
 </head>
-<body>
+<body class = "custom-dark-dark-bg" data-bs-theme = "dark">
     <!-- navbar -->
     <?php require_once "../Assets/navbar-footer/navbar.php"?>
 
@@ -49,7 +49,7 @@
     ?>
 
     <!-- main part -->
-    <main class = "container text-bg-light mt-5 mb-5">
+    <main class = "container mt-5 mb-5">
         <!-- display -->
     <?php
 
@@ -59,6 +59,7 @@
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
     ?>
+    <!-- display restaurant -->
     <section>
             <div class="row p-3 m-3 border rounded">
                 <div class="col-lg-3 mt-3">
@@ -84,7 +85,7 @@
                 </div>
             </div>
         </section>
-        <!-- form below -->
+        <!-- comment below -->
         <section class = "row">
             <div class="col-8 m-auto">
                 <!-- post -->
@@ -109,7 +110,7 @@
                     <br>
                     <input type="submit" name = "add" value="Post" class = "btn btn-warning align-self-end">
                 </form>
-                <!-- display reviews -->
+        <!-- display reviews -->
                 <h1 class = "text-center">Reviews</h1>
                 <div class="row">
                 
@@ -122,7 +123,7 @@
                         while($row = $result->fetch_assoc())
                         {
                     ?>
-                    <hr>
+                    <hr class = "my-5">
                         <div class="col-sm-4 col-12">
                             <?php
                                 if(is_null($row['profileImage']))

@@ -40,9 +40,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find something</title>
-    <link rel="stylesheet" href="../Assets/css/style.css?v=2"/>
+    <link rel="stylesheet" href="../Assets/css/style.css?v=3"/>
 </head>
-<body class="find-something" data-bs-theme= "dark">
+<body class="find-something custom-dark-dark-bg" data-bs-theme= "dark">
     <!-- navbar -->
     <?php require_once "../Assets/navbar-footer/navbar.php"?>
     <!-- header -->
@@ -67,7 +67,7 @@
     </header>
 
     <!-- main part -->
-    <main class = "text-bg-dark" data-bs-theme= "dark">
+    <main class = "text-light" data-bs-theme= "dark">
         <!-- famous restaurant in Manila -->  
         <section class="pt-5 pb-5 shadow-sm restaurant">
             <div class="container">
@@ -196,7 +196,7 @@
         </section>
 
         <!-- famous dishes -->  
-        <section class="text-bg-dark pt-5 pb-5 shadow-sm dishes">
+        <section class="pt-5 pb-5 shadow-sm dishes">
             <div class="container">
               <div class="row pt-5 ">
                 <div class="col-12">

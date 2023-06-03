@@ -25,9 +25,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Cuisine</title>
-    <link rel="stylesheet" href="../Assets/css/style.css?v=2"/>
+    <link rel="stylesheet" href="../Assets/css/style.css?v=3"/>
 </head>
-<body class ="cuisine" >
+<body class ="cuisine custom-dark-dark-bg" >
     <!-- navbar -->
     <?php require_once "../Assets/navbar-footer/navbar.php"?>
 
@@ -69,7 +69,7 @@
     <main class = "cuisine " data-bs-theme="dark">
         <div class="album ">
         <!-- famous dishes -->  
-        <section class="text-bg-dark pt-5 pb-5 shadow-sm dishes">
+        <section class="text-light pt-5 pb-5 shadow-sm dishes">
             <div class="container">
                 <div class="row pt-5 ">
                     <div class="col-12">
