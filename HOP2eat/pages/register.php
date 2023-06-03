@@ -70,15 +70,15 @@
     <title>Register Page</title>
     <link rel="stylesheet" href="../Assets/css/style.css?v=2">
 </head>
-<body class = "bg-secondary-color register-login-bg">
+<body class = "register-login-bg p-3">
 
     
-<main class="container">
+<main class="container-fluid">
   <a href="../index.php">
-    <img class="mb-4" src="../Assets/images/homepage/logo-white.png" alt="" width="120" height="70">
+    <img src="../Assets/images/homepage/logo-white.png" alt="" width="120" height="70">
   </a>
-  <div class=" row my-5">
-    <div class="col-lg-4 m-auto shadow p-3 mb-5 rounded text-center bg-light">
+  <div class=" row shadow">
+    <div class="col-md-6 m-auto shadow pt-5 px-5 pb-0 rounded text-center bg-light">
       <form action= "" method = "POST" class = "needs-validation" novalidate>
         <h1 class="h4 mb-3 fw-normal">Sign Up</h1>
         <?php
@@ -127,12 +127,11 @@
           </a>
         </p>
       </div>
-      <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2023</p>
+      <p class="mt-5 text-body-secondary">&copy; 2017–2023</p>
     </div>
   </div>
-  
-  
 </main>
+
 <div class="toast-container position-fixed bottom-0 end-0 p-3">
   <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-header">

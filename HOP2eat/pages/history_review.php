@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>Comments</title>
     <link rel="stylesheet" href="../Assets/css/style.css"/>
 </head>
 <body class = "custom-dark-dark-bg" data-bs-theme = "dark">
@@ -28,33 +28,22 @@
         {
             $profileImage = $_SESSION['profile_image'];
         }
+        //get id
         $id = $_SESSION['id'];
         
-        if($_SERVER['REQUEST_METHOD'] == 'POST')
-        {
-            //update in database
-
-                //get data
-                $first_name =  $_POST['first_name'];
-                $last_name = $_POST['last_name'];
-                $email = $_POST['email'];
-
-                //create statement
-                $sql = "UPDATE account SET first_name = '$first_name', last_name = '$last_name',email = '$email' WHERE id = $id";
-                $result = $conn->query($sql);
-
-                //update session
-                $_SESSION['first_name'] = $first_name;
-                $_SESSION['last_name'] = $last_name;
-                $_SESSION['email'] = $email;
-        }
+        //prepare statement
+        $sql = "CALL display_rating($id, NULL);";
+        
+        //execute query
+        $result = $conn->query($sql);
+    
     ?>
     <!-- main part -->
     <main class = "container mt-5 mb-5 p-4">
         <section class="Profile">
-            <div class="row g-5">
+            <div class="row g-5 d-flex">
                 <!-- sidebar -->
-                <div class="col-md-4 col-12 navbar text-md-center shadow rounded ">
+                <div class="col-md-4 col-12 navbar text-md-center shadow rounded align-items-start">
                     <div class="container d-block">
                         <button class="navbar-toggler d-md-none p-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -75,13 +64,13 @@
                                     ID: <?php echo $id?>  
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">Profile</a>
+                                    <a class="nav-link" aria-current="page" href="profile.php">Profile</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Change Password</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="history_review.php">Review History</a>
+                                    <a class="nav-link active" href="#">Review History</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="logout.php">Log Out</a>
@@ -91,40 +80,37 @@
                         </div>
                     </div>
                 </div>
-                <!-- display info and ask for changes -->
-                <form class="col-md-8 col-12" method = "POST" action = "">
-                    <h1>Account Information: </h1>
-                    <div class="row">
-                        <div class="col-6 my-3">
-                            <label for="first_name">First Name</label>
-                            <input type="text" class="form-control" name="first_name" id="first_name" value = "<?php echo $_SESSION['first_name'];?>">
-                        </div>
-                        <div class="col-6 my-3">
-                            <label for="last_name">Last Name</label>
-                            <input type="text"class="form-control" name="last_name" id="last_name" value = "<?php echo $_SESSION['last_name'];?>">
-                        </div>
-                        <div class="col-12 my-3">
-                            <label for="Email">Email</label>
-                            <input type="email" class="form-control" name="email" id="email" value = "<?php echo $_SESSION['email'];?>">
-                        </div>
-                        <button class="btn btn-primary mt-5" type = "button" data-bs-toggle="modal" data-bs-target="#confirmModal">Update Information</button>
-                    </div>
-                    <!-- modal confirm-->
-                    <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="updateModalLabel">Confirm Update?</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary">Continue</button>
-                                </div>
+                <!-- display person's comments-->
+                <div class="col-md-8 col-12">
+                    <h1>Comment/s' History</h1>
+                    <div class="row g-4">
+                        <?php
+                        while($row = $result->fetch_assoc())
+                        {?>
+                            <div class="col-12 p-3 border border-dark-subtle shadow rounded bg-dark">
+                                <span class="float-end m-2">
+                                    <?php for ($k = 0, $stars = 5, $currentStars = $row['rating_value']; $k < $stars; $k++, $currentStars--)
+                                    {?>
+                                    <?php
+                                    if($currentStars > 0 and $currentStars < 1){echo '<i class="fa fa-star-half-full checked"></i>';}
+                                    elseif($currentStars > 0){echo '<i class="fa fa-star checked"></i>';}
+                                    else{echo '<i class="fa fa-star"></i>';}?> 
+                                    <?php
+                                    } echo $row['rating_value'];
+                                    ?>
+                                </span>
+                                <h3 class = "text-info"><?php echo $row['restaurant_name']?></h3>
+                                <p class="text-muted"><?php echo $row['rating_date']?></p>
+                                <blockquote>
+                                    <?php echo $row['comment']?>
+                                </blockquote>
                             </div>
-                        </div>
+                        <?php
+                        }
+                        ?>
+                        
                     </div>
-                </form>
+                </div>
             </div>
         </section>
         

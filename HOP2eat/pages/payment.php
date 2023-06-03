@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donation</title>
+    <title>Payment</title>
     <link rel="stylesheet" href="../Assets/css/style.css"/>
 
 </head>
@@ -18,7 +18,7 @@
 
             <div class="col-md-6">  
                 
-                <span>Donation Method</span>
+                <span>Payment Method</span>
                 
 
                 <div class="accordion" id="accordionExample">
@@ -120,14 +120,13 @@
 
                     <div class="d-flex flex-column">
 
-                        <span>Pro(Billed Monthly) <i class="fa fa-caret-down"></i></span>
-                        <a href="#">Save 20% with annual Donation</a>
+                        <span>Pro   <i class="fa fa-caret-down"></i></span>
+                        <a href="#">Save 20% with a gift card</a>
                         
                     </div>
 
-                    <div class="mt-1">
-                        <sup >450 pesos</sup>
-                        <span >/Month</span>
+                    <div class="mt-1">  
+                        <span >450 pesos</span>
                     </div>
                     
                     </div>
@@ -160,7 +159,7 @@
 
                     <div class="d-flex flex-column">
 
-                        <span>Today you pay(Pesos)</span>
+                        <span>Total (Pesos)</span>
                         
                     </div>
                     <span>500Pesos</span>

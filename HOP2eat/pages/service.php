@@ -49,9 +49,9 @@
                   </div>
                   <div class="col-lg-4 col-md-6 col-sm-12 text-center  rounded p-4">
                       <img src="<?php echo $imageDefaultDirectory?>pay.png" alt="..." height = "150"><br>
-                      Consider Donating for continuous support to our open platform
+                      Payment transaction is flexible with different payment method.
                       <br>
-                      <button class="btn btn-light mt-4" type = "button" onclick = "window.location.href='donation.php'">Donation</button>
+                      <button class="btn btn-light mt-4" type = "button" onclick = "window.location.href='payment.php'">Payment</button>
                   </div>
               </div>
           </div>

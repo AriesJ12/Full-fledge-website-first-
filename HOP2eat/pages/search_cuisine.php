@@ -27,12 +27,12 @@
     <title>Search Cuisine</title>
     <link rel="stylesheet" href="../Assets/css/style.css?v=3"/>
 </head>
-<body class ="cuisine custom-dark-dark-bg" >
+<body class ="cuisine custom-dark-dark-bg" data-bs-theme = "dark" >
     <!-- navbar -->
     <?php require_once "../Assets/navbar-footer/navbar.php"?>
 
     <!-- header -->
-    <header>
+    <header data-bs-theme = "light">
         <section class="py-5 text-center container">
             <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">

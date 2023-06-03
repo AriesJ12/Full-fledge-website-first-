@@ -31,12 +31,12 @@
     <title>Cuisines</title>
     <link rel="stylesheet" href="../Assets/css/style.css?v=3"/>
   </head>
-  <body class="cuisine custom-dark-dark-bg" >
+  <body class="cuisine custom-dark-dark-bg" data-bs-theme = "dark">
   <!-- navbar -->
   <?php require_once "../Assets/navbar-footer/navbar.php"?>
   <!-- header -->
   <header>
-    <section class=" text-center container pb-1">
+    <section class=" text-center container pb-1" data-bs-theme = "light">
       <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
           <h1 class="text-light fs-3">Try our newly added cuisine search engine</h1>
@@ -145,7 +145,7 @@
     </div>
 
   </main>
-    
+
   <?php require_once "../Assets/navbar-footer/footer.html"?>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
