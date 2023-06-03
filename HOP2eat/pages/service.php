@@ -14,10 +14,8 @@
     <!-- header -->
 
   <header>
-    <div class="container">
-      <div class="col-12 text-center p-4 m-auto">
-        <h1 class="display-3 text-light">Services</h1>
-      <div>
+    <div class="container header-height d-flex align-items-center justify-content-center">
+        <h1 class="display-1 text-light pt-3">Services</h1>
     </div>
   </header>
 
