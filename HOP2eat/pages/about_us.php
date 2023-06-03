@@ -10,7 +10,7 @@
     <title>About us</title>
     <link rel="stylesheet" href="../Assets/css/style.css"/>
 </head>
-<body>
+<body class="custom-dark-dark-bg">
     <!-- navbar -->
     <?php require_once "../Assets/navbar-footer/navbar.php"?>
     <!-- header -->
@@ -35,9 +35,10 @@
             </div>
         </div>
     </section>
+
     <!-- as indiviaduals -->
     <section class="about-us">
-        <div class="container">
+        <div class="container bg-dark text-light">
             <div class="row p-5 m-5">
                 <div class="col-12 p-md-5 p-3 text-center">
                     <h3 class = "display-6">Who are we as individuals?</h3>

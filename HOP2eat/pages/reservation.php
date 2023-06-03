@@ -17,16 +17,12 @@
     <header>
       <section class="text-center container text-bg-tertiary">
         <div class="row">
-<<<<<<< Updated upstream
-          <div class="col-12 text-center text-light header-height pt-5 m-auto">
-              <h1>BOOK A TABLE</h1>
-=======
           <div class="col-12 text-center text-light pt-5 m-auto pb-5">
                 <h1 class="display-3">RESERVATION</h1>
->>>>>>> Stashed changes
           </div>
         </div>
 
+        <!-- Reservation -->
         <form class="container custom-dark-dark-bg reser-height border p-5"  >
             <div class="row">
                 <div class="col-12 text-center text-light ">
@@ -86,11 +82,6 @@
         </form>
       </section>
     </header>
-      
-
-    <!-- reservation -->
-    
-
 
     </main>
     <!-- footer -->

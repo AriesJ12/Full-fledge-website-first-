@@ -36,7 +36,7 @@
   <?php require_once "../Assets/navbar-footer/navbar.php"?>
   <!-- header -->
   <header>
-    <section class="py-5 text-center container pb-1">
+    <section class=" text-center container pb-1">
       <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
           <h1 class="text-light fs-3">Try our newly added cuisine search engine</h1>

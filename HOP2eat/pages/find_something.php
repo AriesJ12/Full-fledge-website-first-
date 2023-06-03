@@ -42,11 +42,7 @@
     <title>Find something</title>
     <link rel="stylesheet" href="../Assets/css/style.css?v=2"/>
 </head>
-<<<<<<< Updated upstream
-<body>
-=======
 <body class="find-something" data-bs-theme= "dark">
->>>>>>> Stashed changes
     <!-- navbar -->
     <?php require_once "../Assets/navbar-footer/navbar.php"?>
     <!-- header -->
@@ -55,7 +51,7 @@
         <div class="row py-lg-5">
           <div class="col-lg-6 col-md-8 mx-auto">
             <p class="text-light fs-3">Try using the search bar at the navbar to see better result</p>
-            <span class="text-muted">Press search without any inputs to show everything</span> 
+            <span class="text-light">Press search without any inputs to show everything</span> 
 
             <form class="d-flex pt-3" role="search" method = "GET" action = "<?php echo $user_page_directory;?>search.php">
                 <div class="input-group">              
@@ -71,9 +67,9 @@
     </header>
 
     <!-- main part -->
-    <main class = "container">
+    <main class = "text-bg-dark" data-bs-theme= "dark">
         <!-- famous restaurant in Manila -->  
-        <section class="text-bg-light pt-5 pb-5 shadow-sm restaurant">
+        <section class="pt-5 pb-5 shadow-sm restaurant">
             <div class="container">
               <div class="row pt-5 ">
                 <div class="col-12">
@@ -125,7 +121,7 @@
 
        
         <!-- nearby restaurants  -->  
-        <section class="text-bg-light pt-5 pb-5 shadow-sm restaurant">
+        <section class="pt-5 pb-5 shadow-sm restaurant">
             <div class="container">
               <div class="row pt-5 ">
                 <div class="col-12">
@@ -200,11 +196,7 @@
         </section>
 
         <!-- famous dishes -->  
-<<<<<<< Updated upstream
-        <section class="text-bg-light pt-5 pb-5 shadow-sm dishes">
-=======
-        <section class="container-fluid text-light bg-dark pt-5 pb-5 shadow-sm dishes">
->>>>>>> Stashed changes
+        <section class="text-bg-dark pt-5 pb-5 shadow-sm dishes">
             <div class="container">
               <div class="row pt-5 ">
                 <div class="col-12">
@@ -238,7 +230,7 @@
         </section>
 
         <!-- best diner place -->  
-        <section class="text-bg-light pt-5 pb-5 shadow-sm restaurant">
+        <section class="pt-5 pb-5 shadow-sm restaurant">
             <div class="container">
               <div class="row pt-5 ">
                 <div class="col-12">
@@ -303,7 +295,7 @@
         </section>
 
         <!-- bestt breakfast place -->  
-        <section class="text-bg-light pt-5 pb-5 shadow-sm restaurant">
+        <section class=" pt-5 pb-5 shadow-sm restaurant">
             <div class="container">
               <div class="row pt-5 ">
                 <div class="col-12">

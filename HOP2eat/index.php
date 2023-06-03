@@ -34,13 +34,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
-<<<<<<< Updated upstream
     <link rel="stylesheet" href="Assets/css/style.css?v=1">
-=======
-    <link rel="stylesheet" href="Assets/css/style.css?v=4">
 
-    <script src="https://kit.fontawesome.com/10d593c5dc.js" crossorigin="anonymous"></script>
->>>>>>> Stashed changes
+    <link rel="stylesheet" href="Assets/css/style.css?v=4">
 </head>
 <body class="index bg-dark">
     
@@ -105,12 +101,7 @@
     <main>
 
         <!-- about us -->
-<<<<<<< Updated upstream
         <section class="text-light bg-dark-subtle" data-bs-theme = "dark">
-=======
-        <section class="text-bg-dark" data-bs-theme = "dark">
-
->>>>>>> Stashed changes
              <div class="container">
                 <div class="row">
                         <div class="col-12 mt-md-3 p-md-5 p-3 text-center">
@@ -192,16 +183,8 @@
         </section>
 
         <!-- famous restaurant -->
-<<<<<<< Updated upstream
         <section class = " restaurant bg-dark-subtle" data-bs-theme = "dark">
             <div class="container-fluid text-bg-dark">
-=======
-
-        <section class = "restaurant bg-dark" data-bs-theme="dark">
-            <div class="container-fluid text-light">
-
->>>>>>> Stashed changes
-
               <div class="container p-4">
                 <div class="row pt-5 ">
                   <div class="col-12">
@@ -259,11 +242,7 @@
         </section>
 
         <!-- famous dishes -->  
-<<<<<<< Updated upstream
-        <section class="text-bg-light pt-5 pb-5 shadow-sm dishes">
-=======
-        <section class="bg-dark text-light pt-5 pb-5 shadow-sm dishes">
->>>>>>> Stashed changes
+        <section class="text-bg-dark pt-5 pb-5 shadow-sm dishes">
             <div class="container">
               <div class="row pt-5 ">
                 <div class="col-12">
@@ -297,13 +276,7 @@
         </section>
 
         <!-- services -->
-<<<<<<< Updated upstream
-        <section class="services mt-3 mb-5 pb-4 bg-dark-subtle text-light" data-bs-theme = "dark">
-=======
-
-        <section class="services mt-3 mb-5 pb-4 bg-dark text-light" data-bs-theme="dark">
-
->>>>>>> Stashed changes
+        <section class="services mt-3 mb-5 pb-4 bg-dark text-light">
           <div class="container">
               <div class="row g-3">
                   <div class="col-12 text-center p-4">

@@ -10,18 +10,18 @@
     <title>About us</title>
     <link rel="stylesheet" href="../Assets/css/style.css"/>
 </head>
-<body>
+<body class="bg-dark">
     <!-- navbar -->
     <?php require_once "../Assets/navbar-footer/navbar.php"?>
     <!-- header -->
    
     <!-- main part -->
-    <main class = "container text-bg-light mt-5 mb-5 p-4">
+    <main class = "container text-light bg-dark mt-5 mb-5 p-4">
          <!-- about us -->
     <section class="faqs">
         <div class="container rounded">
             <div class="row m-5">
-                <div class="col-12 p-3 text-center display-6">
+                <div class="col-12 p-3 text-center display-5">
                     FAQs
                 </div>
             </div>

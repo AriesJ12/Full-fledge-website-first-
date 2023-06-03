@@ -15,7 +15,7 @@
 
   <header>
     <div class="container">
-      <div class="col-12 text-center p-4">
+      <div class="col-12 text-center p-4 m-auto">
         <h1 class="display-3 text-light">Services</h1>
       <div>
     </div>

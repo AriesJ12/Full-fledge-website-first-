@@ -78,9 +78,9 @@
     <div class="col-lg-4 m-auto border shadow-lg p-3 mb-5 rounded text-center">
       <form action= "" method = "POST" class = "needs-validation" novalidate>
         <a href="../index.php">
-          <img class="mb-4" src="../Assets/images/homepage/logo-black3.png" alt="" width="120" height="57">
+          <img class="mb-4" src="../Assets/images/homepage/logoblack4.png" alt="" width="120" height="57">
         </a>
-        <h1 class="h3 mb-3 fw-normal">Sign Up</h1>
+        <h1 class="h4 mb-3 fw-normal">Sign Up</h1>
         <?php
           if(isset($_GET['error']))
           {?>
