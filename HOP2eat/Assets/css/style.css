@@ -84,19 +84,28 @@
 }
 
 /* services transition */
-.services .col-lg-4, .search-restaurant .container .row
+.services .col-lg-4
 {
   transition: .2s linear;
     
 }
 
 
-.services .col-lg-4:hover, .search-restaurant .container .row:hover
+.services .col-lg-4:hover
 {
   background-color: var( --bs-light);
   color: var(--bs-dark);
   transform:scale(1.05); 
 }
+
+
+.search-restaurant .container .row:hover,
+.restaurant .card:hover
+{
+  background-color: var( --bs-dark);
+  /* input */
+}
+
 .search-restaurant .container .row h2:hover
 {
   cursor: pointer;

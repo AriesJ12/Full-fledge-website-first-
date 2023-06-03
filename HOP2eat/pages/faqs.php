@@ -10,7 +10,7 @@
     <title>About us</title>
     <link rel="stylesheet" href="../Assets/css/style.css"/>
 </head>
-<body class="bg-dark">
+<body class="bg-dark" data-bs-theme="dark">
     <!-- navbar -->
     <?php require_once "../Assets/navbar-footer/navbar.php"?>
     <!-- header -->

@@ -35,15 +35,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search</title>
-    <link rel="stylesheet" href="../Assets/css/style.css?v=1"/>
+    <link rel="stylesheet" href="../Assets/css/style.css?v=2"/>
 </head>
-<body>
+<body class = "text-light custom-dark-dark-bg " data-bs-theme= "dark">
     <!-- navbar -->
     <?php require_once "../Assets/navbar-footer/navbar.php"?>
     <!-- header -->
    
     <!-- main part -->
-    <main class = "container text-bg-light mt-5 mb-5">
+    <main class = "container mt-5 mb-5  ">
         <!-- search part -->
     <section class="search-restaurant">
         <div class="container p-4">
@@ -67,7 +67,7 @@
                 while($row = $result->fetch_assoc())
                 {
                 ?>
-                <div class="row p-3 my-3 border rounded" >
+                <div class="row p-3 my-3 border rounded bg-dark shadow">
                     <div class="col-md-3 mt-3 h-100">
                         <img src="<?php echo $restaurantImages . $row['image'];?>" alt="" class="rounded img-fluid">
                     </div>

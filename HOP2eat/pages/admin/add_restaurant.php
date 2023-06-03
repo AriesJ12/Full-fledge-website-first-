@@ -10,13 +10,13 @@
     <title>Add restaurant</title>
     <link rel="stylesheet" href="../../Assets/css/style.css?v=2"/>
 </head>
-<body>
+<body class = "custom-dark-dark-bg" data-bs-theme = "dark">
     <!-- navbar -->
     <?php require_once "../../Assets/navbar-footer/navbar.php"?>
     <!-- header -->
    <!-- header -->
    <header>
-      <section class="py-5 text-center container text-bg-tertiary">
+      <section class="py-5 text-center container">
       <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
           <h1 class="fw-light">Add restaurant</h1>
@@ -25,10 +25,10 @@
       </section>
     </header>
     <!-- main part -->
-    <main class = "container text-bg-light mt-5 mb-5">
+    <main class = "container mt-5 mb-5">
         <!-- display -->
     <section>
-            <div class="row p-3 m-3 border rounded">
+            <div class="row p-3 m-3 border rounded bg-dark">
                 <div class="col-lg-3 mt-3">
                     <img src="#" alt="Preview Image" id = "main_picture" class="rounded img-fluid">
                 </div>

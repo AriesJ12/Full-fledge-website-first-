@@ -31,7 +31,7 @@
     <title>Cuisines</title>
     <link rel="stylesheet" href="../Assets/css/style.css"/>
   </head>
-  <body class="cuisine">
+  <body class="cuisine" >
   <!-- navbar -->
   <?php require_once "../Assets/navbar-footer/navbar.php"?>
   <!-- header -->
@@ -69,10 +69,10 @@
     </section>
   </header>
   
-  <main>
-    <div class="album py-5">
+  <main data-bs-theme = "dark">
+    <div class="album">
       <!-- famous dishes -->  
-      <section class="text-light pt-5 pb-5 shadow-sm dishes text-bg-dark">
+      <section class="text-light pt-5 pb-5 dishes text-bg-dark">
               <div class="container">
                 <div class="row pt-5 ">
                   <div class="col-12">
@@ -84,8 +84,8 @@
                   for($j = 0 ; $j < $cuisine_per_carousel; $j++)
                   { $row = $cuisine->fetch_assoc();
                 ?>
-                  <div class="col-md-4 col-sm-6 mb-3">
-                    <div class="card overflow-hidden">
+                  <div class="col-md-4 col-sm-6 mb-3 ">
+                    <div class="card overflow-hidden shadow text-bg-dark">
                       <img src="<?php echo $imageCuisineDirectory.$row['image'];?>" class="card-img-top" alt="Card Image" height = "200px" widht = "300x">
                       <div class="card-body">
                         <h5 class="card-title"><?php echo $row['cuisine_name'];?></h5>

@@ -34,11 +34,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
-    <link rel="stylesheet" href="Assets/css/style.css?v=1">
-
-    <link rel="stylesheet" href="Assets/css/style.css?v=4">
+    <link rel="stylesheet" href="Assets/css/style.css?v=0">
 </head>
-<body class="index bg-dark">
+<body class="index bg-dark" data-bs-theme = "dark">
     
     <!-- navbar -->
     <?php require_once "Assets/navbar-footer/navbar.php"?>
@@ -46,7 +44,7 @@
     <header class="container-fluid p-0">
       
         <!-- carousel headeer -->
-        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-theme="light">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -183,7 +181,7 @@
         </section>
 
         <!-- famous restaurant -->
-        <section class = " restaurant bg-dark-subtle" data-bs-theme = "dark">
+        <section class = "restaurant bg-dark-subtle" data-bs-theme = "dark">
             <div class="container-fluid text-bg-dark">
               <div class="container p-4">
                 <div class="row pt-5 ">
@@ -197,12 +195,12 @@
                           <?php for($i = 0; $i < $max_carousel; $i++)
                           {?>
                           <div class="carousel-item <?php if($i==0){echo "active";}?>">
-                            <div class="row row-cols-lg-2 row-cols-md-1 g-4">
+                            <div class="row row-cols-lg-2 row-cols-md-1 g-4 ">
                             <?php for ($j = 0; $j < $restaurant_per_carousel; $j++)
                             {$row = $restaurant->fetch_assoc();?>
-                            <div class="col d-block">
-                              <div class="card mb-3" style="max-width: 540px;">
-                                  <div class="row flex-md-row g-0">
+                            <div class="col d-block ">
+                              <div class="card mb-3" style="max-height: 250px;max-width: 540px;">
+                                  <div class="row flex-md-row g-0 shadow">
                                     <div class="col-md-5 overflow-hidden">
                                       <img src="<?php echo $imageRestaurantDirectory.$row['image'];?>" class="m-auto rounded-start" alt="..." height="200px">
                                     </div>
@@ -242,7 +240,7 @@
         </section>
 
         <!-- famous dishes -->  
-        <section class="text-bg-dark pt-5 pb-5 shadow-sm dishes">
+        <section class="text-bg-dark pt-5 pb-5 dishes">
             <div class="container">
               <div class="row pt-5 ">
                 <div class="col-12">
@@ -256,7 +254,7 @@
                 { $row = $cuisine->fetch_assoc();
               ?>
                 <div class="col-md-4 col-sm-6 mb-3">
-                  <div class="card overflow-hidden">
+                  <div class="card overflow-hidden text-bg-dark shadow">
                     <img src="<?php echo $imageCuisineDirectory.$row['image'];?>" class="card-img-top" alt="Card Image" height = "200px" widht = "300x">
                     <div class="card-body">
                       <h5 class="card-title"><?php echo $row['cuisine_name'];?></h5>

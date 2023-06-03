@@ -14,7 +14,7 @@
     <title>Profile</title>
     <link rel="stylesheet" href="../Assets/css/style.css"/>
 </head>
-<body>
+<body data-bs-theme = "dark">
     <!-- navbar -->
     <?php require_once "../Assets/navbar-footer/navbar.php"?>
     
@@ -50,7 +50,7 @@
         }
     ?>
     <!-- main part -->
-    <main class = "container text-bg-light mt-5 mb-5 p-4">
+    <main class = "container mt-5 mb-5 p-4">
         <section class="Profile">
             <div class="row">
                 <!-- sidebar -->
