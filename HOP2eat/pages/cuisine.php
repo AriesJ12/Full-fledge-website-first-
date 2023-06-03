@@ -29,7 +29,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cuisines</title>
-    <link rel="stylesheet" href="../Assets/css/style.css"/>
+    <link rel="stylesheet" href="../Assets/css/style.css?v=3"/>
   </head>
   <body class="cuisine custom-dark-dark-bg" >
   <!-- navbar -->
@@ -69,39 +69,78 @@
     </section>
   </header>
   
-  <main data-bs-theme = "dark">
+  <main class = "pt-5" data-bs-theme = "dark">
+    <!-- classification -->
+    <!-- breakfats --> 
+    <section class="breakfast my-5" data-bs-theme = "dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-6 mb-3" onclick = "window.location.href='search_cuisine.php?find_cuisine=&classification=1&cuisine_location='">
+            <div class="card- overflow-hidden" style = "max-height:310px;">
+              <img src="../Assets/images/homepage/breakfast.jpg" class="image rounded">
+              <div class="intro">
+                  <h3>BREAKFAST</h3>
+                  <p>Are you having trouble finding your breakfast spot? Hop2eat has you covered because we have plenty of options for you.</p>
+              </div>
+              </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 mb-3 m-auto" onclick = "window.location.href='search_cuisine.php?find_cuisine=&classification=2&cuisine_location='">
+            <div class="card- overflow-hidden" style = "max-height:310px;">
+                    <img src="../Assets/images/homepage/lunch.jpg" class="image rounded">
+                    <div class="intro">
+                        <h3>LUNCH</h3>  
+                        <p>Are you having trouble finding your lunch spot? Hop2eat has you covered because we have plenty of options for you.</p>
+                    </div>
+                </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 mb-3 m-auto" onclick = "window.location.href='search_cuisine.php?find_cuisine=&classification=3&cuisine_location='">
+            <div class="card- overflow-hidden" style = "max-height:310px;">
+                    <img src="../Assets/images/homepage/dinner.jpg" class="image rounded">
+                    <div class="intro">
+                        <h3>DINNER</h3>
+                        <p>Are you having trouble finding your dinner spot? Hop2eat has you covered because we have plenty of options for you.</p>
+                    </div>
+                </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
     <div class="album">
       <!-- famous dishes -->  
       <section class="text-light pt-5 pb-5 dishes">
-              <div class="container">
-                <div class="row pt-5 ">
-                  <div class="col-12">
-                    <h3 class="text-uppercase mb-4 p-1 border-bottom ">Dishes from famous restaurants</h3>
-                  </div>
-                </div> 
-                <div class="row">
-                <?php
-                  for($j = 0 ; $j < $cuisine_per_carousel; $j++)
-                  { $row = $cuisine->fetch_assoc();
-                ?>
-                  <div class="col-md-4 col-sm-6 mb-3 ">
-                    <div class="card overflow-hidden shadow text-bg-dark">
-                      <img src="<?php echo $imageCuisineDirectory.$row['image'];?>" class="card-img-top" alt="Card Image" height = "200px" widht = "300x">
-                      <div class="card-body">
-                        <h5 class="card-title"><?php echo $row['cuisine_name'];?></h5>
-                        <p class="card-text mb-4">From: <a href="<?php echo $https . $row['website']?>"> <?php echo $row['restaurant_name']?> </a></p>
-                      </div>
-                      <div class="card-footer">
-                        Location: <?php echo $row['address']?>
-                      </div>
-                    </div>
-                  </div>
-                <?php 
-                  }
-                ?>
-                  
+        <div class="container">
+          <div class="row pt-5 ">
+            <div class="col-12">
+            <a href="search_cuisine.php?find_cuisine=&classification=&cuisine_location=" class="btn btn-outline-primary float-end m">View All</a>
+              <h3 class="text-uppercase mb-4 p-1 border-bottom ">Dishes from famous restaurants</h3>
+            </div>
+          </div> 
+          <div class="row">
+          <?php
+            for($j = 0 ; $j < $cuisine_per_carousel; $j++)
+            { $row = $cuisine->fetch_assoc();
+          ?>
+            <div class="col-md-4 col-sm-6 mb-3 ">
+              <div class="card overflow-hidden shadow text-bg-dark">
+                <img src="<?php echo $imageCuisineDirectory.$row['image'];?>" class="card-img-top" alt="Card Image" height = "200px" widht = "300x">
+                <div class="card-body">
+                  <h5 class="card-title"><?php echo $row['cuisine_name'];?></h5>
+                  <p class="card-text mb-4">From: <a href="<?php echo $https . $row['website']?>"> <?php echo $row['restaurant_name']?> </a></p>
+                </div>
+                <div class="card-footer">
+                  Location: <?php echo $row['address']?>
                 </div>
               </div>
+            </div>
+          <?php 
+            }
+          ?>
+            
+          </div>
+        </div>
       </section>
     </div>
 

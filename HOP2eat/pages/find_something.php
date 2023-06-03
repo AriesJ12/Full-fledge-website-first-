@@ -194,13 +194,14 @@
               </div>
             </div>
         </section>
-
+        
+        
         <!-- famous dishes -->  
         <section class="pt-5 pb-5 shadow-sm dishes">
             <div class="container">
               <div class="row pt-5 ">
                 <div class="col-12">
-                  <a href="#" class="btn btn-outline-primary float-end m">View All</a>
+                <a href=" search_cuisine.php?find_cuisine=&classification=&cuisine_location=" class="btn btn-outline-primary float-end m">View All</a>
                   <h3 class="text-uppercase mb-4 p-1 border-bottom ">Dishes from famous restaurants</h3>
                 </div>
               </div> 
@@ -230,131 +231,111 @@
         </section>
 
         <!-- best diner place -->  
+        <?php
+          $result->free();
+          $conn->next_result();
+          $sql = "CALL get_restaurant_cuisine(3)";
+          
+          $result = $conn->query($sql);
+        ?>
+        
         <section class="pt-5 pb-5 shadow-sm restaurant">
             <div class="container">
               <div class="row pt-5 ">
                 <div class="col-12">
                   <a href="#" class="btn btn-outline-primary float-end m">View All</a>
-                  <h3 class="text-uppercase mb-4 p-1 border-bottom ">Famous restaurants in Manila</h3>
+                  <h3 class="text-uppercase mb-4 p-1 border-bottom ">Best Diner Place</h3>
                 </div>
               </div> 
               <div class="row">
-                <!--ADD CLASSES HERE d-flex align-items-stretch-->
-                <div class="col-lg-4 mb-3 d-flex align-items-stretch">
-                  <div class="card overflow-hidden">
-                    <img src="https://picsum.photos/200/300" 
-                    class="card-img-top" 
-                    alt="Card Image"
-                    height = "200px" widht = "300x">
-                    <div class="card-body d-flex flex-column">
-                      <h5 class="card-title">Dōtonbori Canal</h5>
-                      <p class="card-text mb-4">Is a manmade waterway dug in the early 1600's and now displays many landmark commercial locals and vivid neon signs.</p>
-                      <p class="card-text mb-4"><span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star-half-full checked"></span>
-                        <span class="fa fa-star"></span></p>
-                      <a href="#" class="btn btn-primary mt-auto align-self-start">Book now</a>
+                <!-- call three diner place -->
+                <?php
+                for($i = 0; $i < $max_resto AND $row = $result->fetch_assoc(); $i++)
+                {
+                ?>
+                  <div class="col-lg-4 mb-3 d-flex align-items-stretch" onclick="location.href='<?php echo $https . $row['website']?>'">
+                    <div class="card overflow-hidden">
+                      <img src="<?php echo $imageDefaultDirectory.$row['image']?>" 
+                      class="card-img-top" 
+                      alt="Card Image"
+                      height = "200px" widht = "300x">
+                      <div class="card-body d-flex flex-column">
+                        <h5 class="card-title"><?php echo $row['restaurant_name']?></h5>
+                        <p class="card-text mb-4 text-muted"><?php echo $row['address'] ?></p>
+                        <p class="card-text mb-4"><?php echo $row['description'] ?></p>
+                        <p class="card-text mb-4">
+                        <?php for ($k = 0, $stars = 5, $currentStars = $row['rating']; $k < $stars; $k++, $currentStars--)
+                        {?>
+                          <?php
+                          if($currentStars > 0 and $currentStars < 1){echo '<i class="fa fa-star-half-full checked"></i>';}
+                          elseif($currentStars > 0){echo '<i class="fa fa-star checked"></i>';}
+                          else{echo '<i class="fa fa-star"></i>';}?> 
+                        <?php
+                        } echo $row['rating'];
+                        ?>
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <!--ADD CLASSES HERE d-flex align-items-stretch-->
-                <div class="col-lg-4 mb-3 d-flex align-items-stretch">
-                  <div class="card overflow-hidden">
-                    <img src="https://i.postimg.cc/4xVY64PV/porto-timoni-double-beach-corfu-greece-700.jpg" class="card-img-top" alt="Card Image" height = "200px" widht = "300x">
-                    <div class="card-body d-flex flex-column">
-                      <h5 class="card-title">Porto Timoni Double Beach</h5>
-                      <p class="card-text mb-4">Near Afionas village, on the west coast of Corfu island. The two beaches form two unique bays. The turquoise color of the sea contrasts to the high green hills surrounding it.</p>
-                      <p class="card-text mb-4"><span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star-half-full checked"></span>
-                        <span class="fa fa-star"></span></p>
-                      <a href="#" class="btn btn-primary mt-auto align-self-start">Book now</a>
-                    </div>
-                  </div>
-                </div>
-                <!--ADD CLASSES HERE d-flex align-items-stretch-->
-                <div class="col-lg-4 mb-3 d-flex align-items-stretch">
-                  <div class="card overflow-hidden">
-                    <img src="https://i.postimg.cc/TYyLPJWk/tritons-fountain-valletta-malta-700.jpg" class="card-img-top" alt="Card Image" height = "200px" widht = "300x">
-                    <div class="card-body d-flex flex-column">
-                      <h5 class="card-title">Tritons Fountain</h5>
-                      <p class="card-text mb-4">Located just outside the City Gate of Valletta, Malta. It consists of three bronze Tritons holding up a large basin, balanced on a concentric base built out of concrete and clad in travertine slabs.</p>
-                      <p class="card-text mb-4"><span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star-half-full checked"></span>
-                        <span class="fa fa-star"></span></p>
-                      <a href="#" class="btn btn-primary mt-auto align-self-start">Book now</a>
-                    </div>
-                  </div>
-                </div>
+                <?php
+                }
+                ?>
+                
               </div>
             </div>
         </section>
-
+        
         <!-- bestt breakfast place -->  
+        <?php
+          $result->free();
+          $conn->next_result();
+          $sql = "CALL get_restaurant_cuisine(1)";
+          
+          $result = $conn->query($sql);
+        ?>
+        
         <section class=" pt-5 pb-5 shadow-sm restaurant">
             <div class="container">
               <div class="row pt-5 ">
                 <div class="col-12">
                   <a href="#" class="btn btn-outline-primary float-end m">View All</a>
-                  <h3 class="text-uppercase mb-4 p-1 border-bottom ">Famous restaurants in Manila</h3>
+                  <h3 class="text-uppercase mb-4 p-1 border-bottom ">Best Breakfast Place</h3>
                 </div>
               </div> 
               <div class="row">
-                <!--ADD CLASSES HERE d-flex align-items-stretch-->
-                <div class="col-lg-4 mb-3 d-flex align-items-stretch">
-                  <div class="card overflow-hidden">
-                    <img src="https://picsum.photos/200/300" 
-                    class="card-img-top" 
-                    alt="Card Image"
-                    height = "200px" widht = "300x">
-                    <div class="card-body d-flex flex-column">
-                      <h5 class="card-title">Dōtonbori Canal</h5>
-                      <p class="card-text mb-4">Is a manmade waterway dug in the early 1600's and now displays many landmark commercial locals and vivid neon signs.</p>
-                      <p class="card-text mb-4"><span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star-half-full checked"></span>
-                        <span class="fa fa-star"></span></p>
-                      <a href="#" class="btn btn-primary mt-auto align-self-start">Book now</a>
+                 <!-- call three diner place -->
+                 <?php
+                for($i = 0; $i < $max_resto AND $row = $result->fetch_assoc(); $i++)
+                {
+                ?>
+                  <div class="col-lg-4 mb-3 d-flex align-items-stretch" onclick="location.href='<?php echo $https . $row['website']?>'">
+                    <div class="card overflow-hidden">
+                      <img src="<?php echo $imageDefaultDirectory.$row['image']?>" 
+                      class="card-img-top" 
+                      alt="Card Image"
+                      height = "200px" widht = "300x">
+                      <div class="card-body d-flex flex-column">
+                        <h5 class="card-title"><?php echo $row['restaurant_name']?></h5>
+                        <p class="card-text mb-4 text-muted"><?php echo $row['address'] ?></p>
+                        <p class="card-text mb-4"><?php echo $row['description'] ?></p>
+                        <p class="card-text mb-4">
+                        <?php for ($k = 0, $stars = 5, $currentStars = $row['rating']; $k < $stars; $k++, $currentStars--)
+                        {?>
+                          <?php
+                          if($currentStars > 0 and $currentStars < 1){echo '<i class="fa fa-star-half-full checked"></i>';}
+                          elseif($currentStars > 0){echo '<i class="fa fa-star checked"></i>';}
+                          else{echo '<i class="fa fa-star"></i>';}?> 
+                        <?php
+                        } echo $row['rating'];
+                        ?>
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <!--ADD CLASSES HERE d-flex align-items-stretch-->
-                <div class="col-lg-4 mb-3 d-flex align-items-stretch">
-                  <div class="card overflow-hidden">
-                    <img src="https://i.postimg.cc/4xVY64PV/porto-timoni-double-beach-corfu-greece-700.jpg" class="card-img-top" alt="Card Image" height = "200px" widht = "300x">
-                    <div class="card-body d-flex flex-column">
-                      <h5 class="card-title">Porto Timoni Double Beach</h5>
-                      <p class="card-text mb-4">Near Afionas village, on the west coast of Corfu island. The two beaches form two unique bays. The turquoise color of the sea contrasts to the high green hills surrounding it.</p>
-                      <p class="card-text mb-4"><span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star-half-full checked"></span>
-                        <span class="fa fa-star"></span></p>
-                      <a href="#" class="btn btn-primary mt-auto align-self-start">Book now</a>
-                    </div>
-                  </div>
-                </div>
-                <!--ADD CLASSES HERE d-flex align-items-stretch-->
-                <div class="col-lg-4 mb-3 d-flex align-items-stretch">
-                  <div class="card overflow-hidden">
-                    <img src="https://i.postimg.cc/TYyLPJWk/tritons-fountain-valletta-malta-700.jpg" class="card-img-top" alt="Card Image" height = "200px" widht = "300x">
-                    <div class="card-body d-flex flex-column">
-                      <h5 class="card-title">Tritons Fountain</h5>
-                      <p class="card-text mb-4">Located just outside the City Gate of Valletta, Malta. It consists of three bronze Tritons holding up a large basin, balanced on a concentric base built out of concrete and clad in travertine slabs.</p>
-                      <p class="card-text mb-4"><span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star-half-full checked"></span>
-                        <span class="fa fa-star"></span></p>
-                      <a href="#" class="btn btn-primary mt-auto align-self-start">Book now</a>
-                    </div>
-                  </div>
-                </div>
+                <?php
+                }
+                ?>
+                
               </div>
             </div>
         </section>

@@ -226,7 +226,8 @@ DELIMITER //
 CREATE PROCEDURE get_restaurant_cuisine(IN search_class INT)
 BEGIN
     SELECT cuis.classificationID AS classification_id, cuis.restaurantID AS restaurant_id,
-    res.ImageURL AS image, class.name AS classification, 
+    res.ImageURL AS image, class.name AS classification, res.description AS description,
+    res.rating AS rating,
     res.name AS restaurant_name, res.website AS website, res.active AS active,
     CONCAT(COALESCE(reg.region_name, ''), ", ", COALESCE(prov.province_name, ''), ", ", COALESCE(res.city_and_barangay, '')) AS address
     FROM restaurant_cuisine AS cuis

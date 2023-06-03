@@ -22,7 +22,11 @@
             // Set up data
             $restoId = $_GET['resto_id'];
             $accountId = $_SESSION['id'];
-            $rating = $_POST['rating'];
+            $rating = 0;
+            if(isset($_POST['rating']))
+            {
+                $rating = $_POST['rating'];
+            }
             $comment = $_POST['description'];
         
             // Escape the variables to prevent SQL injection (optional, but recommended)
@@ -106,9 +110,9 @@
                     </fieldset>                    
                     <br><br>
                     <!-- newly added cuisine no backend-->
-                    <textarea class = "form-control" name="description" id="description" cols="50" rows="5" placeholder= "Comment " class = "form-control"></textarea>
+                    <textarea class = "form-control" name="description" id="description" cols="50" rows="5" placeholder= "Comment " class = "form-control" <?php if(!isset($_SESSION['username'])){echo "disabled";}?>></textarea>
                     <br>
-                    <input type="submit" name = "add" value="Post" class = "btn btn-warning align-self-end">
+                    <input type="submit" name = "add" value="Post" class = "btn btn-warning align-self-end"  <?php if(!isset($_SESSION['username'])){echo "disabled";}?> >
                 </form>
         <!-- display reviews -->
                 <h1 class = "text-center">Reviews</h1>
