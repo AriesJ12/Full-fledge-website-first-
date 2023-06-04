@@ -54,7 +54,7 @@
         <section class="Profile">
             <div class="row g-5">
                 <!-- sidebar -->
-                <div class="col-md-4 col-12 navbar text-md-center shadow rounded ">
+                <div class="col-md-4 col-12 navbar text-md-center h-100 border border-light rounded p-2 p-md-5">
                     <div class="container d-block">
                         <button class="navbar-toggler d-md-none p-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>

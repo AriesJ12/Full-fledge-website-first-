@@ -41,15 +41,15 @@
     <!-- main part -->
     <main class = "container mt-5 mb-5 p-4">
         <section class="Profile">
-            <div class="row g-5 d-flex">
+            <div class="row g-5">
                 <!-- sidebar -->
-                <div class="col-md-4 col-12 navbar text-md-center shadow rounded align-items-start">
+                <div class="col-md-4 col-12 navbar text-md-center h-100 border border-light rounded p-2 p-md-5">
                     <div class="container d-block">
                         <button class="navbar-toggler d-md-none p-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                         Click to see options
                         </button>
-                        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-md offcanvas-start " tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                             <div class="offcanvas-header">
                                 <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Options</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
