@@ -190,7 +190,7 @@
             <div class="container p-4">
               <div class="row pt-5 ">
                 <div class="col-12">
-                  <a href="#" class="btn btn-outline-primary float-end m">View All</a>
+                  <a href="pages/search.php?find_name=&find_location=" class="btn btn-outline-primary float-end m">View All</a>
                   <h3 class="text-uppercase mb-4 p-1 border-bottom ">Famous restaurants</h3>
                 </div>
               </div> 

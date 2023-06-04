@@ -12,15 +12,14 @@
 /* for stars */
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css); 
 
+
+/* CAROUSEL HEIGHT */
 .carousel-content, .header-height {
   height: 500px;
 }
-.custom-dark-dark-bg
-{
-  background-color: #111418;
-}
 
 
+/* NAVBAR EDITS */
 .navbar-footer-color
 {
   background-color:#0E0F0F !important;
@@ -29,6 +28,7 @@
   height: 75px;
 }
 
+/* COLORS */
 
 .custom-dark-dark-bg
 {
@@ -37,7 +37,7 @@
 
 
 
-/* for background only */
+/* for background only HEADER*/
 .index > header > .carousel > .carousel-inner > .carousel-item:nth-child(1) > .row 
 {
     background-image: url("../images/homepage/homeBG.png");
@@ -55,7 +55,7 @@
     background-size: auto;
 }
 
-.find-something header
+.find-something header, .search header
 {
   background-image: url("../images/find-header .png");
   background-size: auto;
@@ -88,6 +88,8 @@
 {
   height: 300px;
 }
+
+
 /* Transition */
 /* restaurant and dishes image(zoom) transition */
 .restaurant img, .dishes img

@@ -52,7 +52,7 @@
       <section class="py-5 text-center container">
         <div class="row py-lg-5">
           <div class="col-lg-6 col-md-8 mx-auto">
-            <p class="text-light fs-3">Try using the search bar at the navbar to see better result</p>
+            <p class="text-light fs-3">Try using the search bar see better result</p>
             <span class="text-light">Press search without any inputs to show everything</span> 
 
             <form class="d-flex pt-3" role="search" method = "GET" action = "<?php echo $user_page_directory;?>search.php">
