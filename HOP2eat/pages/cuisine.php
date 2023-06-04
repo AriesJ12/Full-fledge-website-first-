@@ -30,6 +30,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cuisines</title>
     <link rel="stylesheet" href="../Assets/css/style.css?v=3"/>
+
+    <!-- FOR ICONS -->
+    <script src="https://kit.fontawesome.com/10d593c5dc.js" crossorigin="anonymous"></script>
   </head>
   <body class="cuisine custom-dark-dark-bg" >
   <!-- navbar -->
@@ -79,8 +82,11 @@
             <div class="card- overflow-hidden" style = "max-height:310px;">
               <img src="../Assets/images/homepage/breakfast.jpg" class="image rounded">
               <div class="intro">
-                  <h3>BREAKFAST</h3>
-                  <p>Are you having trouble finding your breakfast spot? Hop2eat has you covered because we have plenty of options for you.</p>
+                  <h3>Herb Roasted Chicken</h3>
+                  <p>There’s nothing better than the aroma of a tender, juicy chicken roasting in the oven – and the anticipation of enjoying a delicious family dinner.</p>
+                  <a href="https://www.facebook.com/liamsnlouisgourmetcafe/" class="link">    
+                    <p class="place"><i class="fa-solid fa-location-dot" style="color: #ff0505;"></i> Liam & Louis’ Gourmet Café</p>
+                  </a>
               </div>
               </div>
           </div>
@@ -89,8 +95,11 @@
             <div class="card- overflow-hidden" style = "max-height:310px;">
                     <img src="../Assets/images/homepage/lunch.jpg" class="image rounded">
                     <div class="intro">
-                        <h3>LUNCH</h3>  
-                        <p>Are you having trouble finding your lunch spot? Hop2eat has you covered because we have plenty of options for you.</p>
+                        <h3>Chicken Fettuccine Alfredo</h3>  
+                        <p>A type of Italian pasta dish prepared with fettuccine tossed in emulsified butter and Parmesan cheese , with flavour from cream and pan-fried chicken breast.</p>
+                        <a href="https://www.facebook.com/liamsnlouisgourmetcafe/" class="link">    
+                            <p class="place"><i class="fa-solid fa-location-dot" style="color: #ff0505;"></i> Cafe Ilang Ilang</p>
+                        </a> 
                     </div>
                 </div>
           </div>
@@ -99,8 +108,11 @@
             <div class="card- overflow-hidden" style = "max-height:310px;">
                     <img src="../Assets/images/homepage/dinner.jpg" class="image rounded">
                     <div class="intro">
-                        <h3>DINNER</h3>
-                        <p>Are you having trouble finding your dinner spot? Hop2eat has you covered because we have plenty of options for you.</p>
+                        <h3>Cheese Pizza </h3>
+                        <p>This pizza is loaded with five different types of cheese, including mozzarella, cheddar, Parmesan, Asiago, and provolone.</p>
+                        <a href="https://www.facebook.com/liamsnlouisgourmetcafe/" class="link">    
+                            <p class="place"><i class="fa-solid fa-location-dot" style="color: #ff0505;"></i> Grumpy Joe</p>
+                        </a>  
                     </div>
                 </div>
           </div>

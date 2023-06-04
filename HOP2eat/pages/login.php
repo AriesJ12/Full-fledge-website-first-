@@ -80,9 +80,11 @@
 
 </head>
 <body class="text-center p-5 vh-100 login register-login-bg">
+    <main class="container">
 <a href="../index.php">
     <img class="mb-4" src="../Assets/images/homepage/logo-white.png" alt="" width="120" height="57">
   </a>
+
 <main class="form-signin w-100 m-auto border shadow-lg p-3 mb-5 bg-body-tertiary rounded">
   <form action= "" method = "POST">
     <h1 class="h4 mb-3 fw-normal">Please sign in</h1>
