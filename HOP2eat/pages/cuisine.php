@@ -80,7 +80,7 @@
         <div class="row">
           <div class="col-md-4 col-sm-6 mb-3" onclick = "window.location.href='search_cuisine.php?find_cuisine=&classification=1&cuisine_location='">
             <div class="card- overflow-hidden" style = "max-height:310px;">
-              <img src="../Assets/images/homepage/breakfast.jpg" class="image rounded">
+              <img src="../Assets/images/cuisineImages/herb.png" class="image rounded">
               <div class="intro">
                   <h3>Herb Roasted Chicken</h3>
                   <p>There’s nothing better than the aroma of a tender, juicy chicken roasting in the oven – and the anticipation of enjoying a delicious family dinner.</p>
@@ -93,7 +93,7 @@
 
           <div class="col-md-4 col-sm-6 mb-3 m-auto" onclick = "window.location.href='search_cuisine.php?find_cuisine=&classification=2&cuisine_location='">
             <div class="card- overflow-hidden" style = "max-height:310px;">
-                    <img src="../Assets/images/homepage/lunch.jpg" class="image rounded">
+                    <img src="../Assets/images/cuisineImages/pasta.png" class="image rounded">
                     <div class="intro">
                         <h3>Chicken Fettuccine Alfredo</h3>  
                         <p>A type of Italian pasta dish prepared with fettuccine tossed in emulsified butter and Parmesan cheese , with flavour from cream and pan-fried chicken breast.</p>
@@ -106,7 +106,7 @@
 
           <div class="col-md-4 col-sm-6 mb-3 m-auto" onclick = "window.location.href='search_cuisine.php?find_cuisine=&classification=3&cuisine_location='">
             <div class="card- overflow-hidden" style = "max-height:310px;">
-                    <img src="../Assets/images/homepage/dinner.jpg" class="image rounded">
+                    <img src="../Assets/images/cuisineImages/pizza.jpg" class="image rounded">
                     <div class="intro">
                         <h3>Cheese Pizza </h3>
                         <p>This pizza is loaded with five different types of cheese, including mozzarella, cheddar, Parmesan, Asiago, and provolone.</p>
