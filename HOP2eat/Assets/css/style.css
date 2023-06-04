@@ -20,10 +20,20 @@
   background-color: #111418;
 }
 
+
 .navbar-footer-color
 {
   background-color:#0E0F0F !important;
 }
+
+
+
+.custom-dark-dark-bg
+{
+  background-color: #111418;
+}
+
+
 
 /* for background only */
 .index > header > .carousel > .carousel-inner > .carousel-item:nth-child(1) > .row 
