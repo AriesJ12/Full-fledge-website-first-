@@ -1,38 +1,32 @@
-name of database : hope2eat
+instructions to operate
+1. Do in order(copy paste) -- click new(side) then sql(top):
+    - contents of tables.sql (creating a db )
 
-tables : 
-    -  accounts
-    - restaurants
-    - cuisine_classification
-    - restaurant_cuisine (junction table) - like menu
-    - location
+(inserting data in the db, all below -- click the HOP2eat database then go to sql)
 
-NOT YET ADDED
-    -rating(for comments)
-    -trigger for rating in restaurants
-    -reservation
-
-LOCATIONS CODES
-- 1 GUAGUA
-- 2 ANGELES
-- 3 MANILA
-- 4 QUEZON CITY
-- 5 TAGUIG
-- 6 PARANAQUE
-- 7 PASAY
-- 8 INTRAMUROS
-- 9 MAKATI
-- 10 CLARK
-- 11 MARIKINA
-- 12 LAS PINAS
-
-guagua; angeles; manila; quezon city; taguig; paranaque; pasay; intramuros; makati; clark; marikina; las pinas
-
-CUISINE_CLASSIFICATION CODES
-- 1 BREAKFAST
-- 2 LUNCH
-- 3 DINNER
+    - insertLocations.sql 
+    - insertResto.sql
+    - insertAccount.sql
+    - insert Cuisines.sql
 
 
+contents::
 
-change location(get it on githubb)
+7 tables:
+
+- account
+- province(location)
+- regions(location)
+- restaurant
+- cuisine
+- cuisine-classification
+- rating
+
+1 trigger 
+- rating insert -> update restaurant's rating
+
+16 procedures
+- 8 - are being use
+- 8 - still implementing
+
+

@@ -3,7 +3,7 @@
     $current_file = basename( $_SERVER['PHP_SELF']);
 
     //store all pages in an array
-    $pages_user = array("find_something.php", "cuisine.php", "reservation.php", "service.php", "about_us.php", "login.php", "register.php","profile.php", "logout.php", "search.php", "faqs.php", "review.php", "search_cuisine.php", "donation.php");
+    $pages_user = array("find_something.php", "cuisine.php", "reservation.php", "service.php", "about_us.php", "login.php", "register.php","profile.php", "logout.php", "search.php", "faqs.php", "review.php", "search_cuisine.php", "payment.php", "history_review.php");
     $pages_admin = array("add_restaurant.php", "view_user.php");
     $index = array("index");
     

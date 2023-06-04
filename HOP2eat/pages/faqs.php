@@ -10,22 +10,22 @@
     <title>About us</title>
     <link rel="stylesheet" href="../Assets/css/style.css"/>
 </head>
-<body>
+<body class="custom-dark-dark-bg" data-bs-theme="dark">
     <!-- navbar -->
     <?php require_once "../Assets/navbar-footer/navbar.php"?>
     <!-- header -->
    
     <!-- main part -->
-    <main class = "container text-bg-light mt-5 mb-5 p-4">
+    <main class = "container text-light mt-5 mb-5 p-4">
          <!-- about us -->
     <section class="faqs">
-        <div class="container rounded">
+        <div class="container rounded ">
             <div class="row m-5">
-                <div class="col-12 p-3 text-center display-6">
+                <div class="col-12 p-3 text-center display-5">
                     FAQs
                 </div>
             </div>
-            <div class="accordion" id="faqs-content">
+            <div class="accordion shadow" id="faqs-content">
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">

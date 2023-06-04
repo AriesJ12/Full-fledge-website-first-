@@ -10,24 +10,24 @@
     <title>About us</title>
     <link rel="stylesheet" href="../Assets/css/style.css"/>
 </head>
-<body>
+<body class="custom-dark-dark-bg" data-bs-theme="dark">
     <!-- navbar -->
     <?php require_once "../Assets/navbar-footer/navbar.php"?>
     <!-- header -->
    
     <!-- main part -->
-    <main class = "container text-bg-light">
+    <main class = "container">
          <!-- about us -->
     <section class="about-us border-bottom">
         <div class="container">
             <div class="row p-5 m-5">
                 <div class="col-12 p-md-5 p-3 text-center border-bottom">
-                    <h3 class = "display-6">Who are we as a whole?</h3>
+                    <h3 class = "display-6 text-light">Who are we as a whole?</h3>
                 </div>
                 <div class="col-md-6 p-md-5 p-3">
                     <img src="<?php echo $imageDefaultDirectory?>aboutImg1.jpg" alt="" class="rounded img-fluid">
                 </div>
-                <div class="col-md-6 mt-md-3 p-md-5 p-3">
+                <div class="col-md-6 mt-md-3 p-md-5 p-3 text-light">
                     <h1 class="display-4">HOP2eat</h1>
                     Looking for an ideal restaurant and book a table quickly and easily with Hop2Eat. We provide a one-of-a-kind dining experience that includes delicious meals in a peaceful and cozy place. If you're having trouble deciding where to eat, we provide the ideal setting and delicious food toshare with family and friends, a special occasion, or a romantic date.
                     <br>
@@ -35,14 +35,15 @@
             </div>
         </div>
     </section>
+
     <!-- as indiviaduals -->
     <section class="about-us">
         <div class="container">
             <div class="row p-5 m-5">
-                <div class="col-12 p-md-5 p-3 text-center">
+                <div class="col-12 p-md-5 p-3 text-center text-light">
                     <h3 class = "display-6">Who are we as individuals?</h3>
                 </div>
-                <div class="row border shadow-sm rounded mb-3">
+                <div class="row border shadow rounded mb-3 bg-dark text-light">
                     <div class="col-md-6 mt-md-3 p-md-5 p-3">
                         <h1 class="display-6">Aries Joseph</h1>
                         I am Aries Tagle, and I am the lead developer of this group. I took computer science because i like money and thinking logically xD.
@@ -52,7 +53,7 @@
                         <img src="<?php echo $imageDefaultDirectory?>aries.jpg" alt="" class="rounded img-fluid img-thumbnail">
                     </div>
                 </div>
-                <div class="row border shadow-sm rounded mb-3">
+                <div class="row border shadow  rounded mb-3 bg-dark text-light">
                     <div class="col-md-6 p-md-5 p-3">
                         <img src="<?php echo $imageDefaultDirectory?>willie.jpg" alt="" class="rounded img-fluid img-thumbnail">
                     </div>
@@ -62,7 +63,7 @@
                         <br>
                     </div>
                 </div>
-                <div class="row border shadow-sm rounded mb-3">
+                <div class="row border shadow rounded mb-3 bg-dark text-light">
                     <div class="col-md-6 mt-md-3 p-md-5 p-3">
                         <h1 class="display-6">Kriesha Mae</h1>
                         I am Kriesha Mae Buglosa, one of the UI designers of this project. Milton Glaser once stated, "There are three responses to a piece of design - yes, no, and WOW! Wow is the one to aim for." Let's always do our best for our dreams to come true.
@@ -72,7 +73,7 @@
                         <img src="<?php echo $imageDefaultDirectory?>kriesha.jpg" alt="" class="rounded img-fluid img-thumbnail">
                     </div>
                 </div>
-                <div class="row border shadow-sm rounded mb-3">
+                <div class="row border shadow rounded mb-3 bg-dark text-light">
                     <div class="col-md-6 p-md-5 p-3">
                         <img src="<?php echo $imageDefaultDirectory?>kian.jpg" alt="" class="rounded img-fluid img-thumbnail">
                     </div>
@@ -82,7 +83,7 @@
                         <br>
                     </div>
                 </div>
-                <div class="row border shadow-sm rounded mb-3">
+                <div class="row border shadow rounded mb-3 bg-dark text-light">
                     <div class="col-md-6 mt-md-3 p-md-5 p-3">
                         <h1 class="display-6">Mark John</h1>
                         Hi, I'm Mark Jhon Beltran, One of the member that created this website. "Coding is like girls, hard to understand when there is a problem"

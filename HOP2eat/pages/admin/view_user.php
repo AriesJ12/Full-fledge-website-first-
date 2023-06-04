@@ -9,13 +9,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View all users</title>
-    <link rel="stylesheet" href="../../Assets/css/style.css"/>
-  </head>
-  <body>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View all users</title>
+  <link rel="stylesheet" href="../../Assets/css/style.css"/>
+</head>
+<body class = "custom-dark-dark-bg" data-bs-theme = "dark">
 
 
 <main>
@@ -30,7 +30,7 @@
     </div>
   </section>
 <!-- view users -->
-  <div class="album py-5 bg-body-tertiary">
+  <div class="album py-5">
     <div class="container">
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -45,8 +45,8 @@
             }
           ?>
             <div class="col">
-              <div class="card shadow-sm">
-                <div class="card-top">
+              <div class="card overflow-hidden rounded shadow">
+                <div class="card-top overflow-hidden">
                   <img src="<?php echo $imagesDefaultDirectory . $profileImage?>" alt="" class="img-fluid">
                 </div>
                 <div class="card-body text-center">
@@ -69,8 +69,8 @@
                   </p>
                   <div class="mb-3 d-flex align-items-end">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Delete</button>
+                      <button type="button" class="btn btn-sm btn-outline-info">Edit</button>
+                      <button type="button" class="btn btn-sm btn-outline-danger">Delete</button>
                     </div>
                   </div>
                   <div class="card-footer text-body-secondary">

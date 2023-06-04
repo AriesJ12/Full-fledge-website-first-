@@ -226,7 +226,8 @@ DELIMITER //
 CREATE PROCEDURE get_restaurant_cuisine(IN search_class INT)
 BEGIN
     SELECT cuis.classificationID AS classification_id, cuis.restaurantID AS restaurant_id,
-    res.ImageURL AS image, class.name AS classification, 
+    res.ImageURL AS image, class.name AS classification, res.description AS description,
+    res.rating AS rating,
     res.name AS restaurant_name, res.website AS website, res.active AS active,
     CONCAT(COALESCE(reg.region_name, ''), ", ", COALESCE(prov.province_name, ''), ", ", COALESCE(res.city_and_barangay, '')) AS address
     FROM restaurant_cuisine AS cuis
@@ -377,38 +378,47 @@ DELIMITER ;
 -- display rating
 
 DELIMITER //
-CREATE PROCEDURE display_rating(
+CREATE PROCEDURE display_rating_ranked_by_date(
     IN accountId INT,
     IN restaurantId INT
 )
 BEGIN
     IF accountId IS NOT NULL AND restaurantId IS NOT NULL THEN
         -- Filter by both account ID and restaurant ID
-        SELECT r.*, a.username, a.email, a.first_name, a.last_name, a.profileImage
+        SELECT r.*, a.username, a.email, a.first_name, a.last_name, a.profileImage, res.name AS restaurant_name
         FROM rating r
         JOIN account a ON r.accountId = a.id
-        WHERE r.active = 1 AND r.accountId = accountId AND r.restaurant_id = restaurantId;
+        JOIN restaurant res ON r.restaurant_id = res.id
+        WHERE r.active = 1 AND r.accountId = accountId AND r.restaurant_id = restaurantId
+        ORDER BY r.rating_date DESC;
     ELSEIF accountId IS NOT NULL THEN
         -- Filter by account ID only
-        SELECT r.*, a.username, a.email, a.first_name, a.last_name, a.profileImage
+        SELECT r.*, a.username, a.email, a.first_name, a.last_name, a.profileImage, res.name AS restaurant_name
         FROM rating r
         JOIN account a ON r.accountId = a.id
-        WHERE r.active = 1 AND r.accountId = accountId;
+        JOIN restaurant res ON r.restaurant_id = res.id
+        WHERE r.active = 1 AND r.accountId = accountId
+        ORDER BY r.rating_date DESC;
     ELSEIF restaurantId IS NOT NULL THEN
         -- Filter by restaurant ID only
-        SELECT r.*, a.username, a.email, a.first_name, a.last_name, a.profileImage
+        SELECT r.*, a.username, a.email, a.first_name, a.last_name, a.profileImage, res.name AS restaurant_name
         FROM rating r
         JOIN account a ON r.accountId = a.id
-        WHERE r.active = 1 AND r.restaurant_id = restaurantId;
+        JOIN restaurant res ON r.restaurant_id = res.id
+        WHERE r.active = 1 AND r.restaurant_id = restaurantId
+        ORDER BY r.rating_date DESC;
     ELSE
         -- No filters applied
-        SELECT r.*, a.username, a.email, a.first_name, a.last_name, a.profileImage
+        SELECT r.*, a.username, a.email, a.first_name, a.last_name, a.profileImage, res.name AS restaurant_name
         FROM rating r
         JOIN account a ON r.accountId = a.id
-        WHERE r.active = 1;
+        JOIN restaurant res ON r.restaurant_id = res.id
+        WHERE r.active = 1
+        ORDER BY r.rating_date DESC;
     END IF;
 END //
 DELIMITER ;
+
 
 
 DELIMITER //

@@ -15,6 +15,16 @@
 .carousel-content, .header-height {
   height: 500px;
 }
+.custom-dark-dark-bg
+{
+  background-color: #111418;
+}
+
+
+.navbar-footer-color
+{
+  background-color:#0E0F0F !important;
+}
 
 
 
@@ -22,6 +32,7 @@
 {
   background-color: #111418;
 }
+
 
 
 /* for background only */
@@ -41,9 +52,29 @@
     background-image: url("../images/homepage/homebg2.jpg");
     background-size: auto;
 }
+
+.find-something header
+{
+  background-image: url("../images/find-header .png");
+  background-size: auto;
+  height: 400px;
+}
+.cuisine header 
+{
+  background-image: url("../images/cuisine-header.png");
+  background-size: auto;
+  height: 500px;
+}
+.service header 
+{
+  background-image: url("../images/services.png");
+  background-size: auto;
+  height: 500px;
+}
 .reservation > header
 {
   background-image: url("../images/resto-header.png");
+  height: 900px;
 }
 
 .reservation-section
@@ -68,19 +99,27 @@
 }
 
 /* services transition */
-.services .col-lg-4, .search-restaurant .container .row
+.services .col-lg-4
 {
   transition: .2s linear;
     
 }
 
 
-.services .col-lg-4:hover, .search-restaurant .container .row:hover
+.services .col-lg-4:hover
 {
   background-color: var( --bs-light);
   color: var(--bs-dark);
   transform:scale(1.05); 
 }
+
+
+.search-restaurant .row:hover ,
+.restaurant .card:hover, .cuisine .card:hover, .dishes .card-body:hover
+{
+  background-color: #393d3f !important;
+}
+
 .search-restaurant .container .row h2:hover
 {
   cursor: pointer;
@@ -178,13 +217,17 @@
   color: orange; 
 }
 
-/* login */
+/* login and register*/
 .login {
   display: flex;
   align-items: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #f5f5f5;
+}
+
+.register-login-bg
+{
+  background-image: url("../images/register-bg.png");
 }
 
 .form-signin {
@@ -192,9 +235,6 @@
   padding: 15px;
 }
 
-.form-signin .form-floating:focus-within {
-  z-index: 2;
-}
 
 .form-signin input[type="email"] {
   margin-bottom: -1px;
@@ -254,6 +294,11 @@
   visibility: visible;
 }
 
+/* Reservation container */
+.reser-height{
+  height: 600px;
+  width: 600px;
+}
 
 
 /* stars */
@@ -293,3 +338,8 @@
   .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
   .rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
 
+/* text-indent */
+blockquote
+{
+  text-indent: 50px;
+}

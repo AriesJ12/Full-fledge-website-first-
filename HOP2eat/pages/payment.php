@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donation</title>
+    <title>Payment</title>
     <link rel="stylesheet" href="../Assets/css/style.css"/>
 
 </head>
-<body>
+<body class = "custom-dark-dark-bg" data-bs-theme = "dark">
     <!-- navbar -->
     <?php require_once "../Assets/navbar-footer/navbar.php"?>
     
@@ -18,14 +18,14 @@
 
             <div class="col-md-6">  
                 
-                <span>Donation Method</span>
+                <span>Payment Method</span>
                 
 
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item">
                         <div class="p-0 accordion-header " id="headingTwo">
                             <h2 class="mb-0 ">
-                                <button class="btn btn-light btn-block text-left p-3 rounded-0 border-bottom-custom w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <button class="btn btn-dark btn-block text-left p-3 rounded-0 border-bottom-custom w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                     <div class="d-flex align-items-center justify-content-between">
 
                                         <span>Paypal</span>
@@ -45,7 +45,7 @@
                     <div class="accordion-item">
                         <div class="accordion-header p-0">
                             <h2 class="mb-0">
-                            <button class="btn btn-light btn-block text-left p-3 rounded-0 w-100" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <button class="btn btn-dark btn-block text-left p-3 rounded-0 w-100" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 <div class="d-flex align-items-center justify-content-between">
 
                                 <span>Credit card</span>
@@ -120,14 +120,13 @@
 
                     <div class="d-flex flex-column">
 
-                        <span>Pro(Billed Monthly) <i class="fa fa-caret-down"></i></span>
-                        <a href="#">Save 20% with annual Donation</a>
+                        <span>Pro   <i class="fa fa-caret-down"></i></span>
+                        <a href="#">Save 20% with a gift card</a>
                         
                     </div>
 
-                    <div class="mt-1">
-                        <sup >450 pesos</sup>
-                        <span >/Month</span>
+                    <div class="mt-1">  
+                        <span >450 pesos</span>
                     </div>
                     
                     </div>
@@ -160,7 +159,7 @@
 
                     <div class="d-flex flex-column">
 
-                        <span>Today you pay(Pesos)</span>
+                        <span>Total (Pesos)</span>
                         
                     </div>
                     <span>500Pesos</span>

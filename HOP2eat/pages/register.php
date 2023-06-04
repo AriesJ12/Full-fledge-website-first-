@@ -68,19 +68,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register Page</title>
-    <link rel="stylesheet" href="../Assets/css/style.css">
+    <link rel="stylesheet" href="../Assets/css/style.css?v=2">
 </head>
-<body class = "bg-secondary-color">
+<body class = "register-login-bg p-3">
 
     
-<main class="container">
-  <div class=" row my-5">
-    <div class="col-lg-4 m-auto border shadow-lg p-3 mb-5 rounded text-center">
-      <form action= "" method = "POST" class = "needs-validation" novalidate>
+<main class="container-fluid">
+  <div class="row w-100">
+      <div class="col-12 d-flex justify-content-center justify-content-sm-start">
         <a href="../index.php">
-          <img class="mb-4" src="../Assets/images/homepage/logo-black3.png" alt="" width="120" height="57">
+          <img src="../Assets/images/homepage/logo-white.png" alt="" width="120" height="70">
         </a>
-        <h1 class="h3 mb-3 fw-normal">Sign Up</h1>
+      </div>
+  </div>
+  <div class=" row shadow">
+    <div class="col-md-6 m-auto shadow pt-5 px-5 pb-0 rounded text-center bg-light">
+      <form action= "" method = "POST" class = "needs-validation" novalidate>
+        <h1 class="h4 mb-3 fw-normal">Sign Up</h1>
         <?php
           if(isset($_GET['error']))
           {?>
@@ -92,28 +96,28 @@
           <?php
           }?>
         <div class="form-floating mb-3">
-          <input type="text" id ="username" name= "username"class="form-control" required>
+          <input type="text" id ="username" name= "username"class="form-control" required placeholder = "username">
           <label for="username" class = "form-label">Username</label>
         </div>
         <div class="form-floating mb-3">
-          <input aria-label = "passwordHelpBlock" type="password" class="form-control" id="password" name = "password" required>
+          <input aria-label = "passwordHelpBlock" type="password" class="form-control" id="password" name = "password" required placeholder = "password">
           <label for="password" class = "form-label">Password</label>
         </div>
         <div class="form-floating mb-3">
-          <input type="password" class="form-control" id="confirm_password" name = "confirm_password" required>
+          <input type="password" class="form-control" id="confirm_password" name = "confirm_password" required placeholder = "confirm password">
           <label for="confirm_password" class = "form-label">Confirm Password</label>
         </div>
         <div class="form-floating mb-3">
-          <input type="email" id ="email" name= "email"class="form-control" required>
+          <input type="email" id ="email" name= "email"class="form-control" required placeholder = "email@email.com">
           <label for="email" class = "form-label">Email</label>
         </div>
         <div class="input-group mb-3">
           <div class="form-floating">
-            <input type="text" id = "first_name" name = "first_name" aria-label="First Name" class="form-control" required>
+            <input type="text" id = "first_name" name = "first_name" aria-label="First Name" class="form-control" required placeholder = "first name">
             <label for="first_name" class = "form-label">First Name</label>
           </div>
           <div class="form-floating">
-            <input type="text" id = "last_name" name = "last_name" aria-label="Last Name" class="form-control" required>
+            <input type="text" id = "last_name" name = "last_name" aria-label="Last Name" class="form-control" required placeholder = "last name">
             <label for="last_name" class = "form-label">Last Name</label>
           </div>
         </div>
@@ -127,12 +131,11 @@
           </a>
         </p>
       </div>
-      <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2023</p>
+      <p class="mt-5 text-body-secondary">&copy; 2017–2023</p>
     </div>
   </div>
-  
-  
 </main>
+
 <div class="toast-container position-fixed bottom-0 end-0 p-3">
   <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-header">

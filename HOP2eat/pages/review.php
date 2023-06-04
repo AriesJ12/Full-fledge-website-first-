@@ -13,7 +13,7 @@
     <title>Review</title>
     <link rel="stylesheet" href="../Assets/css/style.css?v=2"/>
 </head>
-<body>
+<body class = "custom-dark-dark-bg" data-bs-theme = "dark">
     <!-- navbar -->
     <?php require_once "../Assets/navbar-footer/navbar.php"?>
 
@@ -22,7 +22,11 @@
             // Set up data
             $restoId = $_GET['resto_id'];
             $accountId = $_SESSION['id'];
-            $rating = $_POST['rating'];
+            $rating = 0;
+            if(isset($_POST['rating']))
+            {
+                $rating = $_POST['rating'];
+            }
             $comment = $_POST['description'];
         
             // Escape the variables to prevent SQL injection (optional, but recommended)
@@ -49,7 +53,7 @@
     ?>
 
     <!-- main part -->
-    <main class = "container text-bg-light mt-5 mb-5">
+    <main class = "container mt-5 mb-5">
         <!-- display -->
     <?php
 
@@ -59,6 +63,7 @@
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
     ?>
+    <!-- display restaurant -->
     <section>
             <div class="row p-3 m-3 border rounded">
                 <div class="col-lg-3 mt-3">
@@ -84,7 +89,7 @@
                 </div>
             </div>
         </section>
-        <!-- form below -->
+        <!-- comment below -->
         <section class = "row">
             <div class="col-8 m-auto">
                 <!-- post -->
@@ -105,11 +110,11 @@
                     </fieldset>                    
                     <br><br>
                     <!-- newly added cuisine no backend-->
-                    <textarea class = "form-control" name="description" id="description" cols="50" rows="5" placeholder= "Comment " class = "form-control"></textarea>
+                    <textarea class = "form-control" name="description" id="description" cols="50" rows="5" placeholder= "Comment " class = "form-control" <?php if(!isset($_SESSION['username'])){echo "disabled";}?>></textarea>
                     <br>
-                    <input type="submit" name = "add" value="Post" class = "btn btn-warning align-self-end">
+                    <input type="submit" name = "add" value="Post" class = "btn btn-warning align-self-end"  <?php if(!isset($_SESSION['username'])){echo "disabled";}?> >
                 </form>
-                <!-- display reviews -->
+        <!-- display reviews -->
                 <h1 class = "text-center">Reviews</h1>
                 <div class="row">
                 
@@ -122,7 +127,7 @@
                         while($row = $result->fetch_assoc())
                         {
                     ?>
-                    <hr>
+                    <hr class = "my-5">
                         <div class="col-sm-4 col-12">
                             <?php
                                 if(is_null($row['profileImage']))
@@ -154,7 +159,7 @@
                             ?>
                             
                         </div>
-                        <div class = "col-sm-8 col-12 border rounded p-3">
+                        <div class = "col-sm-8 col-12 border rounded bg-dark p-3">
                             <?php echo $row['comment']?>
                         </div>
                     <?php
