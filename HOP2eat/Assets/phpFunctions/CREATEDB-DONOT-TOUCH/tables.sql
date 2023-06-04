@@ -378,7 +378,7 @@ DELIMITER ;
 -- display rating
 
 DELIMITER //
-CREATE PROCEDURE display_rating_ranked_by_date(
+CREATE PROCEDURE display_rating(
     IN accountId INT,
     IN restaurantId INT
 )
