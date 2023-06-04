@@ -77,30 +77,30 @@
         <div class="row">
           <div class="col-md-4 col-sm-6 mb-3" onclick = "window.location.href='search_cuisine.php?find_cuisine=&classification=1&cuisine_location='">
             <div class="card- overflow-hidden" style = "max-height:310px;">
-              <img src="../Assets/images/homepage/breakfast.jpg" class="image rounded">
+              <img src="../Assets/images/cuisineImages/herb.png" class="image rounded">
               <div class="intro">
-                  <h3>BREAKFAST</h3>
-                  <p>Are you having trouble finding your breakfast spot? Hop2eat has you covered because we have plenty of options for you.</p>
+                  <h3>Herb Roasted Chicken</h3>
+                  <p>There’s nothing better than the aroma of a tender, juicy chicken roasting in the oven – and the anticipation of enjoying a delicious family dinner.</p>
               </div>
               </div>
           </div>
 
           <div class="col-md-4 col-sm-6 mb-3 m-auto" onclick = "window.location.href='search_cuisine.php?find_cuisine=&classification=2&cuisine_location='">
             <div class="card- overflow-hidden" style = "max-height:310px;">
-                    <img src="../Assets/images/homepage/lunch.jpg" class="image rounded">
+                    <img src="../Assets/images/cuisineImages/pasta.png" class="image rounded">
                     <div class="intro">
-                        <h3>LUNCH</h3>  
-                        <p>Are you having trouble finding your lunch spot? Hop2eat has you covered because we have plenty of options for you.</p>
+                        <h3>Chicken Fettuccine Alfredo</h3>  
+                        <p>Chicken Fettuccine Alfredo is a type of Italian pasta dish prepared with fettuccine tossed in emulsified butter and Parmesan cheese , with flavour from cream and pan-fried chicken breast.</p> 
                     </div>
                 </div>
           </div>
 
           <div class="col-md-4 col-sm-6 mb-3 m-auto" onclick = "window.location.href='search_cuisine.php?find_cuisine=&classification=3&cuisine_location='">
             <div class="card- overflow-hidden" style = "max-height:310px;">
-                    <img src="../Assets/images/homepage/dinner.jpg" class="image rounded">
+                    <img src="../Assets/images/cuisineImages/pizza.jpg" class="image rounded">
                     <div class="intro">
-                        <h3>DINNER</h3>
-                        <p>Are you having trouble finding your dinner spot? Hop2eat has you covered because we have plenty of options for you.</p>
+                        <h3>5 Cheese Pizza</h3>
+                        <p>This pizza is loaded with five different types of cheese, including mozzarella, cheddar, Parmesan, Asiago, and provolone.</p>
                     </div>
                 </div>
           </div>
