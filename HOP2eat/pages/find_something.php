@@ -42,7 +42,9 @@
     <title>Find something</title>
     <link rel="stylesheet" href="../Assets/css/style.css?v=3"/>
 </head>
+
 <body class="find-something custom-dark-dark-bg" data-bs-theme= "dark">
+
     <!-- navbar -->
     <?php require_once "../Assets/navbar-footer/navbar.php"?>
     <!-- header -->
@@ -67,9 +69,11 @@
     </header>
 
     <!-- main part -->
+
     <main class = "text-light" data-bs-theme= "dark">
         <!-- famous restaurant in Manila -->  
         <section class="pt-5 pb-5 shadow-sm restaurant">
+
             <div class="container">
               <div class="row pt-5 ">
                 <div class="col-12">
@@ -121,7 +125,9 @@
 
        
         <!-- nearby restaurants  -->  
+
         <section class="pt-5 pb-5 shadow-sm restaurant">
+
             <div class="container">
               <div class="row pt-5 ">
                 <div class="col-12">
@@ -197,7 +203,9 @@
         
         
         <!-- famous dishes -->  
+
         <section class="pt-5 pb-5 shadow-sm dishes">
+
             <div class="container">
               <div class="row pt-5 ">
                 <div class="col-12">
@@ -231,6 +239,7 @@
         </section>
 
         <!-- best diner place -->  
+
         <?php
           $result->free();
           $conn->next_result();
@@ -240,6 +249,7 @@
         ?>
         
         <section class="pt-5 pb-5 shadow-sm restaurant">
+
             <div class="container">
               <div class="row pt-5 ">
                 <div class="col-12">
@@ -286,6 +296,7 @@
         </section>
         
         <!-- bestt breakfast place -->  
+
         <?php
           $result->free();
           $conn->next_result();
@@ -295,6 +306,7 @@
         ?>
         
         <section class=" pt-5 pb-5 shadow-sm restaurant">
+
             <div class="container">
               <div class="row pt-5 ">
                 <div class="col-12">

@@ -34,9 +34,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
+
     <link rel="stylesheet" href="Assets/css/style.css?v=6">
 </head>
 <body class="index custom-dark-dark-bg" data-bs-theme = "dark">
+
     
     <!-- navbar -->
     <?php require_once "Assets/navbar-footer/navbar.php"?>
@@ -95,6 +97,7 @@
     </header>
     <main>
 
+
       <!-- about us -->
       <section class="text-light" data-bs-theme = "dark">
             <div class="container">
@@ -105,6 +108,7 @@
                         <br>
                         <a href="pages/about_us.php" class="btn btn-outline-secondary mt-5">About us</a>
                       </div>
+
 
                       <div class="col-12 border my-5">
                         <div class="row border h-100">
@@ -123,6 +127,8 @@
                               <img src="Assets/images/homepage/f3.jpg" alt="" class="w-100 h-100">
                             </div>
                           </div>
+
+
                         </div>
                     </div>  
                     </div> 
@@ -176,6 +182,7 @@
           </div>
         </div>
       </section>
+
 
       <!-- famous restaurant -->
       <section class = "restaurant" data-bs-theme = "dark">
@@ -231,13 +238,16 @@
                         <?php
                         }?>
                       </div>
+
                     </div>
               </div>
             </div>
       </section>
 
+
       <!-- famous dishes -->  
       <section class="pt-5 pb-5 dishes">
+
           <div class="container">
             <div class="row pt-5 ">
               <div class="col-12">

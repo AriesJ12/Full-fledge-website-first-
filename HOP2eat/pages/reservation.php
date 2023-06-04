@@ -17,8 +17,10 @@
     <header>
       <section class="text-center container text-bg-tertiary">
         <div class="row">
+
           <div class="col-12 text-center text-light pt-5 m-auto pb-5">
                 <h1 class="display-3">RESERVATION</h1>
+
           </div>
         </div>
 
