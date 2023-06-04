@@ -134,7 +134,7 @@
       <section class="breakfast " data-bs-theme = "dark">
         <div class="container">
           <div class="row">
-            <div class="col-md-4 col-sm-6 mb-3 m-auto" onclick = "window.location.href='pages/search_cuisine.php?find_cuisine=&classification=1&cuisine_location='">
+            <div class="col-lg-4 col-md-6 col-12 mb-3 m-auto" onclick = "window.location.href='pages/search_cuisine.php?find_cuisine=&classification=1&cuisine_location='">
               <div class="card-">
                 <img src="Assets/images/homepage/breakfast.jpg" class="image rounded">
                 <div class="intro">
@@ -144,7 +144,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4 col-sm-6 mb-3 m-auto" onclick = "window.location.href='pages/search_cuisine.php?find_cuisine=&classification=2&cuisine_location='">
+            <div class="col-lg-4 col-md-6 col-12 mb-3 m-auto" onclick = "window.location.href='pages/search_cuisine.php?find_cuisine=&classification=2&cuisine_location='">
               <div class="card-">
                       <img src="Assets/images/homepage/lunch.jpg" class="image rounded">
                       <div class="intro">
@@ -154,7 +154,7 @@
                   </div>
             </div>
 
-            <div class="col-md-4 col-sm-6 mb-3 m-auto" onclick = "window.location.href='pages/search_cuisine.php?find_cuisine=&classification=3&cuisine_location='">
+            <div class="col-lg-4 col-md-6 col-12 mb-3 m-auto" onclick = "window.location.href='pages/search_cuisine.php?find_cuisine=&classification=3&cuisine_location='">
               <div class="card-">
                       <img src="Assets/images/homepage/dinner.jpg" class="image rounded">
                       <div class="intro">
@@ -196,7 +196,7 @@
                           <?php for ($j = 0; $j < $restaurant_per_carousel; $j++)
                           {$row = $restaurant->fetch_assoc();?>
                           <div class="col d-block ">
-                            <div class="card mb-3" style="max-height: 250px;max-width: 540px;">
+                            <div class="card mb-3" style="max-height: 500px;max-width: 540px;">
                                 <div class="row flex-md-row g-0 shadow">
                                   <div class="col-md-5 overflow-hidden">
                                     <img src="<?php echo $imageRestaurantDirectory.$row['image'];?>" class="m-auto rounded-start" alt="..." height="200px">

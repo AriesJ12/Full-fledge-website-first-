@@ -74,9 +74,13 @@
 
     
 <main class="container-fluid">
-  <a href="../index.php">
-    <img src="../Assets/images/homepage/logo-white.png" alt="" width="120" height="70">
-  </a>
+  <div class="row w-100">
+      <div class="col-12 d-flex justify-content-center justify-content-sm-start">
+        <a href="../index.php">
+          <img src="../Assets/images/homepage/logo-white.png" alt="" width="120" height="70">
+        </a>
+      </div>
+  </div>
   <div class=" row shadow">
     <div class="col-md-6 m-auto shadow pt-5 px-5 pb-0 rounded text-center bg-light">
       <form action= "" method = "POST" class = "needs-validation" novalidate>

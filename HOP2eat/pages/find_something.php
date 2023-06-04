@@ -78,7 +78,7 @@
                   <h3 class="text-uppercase mb-4 p-1 border-bottom ">Famous restaurants in Manila</h3>
                 </div>
               </div> 
-              <div class="row">
+              <div class="row d-flex justify-content-center ">
                 <?php
                   for($i = 0; $i < $max_resto; $i++)
                   { $row = $result->fetch_assoc();
@@ -87,7 +87,7 @@
                       break;
                     }
                   ?>
-                  <div class="col-lg-4 mb-3 d-flex align-items-stretch" onclick="location.href='<?php echo $https . $row['website']?>'">
+                  <div class="col-lg-4 col-8 mb-3 d-flex align-items-stretch" onclick="location.href='<?php echo $https . $row['website']?>'">
                     <div class="card overflow-hidden">
                       <img src="<?php echo $imageDefaultDirectory.$row['image']?>" 
                       class="card-img-top" 
@@ -129,9 +129,9 @@
                   <h3 class="text-uppercase mb-4 p-1 border-bottom ">Nearby restuarants</h3>
                 </div>
               </div> 
-              <div class="row">
+              <div class="row d-flex justify-content-center">
                 <!--content-->
-                <div class="col-lg-4 mb-3 d-flex align-items-stretch">
+                <div class="col-lg-4 col-8 mb-3 d-flex align-items-stretch">
                   <div class="card overflow-hidden">
                     <img src="<?php echo $imageDefaultDirectory?>wholesome-table.jpg" 
                     class="card-img-top" 
@@ -151,7 +151,7 @@
                   </div>
                 </div>
                 <!--change content-->
-                <div class="col-lg-4 mb-3 d-flex align-items-stretch">
+                <div class="col-lg-4 col-8 mb-3 d-flex align-items-stretch">
                   <div class="card overflow-hidden">
                     <img src="<?php echo $imageDefaultDirectory?>barbara's_logo.jpg" 
                     class="card-img-top" 
@@ -171,7 +171,7 @@
                   </div>
                 </div>
                 <!--change content-->
-                <div class="col-lg-4 mb-3 d-flex align-items-stretch">
+                <div class="col-lg-4 col-8 mb-3 d-flex align-items-stretch">
                   <div class="card overflow-hidden">
                     <img src="<?php echo $imageDefaultDirectory?>lampara_logo.png" 
                     class="card-img-top" 
@@ -205,12 +205,12 @@
                   <h3 class="text-uppercase mb-4 p-1 border-bottom ">Dishes from famous restaurants</h3>
                 </div>
               </div> 
-              <div class="row">
+              <div class="row d-flex justify-content-center">
               <?php
                 for($j = 0 ; $j < $cuisine_per_carousel; $j++)
                 { $row = $cuisine->fetch_assoc();
               ?>
-                <div class="col-md-4 col-sm-6 mb-3">
+                <div class="col-md-4 col-8 mb-3">
                   <div class="card overflow-hidden">
                     <img src="<?php echo $imageCuisineDirectory.$row['image'];?>" class="card-img-top" alt="Card Image" height = "200px" widht = "300x">
                     <div class="card-body">
@@ -247,13 +247,13 @@
                   <h3 class="text-uppercase mb-4 p-1 border-bottom ">Best Diner Place</h3>
                 </div>
               </div> 
-              <div class="row">
+              <div class="row d-flex justify-content-center">
                 <!-- call three diner place -->
                 <?php
                 for($i = 0; $i < $max_resto AND $row = $result->fetch_assoc(); $i++)
                 {
                 ?>
-                  <div class="col-lg-4 mb-3 d-flex align-items-stretch" onclick="location.href='<?php echo $https . $row['website']?>'">
+                  <div class="col-lg-4 col-8 mb-3 d-flex align-items-stretch" onclick="location.href='<?php echo $https . $row['website']?>'">
                     <div class="card overflow-hidden">
                       <img src="<?php echo $imageDefaultDirectory.$row['image']?>" 
                       class="card-img-top" 
@@ -302,13 +302,13 @@
                   <h3 class="text-uppercase mb-4 p-1 border-bottom ">Best Breakfast Place</h3>
                 </div>
               </div> 
-              <div class="row">
+              <div class="row d-flex justify-content-center">
                  <!-- call three diner place -->
                  <?php
                 for($i = 0; $i < $max_resto AND $row = $result->fetch_assoc(); $i++)
                 {
                 ?>
-                  <div class="col-lg-4 mb-3 d-flex align-items-stretch" onclick="location.href='<?php echo $https . $row['website']?>'">
+                  <div class="col-lg-4 col-8 mb-3" onclick="location.href='<?php echo $https . $row['website']?>'">
                     <div class="card overflow-hidden">
                       <img src="<?php echo $imageDefaultDirectory.$row['image']?>" 
                       class="card-img-top" 
