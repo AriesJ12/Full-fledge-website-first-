@@ -339,7 +339,7 @@ CREATE PROCEDURE active_cuisine(
     IN newActiveStatus TINYINT(1)
 )
 BEGIN
-    UPDATE restaurant_cuisine
+    UPDATE restaurant_cuisine   
     SET active = newActiveStatus
     WHERE id = cuisineId;
 END //

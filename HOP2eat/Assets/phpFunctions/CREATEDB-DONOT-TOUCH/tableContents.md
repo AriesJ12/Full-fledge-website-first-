@@ -9,6 +9,8 @@ instructions to operate
     - insertAccount.sql
     - insert Cuisines.sql
 
+2. OR JUST IMPORT THE hop2eat.sql
+
 
 contents::
 

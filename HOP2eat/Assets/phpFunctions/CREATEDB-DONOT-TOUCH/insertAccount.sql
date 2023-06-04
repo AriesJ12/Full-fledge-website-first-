@@ -1,10 +1,10 @@
 
 INSERT INTO `account` (`id`, `username`, `email`, `password`, `first_name`, `last_name`, `profileImage`, `account_type`, `created_at`, `updated_at`) VALUES
-(1, 'aries', 'aries@email.com\r\n', 'ariestagle', NULL, NULL, NULL, 1, '2023-05-25 14:45:09', '2023-05-25 15:41:47'),
-(2, 'mark', NULL, 'markbeltran', NULL, NULL, NULL, 0, '2023-05-25 14:45:09', '2023-05-25 14:45:09'),
-(3, 'kian', NULL, 'kiandavid', NULL, NULL, NULL, 0, '2023-05-25 14:45:09', '2023-05-25 14:45:09'),
-(4, 'kriesha', NULL, 'krieshabuglosa', NULL, NULL, NULL, 0, '2023-05-25 14:45:09', '2023-05-25 14:45:09'),
-(5, 'willie', NULL, 'willieroldan', NULL, NULL, NULL, 0, '2023-05-25 14:45:09', '2023-05-25 14:45:09'),
+(1, 'aries', 'aries@email.com\r\n', 'ariestagle', NULL, NULL, 'defaultAvatar.jpg', 1, '2023-05-25 14:45:09', '2023-05-25 15:41:47'),
+(2, 'mark', NULL, 'markbeltran', NULL, NULL, 'defaultAvatar.jpg', 0, '2023-05-25 14:45:09', '2023-05-25 14:45:09'),
+(3, 'kian', NULL, 'kiandavid', NULL, NULL, 'defaultAvatar.jpg', 0, '2023-05-25 14:45:09', '2023-05-25 14:45:09'),
+(4, 'kriesha', NULL, 'krieshabuglosa', NULL, NULL, 'defaultAvatar.jpg', 0, '2023-05-25 14:45:09', '2023-05-25 14:45:09'),
+(5, 'willie', NULL, 'willieroldan', NULL, NULL, 'defaultAvatar.jpg', 0, '2023-05-25 14:45:09', '2023-05-25 14:45:09'),
 (6, 'joseph_a', 'JosephAgoncillo@gmail.com', '111111111', 'Joseph', 'Agoncillo', 'pic1.jpg', 1, '2023-05-25 16:24:31', '2023-05-25 16:24:31'),
 (7, 'kervinss', 'Harold02@gmail.com', '22222222', 'Harold Kervin', 'De Mesa', 'pic2.jpg', 0, '2023-05-25 16:24:31', '2023-05-25 16:24:31'),
 (8, 'Kylie.mavs', 'Kyliemavs@gmail.com', '33333333', 'Kylie', 'Francisco', 'pic3.jpg', 0, '2023-05-25 16:24:31', '2023-05-25 16:24:31'),

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 04, 2023 at 11:02 AM
+-- Generation Time: Jun 04, 2023 at 11:52 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,6 +20,9 @@ SET time_zone = "+00:00";
 --
 -- Database: `hop2eat`
 --
+DROP DATABASE IF EXISTS `hop2eat`;
+CREATE DATABASE IF NOT EXISTS `hop2eat` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `hop2eat`;
 
 DELIMITER $$
 --
@@ -32,7 +35,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `active_account` (IN `accountId` INT
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `active_cuisine` (IN `cuisineId` INT, IN `newActiveStatus` TINYINT(1))   BEGIN
-    UPDATE restaurant_cuisine
+    UPDATE restaurant_cuisine   
     SET active = newActiveStatus
     WHERE id = cuisineId;
 END$$
@@ -64,7 +67,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `add_restaurant` (IN `newName` VARCH
     VALUES (newName, newDescription, newPhone, newWebsite, newEmail, newCityAndBarangay, newProvinceId, newImageUrl);
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `display_rating_ranked_by_date` (IN `accountId` INT, IN `restaurantId` INT)   BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `display_rating` (IN `accountId` INT, IN `restaurantId` INT)   BEGIN
     IF accountId IS NOT NULL AND restaurantId IS NOT NULL THEN
         -- Filter by both account ID and restaurant ID
         SELECT r.*, a.username, a.email, a.first_name, a.last_name, a.profileImage, res.name AS restaurant_name
@@ -218,7 +221,7 @@ CREATE TABLE `account` (
   `password` varchar(255) NOT NULL,
   `first_name` varchar(50) DEFAULT NULL,
   `last_name` varchar(50) DEFAULT NULL,
-  `profileImage` varchar(255) DEFAULT NULL,
+  `profileImage` varchar(255) DEFAULT 'defaultAvatar.jpg',
   `account_type` tinyint(1) DEFAULT 0,
   `active` tinyint(1) DEFAULT 1,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -230,11 +233,11 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`id`, `username`, `email`, `password`, `first_name`, `last_name`, `profileImage`, `account_type`, `active`, `created_at`, `updated_at`) VALUES
-(1, 'aries', 'aries@email.com\r\n', 'ariestagle', NULL, NULL, NULL, 1, 1, '2023-05-25 06:45:09', '2023-05-25 07:41:47'),
-(2, 'mark', NULL, 'markbeltran', NULL, NULL, NULL, 0, 1, '2023-05-25 06:45:09', '2023-05-25 06:45:09'),
-(3, 'kian', NULL, 'kiandavid', NULL, NULL, NULL, 0, 1, '2023-05-25 06:45:09', '2023-05-25 06:45:09'),
-(4, 'kriesha', NULL, 'krieshabuglosa', NULL, NULL, NULL, 0, 1, '2023-05-25 06:45:09', '2023-05-25 06:45:09'),
-(5, 'willie', NULL, 'willieroldan', NULL, NULL, NULL, 0, 1, '2023-05-25 06:45:09', '2023-05-25 06:45:09'),
+(1, 'aries', 'aries@email.com\r\n', 'ariestagle', NULL, NULL, 'defaultAvatar.jpg', 1, 1, '2023-05-25 06:45:09', '2023-05-25 07:41:47'),
+(2, 'mark', NULL, 'markbeltran', NULL, NULL, 'defaultAvatar.jpg', 0, 1, '2023-05-25 06:45:09', '2023-05-25 06:45:09'),
+(3, 'kian', NULL, 'kiandavid', NULL, NULL, 'defaultAvatar.jpg', 0, 1, '2023-05-25 06:45:09', '2023-05-25 06:45:09'),
+(4, 'kriesha', NULL, 'krieshabuglosa', NULL, NULL, 'defaultAvatar.jpg', 0, 1, '2023-05-25 06:45:09', '2023-05-25 06:45:09'),
+(5, 'willie', NULL, 'willieroldan', NULL, NULL, 'defaultAvatar.jpg', 0, 1, '2023-05-25 06:45:09', '2023-05-25 06:45:09'),
 (6, 'joseph_a', 'JosephAgoncillo@gmail.com', '111111111', 'Joseph', 'Agoncillo', 'pic1.jpg', 1, 1, '2023-05-25 08:24:31', '2023-05-25 08:24:31'),
 (7, 'kervinss', 'Harold02@gmail.com', '22222222', 'Harold Kervin', 'De Mesa', 'pic2.jpg', 0, 1, '2023-05-25 08:24:31', '2023-05-25 08:24:31'),
 (8, 'Kylie.mavs', 'Kyliemavs@gmail.com', '33333333', 'Kylie', 'Francisco', 'pic3.jpg', 0, 1, '2023-05-25 08:24:31', '2023-05-25 08:24:31'),
@@ -254,7 +257,8 @@ INSERT INTO `account` (`id`, `username`, `email`, `password`, `first_name`, `las
 (22, 'Hannsz143', 'HannsAndrei34@gmail.com', '17171717', 'Hanns Andrei', 'Hernaez', 'pic17.jpg', 0, 1, '2023-05-25 08:24:31', '2023-05-25 08:24:31'),
 (23, 'Trish-aaa28', 'Trisha.Ferrer@gmail.com', '18181818', 'Trisha', 'Ferre', 'pic18.jpg', 0, 1, '2023-05-25 08:24:31', '2023-05-25 08:24:31'),
 (24, 'Vinceonle', 'VinceMercado@gmail.com', '19191919', 'Vince Aaron', 'Mercado', 'pic19.jpg', 0, 1, '2023-05-25 08:24:31', '2023-05-25 08:24:31'),
-(25, 'Benben2', 'BenPascual@gmail.com', '20202020', 'Benedict', 'Pascual', 'pic20.jpg', 0, 1, '2023-05-25 08:24:31', '2023-05-25 08:24:31');
+(25, 'Benben2', 'BenPascual@gmail.com', '20202020', 'Benedict', 'Pascual', 'pic20.jpg', 0, 1, '2023-05-25 08:24:31', '2023-05-25 08:24:31'),
+(26, 'sample', 'sample@email.com', 'sample1', 'asda', 'asd', 'defaultAvatar.jpg', 0, 1, '2023-06-04 09:35:03', '2023-06-04 09:35:03');
 
 -- --------------------------------------------------------
 
@@ -291,6 +295,13 @@ CREATE TABLE `rating` (
   `comment` text DEFAULT NULL,
   `active` tinyint(1) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `rating`
+--
+
+INSERT INTO `rating` (`id`, `restaurant_id`, `accountId`, `rating_value`, `rating_date`, `comment`, `active`) VALUES
+(1, 35, 26, 5.00, '2023-06-04 09:36:34', '', 1);
 
 --
 -- Triggers `rating`
@@ -337,7 +348,7 @@ INSERT INTO `restaurant` (`id`, `name`, `description`, `phone`, `website`, `emai
 (4, 'Sushi Zen', 'Enjoy fresh and authentic Japanese sushi rolls and sashimi.', '+1-456-789-0123', 'www.sushizen.com', 'info@sushizen.com', ' Cagayan de Oro City, Carmen', 57, 0.00, 'resto4.jpg', 1),
 (5, 'El Rancho Steakhouse', 'A classic steakhouse offering mouthwatering steaks and grilled specialties.', '+1-567-890-1234', 'www.elrancho.com', 'info@elrancho.com', 'Masbate City, Bapor', 32, 0.00, 'resto5.jpg', 1),
 (6, 'Thai Orchid', 'Delight in the flavors of Thailand through authentic Thai cuisine.', '+1-678-901-2345', 'www.thaiorchid.com', 'info@thaiorchid.com', 'Jolo, Asturias', 76, 0.00, 'resto6.jpg', 1),
-(7, 'The Greek Taverna', 'Experience the taste of Greece with traditional Greek dishes and mezes.', '+1-789-012-3456', 'www.greektaverna.com', 'info@greektaverna.com', 'Baguio City, Camp 7', 68, 0.00, 'resto7.jpg', 1),
+(7, 'The Greek Taverna', 'Experience the taste of Greece with traditional Greek dishes and mezes.', '+1-789-012-3456', 'www.greektaverna.com', 'info@greektaverna.com', 'Baguio City, Camp 7', 1, 0.00, 'resto7.jpg', 1),
 (8, 'Tex-Mex Fiesta', 'Savor the flavors of Tex-Mex cuisine with hearty burritos, fajitas, and nachos.', '+1-890-123-4567', 'www.texmexfiesta.com', 'info@texmexfiesta.com', 'Calapan City, Brgy. IV', 25, 0.00, 'resto8.jpg', 1),
 (9, 'Bistro de Paris', 'French-inspired bistro serving delectable pastries and gourmet dishes.', '+1-901-234-5678', 'www.bistrodeparis.com', 'info@bistrodeparis.com', ' Dipolog City, Minaog', 50, 0.00, 'resto9.jpg', 1),
 (10, 'Tokyo Ramen House', 'Indulge in authentic Japanese ramen bowls with rich and flavorful broths.', '+1-012-345-6789', 'www.tokyoramen.com', 'info@tokyoramen.com', ' Batangas City, Balagtas', 18, 0.00, 'resto10.jpg', 1),
@@ -345,7 +356,7 @@ INSERT INTO `restaurant` (`id`, `name`, `description`, `phone`, `website`, `emai
 (12, 'Himalayan Curry House', 'Dive into the flavors of Nepal and India with aromatic curries and naan bread.', '+1-234-567-8901', 'www.himalayancurry.com', 'info@himalayancurry.com', 'Balanga City, Tenejero', 11, 0.00, 'resto12.jpg', 1),
 (13, 'Seafood Sensations', 'A seafood lovers paradise with a wide selection of fresh seafood dishes.', '+1-345-678-9012', 'www.seafoodsensations.com', 'info@seafoodsensations.com', 'Surigao City, Taft', 80, 0.00, 'resto13.jpg', 1),
 (14, 'The Vegan Garden', 'Plant-based eatery offering a variety of delicious vegan and vegetarian dishes.', '+1-456-789-0123', 'www.vegangarden.com', 'info@vegangarden.com', 'Lucena City, Gulang-Gulang', 21, 0.00, 'resto14.jpg', 1),
-(15, 'Bao Buns & Dumplings', 'A modern Asian eatery specializing in fluffy bao buns and flavorful dumplings.', '+1-567-890-1234', 'www.baobuns.com', 'info@baobuns.com', 'Tuguegarao City, Pengue-Ruyu', 7, 0.00, 'resto15.jpg', 1),
+(15, 'Bao Buns & Dumplings', 'A modern Asian eatery specializing in fluffy bao buns and flavorful dumplings.', '+1-567-890-1234', 'www.baobuns.com', 'info@baobuns.com', 'Tuguegarao City, Pengue-Ruyu', 1, 0.00, 'resto15.jpg', 1),
 (16, 'Tacos & Tequila', 'Enjoy a fiesta of Mexican flavors with tacos, margaritas, and tequila.', '+1-678-901-2345', 'www.tacosandtequila.com', 'info@tacosandtequila.com', 'Catarman, Mabolo', 46, 0.00, 'resto16.jpg', 1),
 (17, 'Hanami Sushi Bar', 'Experience the art of sushi-making at this stylish Japanese sushi bar.', '+1-789-012-3456', 'www.hanamisushi.com', 'info@hanamisushi.com', 'Buluan, Poblacion', 75, 0.00, 'resto17.jpg', 1),
 (18, 'Mamma Mia Pizzeria', 'Authentic Italian pizzeria serving wood-fired pizzas with fresh toppings.', '+1-890-123-4567', 'www.mammamia.com', 'info@mammamia.com', 'Naga City, Bagumbayan Norte', 30, 0.00, 'resto18.jpg', 1),
@@ -365,7 +376,7 @@ INSERT INTO `restaurant` (`id`, `name`, `description`, `phone`, `website`, `emai
 (32, 'The Coastal Grill', 'Enjoy a seafood feast with a stunning view of the ocean at this coastal grill.', '+1-234-567-8901', 'www.coastalgrill.com', 'info@coastalgrill.com', 'Mati City, Dahican', 60, 0.00, 'resto32.jpg', 1),
 (33, 'Little Tokyo Ramen', 'A cozy ramen joint serving authentic Japanese ramen in a casual setting.', '+1-345-678-9012', 'www.littletokyoramen.com', 'info@littletokyoramen.com', 'Iloilo City, Jalandoni-Wilson', 37, 0.00, 'resto33.jpg', 1),
 (34, 'The Mediterranean Kitchen', 'Explore the flavors of the Mediterranean with a diverse selection of dishes.', '+1-456-789-0123', 'www.medkitchen.com', 'info@medkitchen.com', 'Manila, Ermita', 1, 0.00, 'resto34.jpg', 1),
-(35, 'Tokyo Grill House', 'Savor the taste of Japanese grilled dishes and teppanyaki-style cooking.', '+1-567-890-1234', 'www.tokyogrillhouse.com', 'info@tokyogrillhouse.com', 'Isabela City, Sumagdang', 73, 0.00, 'resto35.jpg', 1),
+(35, 'Tokyo Grill House', 'Savor the taste of Japanese grilled dishes and teppanyaki-style cooking.', '+1-567-890-1234', 'www.tokyogrillhouse.com', 'info@tokyogrillhouse.com', 'Isabela City, Sumagdang', 73, 5.00, 'resto35.jpg', 1),
 (36, 'The Baking Lab', 'A bakery and café offering a wide range of freshly baked goods and pastries.', '+1-678-901-2345', 'www.bakinglab.com', 'info@bakinglab.com', 'Naval, Brgy. No. 1', 49, 0.00, 'resto36.jpg', 1),
 (37, 'Gourmet Burger Co.', 'Indulge in gourmet burgers made with high-quality ingredients and creative toppings.', '+1-789-012-3456', 'www.gourmetburgerco.com', 'info@gourmetburgerco.com', 'Cavite City, San Roque', 19, 0.00, 'resto37.jpg', 1),
 (38, 'Churrasco House', 'Experience a Brazilian barbecue feast with a variety of grilled meats and sides.', '+1-890-123-4567', 'www.churrascohouse.com', 'info@churrascohouse.com', 'Tabuk City, Bulanao', 70, 0.00, 'resto38.jpg', 1),
@@ -651,7 +662,7 @@ ALTER TABLE `table_region`
 -- AUTO_INCREMENT for table `account`
 --
 ALTER TABLE `account`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `cuisine_classification`
@@ -663,7 +674,7 @@ ALTER TABLE `cuisine_classification`
 -- AUTO_INCREMENT for table `rating`
 --
 ALTER TABLE `rating`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `restaurant`
