@@ -23,36 +23,38 @@
         </div>
 
         <!-- Reservation -->
-        <form class="container custom-dark-dark-bg reser-height rounded border p-5"  >
+        <form class="container custom-dark-dark-bg rounded border p-5 w-75"  >
             <div class="row">
                 <div class="col-12 text-center text-light ">
                     <h1 class="display-5">BOOK A TABLE</h1>
                 </div>
-                <div class="col-md-4 pt-5 pb-3">
+            </div>
+            <div class="row mt-3 g-3">
+              <div class="col-md-4">
                   <input type="text" class="form-control" placeholder="Date">
                 </div>
 
-                <div class="col-md-4 pt-5 pb-3">
+                <div class="col-md-4 ">
                   <input type="text" class="form-control" placeholder="Time">
                 </div>
 
-                <div class="col-md-4 pt-5 pb-3">
+                <div class="col-md-4 ">
                   <input type="text" class="form-control" placeholder="No. of attendees">
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-6 pt-2 pb-3">
+            <div class="row mt-3 g-3">
+                <div class="col-sm-6 col-12">
                   <input type="text" class="form-control" placeholder="Name">
                 </div>
 
-                <div class="col-6 pt-2 pb-3">
+                <div class="col-sm-6 col-12">
                   <input type="text" class="form-control" placeholder="Contact no.">
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-12 pt-2 pb-3">
+            <div class="row mt-3">
+                <div class="col-12">
                     <select class="form-select border">
                         <option value = "" selected>Select Restaurant ...</option>
                         <option value="1">La Trattoria</option>
@@ -62,8 +64,8 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-12 pt-2 pb-3">
+            <div class="row mt-3">
+                <div class="col-12">
                     <select class="form-select border ">
                         <option value = "" selected>Select Location ...</option>
                         <option value="1">CAR, Abra, Bangued, Calaba</option>
@@ -73,12 +75,12 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-12 pt-2 pb-5">
+            <div class="row mt-5">
+                <div class="col-12">
                   <textarea class="form-control" rows="3" placeholder="Message"></textarea>
                 </div>
             </div>
-                    <button type="submit" class="btn btn-dark mb-2">Submit</button>
+            <button type="submit" class="btn btn-dark mt-3">Submit</button>
         </form>
       </section>
     </header>

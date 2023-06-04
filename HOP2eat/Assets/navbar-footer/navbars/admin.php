@@ -1,4 +1,4 @@
-<nav class="navbar sticky-md-top navbar-expand-md navbar-dark text-light custom-dark-dark-bg" data-bs-theme="dark">
+<nav class="navbar sticky-md-top navbar-expand-md navbar-dark text-light navbar-footer-color" data-bs-theme="dark">
     <div class="container fs-5 class">
       <a class="navbar-brand" href="<?php echo $index_page_directory?>index.php">
         <img src="<?php echo $logo_directory?>logo-white.png"

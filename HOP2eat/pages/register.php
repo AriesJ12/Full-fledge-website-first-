@@ -70,12 +70,19 @@
     <title>Register Page</title>
     <link rel="stylesheet" href="../Assets/css/style.css">
 </head>
-<body class = "bg-secondary-color register-login-bg">
+<body class = "register-login-bg p-3">
 
-    
-<main class="container">
-  <div class=" row my-5">
-    <div class="col-lg-4 m-auto border shadow-lg p-3 mb-5 rounded text-center bg-light">
+
+<main class="container-fluid">
+  <div class="row w-100">
+      <div class="col-12 d-flex justify-content-center justify-content-sm-start">
+        <a href="../index.php">
+          <img src="../Assets/images/homepage/logo-white.png" alt="" width="120" height="70">
+        </a>
+      </div>
+  </div>
+  <div class=" row shadow">
+    <div class="col-md-6 m-auto shadow pt-5 px-5 pb-0 rounded text-center bg-light">
       <form action= "" method = "POST" class = "needs-validation" novalidate>
         <a href="../index.php">
           <img class="mb-4" src="../Assets/images/homepage/logoblack4.png" alt="" width="120" height="57">
@@ -127,12 +134,11 @@
           </a>
         </p>
       </div>
-      <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2023</p>
+      <p class="mt-5 text-body-secondary">&copy; 2017–2023</p>
     </div>
   </div>
-  
-  
 </main>
+
 <div class="toast-container position-fixed bottom-0 end-0 p-3">
   <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-header">

@@ -46,7 +46,7 @@
           ?>
             <div class="col">
               <div class="card overflow-hidden rounded shadow">
-                <div class="card-top">
+                <div class="card-top overflow-hidden">
                   <img src="<?php echo $imagesDefaultDirectory . $profileImage?>" alt="" class="img-fluid">
                 </div>
                 <div class="card-body text-center">

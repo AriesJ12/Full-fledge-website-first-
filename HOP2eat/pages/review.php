@@ -159,7 +159,7 @@
                             ?>
                             
                         </div>
-                        <div class = "col-sm-8 col-12 border rounded p-3">
+                        <div class = "col-sm-8 col-12 border rounded bg-dark p-3">
                             <?php echo $row['comment']?>
                         </div>
                     <?php
