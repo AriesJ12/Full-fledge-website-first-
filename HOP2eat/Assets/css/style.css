@@ -24,9 +24,9 @@
 {
   background-color:#0E0F0F !important;
 }
-.navbar{
+/* .navbar{
   height: 75px;
-}
+} */
 
 /* COLORS */
 
@@ -255,7 +255,7 @@
 
 /* navbar height */
 .navbar-height{
-  height: 80px;
+  /* height: 80px; */
 }
 
 

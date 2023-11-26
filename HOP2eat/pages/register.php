@@ -83,7 +83,7 @@
   </div>
   <div class=" row shadow">
     <div class="col-md-6 m-auto shadow pt-5 px-5 pb-0 rounded text-center bg-light">
-      <form action= "" method = "POST" class = "needs-validation" novalidate>
+      <form action= "register.php" method = "POST" class = "needs-validation" novalidate>
         <h1 class="h4 mb-3 fw-normal">Sign Up</h1>
         <?php
           if(isset($_GET['error']))
